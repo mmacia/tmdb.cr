@@ -3,7 +3,6 @@ class Tmdb::LazyIterator(T)
   getter resource : Resource
   @total_items : Int32 = 0
 
-  private getter items_per_page : Int32 = 0
   private getter total_pages : Int32 = 0
   private getter? fetched : Bool = false
 
@@ -43,7 +42,6 @@ class Tmdb::LazyIterator(T)
 
   private def update_counters(payload : JSON::Any)
     @total_items = payload["total_results"].as_i
-    @items_per_page = 20
     @total_pages = payload["total_pages"].as_i
     nil
   end

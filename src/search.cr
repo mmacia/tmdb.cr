@@ -1,4 +1,5 @@
 require "./lazy_iterator"
+require "./movie_result"
 
 class Tmdb::Search
   def self.movie(query : String, **filters) : LazyIterator(MovieResult)

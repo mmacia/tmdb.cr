@@ -14,6 +14,10 @@ class Tmdb::Resource
   def initialize(@query_url : String, @params : Hash(Symbol, String), @api : Api = Tmdb.api)
   end
 
+  def initialize(@query_url : String, @api : Api = Tmdb.api)
+    @params = Hash(Symbol, String).new
+  end
+
   def get
     request_params = api.params
     request_params.merge!(params)
