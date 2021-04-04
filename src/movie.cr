@@ -1,4 +1,5 @@
 require "./collection"
+require "./genre"
 
 class Tmdb::Movie
   enum Status
@@ -14,7 +15,7 @@ class Tmdb::Movie
   getter backdrop_path : String?
   getter belongs_to_collection : Collection?
   getter budget : Int64
-  #getter genres : Array(Genre)
+  getter genres : Array(Genre)
   getter homepage : String?
   getter id : Int64
   getter imdb_id : String?
@@ -49,7 +50,11 @@ class Tmdb::Movie
     )
 
     @budget = data["budget"].as_i64
-    #@genres = data["genres"]
+
+    @genres = data["genres"].as_a.map do |genre|
+      Genre.new(genre)
+    end
+
     @homepage = data["homepage"].as_s?
     @id = data["id"].as_i64
     @imdb_id = data["imdb_id"].as_s?
