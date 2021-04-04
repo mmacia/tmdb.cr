@@ -1,0 +1,13 @@
+name: tmdb
+version: 0.1.0
+
+authors:
+  - Moisès Macià <mmacia@gmail.com>
+
+targets:
+  tmdb:
+    main: src/tmdb.cr
+
+crystal: 1.0.0
+
+license: MIT
