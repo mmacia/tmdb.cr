@@ -1,5 +1,6 @@
 require "./collection"
 require "./genre"
+require "./company"
 
 class Tmdb::Movie
   enum Status
@@ -24,7 +25,7 @@ class Tmdb::Movie
   getter overview : String?
   getter popularity : Float64
   getter poster_path : String?
-  #getter production_companies : Array(Company)
+  getter production_companies : Array(Company)
   #getter production_countries : Array(Country)
   getter release_date : Time?
   getter revenue : Int32
@@ -63,7 +64,16 @@ class Tmdb::Movie
     @overview = data["overview"].as_s?
     @popularity = data["popularity"].as_f
     @poster_path = data["poster_path"].as_s?
-    #@production_companies = data["production_companies"]
+
+    @production_companies = data["production_companies"].as_a.map do |company|
+      Company.new(
+        id: company["id"].as_i64,
+        name: company["name"].as_s,
+        logo_path: company["logo_path"].as_s?,
+        origin_country: company["origin_country"].as_s
+      )
+    end
+
     #@production_countries = data["production_countries"]
 
     date = data["release_date"].as_s
