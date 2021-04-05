@@ -2,6 +2,7 @@ require "./collection"
 require "./genre"
 require "./company"
 require "./country"
+require "./language"
 
 class Tmdb::Movie
   enum Status
@@ -31,7 +32,7 @@ class Tmdb::Movie
   getter release_date : Time?
   getter revenue : Int32
   getter runtime : Int32?
-  #getter spoken_languages : Array(Language)
+  getter spoken_languages : Array(Language)
   getter status : Status
   getter tagline : String?
   getter title : String
@@ -84,7 +85,11 @@ class Tmdb::Movie
 
     @revenue = data["revenue"].as_i
     @runtime = data["runtime"].as_i
-    #@spoken_languages = data["spoken_languages"]
+
+    @spoken_languages = data["spoken_languages"].as_a.map do |lang|
+      Language.new(lang)
+    end
+
     @status = Status.parse(data["status"].as_s)
     @tagline = data["tagline"].as_s?
     @title = data["title"].as_s
