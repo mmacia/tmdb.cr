@@ -1,6 +1,7 @@
 require "./collection"
 require "./genre"
 require "./company"
+require "./country"
 
 class Tmdb::Movie
   enum Status
@@ -26,7 +27,7 @@ class Tmdb::Movie
   getter popularity : Float64
   getter poster_path : String?
   getter production_companies : Array(Company)
-  #getter production_countries : Array(Country)
+  getter production_countries : Array(Country)
   getter release_date : Time?
   getter revenue : Int32
   getter runtime : Int32?
@@ -74,7 +75,9 @@ class Tmdb::Movie
       )
     end
 
-    #@production_countries = data["production_countries"]
+    @production_countries = data["production_countries"].as_a.map do |country|
+      Country.new(country)
+    end
 
     date = data["release_date"].as_s
     @release_date = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
