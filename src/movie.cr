@@ -3,6 +3,7 @@ require "./genre"
 require "./company"
 require "./country"
 require "./language"
+require "./alternative_title"
 
 class Tmdb::Movie
   enum Status
@@ -39,6 +40,9 @@ class Tmdb::Movie
   getter? video : Bool
   getter vote_average : Float64
   getter vote_count : Int32
+
+
+  @alternative_titles : Array(AlternativeTitle)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -96,5 +100,58 @@ class Tmdb::Movie
     @video = data["video"].as_bool
     @vote_average = data["vote_average"].as_f
     @vote_count = data["vote_count"].as_i
+  end
+
+  def alternative_titles : Array(AlternativeTitle)
+    return @alternative_titles.not_nil! unless @alternative_titles.nil?
+
+    filters = Hash(Symbol, String).new
+    res = Resource.new("/movie/#{id}/alternative_titles", filters)
+    @alternative_titles = res.get["titles"].as_a.map do |title|
+      AlternativeTitle.new(title)
+    end
+  end
+
+  def alternative_titles(**filters) : Array(AlternativeTitle)
+    return @alternative_titles.not_nil! unless @alternative_titles.nil?
+
+    filters = filters.to_h.transform_values(&.to_s)
+    res = Resource.new("/movie/#{id}/alternative_titles", filters)
+    @alternative_titles = res.get["titles"].as_a.map do |title|
+      AlternativeTitle.new(title)
+    end
+  end
+
+  def credits
+  end
+
+  def external_ids
+  end
+
+  def images
+  end
+
+  def keywords
+  end
+
+  def recommendations
+  end
+
+  def release_dates
+  end
+
+  def user_reviews
+  end
+
+  def similar_movies
+  end
+
+  def translations
+  end
+
+  def videos
+  end
+
+  def watch_providers
   end
 end
