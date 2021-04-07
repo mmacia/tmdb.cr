@@ -10,6 +10,7 @@ require "./release"
 require "./review"
 require "./translation"
 require "./video"
+require "./watch"
 
 class Tmdb::Movie
   enum Status
@@ -59,6 +60,7 @@ class Tmdb::Movie
   @release_dates : Array(Tuple(String, Array(Release)))? = nil
   @translations : Array(Translation)? = nil
   @videos : Array(Video)? = nil
+  @watch_providers : Hash(String, Watch)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -255,6 +257,23 @@ class Tmdb::Movie
     @videos = data["results"].as_a.map { |video| Video.new(video) }
   end
 
-  def watch_providers
+  def watch_providers : Hash(String, Watch)
+    return @watch_providers.not_nil! unless @watch_providers.nil?
+
+    res = Resource.new("/movie/#{id}/watch/providers")
+    data = res.get
+
+    ret = Hash(String, Watch).new
+    data["results"].as_h.each do |country_code, wp|
+      watch = Watch.new
+
+      watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
+      watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
+      watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
+
+      ret[country_code] = watch
+    end
+
+    @watch_providers = ret
   end
 end
