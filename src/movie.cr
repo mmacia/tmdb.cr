@@ -4,6 +4,7 @@ require "./company"
 require "./country"
 require "./language"
 require "./alternative_title"
+require "./credit"
 
 class Tmdb::Movie
   enum Status
@@ -41,8 +42,9 @@ class Tmdb::Movie
   getter vote_average : Float64
   getter vote_count : Int32
 
-
   @alternative_titles : Array(AlternativeTitle)? = nil
+  @cast : Array(CastCredit)? = nil
+  @crew : Array(CrewCredit)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -122,7 +124,26 @@ class Tmdb::Movie
     end
   end
 
-  def credits
+  def cast : Array(CastCredit)
+    @cast.not_nil! unless @cast.nil?
+    res = Resource.new("/movie/#{id}/credits")
+    data = res.get
+
+    @cast = data["cast"].as_a.map { |cast| CastCredit.new(cast) }
+    @crew = data["crew"].as_a.map { |crew| CrewCredit.new(crew) }
+
+    @cast.not_nil!
+  end
+
+  def crew : Array(CrewCredit)
+    @crew.not_nil! unless @crew.nil?
+    res = Resource.new("/movie/#{id}/credits")
+    data = res.get
+
+    @cast = data["cast"].as_a.map { |cast| CastCredit.new(cast) }
+    @crew = data["crew"].as_a.map { |crew| CrewCredit.new(crew) }
+
+    @crew.not_nil!
   end
 
   def external_ids
