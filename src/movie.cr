@@ -9,6 +9,7 @@ require "./image"
 require "./release"
 require "./review"
 require "./translation"
+require "./video"
 
 class Tmdb::Movie
   enum Status
@@ -57,6 +58,7 @@ class Tmdb::Movie
   @keywords : Array(String)? = nil
   @release_dates : Array(Tuple(String, Array(Release)))? = nil
   @translations : Array(Translation)? = nil
+  @videos : Array(Video)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -244,7 +246,13 @@ class Tmdb::Movie
     @translations = data["translations"].as_a.map { |tr| Translation.new(tr) }
   end
 
-  def videos
+  def videos : Array(Video)
+    return @videos.not_nil! unless @videos.nil?
+
+    res = Resource.new("/movie/#{id}/videos")
+    data = res.get
+
+    @videos = data["results"].as_a.map { |video| Video.new(video) }
   end
 
   def watch_providers
