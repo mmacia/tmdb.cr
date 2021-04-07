@@ -228,7 +228,9 @@ class Tmdb::Movie
     LazyIterator(Review).new(res)
   end
 
-  def similar_movies
+  def similar_movies : LazyIterator(MovieResult)
+    res = Resource.new("/movie/#{id}/similar")
+    LazyIterator(MovieResult).new(res)
   end
 
   def translations
