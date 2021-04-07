@@ -5,6 +5,7 @@ require "./country"
 require "./language"
 require "./alternative_title"
 require "./credit"
+require "./image"
 
 class Tmdb::Movie
   enum Status
@@ -48,6 +49,8 @@ class Tmdb::Movie
   @cast : Array(CastCredit)? = nil
   @crew : Array(CrewCredit)? = nil
   @external_ids : Array(ExternalId)? = nil
+  @backdrops : Array(Image)? = nil
+  @posters : Array(Image)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -156,26 +159,36 @@ class Tmdb::Movie
     res = Resource.new("/movie/#{id}/external_ids")
     data = res.get
 
-    if data["imdb_id"].as_s?
-      ret << ExternalId.new("imdb_id", data["imdb_id"].as_s)
-    end
-
-    if data["facebook_id"].as_s?
-      ret << ExternalId.new("facebook_id", data["facebook_id"].as_s)
-    end
-
-    if data["instagram_id"].as_s?
-      ret << ExternalId.new("instagram_id", data["instagram_id"].as_s)
-    end
-
-    if data["twitter_id"].as_s?
-      ret << ExternalId.new("twitter_id", data["twitter_id"].as_s)
-    end
+    ret << ExternalId.new("imdb_id", data["imdb_id"].as_s) if data["imdb_id"].as_s?
+    ret << ExternalId.new("facebook_id", data["facebook_id"].as_s) if data["facebook_id"].as_s?
+    ret << ExternalId.new("instagram_id", data["instagram_id"].as_s) if data["instagram_id"].as_s?
+    ret << ExternalId.new("twitter_id", data["twitter_id"].as_s) if data["twitter_id"].as_s?
 
     @external_ids = ret
   end
 
-  def images
+  def backdrops : Array(Image)
+    return @backdrops.not_nil! unless @backdrops.nil?
+
+    res = Resource.new("/movie/#{id}/images")
+    data = res.get
+
+    @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
+    @posters = data["posters"].as_a.map { |poster| Image.new(poster) }
+
+    @backdrops.not_nil!
+  end
+
+  def posters : Array(Image)
+    return @posters.not_nil! unless @posters.nil?
+
+    res = Resource.new("/movie/#{id}/images")
+    data = res.get
+
+    @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
+    @posters = data["posters"].as_a.map { |poster| Image.new(poster) }
+
+    @posters.not_nil!
   end
 
   def keywords
