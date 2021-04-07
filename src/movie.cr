@@ -51,6 +51,7 @@ class Tmdb::Movie
   @external_ids : Array(ExternalId)? = nil
   @backdrops : Array(Image)? = nil
   @posters : Array(Image)? = nil
+  @keywords : Array(String)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -191,7 +192,13 @@ class Tmdb::Movie
     @posters.not_nil!
   end
 
-  def keywords
+  def keywords : Array(String)
+    return @keywords.not_nil! unless @keywords.nil?
+
+    res = Resource.new("/movie/#{id}/keywords")
+    data = res.get
+
+    @keywords = data["keywords"].as_a.map { |keyword|  keyword["name"].as_s }
   end
 
   def recommendations
