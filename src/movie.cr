@@ -16,6 +16,8 @@ class Tmdb::Movie
     Canceled
   end
 
+  alias ExternalId = Tuple(String, String)
+
   getter? adult : Bool
   getter backdrop_path : String?
   getter belongs_to_collection : Collection?
@@ -45,6 +47,7 @@ class Tmdb::Movie
   @alternative_titles : Array(AlternativeTitle)? = nil
   @cast : Array(CastCredit)? = nil
   @crew : Array(CrewCredit)? = nil
+  @external_ids : Array(ExternalId)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -125,7 +128,7 @@ class Tmdb::Movie
   end
 
   def cast : Array(CastCredit)
-    @cast.not_nil! unless @cast.nil?
+    return @cast.not_nil! unless @cast.nil?
     res = Resource.new("/movie/#{id}/credits")
     data = res.get
 
@@ -136,7 +139,7 @@ class Tmdb::Movie
   end
 
   def crew : Array(CrewCredit)
-    @crew.not_nil! unless @crew.nil?
+    return @crew.not_nil! unless @crew.nil?
     res = Resource.new("/movie/#{id}/credits")
     data = res.get
 
@@ -146,7 +149,30 @@ class Tmdb::Movie
     @crew.not_nil!
   end
 
-  def external_ids
+  def external_ids : Array(ExternalId)
+    return @external_ids.not_nil! unless @external_ids.nil?
+
+    ret = [] of ExternalId
+    res = Resource.new("/movie/#{id}/external_ids")
+    data = res.get
+
+    if data["imdb_id"].as_s?
+      ret << ExternalId.new("imdb_id", data["imdb_id"].as_s)
+    end
+
+    if data["facebook_id"].as_s?
+      ret << ExternalId.new("facebook_id", data["facebook_id"].as_s)
+    end
+
+    if data["instagram_id"].as_s?
+      ret << ExternalId.new("instagram_id", data["instagram_id"].as_s)
+    end
+
+    if data["twitter_id"].as_s?
+      ret << ExternalId.new("twitter_id", data["twitter_id"].as_s)
+    end
+
+    @external_ids = ret
   end
 
   def images
