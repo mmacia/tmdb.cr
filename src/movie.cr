@@ -7,6 +7,7 @@ require "./alternative_title"
 require "./credit"
 require "./image"
 require "./release"
+require "./review"
 
 class Tmdb::Movie
   enum Status
@@ -222,7 +223,9 @@ class Tmdb::Movie
     end
   end
 
-  def user_reviews
+  def user_reviews : LazyIterator(Review)
+    res = Resource.new("/movie/#{id}/reviews")
+    LazyIterator(Review).new(res)
   end
 
   def similar_movies
