@@ -8,6 +8,7 @@ require "./credit"
 require "./image"
 require "./release"
 require "./review"
+require "./translation"
 
 class Tmdb::Movie
   enum Status
@@ -55,6 +56,7 @@ class Tmdb::Movie
   @posters : Array(Image)? = nil
   @keywords : Array(String)? = nil
   @release_dates : Array(Tuple(String, Array(Release)))? = nil
+  @translations : Array(Translation)? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -233,7 +235,13 @@ class Tmdb::Movie
     LazyIterator(MovieResult).new(res)
   end
 
-  def translations
+  def translations : Array(Translation)
+    return @translations.not_nil! unless @translations.nil?
+
+    res = Resource.new("/movie/#{id}/translations")
+    data = res.get
+
+    @translations = data["translations"].as_a.map { |tr| Translation.new(tr) }
   end
 
   def videos
