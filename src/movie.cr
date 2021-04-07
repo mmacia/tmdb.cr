@@ -6,6 +6,7 @@ require "./language"
 require "./alternative_title"
 require "./credit"
 require "./image"
+require "./release"
 
 class Tmdb::Movie
   enum Status
@@ -52,6 +53,7 @@ class Tmdb::Movie
   @backdrops : Array(Image)? = nil
   @posters : Array(Image)? = nil
   @keywords : Array(String)? = nil
+  @release_dates : Array(Tuple(String, Array(Release)))? = nil
 
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
@@ -206,7 +208,18 @@ class Tmdb::Movie
     LazyIterator(MovieResult).new(res)
   end
 
-  def release_dates
+  def release_dates : Array(Tuple(String, Array(Release)))
+    return @release_dates.not_nil! unless @release_dates.nil?
+
+    res = Resource.new("/movie/#{id}/release_dates")
+    data = res.get
+
+    @release_dates = data["results"].as_a.map do |release|
+      country_code = release["iso_3166_1"].as_s
+      releases = release["release_dates"].as_a.map { |rd| Release.new(rd) }
+
+      {country_code, releases}
+    end
   end
 
   def user_reviews
