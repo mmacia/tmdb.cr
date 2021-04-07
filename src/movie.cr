@@ -201,7 +201,9 @@ class Tmdb::Movie
     @keywords = data["keywords"].as_a.map { |keyword|  keyword["name"].as_s }
   end
 
-  def recommendations
+  def recommendations : LazyIterator(MovieResult)
+    res = Resource.new("/movie/#{id}/recommendations")
+    LazyIterator(MovieResult).new(res)
   end
 
   def release_dates
