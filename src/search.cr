@@ -3,6 +3,7 @@ require "./movie_result"
 require "./company_result"
 require "./collection_result"
 require "./keyword"
+require "./person_result"
 
 class Tmdb::Search
   def self.movies(
@@ -50,8 +51,20 @@ class Tmdb::Search
     LazyIterator(Keyword).new(res)
   end
 
-  def self.people()
-    # Implement me
+  def self.people(
+    query : String,
+    language : String? = nil,
+    include_adult : Bool? = nil,
+    region : String? = nil
+  ) : LazyIterator(PersonResult)
+    filters = Hash(Symbol, String).new
+    filters[:query] = query
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+    filters[:include_adult] = include_adult.not_nil!.to_s unless include_adult.nil?
+    filters[:region] = region.not_nil!.upcase unless region.nil?
+
+    res = Resource.new("/search/person", filters)
+    LazyIterator(PersonResult).new(res)
   end
 
   def self.tv_shows()

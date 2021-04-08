@@ -17,11 +17,11 @@ class Tmdb::MovieResult
   getter vote_average : Float64
 
   def initialize(data : JSON::Any)
-    @poster_path = data["poster_path"].as_s?
+    @poster_path = data["poster_path"]? ? data["poster_path"].as_s? : nil
     @adult = data["adult"].as_bool
     @overview = data["overview"].as_s
 
-    date = data["release_date"].as_s
+    date = data["release_date"]? ?  data["release_date"].as_s : ""
     @release_date = date.empty? ? nil : Time.parse(date,"%Y-%m-%d", Time::Location::UTC)
 
     @genre_ids = data["genre_ids"].as_a.map(&.as_i)
@@ -29,8 +29,8 @@ class Tmdb::MovieResult
     @original_title = data["original_title"].as_s
     @original_language = data["original_language"].as_s
     @title = data["title"].as_s
-    @backdrop_path = data["backdrop_path"].as_s?
-    @popularity = data["popularity"].as_f
+    @backdrop_path = data["backdrop_path"]? ? data["backdrop_path"].as_s? : nil
+    @popularity = data["popularity"]? ? data["popularity"].as_f : 0.0
     @vote_count = data["vote_count"].as_i
     @video = data["video"].as_bool
 
