@@ -3,8 +3,8 @@ require "./resource"
 require "./search"
 require "./configuration"
 require "./certification"
+require "./collection"
 
-# changes
 # collections
 # companies
 # credits
