@@ -2,9 +2,8 @@ require "./api"
 require "./resource"
 require "./search"
 require "./configuration"
+require "./certification"
 
-# configuration
-# certifiactes
 # changes
 # collections
 # companies
