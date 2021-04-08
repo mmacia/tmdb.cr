@@ -1,6 +1,7 @@
 require "./lazy_iterator"
 require "./movie_result"
 require "./company_result"
+require "./collection_result"
 
 class Tmdb::Search
   def self.movies(
@@ -31,8 +32,13 @@ class Tmdb::Search
     LazyIterator(CompanyResult).new(res)
   end
 
-  def self.collections()
-    # Implement me
+  def self.collections(query : String, language : String? = nil) : LazyIterator(CollectionResult)
+    filters = Hash(Symbol, String).new
+    filters[:query] = query
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/search/collection", filters)
+    LazyIterator(CollectionResult).new(res)
   end
 
   def self.keywords()

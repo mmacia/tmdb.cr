@@ -1,7 +1,7 @@
 class Tmdb::Collection
   class Part
     getter? adult : Bool
-    getter backdrop_path : String
+    getter backdrop_path : String?
     getter genre_ids : Array(Int32)
     getter id : Int32
     getter original_language : String
@@ -17,7 +17,7 @@ class Tmdb::Collection
 
     def initialize(data : JSON::Any)
       @adult = data["adult"].as_bool
-      @backdrop_path = data["backdrop_path"].as_s
+      @backdrop_path = data["backdrop_path"].as_s?
       @genre_ids = data["genre_ids"].as_a.map(&.as_i)
       @id = data["id"].as_i
       @original_language = data["original_language"].as_s
