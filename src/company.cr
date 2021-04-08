@@ -2,7 +2,7 @@ class Tmdb::Company
   getter id : Int64
   getter logo_path : String?
   getter name : String
-  getter origin_country : String
+  getter origin_country : String?
   @description : String? = nil
   @headquarters : String? = nil
   @homepage : String? = nil
@@ -20,12 +20,12 @@ class Tmdb::Company
     @headquarters = data["headquarters"].as_s
     @homepage = data["homepage"].as_s
     @id = data["id"].as_i64
-    @origin_country = data["origin_country"].as_s
+    @origin_country = data["origin_country"].as_s?
     @logo_path = data["logo_path"].as_s?
     @name = data["name"].as_s
 
-    if data["parent_company"]?
-      pc = data["parent_company"]
+    pc = data["parent_company"]
+    unless pc.as_nil.nil?
       @parent_company = Company.new(
         id: pc["id"].as_i64,
         name: pc["name"].as_s,
