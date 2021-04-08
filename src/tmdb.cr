@@ -4,8 +4,8 @@ require "./search"
 require "./configuration"
 require "./certification"
 require "./collection"
+require "./company"
 
-# companies
 # credits
 # discover
 # find

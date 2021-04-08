@@ -1,3 +1,5 @@
+require "./logo"
+
 class Tmdb::Company
   getter id : Int64
   getter logo_path : String?
@@ -7,6 +9,8 @@ class Tmdb::Company
   @headquarters : String? = nil
   @homepage : String? = nil
   @parent_company : Company? = nil
+  @alternative_names : Array(String)? = nil
+  @logos : Array(Logo)? = nil
 
   private getter? full_initialized : Bool
 
@@ -59,6 +63,28 @@ class Tmdb::Company
   def parent_company : Company?
     refresh! unless full_initialized?
     @parent_company
+  end
+
+  def alternative_names : Array(String)
+    return @alternative_names.not_nil! unless @alternative_names.nil?
+
+    res = Resource.new("/company/#{id}/alternative_names")
+    data = res.get
+
+    @alternative_names = data["results"].as_a.map { |an| an["name"].as_s }
+  rescue NotFound
+    [] of String
+  end
+
+  def logos : Array(Logo)
+    return @logos.not_nil! unless @logos.nil?
+
+    res = Resource.new("/company/#{id}/images")
+    data = res.get
+
+    @logos = data["logos"].as_a.map { |logo| Logo.new(logo) }
+  rescue NotFound
+    [] of Logo
   end
 
   private def refresh!
