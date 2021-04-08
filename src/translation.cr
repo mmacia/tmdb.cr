@@ -17,7 +17,7 @@ class Tmdb::Translation
     @title = data["data"]["title"].as_s
     @overview = data["data"]["overview"].as_s
     @homepage = data["data"]["homepage"].as_s
-    @runtime = data["data"]["runtime"].as_i?
-    @tagline = data["data"]["tagline"].as_s
+    @runtime = data["data"]["runtime"]? ? data["data"]["runtime"].as_i? : nil
+    @tagline = data["data"]["tagline"]? ? data["data"]["tagline"].as_s : ""
   end
 end

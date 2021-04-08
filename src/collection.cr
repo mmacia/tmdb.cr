@@ -1,5 +1,6 @@
 require "./movie_result"
 require "./image"
+require "./translation"
 
 class Tmdb::Collection
   getter id : Int64
@@ -10,6 +11,7 @@ class Tmdb::Collection
   @parts : Array(MovieResult) = [] of MovieResult
   @backdrops : Array(Image)? = nil
   @posters : Array(Image)? = nil
+  @translations : Array(Translation)? = nil
 
   private getter? full_initialized : Bool
 
@@ -77,6 +79,15 @@ class Tmdb::Collection
     @posters = data["posters"].as_a.map { |poster| Image.new(poster) }
 
     @posters.not_nil!
+  end
+
+  def translations(language : String? = nil) : Array(Translation)
+    return @translations.not_nil! unless @translations.nil?
+
+    res = Resource.new("/collection/#{id}/translations")
+    data = res.get
+
+    @translations = data["translations"].as_a.map { |tr| Translation.new(tr) }
   end
 
   private def refresh!

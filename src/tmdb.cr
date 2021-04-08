@@ -5,7 +5,6 @@ require "./configuration"
 require "./certification"
 require "./collection"
 
-# collections
 # companies
 # credits
 # discover
