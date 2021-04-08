@@ -1,6 +1,7 @@
 require "./api"
 require "./resource"
 require "./search"
+require "./configuration"
 
 # configuration
 # certifiactes
