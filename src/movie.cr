@@ -11,6 +11,7 @@ require "./review"
 require "./translation"
 require "./video"
 require "./watch"
+require "./keyword"
 
 class Tmdb::Movie
   enum Status
@@ -56,7 +57,7 @@ class Tmdb::Movie
   @external_ids : Array(ExternalId)? = nil
   @backdrops : Array(Image)? = nil
   @posters : Array(Image)? = nil
-  @keywords : Array(String)? = nil
+  @keywords : Array(Keyword)? = nil
   @release_dates : Array(Tuple(String, Array(Release)))? = nil
   @translations : Array(Translation)? = nil
   @videos : Array(Video)? = nil
@@ -217,13 +218,13 @@ class Tmdb::Movie
     @posters.not_nil!
   end
 
-  def keywords : Array(String)
+  def keywords : Array(Keyword)
     return @keywords.not_nil! unless @keywords.nil?
 
     res = Resource.new("/movie/#{id}/keywords")
     data = res.get
 
-    @keywords = data["keywords"].as_a.map { |keyword|  keyword["name"].as_s }
+    @keywords = data["keywords"].as_a.map { |keyword|  Keyword.new(keyword) }
   end
 
   def recommendations(language : String? = nil) : LazyIterator(MovieResult)

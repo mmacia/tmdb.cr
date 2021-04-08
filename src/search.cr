@@ -2,6 +2,7 @@ require "./lazy_iterator"
 require "./movie_result"
 require "./company_result"
 require "./collection_result"
+require "./keyword"
 
 class Tmdb::Search
   def self.movies(
@@ -41,8 +42,12 @@ class Tmdb::Search
     LazyIterator(CollectionResult).new(res)
   end
 
-  def self.keywords()
-    # Implement me
+  def self.keywords(query : String) : LazyIterator(Keyword)
+    filters = Hash(Symbol, String).new
+    filters[:query] = query
+
+    res = Resource.new("/search/keyword", filters)
+    LazyIterator(Keyword).new(res)
   end
 
   def self.people()
