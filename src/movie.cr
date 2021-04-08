@@ -62,6 +62,14 @@ class Tmdb::Movie
   @videos : Array(Video)? = nil
   @watch_providers : Hash(String, Watch)? = nil
 
+  def self.detail(id : Int64, language : String? = nil) : Movie
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/movie/#{id}", filters)
+    Movie.new(res.get)
+  end
+
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
     @backdrop_path = data["backdrop_path"].as_s?
@@ -120,29 +128,25 @@ class Tmdb::Movie
     @vote_count = data["vote_count"].as_i
   end
 
-  def alternative_titles : Array(AlternativeTitle)
+  def alternative_titles(country : String? = nil) : Array(AlternativeTitle)
     return @alternative_titles.not_nil! unless @alternative_titles.nil?
 
     filters = Hash(Symbol, String).new
+    filters[:country] = country.not_nil! unless country.nil?
+
     res = Resource.new("/movie/#{id}/alternative_titles", filters)
     @alternative_titles = res.get["titles"].as_a.map do |title|
       AlternativeTitle.new(title)
     end
   end
 
-  def alternative_titles(**filters) : Array(AlternativeTitle)
-    return @alternative_titles.not_nil! unless @alternative_titles.nil?
-
-    filters = filters.to_h.transform_values(&.to_s)
-    res = Resource.new("/movie/#{id}/alternative_titles", filters)
-    @alternative_titles = res.get["titles"].as_a.map do |title|
-      AlternativeTitle.new(title)
-    end
-  end
-
-  def cast : Array(CastCredit)
+  def cast(language : String? = nil) : Array(CastCredit)
     return @cast.not_nil! unless @cast.nil?
-    res = Resource.new("/movie/#{id}/credits")
+
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/movie/#{id}/credits", filters)
     data = res.get
 
     @cast = data["cast"].as_a.map { |cast| CastCredit.new(cast) }
@@ -153,7 +157,11 @@ class Tmdb::Movie
 
   def crew : Array(CrewCredit)
     return @crew.not_nil! unless @crew.nil?
-    res = Resource.new("/movie/#{id}/credits")
+
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/movie/#{id}/credits", filters)
     data = res.get
 
     @cast = data["cast"].as_a.map { |cast| CastCredit.new(cast) }
@@ -177,10 +185,14 @@ class Tmdb::Movie
     @external_ids = ret
   end
 
-  def backdrops : Array(Image)
+  def backdrops(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
     return @backdrops.not_nil! unless @backdrops.nil?
 
-    res = Resource.new("/movie/#{id}/images")
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+    filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
+
+    res = Resource.new("/movie/#{id}/images", filters)
     data = res.get
 
     @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
@@ -189,10 +201,14 @@ class Tmdb::Movie
     @backdrops.not_nil!
   end
 
-  def posters : Array(Image)
+  def posters(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
     return @posters.not_nil! unless @posters.nil?
 
-    res = Resource.new("/movie/#{id}/images")
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+    filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
+
+    res = Resource.new("/movie/#{id}/images", filters)
     data = res.get
 
     @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
@@ -210,8 +226,11 @@ class Tmdb::Movie
     @keywords = data["keywords"].as_a.map { |keyword|  keyword["name"].as_s }
   end
 
-  def recommendations : LazyIterator(MovieResult)
-    res = Resource.new("/movie/#{id}/recommendations")
+  def recommendations(language : String? = nil) : LazyIterator(MovieResult)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/movie/#{id}/recommendations", filters)
     LazyIterator(MovieResult).new(res)
   end
 
@@ -229,13 +248,19 @@ class Tmdb::Movie
     end
   end
 
-  def user_reviews : LazyIterator(Review)
-    res = Resource.new("/movie/#{id}/reviews")
+  def user_reviews(language : String? = nil) : LazyIterator(Review)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/movie/#{id}/reviews", filters)
     LazyIterator(Review).new(res)
   end
 
-  def similar_movies : LazyIterator(MovieResult)
-    res = Resource.new("/movie/#{id}/similar")
+  def similar_movies(language : String? = nil) : LazyIterator(MovieResult)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/movie/#{id}/similar", filters)
     LazyIterator(MovieResult).new(res)
   end
 
@@ -248,10 +273,13 @@ class Tmdb::Movie
     @translations = data["translations"].as_a.map { |tr| Translation.new(tr) }
   end
 
-  def videos : Array(Video)
+  def videos(language : String? = nil) : Array(Video)
     return @videos.not_nil! unless @videos.nil?
 
-    res = Resource.new("/movie/#{id}/videos")
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/movie/#{id}/videos", filters)
     data = res.get
 
     @videos = data["results"].as_a.map { |video| Video.new(video) }

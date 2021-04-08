@@ -10,6 +10,14 @@ class Tmdb::CrewCredit < Tmdb::Credit
     @credit_id = data["credit_id"].as_s
     @department = data["department"].as_s
     @job = data["job"].as_s
-    @person = Person.new(data, full_initialized: false)
+    @person = Person.new(
+      adult: data["adult"].as_bool,
+      gender: data["gender"].as_i,
+      id: data["id"].as_i64,
+      known_for_department: data["known_for_department"].as_s,
+      name: data["name"].as_s,
+      popularity: data["popularity"].as_f,
+      profile_path: data["profile_path"].as_s?
+    )
   end
 end

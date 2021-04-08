@@ -34,15 +34,8 @@ class Tmdb::Collection
       @vote_count = data["vote_count"].as_i
     end
 
-    def movie_detail(**filters) : Movie
-      filters = filters.to_h.transform_values(&.to_s)
-      res = Resource.new("/movie/#{id}", filters)
-      Movie.new(res.get)
-    end
-
-    def movie_detail : Movie
-      res = Resource.new("/movie/#{id}")
-      Movie.new(res.get)
+    def movie_detail(language : String? = nil) : Movie
+      Movie.detail(id, language)
     end
   end
 
@@ -54,6 +47,14 @@ class Tmdb::Collection
   @parts : Array(Part) = [] of Part
 
   private getter? full_initialized : Bool
+
+  def self.detail(id : Int64, language : String? = nil) : Collection
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/collection/#{id}", filters)
+    Collection.new(res.get)
+  end
 
 
   def initialize(@id, @name, @poster_path, @backdrop_path)
@@ -84,18 +85,14 @@ class Tmdb::Collection
   end
 
   private def refresh!
-    res = Resource.new("/collection/#{id}")
-    data = res.get
+    obj = Collection.detail(id)
 
-    @id = data["id"].as_i64
-    @name = data["name"].as_s
-    @overview = data["overview"].as_s
-    @poster_path = data["poster_path"].as_s
-    @backdrop_path = data["backdrop_path"].as_s
-
-    @parts = data["parts"].as_a.map do |part|
-      Part.new(part)
-    end
+    @id = obj.id
+    @name = obj.name
+    @overview = obj.overview
+    @poster_path = obj.poster_path
+    @backdrop_path = obj.backdrop_path
+    @parts = obj.parts
 
     @full_initialized = true
   end

@@ -8,13 +8,17 @@ end
 
 class Tmdb::Resource
   getter query_url : String
-  getter api : Api
-  property params : Hash(Symbol, String)
+  getter api : Api = Tmdb.api
+  getter params : Hash(Symbol, String)
 
-  def initialize(@query_url : String, @params : Hash(Symbol, String), @api : Api = Tmdb.api)
+  def initialize(@query_url : String, params : NamedTuple)
+    @params = params.to_h.transform_value(&.to_s)
   end
 
-  def initialize(@query_url : String, @api : Api = Tmdb.api)
+  def initialize(@query_url : String, @params : Hash(Symbol, String))
+  end
+
+  def initialize(@query_url : String)
     @params = Hash(Symbol, String).new
   end
 

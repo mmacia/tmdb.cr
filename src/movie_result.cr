@@ -43,14 +43,8 @@ class Tmdb::MovieResult
     @vote_average = vote_avg
   end
 
-  def movie_detail(**filters) : Movie
-    filters = filters.to_h.transform_values(&.to_s)
-    res = Resource.new("/movie/#{id}", filters)
-    Movie.new(res.get)
-  end
-
-  def movie_detail : Movie
+  def movie_detail(language : String? = nil) : Movie
     res = Resource.new("/movie/#{id}")
-    Movie.new(res.get)
+    Movie.detail(id, language)
   end
 end

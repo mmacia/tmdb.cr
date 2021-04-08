@@ -10,6 +10,11 @@ class Tmdb::Company
 
   private getter? full_initialized : Bool
 
+  def self.detail(id : Int64) : Company
+    res = Resource.new("/company/#{id}")
+    Company.new(res.get)
+  end
+
   def initialize(data : JSON::Any)
     @description = data["description"].as_s
     @headquarters = data["headquarters"].as_s
@@ -57,26 +62,16 @@ class Tmdb::Company
   end
 
   private def refresh!
-    res = Resource.new("/company/#{id}")
-    data = res.get
+    obj = Company.detail(id)
 
-    @description = data["description"].as_s
-    @headquarters = data["headquarters"].as_s
-    @homepage = data["homepage"].as_s
-    @id = data["id"].as_i64
-    @origin_country = data["origin_country"].as_s
-    @logo_path = data["logo_path"].as_s?
-    @name = data["name"].as_s
-
-    if data["parent_company"]?
-      pc = data["parent_company"]
-      @parent_company = Company.new(
-        id: pc["id"].as_i64,
-        name: pc["name"].as_s,
-        logo_path: pc["logo_path"].as_s?,
-        origin_country: pc["origin_country"].as_s
-      )
-    end
+    @description = obj.description
+    @headquarters = obj.headquarters
+    @homepage = obj.homepage
+    @id = obj.id
+    @origin_country = obj.origin_country
+    @logo_path = obj.logo_path
+    @name = obj.name
+    @parent_company = obj.parent_company
 
     @full_initialized = true
   end

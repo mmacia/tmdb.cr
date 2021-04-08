@@ -23,7 +23,20 @@ class Tmdb::Person
 
   private getter? full_initialized : Bool
 
-  def initialize(data : JSON::Any, @full_initialized)
+  def self.detail(id : Int64, language : String? = nil) : Person
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/person/#{id}", filters)
+    Person.new(res.get)
+  end
+
+  def initialize(@adult, gender : Int32, @id, @known_for_department, @name, @popularity, @profile_path)
+    @gender = Gender.from_value(gender)
+    @full_initialized = false
+  end
+
+  def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
     @gender = Gender.from_value(data["gender"].as_i)
     @id = data["id"].as_i64
@@ -31,6 +44,18 @@ class Tmdb::Person
     @name = data["name"].as_s
     @popularity = data["popularity"].as_f
     @profile_path = data["profile_path"].as_s?
+    @biography = data["biography"].as_s
+    @imdb_id = data["imdb_id"].as_s
+
+    date = data["birthday"].as_s
+    @birthday = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
+
+    date = data["deathday"].as_s?
+    @deathday = (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
+    @place_of_birth = data["place_of_birth"].as_s
+    @homepage = data["homepage"].as_s?
+
+    @full_initialized = true
   end
 
   def biography : String
@@ -64,26 +89,21 @@ class Tmdb::Person
   end
 
   private def refresh!
-    res = Resource.new("/person/#{id}")
-    data = res.get
+    obj = Person.detail(id)
 
-    @adult = data["adult"].as_bool
-    @gender = Gender.from_value(data["gender"].as_i)
-    @id = data["id"].as_i64
-    @known_for_department = data["known_for_department"].as_s
-    @name = data["name"].as_s
-    @popularity = data["popularity"].as_f
-    @profile_path = data["profile_path"].as_s?
-    @biography = data["biography"].as_s
-    @imdb_id = data["imdb_id"].as_s
-
-    date = data["birthday"].as_s
-    @birthday = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
-
-    date = data["deathday"].as_s?
-    @deathday = (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
-    @place_of_birth = data["place_of_birth"].as_s
-    @homepage = data["homepage"].as_s?
+    @adult = obj.adult
+    @gender = obj.gender
+    @id = obj.id
+    @known_for_department = obj.known_for_department
+    @name = obj.name
+    @popularity = obj.popularity
+    @profile_path = obj.profile_path
+    @biography = obj.biography
+    @imdb_id = obj.imdb_id
+    @birthday = obj.birthday
+    @deathday = obj.deathday
+    @place_of_birth = obj.place_of_birth
+    @homepage = obj.homepage
 
     @full_initialized = true
   end
