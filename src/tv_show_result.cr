@@ -5,7 +5,7 @@ class Tmdb::TVShowResult
   getter overview : String
   getter backdrop_path : String?
   getter vote_average : Float64
-  getter first_air_date : Time
+  getter first_air_date : Time?
   getter origin_country : Array(String)
   getter genre_ids : Array(Int32)
   getter original_language : String
@@ -28,8 +28,8 @@ class Tmdb::TVShowResult
 
     @vote_average = vote_avg
 
-    date = data["first_air_date"].as_s
-    @first_air_date = Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
+    date = data["first_air_date"]? ? data["first_air_date"].as_s : ""
+    @first_air_date = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
 
     @origin_country = data["origin_country"].as_a.map(&.to_s)
     @genre_ids = data["genre_ids"].as_a.map(&.as_i)
