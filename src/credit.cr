@@ -1,5 +1,6 @@
 require "./person"
 require "./tv_season"
+require "./media_type"
 
 class Tmdb::Credit
   enum Type
@@ -8,11 +9,6 @@ class Tmdb::Credit
   end
 
   class Media
-    enum Type
-      Tv
-      Movie
-    end
-
     getter media_type : Type
     getter media : MovieResult | TVShowResult
     getter character : String

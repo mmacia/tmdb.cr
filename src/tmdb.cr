@@ -13,8 +13,6 @@ require "./keyword"
 # jobs
 # networks
 # people
-# recommendations
-# reviews
 # tv
 # tv seasons
 # tv episodes
