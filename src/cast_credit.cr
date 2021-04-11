@@ -1,4 +1,6 @@
-class Tmdb::CrewCredit < Tmdb::Credit
+require "./credit"
+
+class Tmdb::CrewCredit
   getter original_name : String
   getter credit_id : String
   getter person : Person
@@ -19,5 +21,9 @@ class Tmdb::CrewCredit < Tmdb::Credit
       popularity: data["popularity"].as_f,
       profile_path: data["profile_path"].as_s?
     )
+  end
+
+  def credit_detail : Credit
+    Credit.detail(credit_id)
   end
 end

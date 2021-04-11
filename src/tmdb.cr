@@ -5,8 +5,8 @@ require "./configuration"
 require "./certification"
 require "./collection"
 require "./company"
+require "./credit"
 
-# credits
 # discover
 # find
 # genres

@@ -6,14 +6,14 @@ class Tmdb::Person
     NonBinary
   end
 
-  getter adult : Bool
-  getter gender : Gender = Gender::NotSpecified
   getter id : Int64
-  getter known_for_department : String
   getter name : String
   getter also_known_as : Array(String) = [] of String
-  getter popularity : Float64
-  getter profile_path : String?
+  @adult : Bool? = nil
+  @gender : Gender = Gender::NotSpecified
+  @known_for_department : String = ""
+  @popularity : Float64? = nil
+  @profile_path : String? = nil
   @biography : String = ""
   @imdb_id : String = ""
   @birthday : Time? = nil
@@ -33,6 +33,10 @@ class Tmdb::Person
 
   def initialize(@adult, gender : Int32, @id, @known_for_department, @name, @popularity, @profile_path)
     @gender = Gender.from_value(gender)
+    @full_initialized = false
+  end
+
+  def initialize(@name, @id)
     @full_initialized = false
   end
 
@@ -56,6 +60,31 @@ class Tmdb::Person
     @homepage = data["homepage"].as_s?
 
     @full_initialized = true
+  end
+
+  def adult : Bool
+    refresh! unless full_initialized?
+    @adult.not_nil!
+  end
+
+  def gender : Gender
+    refresh! unless full_initialized?
+    @gender
+  end
+
+  def known_for_department : String
+    refresh! unless full_initialized?
+    @known_for_department
+  end
+
+  def popularity : Float64
+    refresh! unless full_initialized?
+    @popularity.not_nil!
+  end
+
+  def profile_path : String?
+    refresh! unless full_initialized?
+    @profile_path
   end
 
   def biography : String
