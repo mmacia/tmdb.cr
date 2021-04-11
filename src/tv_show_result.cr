@@ -14,7 +14,7 @@ class Tmdb::TVShowResult
   getter original_name : String
 
   def initialize(data : JSON::Any)
-    @poster_path = data["poster_path"].as_s?
+    @poster_path = data["poster_path"]? ? data["poster_path"].as_s? : nil
     @popularity = data["popularity"]? ? data["popularity"].as_f : 0.0
     @id = data["id"].as_i64
     @overview = data["overview"].as_s

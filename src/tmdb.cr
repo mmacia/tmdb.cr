@@ -19,7 +19,7 @@ require "./keyword"
 
 module Tmdb
   VERSION = "0.1.0"
-  @@api : Api? = nil
+  @@api : Api = Api.new
 
   def self.configure
     api = Api.new
@@ -28,6 +28,6 @@ module Tmdb
   end
 
   def self.api : Api
-    @@api.not_nil!
+    @@api
   end
 end

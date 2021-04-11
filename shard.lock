@@ -1,0 +1,10 @@
+version: 2.0
+shards:
+  habitat:
+    git: https://github.com/kalinon/habitat.git
+    version: 0.4.6+git.commit.60e1a42fb7bdb3c079aab07b03211783000fe991
+
+  vcr:
+    git: https://github.com/spoved/vcr.cr.git
+    version: 0.4.4
+

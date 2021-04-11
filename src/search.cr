@@ -77,7 +77,7 @@ class Tmdb::Search
     filters[:query] = query
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
     filters[:include_adult] = include_adult.not_nil!.to_s unless include_adult.nil?
-    filters[:first_air_date_year] = first_air_date_year.not_nil!.upcase unless first_air_date_year.nil?
+    filters[:first_air_date_year] = first_air_date_year.not_nil!.to_s unless first_air_date_year.nil?
 
     res = Resource.new("/search/tv", filters)
     LazyIterator(TVShowResult).new(res)

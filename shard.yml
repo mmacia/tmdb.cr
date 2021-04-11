@@ -8,6 +8,10 @@ targets:
   tmdb:
     main: src/tmdb.cr
 
+development_dependencies:
+  vcr:
+    github: spoved/vcr.cr
+
 crystal: 1.0.0
 
 license: MIT
