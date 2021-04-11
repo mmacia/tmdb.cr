@@ -6,12 +6,11 @@ require "./certification"
 require "./collection"
 require "./company"
 require "./credit"
+require "./keyword"
 
 # discover
 # find
 # jobs
-# keywords
-# movies
 # networks
 # people
 # recommendations
