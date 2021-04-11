@@ -9,7 +9,6 @@ require "./credit"
 
 # discover
 # find
-# genres
 # jobs
 # keywords
 # movies
