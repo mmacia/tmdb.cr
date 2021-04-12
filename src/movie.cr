@@ -52,12 +52,7 @@ class Tmdb::Movie
   getter vote_average : Float64
   getter vote_count : Int32
 
-  @alternative_titles : Array(AlternativeTitle)? = nil
-  @cast : Array(CastCredit)? = nil
-  @crew : Array(CrewCredit)? = nil
   @external_ids : Array(ExternalId)? = nil
-  @backdrops : Array(Image)? = nil
-  @posters : Array(Image)? = nil
   @keywords : Array(Keyword)? = nil
   @release_dates : Array(Tuple(String, Array(Release)))? = nil
   @translations : Array(Translation)? = nil
@@ -131,45 +126,31 @@ class Tmdb::Movie
   end
 
   def alternative_titles(country : String? = nil) : Array(AlternativeTitle)
-    return @alternative_titles.not_nil! unless @alternative_titles.nil?
-
     filters = Hash(Symbol, String).new
     filters[:country] = country.not_nil! unless country.nil?
 
     res = Resource.new("/movie/#{id}/alternative_titles", filters)
-    @alternative_titles = res.get["titles"].as_a.map do |title|
-      AlternativeTitle.new(title)
-    end
+    res.get["titles"].as_a.map { |title| AlternativeTitle.new(title) }
   end
 
   def cast(language : String? = nil) : Array(CastCredit)
-    return @cast.not_nil! unless @cast.nil?
-
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/movie/#{id}/credits", filters)
     data = res.get
 
-    @cast = data["cast"].as_a.map { |cast| CastCredit.new(cast) }
-    @crew = data["crew"].as_a.map { |crew| CrewCredit.new(crew) }
-
-    @cast.not_nil!
+    data["cast"].as_a.map { |cast| CastCredit.new(cast) }
   end
 
-  def crew : Array(CrewCredit)
-    return @crew.not_nil! unless @crew.nil?
-
+  def crew(language : String? = nil) : Array(CrewCredit)
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/movie/#{id}/credits", filters)
     data = res.get
 
-    @cast = data["cast"].as_a.map { |cast| CastCredit.new(cast) }
-    @crew = data["crew"].as_a.map { |crew| CrewCredit.new(crew) }
-
-    @crew.not_nil!
+    data["crew"].as_a.map { |crew| CrewCredit.new(crew) }
   end
 
   def external_ids : Array(ExternalId)
@@ -188,8 +169,6 @@ class Tmdb::Movie
   end
 
   def backdrops(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
-    return @backdrops.not_nil! unless @backdrops.nil?
-
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
     filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
@@ -197,15 +176,10 @@ class Tmdb::Movie
     res = Resource.new("/movie/#{id}/images", filters)
     data = res.get
 
-    @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
-    @posters = data["posters"].as_a.map { |poster| Image.new(poster) }
-
-    @backdrops.not_nil!
+    data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
   end
 
   def posters(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
-    return @posters.not_nil! unless @posters.nil?
-
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
     filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
@@ -213,10 +187,7 @@ class Tmdb::Movie
     res = Resource.new("/movie/#{id}/images", filters)
     data = res.get
 
-    @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
-    @posters = data["posters"].as_a.map { |poster| Image.new(poster) }
-
-    @posters.not_nil!
+    data["posters"].as_a.map { |poster| Image.new(poster) }
   end
 
   def keywords : Array(Keyword)

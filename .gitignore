@@ -3,6 +3,6 @@
 /bin/
 /.shards/
 *.dwarf
-/spec/fixtures/vcr/tmdb-search/
-!/spec/fixtures/vcr/tmdb-search/.keep
+/spec/fixtures/vcr/tmdb/
+!/spec/fixtures/vcr/tmdb/.keep
 /coverage
