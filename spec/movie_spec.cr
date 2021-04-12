@@ -292,4 +292,16 @@ describe Tmdb::Movie do
       watch_providers.size.should eq(44)
     end
   end
+
+  it "should access to collection data" do
+    VCR.use_cassette("tmdb") do
+      movie = Tmdb::Movie.detail(218)
+      collection = movie.belongs_to_collection.not_nil!
+      overview = collection.overview
+      parts = collection.parts
+
+      overview.should be_a(String)
+      parts.should be_a(Array(Tmdb::MovieResult))
+    end
+  end
 end

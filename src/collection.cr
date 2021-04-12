@@ -9,8 +9,6 @@ class Tmdb::Collection
   getter backdrop_path : String
   @overview : String? = nil
   @parts : Array(MovieResult) = [] of MovieResult
-  @backdrops : Array(Image)? = nil
-  @posters : Array(Image)? = nil
   @translations : Array(Translation)? = nil
 
   private getter? full_initialized : Bool
@@ -52,33 +50,23 @@ class Tmdb::Collection
   end
 
   def backdrops(language : String? = nil) : Array(Image)
-    return @backdrops.not_nil! unless @backdrops.nil?
-
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/collection/#{id}/images", filters)
     data = res.get
 
-    @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
-    @posters = data["posters"].as_a.map { |poster| Image.new(poster) }
-
-    @backdrops.not_nil!
+    data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
   end
 
   def posters(language : String? = nil) : Array(Image)
-    return @posters.not_nil! unless @posters.nil?
-
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/collection/#{id}/images", filters)
     data = res.get
 
-    @backdrops = data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
-    @posters = data["posters"].as_a.map { |poster| Image.new(poster) }
-
-    @posters.not_nil!
+    data["posters"].as_a.map { |poster| Image.new(poster) }
   end
 
   def translations(language : String? = nil) : Array(Translation)
