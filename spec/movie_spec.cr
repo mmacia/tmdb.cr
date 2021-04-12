@@ -304,4 +304,19 @@ describe Tmdb::Movie do
       parts.should be_a(Array(Tmdb::MovieResult))
     end
   end
+
+  it "should access to company data" do
+    VCR.use_cassette("tmdb") do
+      movie = Tmdb::Movie.detail(218)
+      movie.production_companies.each do |company|
+        description = company.description
+        hq = company.headquarters
+        homepage = company.homepage
+
+        description.should be_a(String)
+        hq.should be_a(String)
+        homepage.should be_a(String)
+      end
+    end
+  end
 end
