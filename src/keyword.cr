@@ -15,7 +15,7 @@ class Tmdb::Keyword
   def movies(language : String? = nil, include_adult : Bool? = nil) : LazyIterator(MovieResult)
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-    filters[:include_adult] = include_adult.not_nil! unless include_adult.nil?
+    filters[:include_adult] = include_adult.not_nil!.to_s unless include_adult.nil?
 
     res = Resource.new("/keyword/#{id}/movies", filters)
     LazyIterator(MovieResult).new(res)
