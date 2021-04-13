@@ -109,7 +109,7 @@ class Tmdb::Person
 
   def place_of_birth : String
     refresh! unless full_initialized?
-    @place_of_birth
+    @place_of_birth.not_nil!
   end
 
   def homepage : String?
