@@ -9,11 +9,11 @@ class Tmdb::Credit
   end
 
   class Media
-    getter media_type : Type
+    getter media_type : ::Tmdb::Media::Type
     getter media : MovieResult | TVShowResult
     getter character : String
 
-    def initialize(@media_type : Type, data : JSON::Any)
+    def initialize(@media_type : ::Tmdb::Media::Type, data : JSON::Any)
       if media_type.tv?
         @media = TVShowResult.new(data)
       else
@@ -42,7 +42,7 @@ class Tmdb::Credit
     @credit_type = Type.parse(data["credit_type"].as_s)
     @department = data["department"].as_s
     @job = data["job"].as_s
-    @media = Media.new(Media::Type.parse(data["media_type"].as_s), data["media"])
+    @media = Media.new(::Tmdb::Media::Type.parse(data["media_type"].as_s), data["media"])
     @id = data["id"].as_s
     @person = Person.new(
       name: data["person"]["name"].as_s,
