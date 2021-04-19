@@ -6,12 +6,13 @@ class Tmdb::Credit
   enum Type
     Cast
     Crew
+    Creator
   end
 
   class Media
     getter media_type : ::Tmdb::Media::Type
     getter media : MovieResult | TVShowResult
-    getter character : String
+    getter character : String?
 
     def initialize(@media_type : ::Tmdb::Media::Type, data : JSON::Any)
       if media_type.tv?
@@ -20,7 +21,7 @@ class Tmdb::Credit
         @media = MovieResult.new(data)
       end
 
-      @character = data["character"].as_s
+      @character = data["character"]? ? data["character"].as_s : nil
     end
   end
 

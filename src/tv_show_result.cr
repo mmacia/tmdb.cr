@@ -1,3 +1,5 @@
+require "./tv_show"
+
 class Tmdb::TVShowResult
   getter poster_path : String?
   getter popularity : Float64
@@ -15,7 +17,15 @@ class Tmdb::TVShowResult
 
   def initialize(data : JSON::Any)
     @poster_path = data["poster_path"]? ? data["poster_path"].as_s? : nil
-    @popularity = data["popularity"]? ? data["popularity"].as_f : 0.0
+
+    begin
+      pop = data["popularity"]? ? data["popularity"].as_f : 0.0
+    rescue TypeCastError
+      pop = data["popularity"].as_i64.to_f64
+    end
+
+    @popularity = pop
+
     @id = data["id"].as_i64
     @overview = data["overview"].as_s
     @backdrop_path = data["backdrop_path"]? ? data["backdrop_path"].as_s? : nil
@@ -37,5 +47,9 @@ class Tmdb::TVShowResult
     @vote_count = data["vote_count"].as_i
     @name = data["name"].as_s
     @original_name = data["original_name"].as_s
+  end
+
+  def tv_show_detail : TVShow
+    TVShow.detail(id)
   end
 end

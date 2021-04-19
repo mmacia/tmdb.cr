@@ -11,6 +11,7 @@ targets:
 development_dependencies:
   vcr:
     github: spoved/vcr.cr
+    version: 0.5.0
 
 crystal: 1.0.0
 
