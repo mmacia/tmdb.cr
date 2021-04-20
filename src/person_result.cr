@@ -1,4 +1,4 @@
-require "./tv_show_result"
+require "./tv/show_result"
 require "./movie_result"
 
 class Tmdb::PersonResult
@@ -7,7 +7,7 @@ class Tmdb::PersonResult
   getter id : Int64
   getter name : String
   getter popularity : Float64
-  getter known_for : Array(MovieResult | TVShowResult)
+  getter known_for : Array(MovieResult | Tv::ShowResult)
 
   def initialize(data : JSON::Any)
     @profile_path = data["profile_path"].as_s?
@@ -18,7 +18,7 @@ class Tmdb::PersonResult
 
     @known_for = data["known_for"].as_a.map do |item|
       if item["media_type"].as_s == "tv"
-        TVShowResult.new(item)
+        Tv::ShowResult.new(item)
       else
         MovieResult.new(item)
       end

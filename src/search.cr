@@ -72,7 +72,7 @@ class Tmdb::Search
     language : String? = nil,
     include_adult : Bool? = nil,
     first_air_date_year : Int32? = nil
-  ) : LazyIterator(TVShowResult)
+  ) : LazyIterator(Tv::ShowResult)
     filters = Hash(Symbol, String).new
     filters[:query] = query
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
@@ -80,6 +80,6 @@ class Tmdb::Search
     filters[:first_air_date_year] = first_air_date_year.not_nil!.to_s unless first_air_date_year.nil?
 
     res = Resource.new("/search/tv", filters)
-    LazyIterator(TVShowResult).new(res)
+    LazyIterator(Tv::ShowResult).new(res)
   end
 end

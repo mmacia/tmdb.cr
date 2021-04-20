@@ -1,5 +1,4 @@
 require "./person"
-require "./tv_season"
 require "./media_type"
 
 class Tmdb::Credit
@@ -11,12 +10,12 @@ class Tmdb::Credit
 
   class Media
     getter media_type : ::Tmdb::Media::Type
-    getter media : MovieResult | TVShowResult
+    getter media : MovieResult | Tv::ShowResult
     getter character : String?
 
     def initialize(@media_type : ::Tmdb::Media::Type, data : JSON::Any)
       if media_type.tv?
-        @media = TVShowResult.new(data)
+        @media = Tv::ShowResult.new(data)
       else
         @media = MovieResult.new(data)
       end

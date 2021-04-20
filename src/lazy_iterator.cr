@@ -1,3 +1,5 @@
+require "json"
+
 class Tmdb::LazyIterator(T)
   include Enumerable(JSON::Any)
   getter resource : Resource

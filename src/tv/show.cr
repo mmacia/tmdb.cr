@@ -1,16 +1,16 @@
 require "./episode"
-require "./network"
-require "./tv_season"
-require "./tv/cast"
-require "./tv/crew"
-require "./tv/rating"
-require "./tv/episode_group_result"
-require "./tv/translation"
-require "./alternative_title"
-require "./external_id"
-require "./review"
+require "../network"
+require "./season"
+require "./cast"
+require "./crew"
+require "./rating"
+require "./episode_group_result"
+require "./translation"
+require "../alternative_title"
+require "../external_id"
+require "../review"
 
-class Tmdb::TVShow
+class Tmdb::Tv::Show
   enum Type
     News
     Scripted
@@ -39,7 +39,7 @@ class Tmdb::TVShow
   getter? in_production : Bool
   getter languages : Array(String)
   getter last_air_date : Time?
-  getter last_episode_to_air : Episode?
+  getter last_episode_to_air : Tv::Episode?
   getter name : String
   getter next_episode_to_air : Int32?
   getter networks : Array(Network)
@@ -53,7 +53,7 @@ class Tmdb::TVShow
   getter poster_path : String?
   getter production_companies : Array(CompanyResult)
   getter production_countries : Array(Country)
-  getter seasons : Array(TVSeason)
+  getter seasons : Array(Tv::Season)
   getter spoken_languages : Array(Language)
   getter status : Status
   getter tagline : String
@@ -66,12 +66,12 @@ class Tmdb::TVShow
   @videos : Array(Video)? = nil
   @watch_providers : Hash(String, Watch)? = nil
 
-  def self.detail(id : Int64, language : String? = nil) : TVShow
+  def self.detail(id : Int64, language : String? = nil) : Show
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/tv/#{id}", filters)
-    TVShow.new(res.get)
+    Tv::Show.new(res.get)
   end
 
   def initialize(data : JSON::Any)
@@ -98,7 +98,7 @@ class Tmdb::TVShow
     date = data["last_air_date"].as_s?
     @last_air_date = date.nil? || date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
 
-    @last_episode_to_air = Episode.new(data["last_episode_to_air"]) unless data["last_episode_to_air"]?
+    @last_episode_to_air = Tv::Episode.new(data["last_episode_to_air"]) unless data["last_episode_to_air"]?
     @name = data["name"].as_s
     @next_episode_to_air = data["next_episode_to_air"].as_i?
 
@@ -116,7 +116,7 @@ class Tmdb::TVShow
     @poster_path = data["poster_path"].as_s?
     @production_companies = data["production_companies"].as_a.map { |company| CompanyResult.new(company) }
     @production_countries = data["production_countries"].as_a.map { |country| Country.new(country) }
-    @seasons = data["seasons"].as_a.map { |season| TVSeason.new(season) }
+    @seasons = data["seasons"].as_a.map { |season| Tv::Season.new(season) }
     @spoken_languages = data["spoken_languages"].as_a.map { |lang| Language.new(lang) }
     @status = Status.parse(data["status"].as_s.gsub(" ", ""))
     @tagline = data["tagline"].as_s
@@ -221,12 +221,12 @@ class Tmdb::TVShow
     @keywords = data["results"].as_a.map { |keyword|  Keyword.new(keyword) }
   end
 
-  def recommendations(language : String? = nil) : LazyIterator(TVShowResult)
+  def recommendations(language : String? = nil) : LazyIterator(ShowResult)
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/tv/#{id}/recommendations", filters)
-    LazyIterator(TVShowResult).new(res)
+    LazyIterator(ShowResult).new(res)
   end
 
   def reviews(language : String? = nil) : LazyIterator(Review)
@@ -237,12 +237,12 @@ class Tmdb::TVShow
     LazyIterator(Review).new(res)
   end
 
-  def similar_tv_shows(language : String? = nil) : LazyIterator(TVShowResult)
+  def similar_tv_shows(language : String? = nil) : LazyIterator(ShowResult)
     filters = Hash(Symbol, String).new
     filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/tv/#{id}/similar", filters)
-    LazyIterator(TVShowResult).new(res)
+    LazyIterator(ShowResult).new(res)
   end
 
   def translations : Array(Tv::Translation)

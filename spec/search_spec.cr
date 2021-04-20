@@ -202,7 +202,7 @@ describe Tmdb::Search do
 
         tv_shows.total_items.should eq(1)
         tv_shows.each do |tv_show|
-          tv_show.should be_a(Tmdb::TVShowResult)
+          tv_show.should be_a(Tmdb::Tv::ShowResult)
         end
       end
     end

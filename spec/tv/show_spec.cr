@@ -1,20 +1,20 @@
-require "./spec_helper"
+require "../spec_helper"
 
-describe Tmdb::TVShow do
+describe Tmdb::Tv::Show do
   context "#detail" do
     it "should get a TV Show from ID" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
 
-        tv_show.should be_a(Tmdb::TVShow)
+        tv_show.should be_a(Tmdb::Tv::Show)
       end
     end
 
     it "should get translated data" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132, language: "es")
+        tv_show = Tmdb::Tv::Show.detail(31132, language: "es")
 
-        tv_show.should be_a(Tmdb::TVShow)
+        tv_show.should be_a(Tmdb::Tv::Show)
       end
     end
   end
@@ -22,7 +22,7 @@ describe Tmdb::TVShow do
   context "#aggregated_credits" do
     it "should get a list of credits" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         credits = tv_show.aggregated_credits
 
         credits.should be_a(Array(Tmdb::Tv::Cast | Tmdb::Tv::Crew))
@@ -32,7 +32,7 @@ describe Tmdb::TVShow do
 
     it "should get translated list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         credits = tv_show.aggregated_credits(language: "es")
 
         credits.should be_a(Array(Tmdb::Tv::Cast | Tmdb::Tv::Crew))
@@ -44,7 +44,7 @@ describe Tmdb::TVShow do
   context "#alternative_titles" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         titles = tv_show.alternative_titles
 
         titles.should be_a(Array(Tmdb::AlternativeTitle))
@@ -54,7 +54,7 @@ describe Tmdb::TVShow do
 
     it "should get a translated list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         titles = tv_show.alternative_titles(language: "es")
 
         titles.should be_a(Array(Tmdb::AlternativeTitle))
@@ -66,7 +66,7 @@ describe Tmdb::TVShow do
   context "#content_ratings" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         ratings = tv_show.content_ratings
 
         ratings.should be_a(Array(Tmdb::Tv::Rating))
@@ -76,7 +76,7 @@ describe Tmdb::TVShow do
 
     it "should get a translated list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         ratings = tv_show.content_ratings(language: "es")
 
         ratings.should be_a(Array(Tmdb::Tv::Rating))
@@ -88,7 +88,7 @@ describe Tmdb::TVShow do
   context "#episode_groups" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         episode_groups = tv_show.episode_groups
 
         episode_groups.should be_a(Array(Tmdb::Tv::EpisodeGroupResult))
@@ -98,7 +98,7 @@ describe Tmdb::TVShow do
 
     it "should get a translated list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         episode_groups = tv_show.episode_groups(language: "es")
 
         episode_groups.should be_a(Array(Tmdb::Tv::EpisodeGroupResult))
@@ -110,7 +110,7 @@ describe Tmdb::TVShow do
   context "#external_ids" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         external_ids = tv_show.external_ids
 
         external_ids.should be_a(Array(Tmdb::ExternalId))
@@ -120,7 +120,7 @@ describe Tmdb::TVShow do
 
     it "should get a translated list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         external_ids = tv_show.external_ids(language: "es")
 
         external_ids.should be_a(Array(Tmdb::ExternalId))
@@ -132,7 +132,7 @@ describe Tmdb::TVShow do
   context "#backdrops" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         backdrops = tv_show.backdrops
 
         backdrops.should be_a(Array(Tmdb::Image))
@@ -142,7 +142,7 @@ describe Tmdb::TVShow do
 
     it "should filter by language" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         backdrops = tv_show.backdrops(language: "es")
 
         backdrops.should be_a(Array(Tmdb::Image))
@@ -154,7 +154,7 @@ describe Tmdb::TVShow do
   context "#posters" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         posters = tv_show.posters
 
         posters.should be_a(Array(Tmdb::Image))
@@ -164,7 +164,7 @@ describe Tmdb::TVShow do
 
     it "should filter by language" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         posters = tv_show.posters(language: "es")
 
         posters.should be_a(Array(Tmdb::Image))
@@ -176,7 +176,7 @@ describe Tmdb::TVShow do
   context "#keywords" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         keywords = tv_show.keywords
 
         keywords.should be_a(Array(Tmdb::Keyword))
@@ -188,7 +188,7 @@ describe Tmdb::TVShow do
   context "#recommendations" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         recommendations = tv_show.recommendations
 
         recommendations.total_items.should eq(40)
@@ -197,7 +197,7 @@ describe Tmdb::TVShow do
 
     it "should filter by language" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         recommendations = tv_show.recommendations(language: "es")
 
         recommendations.total_items.should eq(40)
@@ -206,11 +206,11 @@ describe Tmdb::TVShow do
 
     it "should iterate over all items" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         recommendations = tv_show.recommendations(language: "es")
 
         recommendations.each do |recommendation|
-          recommendation.should be_a(Tmdb::TVShowResult)
+          recommendation.should be_a(Tmdb::Tv::ShowResult)
         end
       end
     end
@@ -219,7 +219,7 @@ describe Tmdb::TVShow do
   context "#reviews" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         reviews = tv_show.reviews
 
         reviews.total_items.should eq(0)
@@ -228,7 +228,7 @@ describe Tmdb::TVShow do
 
     it "should filter by language" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         reviews = tv_show.reviews(language: "es")
 
         reviews.total_items.should eq(0)
@@ -237,7 +237,7 @@ describe Tmdb::TVShow do
 
     it "should iterate over all items" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         reviews = tv_show.reviews
 
         reviews.each do |review|
@@ -250,7 +250,7 @@ describe Tmdb::TVShow do
   context "#similar_tv_shows" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         similar = tv_show.similar_tv_shows
 
         similar.total_items.should eq(84)
@@ -259,7 +259,7 @@ describe Tmdb::TVShow do
 
     it "should filter by language" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         similar = tv_show.similar_tv_shows(language: "es")
 
         similar.total_items.should eq(84)
@@ -268,11 +268,11 @@ describe Tmdb::TVShow do
 
     it "should iterate over all items" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         similar = tv_show.similar_tv_shows
 
         similar.each do |review|
-          review.should be_a(Tmdb::TVShowResult)
+          review.should be_a(Tmdb::Tv::ShowResult)
         end
       end
     end
@@ -281,7 +281,7 @@ describe Tmdb::TVShow do
   context "#translations" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         translations = tv_show.translations
 
         translations.should be_a(Array(Tmdb::Tv::Translation))
@@ -293,7 +293,7 @@ describe Tmdb::TVShow do
   context "#videos" do
     it "should get videos" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         videos = tv_show.videos
 
         videos.size.should eq(1)
@@ -302,7 +302,7 @@ describe Tmdb::TVShow do
 
     it "should filter by language" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         videos = tv_show.videos(language: "es")
 
         videos.size.should eq(0)
@@ -313,7 +313,7 @@ describe Tmdb::TVShow do
   context "#watch_providers" do
     it "should get watch providers" do
       VCR.use_cassette("tmdb") do
-        tv_show = Tmdb::TVShow.detail(31132)
+        tv_show = Tmdb::Tv::Show.detail(31132)
         watch_providers = tv_show.watch_providers
 
         watch_providers.size.should eq(21)

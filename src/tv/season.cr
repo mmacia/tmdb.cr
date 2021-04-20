@@ -1,4 +1,4 @@
-class Tmdb::TVSeason
+class Tmdb::Tv::Season
   getter air_date : Time?
   getter poster_path : String?
   getter season_number : Int32

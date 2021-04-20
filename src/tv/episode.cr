@@ -1,4 +1,4 @@
-class Tmdb::Episode
+class Tmdb::Tv::Episode
   getter air_date : Time?
   getter episode_number : Int32
   getter name : String

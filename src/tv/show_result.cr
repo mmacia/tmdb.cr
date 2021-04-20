@@ -1,6 +1,6 @@
-require "./tv_show"
+require "./show"
 
-class Tmdb::TVShowResult
+class Tmdb::Tv::ShowResult
   getter poster_path : String?
   getter popularity : Float64
   getter id : Int64
@@ -49,7 +49,7 @@ class Tmdb::TVShowResult
     @original_name = data["original_name"].as_s
   end
 
-  def tv_show_detail : TVShow
-    TVShow.detail(id)
+  def tv_show_detail : Show
+    Show.detail(id)
   end
 end
