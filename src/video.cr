@@ -6,6 +6,7 @@ class Tmdb::Video
     Featurette
     BehindTheScenes
     Bloopers
+    OpeningCredits
   end
 
   getter id : String

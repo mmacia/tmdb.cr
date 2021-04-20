@@ -13,6 +13,7 @@ require "./translation"
 require "./video"
 require "./watch"
 require "./keyword"
+require "./external_id"
 
 class Tmdb::Movie
   enum Status
@@ -23,8 +24,6 @@ class Tmdb::Movie
     Released
     Canceled
   end
-
-  alias ExternalId = Tuple(String, String)
 
   getter? adult : Bool
   getter backdrop_path : String?

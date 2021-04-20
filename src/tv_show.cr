@@ -1,6 +1,14 @@
 require "./episode"
 require "./network"
 require "./tv_season"
+require "./tv/cast"
+require "./tv/crew"
+require "./tv/rating"
+require "./tv/episode_group_result"
+require "./tv/translation"
+require "./alternative_title"
+require "./external_id"
+require "./review"
 
 class Tmdb::TVShow
   enum Type
@@ -52,6 +60,11 @@ class Tmdb::TVShow
   getter type : Type
   getter vote_average : Float64
   getter vote_count : Int32
+
+  @keywords : Array(Keyword)? = nil
+  @translations : Array(Tv::Translation)? = nil
+  @videos : Array(Video)? = nil
+  @watch_providers : Hash(String, Watch)? = nil
 
   def self.detail(id : Int64, language : String? = nil) : TVShow
     filters = Hash(Symbol, String).new
@@ -110,5 +123,166 @@ class Tmdb::TVShow
     @type = Type.parse(data["type"].as_s.gsub(" ", ""))
     @vote_average = data["vote_average"].as_f
     @vote_count = data["vote_count"].as_i
+  end
+
+  def aggregated_credits(language : String? = nil) : Array(Tv::Cast|Tv::Crew)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/aggregate_credits", filters)
+    ret = [] of Tv::Cast | Tv::Crew
+    data = res.get
+
+    data["cast"].as_a.each do |cast|
+      ret << Tv::Cast.new(cast)
+    end
+
+    data["crew"].as_a.each do |crew|
+      ret << Tv::Crew.new(crew)
+    end
+
+    ret
+  end
+
+  def alternative_titles(language : String? = nil) : Array(AlternativeTitle)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/alternative_titles", filters)
+    res.get["results"].as_a.map { |title| AlternativeTitle.new(title) }
+  end
+
+  def content_ratings(language : String? = nil) : Array(Tv::Rating)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/content_ratings", filters)
+    res.get["results"].as_a.map { |rating| Tv::Rating.new(rating) }
+  end
+
+  def episode_groups(language : String? = nil) : Array(Tv::EpisodeGroupResult)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/episode_groups")
+    data = res.get
+
+    data["results"].as_a.map do |episode_group|
+      Tv::EpisodeGroupResult.new(episode_group)
+    end
+  end
+
+  def external_ids(language : String? = nil) : Array(ExternalId)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/external_ids")
+    data = res.get
+    ret = [] of ExternalId
+
+    ret << ExternalId.new("imdb_id", data["imdb_id"].as_s) if data["imdb_id"].as_s?
+    ret << ExternalId.new("freebase_mid", data["freebase_mid"].as_s) if data["freebase_mid"].as_s?
+    ret << ExternalId.new("freebase_id", data["freebase_id"].as_s) if data["freebase_id"].as_s?
+    ret << ExternalId.new("tvdb_id", data["tvdb_id"].as_i.to_s) if data["tvdb_id"].as_i?
+    ret << ExternalId.new("tvrage_id", data["tvrage_id"].as_i.to_s) if data["tvrage_id"].as_i?
+    ret << ExternalId.new("facebook_id", data["facebook_id"].as_s) if data["facebook_id"].as_s?
+    ret << ExternalId.new("instagram_id", data["instagram_id"].as_s) if data["instagram_id"].as_s?
+    ret << ExternalId.new("twitter_id", data["twitter_id"].as_s) if data["twitter_id"].as_s?
+
+    ret
+  end
+
+  def backdrops(language : String? = nil) : Array(Image)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/images", filters)
+    data = res.get
+
+    data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
+  end
+
+  def posters(language : String? = nil) : Array(Image)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/images", filters)
+    data = res.get
+
+    data["posters"].as_a.map { |poster| Image.new(poster) }
+  end
+
+  def keywords : Array(Keyword)
+    return @keywords.not_nil! unless @keywords.nil?
+
+    res = Resource.new("/tv/#{id}/keywords")
+    data = res.get
+
+    @keywords = data["results"].as_a.map { |keyword|  Keyword.new(keyword) }
+  end
+
+  def recommendations(language : String? = nil) : LazyIterator(TVShowResult)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/recommendations", filters)
+    LazyIterator(TVShowResult).new(res)
+  end
+
+  def reviews(language : String? = nil) : LazyIterator(Review)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/reviews", filters)
+    LazyIterator(Review).new(res)
+  end
+
+  def similar_tv_shows(language : String? = nil) : LazyIterator(TVShowResult)
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/similar", filters)
+    LazyIterator(TVShowResult).new(res)
+  end
+
+  def translations : Array(Tv::Translation)
+    return @translations.not_nil! unless @translations.nil?
+
+    res = Resource.new("/tv/#{id}/translations")
+    data = res.get
+
+    @translations = data["translations"].as_a.map { |tr| Tv::Translation.new(tr) }
+  end
+
+  def videos(language : String? = nil) : Array(Video)
+    return @videos.not_nil! unless @videos.nil?
+
+    filters = Hash(Symbol, String).new
+    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+
+    res = Resource.new("/tv/#{id}/videos", filters)
+    data = res.get
+
+    @videos = data["results"].as_a.map { |video| Video.new(video) }
+  end
+
+  def watch_providers : Hash(String, Watch)
+    return @watch_providers.not_nil! unless @watch_providers.nil?
+
+    res = Resource.new("/tv/#{id}/watch/providers")
+    data = res.get
+
+    ret = Hash(String, Watch).new
+    data["results"].as_h.each do |country_code, wp|
+      watch = Watch.new
+
+      watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
+      watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
+      watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
+
+      ret[country_code] = watch
+    end
+
+    @watch_providers = ret
   end
 end

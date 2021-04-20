@@ -73,7 +73,7 @@ describe Tmdb::Movie do
       external_ids = movie.external_ids
 
       external_ids.size.should eq(2)
-      external_ids.should be_a(Array(Tmdb::Movie::ExternalId))
+      external_ids.should be_a(Array(Tmdb::ExternalId))
     end
   end
 
@@ -236,10 +236,12 @@ describe Tmdb::Movie do
     end
 
     it "should filter by language" do
+      VCR.use_cassette("tmdb") do
         movie = Tmdb::Movie.detail(218)
         similar_movies = movie.similar_movies(language: "es")
 
-        similar_movies.total_items.should eq(134)
+        similar_movies.total_items.should eq(282)
+      end
     end
 
     it "should iterate over all items" do
