@@ -25,7 +25,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         credits = tv_show.aggregated_credits
 
-        credits.should be_a(Array(Tmdb::Tv::Cast | Tmdb::Tv::Crew))
+        credits.should be_a(Array(Tmdb::Tv::AggregatedCast | Tmdb::Tv::AggregatedCrew))
         credits.size.should eq(42)
       end
     end
@@ -35,7 +35,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         credits = tv_show.aggregated_credits(language: "es")
 
-        credits.should be_a(Array(Tmdb::Tv::Cast | Tmdb::Tv::Crew))
+        credits.should be_a(Array(Tmdb::Tv::AggregatedCast | Tmdb::Tv::AggregatedCrew))
         credits.size.should eq(42)
       end
     end
@@ -114,7 +114,7 @@ describe Tmdb::Tv::Show do
         external_ids = tv_show.external_ids
 
         external_ids.should be_a(Array(Tmdb::ExternalId))
-        external_ids.size.should eq(6)
+        external_ids.size.should eq(4)
       end
     end
 
@@ -124,7 +124,7 @@ describe Tmdb::Tv::Show do
         external_ids = tv_show.external_ids(language: "es")
 
         external_ids.should be_a(Array(Tmdb::ExternalId))
-        external_ids.size.should eq(6)
+        external_ids.size.should eq(4)
       end
     end
   end

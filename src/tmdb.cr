@@ -7,15 +7,9 @@ require "./collection"
 require "./company"
 require "./credit"
 require "./keyword"
-
-# discover
-# find
-# jobs
-# networks
-# people
-# tv
-# tv seasons
-# tv episodes
+require "./tv/show"
+require "./tv/season"
+require "./tv/episode"
 
 module Tmdb
   VERSION = "0.1.0"
@@ -29,5 +23,15 @@ module Tmdb
 
   def self.api : Api
     @@api
+  end
+
+  def self.parse_date(data : JSON::Any) : Time?
+    date = data.as_s?
+    (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
+  end
+
+  macro memoize(var)
+    return @{{ var.id }}.not_nil! unless @{{ var.id }}.nil?
+    @{{ var.id }} = {{ yield }}
   end
 end

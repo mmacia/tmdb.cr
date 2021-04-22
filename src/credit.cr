@@ -33,9 +33,7 @@ class Tmdb::Credit
 
   def self.detail(id : String) : Credit
     res = Resource.new("/credit/#{id}")
-    data = res.get
-
-    Credit.new(data)
+    Credit.new(res.get)
   end
 
   def initialize(data : JSON::Any)

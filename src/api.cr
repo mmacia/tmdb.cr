@@ -1,4 +1,5 @@
 require "http"
+require "./filter_factory"
 
 class Tmdb::Api
   private getter version : String = "3"
@@ -18,10 +19,10 @@ class Tmdb::Api
   end
 
   def params
-    {
+    FilterFactory.create(
       language: default_language,
       api_key: api_key
-    }.to_h
+    )
   end
 
   def json_headers : HTTP::Headers

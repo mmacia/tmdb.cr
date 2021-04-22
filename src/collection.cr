@@ -1,6 +1,7 @@
 require "./movie_result"
 require "./image"
 require "./translation"
+require "./filter_factory"
 
 class Tmdb::Collection
   getter id : Int64
@@ -14,10 +15,7 @@ class Tmdb::Collection
   private getter? full_initialized : Bool
 
   def self.detail(id : Int64, language : String? = nil) : Collection
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/collection/#{id}", filters)
+    res = Resource.new("/collection/#{id}", FilterFactory.create_language(language))
     Collection.new(res.get)
   end
 
@@ -32,10 +30,8 @@ class Tmdb::Collection
     @overview = data["overview"].as_s
     @poster_path = data["poster_path"].as_s
     @backdrop_path = data["backdrop_path"].as_s
+    @parts = data["parts"].as_a.map { |part| MovieResult.new(part) }
 
-    @parts = data["parts"].as_a.map do |part|
-      MovieResult.new(part)
-    end
     @full_initialized = true
   end
 
@@ -50,32 +46,24 @@ class Tmdb::Collection
   end
 
   def backdrops(language : String? = nil) : Array(Image)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/collection/#{id}/images", filters)
+    res = Resource.new("/collection/#{id}/images", FilterFactory.create_language(language))
     data = res.get
 
     data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
   end
 
   def posters(language : String? = nil) : Array(Image)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/collection/#{id}/images", filters)
+    res = Resource.new("/collection/#{id}/images", FilterFactory.create_language(language))
     data = res.get
 
     data["posters"].as_a.map { |poster| Image.new(poster) }
   end
 
   def translations(language : String? = nil) : Array(Translation)
-    return @translations.not_nil! unless @translations.nil?
-
-    res = Resource.new("/collection/#{id}/translations")
-    data = res.get
-
-    @translations = data["translations"].as_a.map { |tr| Translation.new(tr) }
+    Tmdb.memoize :translations do
+      res = Resource.new("/collection/#{id}/translations")
+      res.get["translations"].as_a.map { |tr| Translation.new(tr) }
+    end
   end
 
   private def refresh!

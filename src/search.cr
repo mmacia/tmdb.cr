@@ -14,9 +14,8 @@ class Tmdb::Search
     year : Int32? = nil,
     primary_release_year : Int32? = nil
   ) : LazyIterator(MovieResult)
-    filters = Hash(Symbol, String).new
+    filters = FilterFactory.create_language(language)
     filters[:query] = query
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
     filters[:include_adult] = include_adult.not_nil!.to_s unless include_adult.nil?
     filters[:region] = region.not_nil!.upcase unless region.nil?
     filters[:year] = year.not_nil!.to_s unless year.nil?
@@ -27,27 +26,20 @@ class Tmdb::Search
   end
 
   def self.companies(query : String) : LazyIterator(CompanyResult)
-    filters = Hash(Symbol, String).new
-    filters[:query] = query
-
-    res = Resource.new("/search/company", filters)
+    res = Resource.new("/search/company", FilterFactory.create(query: query))
     LazyIterator(CompanyResult).new(res)
   end
 
   def self.collections(query : String, language : String? = nil) : LazyIterator(CollectionResult)
-    filters = Hash(Symbol, String).new
+    filters = FilterFactory.create_language(language)
     filters[:query] = query
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
 
     res = Resource.new("/search/collection", filters)
     LazyIterator(CollectionResult).new(res)
   end
 
   def self.keywords(query : String) : LazyIterator(Keyword)
-    filters = Hash(Symbol, String).new
-    filters[:query] = query
-
-    res = Resource.new("/search/keyword", filters)
+    res = Resource.new("/search/keyword", FilterFactory.create(query: query))
     LazyIterator(Keyword).new(res)
   end
 
@@ -57,9 +49,8 @@ class Tmdb::Search
     include_adult : Bool? = nil,
     region : String? = nil
   ) : LazyIterator(PersonResult)
-    filters = Hash(Symbol, String).new
+    filters = FilterFactory.create_language(language)
     filters[:query] = query
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
     filters[:include_adult] = include_adult.not_nil!.to_s unless include_adult.nil?
     filters[:region] = region.not_nil!.upcase unless region.nil?
 
@@ -73,9 +64,8 @@ class Tmdb::Search
     include_adult : Bool? = nil,
     first_air_date_year : Int32? = nil
   ) : LazyIterator(Tv::ShowResult)
-    filters = Hash(Symbol, String).new
+    filters = FilterFactory.create_language(language)
     filters[:query] = query
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
     filters[:include_adult] = include_adult.not_nil!.to_s unless include_adult.nil?
     filters[:first_air_date_year] = first_air_date_year.not_nil!.to_s unless first_air_date_year.nil?
 

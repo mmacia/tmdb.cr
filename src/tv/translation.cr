@@ -5,7 +5,7 @@ class Tmdb::Tv::Translation
   getter english_name : String
   getter title : String
   getter overview : String
-  getter homepage : String
+  getter homepage : String?
 
   def initialize(data : JSON::Any)
     @iso_3166_1 = data["iso_3166_1"].as_s
@@ -14,7 +14,7 @@ class Tmdb::Tv::Translation
     @english_name = data["english_name"].as_s
     @title = data["data"]["name"].as_s
     @overview = data["data"]["overview"].as_s
-    @homepage = data["data"]["homepage"].as_s
+    @homepage = data["data"]["homepage"]? ? data["data"]["homepage"].as_s? : nil
   end
 end
 

@@ -5,7 +5,7 @@ class Tmdb::Translation
   getter english_name : String
   getter title : String
   getter overview : String
-  getter homepage : String
+  getter homepage : String?
   getter runtime : Int32?
   getter tagline : String
 

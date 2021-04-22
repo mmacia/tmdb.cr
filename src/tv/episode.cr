@@ -1,3 +1,9 @@
+require "./crew"
+require "./cast"
+require "./guest_star"
+require "../filter_factory"
+require "../external_id"
+
 class Tmdb::Tv::Episode
   getter air_date : Time?
   getter episode_number : Int32
@@ -9,28 +15,27 @@ class Tmdb::Tv::Episode
   getter still_path : String?
   getter vote_average : Float64
   getter vote_count : Int32
+  getter show_id : Int64
 
-  @crew : Array(Credit)? = nil
-  @guest_stars : Array(Credit)? = nil
+  @crew : Array(Crew)? = nil
+  @guest_stars : Array(GuestStar)? = nil
+  @credits : Array(Crew | Cast | GuestStar)? = nil
+  @translations : Array(Translation)? = nil
+  @external_ids : Array(ExternalId)? = nil
+  @images : Array(Image)? = nil
+  @videos : Array(Video)? = nil
 
-  def initialize(data : JSON::Any)
-    date = data["air_date"].as_s?
-    @air_date = date.nil? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
+  def self.detail(show_id : Int64, season_number : Int32, episode_number : Int32, language : String? = nil) : Episode
+    url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}"
+    res = Resource.new(url, FilterFactory.create_language(language))
+    Tv::Episode.new(res.get, show_id)
+  end
 
-    if data["crew"]?
-      @crew = data["crew"].as_a.map do |crew|
-        Credit.new(crew)
-      end
-    end
-
+  def initialize(data : JSON::Any, @show_id : Int64)
+    @air_date = Tmdb.parse_date(data["air_date"])
+    @crew = data["crew"].as_a.map { |crew| Crew.new(crew) } if data["crew"]?
     @episode_number = data["episode_number"].as_i
-
-    if data["guest_stars"]?
-      @guest_stars = data["guest_stars"].as_a.map do |guest_star|
-        Credit.new(guest_star)
-      end
-    end
-
+    @guest_stars = data["guest_stars"].as_a.map { |guest_star| GuestStar.new(guest_star) } if data["guest_stars"]?
     @name = data["name"].as_s
     @overview = data["overview"].as_s
     @id = data["id"].as_i64
@@ -41,16 +46,81 @@ class Tmdb::Tv::Episode
     @vote_count = data["vote_count"].as_i
   end
 
-  def crew : Array(Credit)
+  def crew : Array(Crew)
     refresh! if @crew.nil?
     @crew.not_nil!
   end
 
-  def guest_star : Array(Credit)
-    refresh! if @guest_star.nil?
-    @guest_star.not_nil!
+  def guest_stars : Array(GuestStar)
+    refresh! if @guest_stars.nil?
+    @guest_stars.not_nil!
+  end
+
+  def credits(language : String? = nil) : Array(Crew | Cast | GuestStar)
+    Tmdb.memoize :credits do
+      url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}"
+      res = Resource.new(url, FilterFactory.create_language(language))
+      data = res.get
+      ret = [] of Cast | Crew | GuestStar
+
+      data["cast"].as_a.reduce(ret) { |ret, cast| ret << Cast.new(cast) } if data["cast"]?
+      data["crew"].as_a.reduce(ret) { |ret, crew| ret << Crew.new(crew) } if data["crew"]?
+      data["guest_stars"].as_a.reduce(ret) { |ret, guest_star| ret << GuestStar.new(guest_star) } if data["guest_stars"]?
+
+      ret
+    end
+  end
+
+  def external_ids : Array(ExternalId)
+    Tmdb.memoize :external_ids do
+      res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/external_ids")
+      data = res.get
+      ret = [] of ExternalId
+
+      %w(imdb_id freebase_mid freebase_id tvdb_id tvrage_id).each do |provider|
+        ret << ExternalId.new(provider, data[provider].as_s) if data[provider].as_s?
+      end
+
+      ret
+    end
+  end
+
+  def images : Array(Image)
+    Tmdb.memoize :images do
+      res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/images")
+      res.get["stills"].as_a.map { |still| Image.new(still) }
+    end
+  end
+
+  def translations : Array(Tv::Translation)
+    Tmdb.memoize :translations do
+      res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/translations")
+      res.get["translations"].as_a.map { |tr| Tv::Translation.new(tr) }
+    end
+  end
+
+  def videos(language : String? = nil) : Array(Video)
+    Tmdb.memoize :videos do
+      url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/videos"
+      res = Resource.new(url, FilterFactory.create_language(language))
+      res.get["results"].as_a.map { |video| Video.new(video) }
+    end
   end
 
   private def refresh!
+    obj = Episode.detail(show_id, season_number, episode_number)
+
+    @air_date = obj.air_date
+    @crew = obj.crew
+    @episode_number = obj.episode_number
+    @guest_stars = obj.guest_stars
+    @name = obj.name
+    @overview = obj.overview
+    @id = obj.id
+    @production_code = obj.production_code
+    @season_number = obj.season_number
+    @still_path = obj.still_path
+    @vote_average = obj.vote_average
+    @vote_count = obj.vote_count
   end
 end

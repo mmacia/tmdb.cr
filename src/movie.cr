@@ -14,6 +14,7 @@ require "./video"
 require "./watch"
 require "./keyword"
 require "./external_id"
+require "./filter_factory"
 
 class Tmdb::Movie
   enum Status
@@ -55,14 +56,10 @@ class Tmdb::Movie
   @keywords : Array(Keyword)? = nil
   @release_dates : Array(Tuple(String, Array(Release)))? = nil
   @translations : Array(Translation)? = nil
-  @videos : Array(Video)? = nil
   @watch_providers : Hash(String, Watch)? = nil
 
   def self.detail(id : Int64, language : String? = nil) : Movie
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/movie/#{id}", filters)
+    res = Resource.new("/movie/#{id}", FilterFactory.create_language(language))
     Movie.new(res.get)
   end
 
@@ -79,11 +76,7 @@ class Tmdb::Movie
     )
 
     @budget = data["budget"].as_i64
-
-    @genres = data["genres"].as_a.map do |genre|
-      Genre.new(genre)
-    end
-
+    @genres = data["genres"].as_a.map { |genre| Genre.new(genre) }
     @homepage = data["homepage"].as_s?
     @id = data["id"].as_i64
     @imdb_id = data["imdb_id"].as_s?
@@ -102,20 +95,11 @@ class Tmdb::Movie
       )
     end
 
-    @production_countries = data["production_countries"].as_a.map do |country|
-      Country.new(country)
-    end
-
-    date = data["release_date"].as_s
-    @release_date = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
-
+    @production_countries = data["production_countries"].as_a.map { |country| Country.new(country) }
+    @release_date = Tmdb.parse_date(data["release_date"])
     @revenue = data["revenue"].as_i
     @runtime = data["runtime"].as_i
-
-    @spoken_languages = data["spoken_languages"].as_a.map do |lang|
-      Language.new(lang)
-    end
-
+    @spoken_languages = data["spoken_languages"].as_a.map { |lang| Language.new(lang) }
     @status = Status.parse(data["status"].as_s)
     @tagline = data["tagline"].as_s?
     @title = data["title"].as_s
@@ -125,155 +109,117 @@ class Tmdb::Movie
   end
 
   def alternative_titles(country : String? = nil) : Array(AlternativeTitle)
-    filters = Hash(Symbol, String).new
-    filters[:country] = country.not_nil! unless country.nil?
-
-    res = Resource.new("/movie/#{id}/alternative_titles", filters)
+    res = Resource.new("/movie/#{id}/alternative_titles", FilterFactory.create_country(country))
     res.get["titles"].as_a.map { |title| AlternativeTitle.new(title) }
   end
 
   def cast(language : String? = nil) : Array(CastCredit)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/movie/#{id}/credits", filters)
+    res = Resource.new("/movie/#{id}/credits", FilterFactory.create_language(language))
     data = res.get
 
     data["cast"].as_a.map { |cast| CastCredit.new(cast) }
   end
 
   def crew(language : String? = nil) : Array(CrewCredit)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/movie/#{id}/credits", filters)
+    res = Resource.new("/movie/#{id}/credits", FilterFactory.create_language(language))
     data = res.get
 
     data["crew"].as_a.map { |crew| CrewCredit.new(crew) }
   end
 
   def external_ids : Array(ExternalId)
-    return @external_ids.not_nil! unless @external_ids.nil?
+    Tmdb.memoize :external_ids do
+      ret = [] of ExternalId
+      res = Resource.new("/movie/#{id}/external_ids")
+      data = res.get
 
-    ret = [] of ExternalId
-    res = Resource.new("/movie/#{id}/external_ids")
-    data = res.get
+      %w(imdb_id facebook_id instagram_id twitter_id).each do |provider|
+        ret << ExternalId.new(provider, data[provider].as_s) if data[provider].as_s?
+      end
 
-    ret << ExternalId.new("imdb_id", data["imdb_id"].as_s) if data["imdb_id"].as_s?
-    ret << ExternalId.new("facebook_id", data["facebook_id"].as_s) if data["facebook_id"].as_s?
-    ret << ExternalId.new("instagram_id", data["instagram_id"].as_s) if data["instagram_id"].as_s?
-    ret << ExternalId.new("twitter_id", data["twitter_id"].as_s) if data["twitter_id"].as_s?
-
-    @external_ids = ret
+      ret
+    end
   end
 
   def backdrops(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+    filters = FilterFactory.create_language(language)
     filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
 
     res = Resource.new("/movie/#{id}/images", filters)
-    data = res.get
-
-    data["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
+    res.get["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
   end
 
   def posters(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
+    filters = FilterFactory.create_language(language)
     filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
 
     res = Resource.new("/movie/#{id}/images", filters)
-    data = res.get
-
-    data["posters"].as_a.map { |poster| Image.new(poster) }
+    res.get["posters"].as_a.map { |poster| Image.new(poster) }
   end
 
   def keywords : Array(Keyword)
-    return @keywords.not_nil! unless @keywords.nil?
-
-    res = Resource.new("/movie/#{id}/keywords")
-    data = res.get
-
-    @keywords = data["keywords"].as_a.map { |keyword|  Keyword.new(keyword) }
+    Tmdb.memoize :keywords do
+      res = Resource.new("/movie/#{id}/keywords")
+      res.get["keywords"].as_a.map { |keyword|  Keyword.new(keyword) }
+    end
   end
 
   def recommendations(language : String? = nil) : LazyIterator(MovieResult)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/movie/#{id}/recommendations", filters)
+    res = Resource.new("/movie/#{id}/recommendations", FilterFactory.create_language(language))
     LazyIterator(MovieResult).new(res)
   end
 
   def release_dates : Array(Tuple(String, Array(Release)))
-    return @release_dates.not_nil! unless @release_dates.nil?
+    Tmdb.memoize :release_dates do
+      res = Resource.new("/movie/#{id}/release_dates")
 
-    res = Resource.new("/movie/#{id}/release_dates")
-    data = res.get
+      res.get["results"].as_a.map do |release|
+        country_code = release["iso_3166_1"].as_s
+        releases = release["release_dates"].as_a.map { |rd| Release.new(rd) }
 
-    @release_dates = data["results"].as_a.map do |release|
-      country_code = release["iso_3166_1"].as_s
-      releases = release["release_dates"].as_a.map { |rd| Release.new(rd) }
-
-      {country_code, releases}
+        {country_code, releases}
+      end
     end
   end
 
   def user_reviews(language : String? = nil) : LazyIterator(Review)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/movie/#{id}/reviews", filters)
+    res = Resource.new("/movie/#{id}/reviews", FilterFactory.create_language(language))
     LazyIterator(Review).new(res)
   end
 
   def similar_movies(language : String? = nil) : LazyIterator(MovieResult)
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/movie/#{id}/similar", filters)
+    res = Resource.new("/movie/#{id}/similar", FilterFactory.create_language(language))
     LazyIterator(MovieResult).new(res)
   end
 
   def translations : Array(Translation)
-    return @translations.not_nil! unless @translations.nil?
-
-    res = Resource.new("/movie/#{id}/translations")
-    data = res.get
-
-    @translations = data["translations"].as_a.map { |tr| Translation.new(tr) }
+    Tmdb.memoize :translations do
+      res = Resource.new("/movie/#{id}/translations")
+      res.get["translations"].as_a.map { |tr| Translation.new(tr) }
+    end
   end
 
   def videos(language : String? = nil) : Array(Video)
-    return @videos.not_nil! unless @videos.nil?
-
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/movie/#{id}/videos", filters)
-    data = res.get
-
-    @videos = data["results"].as_a.map { |video| Video.new(video) }
+    res = Resource.new("/movie/#{id}/videos", FilterFactory.create_language(language))
+    res.get["results"].as_a.map { |video| Video.new(video) }
   end
 
   def watch_providers : Hash(String, Watch)
-    return @watch_providers.not_nil! unless @watch_providers.nil?
+    Tmdb.memoize :watch_providers do
+      res = Resource.new("/movie/#{id}/watch/providers")
+      ret = Hash(String, Watch).new
 
-    res = Resource.new("/movie/#{id}/watch/providers")
-    data = res.get
+      res.get["results"].as_h.each do |country_code, wp|
+        watch = Watch.new
 
-    ret = Hash(String, Watch).new
-    data["results"].as_h.each do |country_code, wp|
-      watch = Watch.new
+        watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
+        watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
+        watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
 
-      watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
-      watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
-      watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
+        ret[country_code] = watch
+      end
 
-      ret[country_code] = watch
+      ret
     end
-
-    @watch_providers = ret
   end
 end

@@ -1,3 +1,5 @@
+require "./filter_factory"
+
 class Tmdb::Person
   enum Gender
     NotSpecified
@@ -24,10 +26,7 @@ class Tmdb::Person
   private getter? full_initialized : Bool
 
   def self.detail(id : Int64, language : String? = nil) : Person
-    filters = Hash(Symbol, String).new
-    filters[:language] = language.nil? ? Tmdb.api.default_language : language.not_nil!
-
-    res = Resource.new("/person/#{id}", filters)
+    res = Resource.new("/person/#{id}", FilterFactory.create_language(language))
     Person.new(res.get)
   end
 
@@ -50,12 +49,8 @@ class Tmdb::Person
     @profile_path = data["profile_path"].as_s?
     @biography = data["biography"].as_s
     @imdb_id = data["imdb_id"].as_s
-
-    date = data["birthday"].as_s
-    @birthday = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
-
-    date = data["deathday"].as_s?
-    @deathday = (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
+    @birthday = Tmdb.parse_date(data["birthday"])
+    @deathday = Tmdb.parse_date(data["deathday"])
     @place_of_birth = data["place_of_birth"].as_s
     @homepage = data["homepage"].as_s?
 

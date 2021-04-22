@@ -66,23 +66,19 @@ class Tmdb::Company
   end
 
   def alternative_names : Array(String)
-    return @alternative_names.not_nil! unless @alternative_names.nil?
-
-    res = Resource.new("/company/#{id}/alternative_names")
-    data = res.get
-
-    @alternative_names = data["results"].as_a.map { |an| an["name"].as_s }
+    Tmdb.memoize :alternative_names do
+      res = Resource.new("/company/#{id}/alternative_names")
+      res.get["results"].as_a.map { |an| an["name"].as_s }
+    end
   rescue NotFound
     [] of String
   end
 
   def logos : Array(Logo)
-    return @logos.not_nil! unless @logos.nil?
-
-    res = Resource.new("/company/#{id}/images")
-    data = res.get
-
-    @logos = data["logos"].as_a.map { |logo| Logo.new(logo) }
+    Tmdb.memoize :logos do
+      res = Resource.new("/company/#{id}/images")
+      res.get["logos"].as_a.map { |logo| Logo.new(logo) }
+    end
   rescue NotFound
     [] of Logo
   end

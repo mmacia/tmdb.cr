@@ -15,18 +15,14 @@ class Tmdb::Configuration
 
   def self.countries : Array(Country)
     res = Resource.new("/configuration/countries")
-    data = res.get
-
-    data.as_a.map { |c| Country.new(c) }
+    res.get.as_a.map { |c| Country.new(c) }
   end
 
   def self.jobs : Hash(String, Array(String))
     res = Resource.new("/configuration/jobs")
-    data = res.get
-
     ret = Hash(String, Array(String)).new
 
-    data.as_a.each do |item|
+    res.get.as_a.each do |item|
       ret[item["department"].as_s] = item["jobs"].as_a.map(&.to_s)
     end
 
@@ -35,25 +31,19 @@ class Tmdb::Configuration
 
   def self.languages : Array(Language)
     res = Resource.new("/configuration/languages")
-    data = res.get
-
-    data.as_a.map { |l| Language.new(l) }
+    res.get.as_a.map { |l| Language.new(l) }
   end
 
   def self.primary_translations : Array(String)
     res = Resource.new("/configuration/primary_translations")
-    data = res.get
-
-    data.as_a.map(&.to_s)
+    res.get.as_a.map(&.to_s)
   end
 
   def self.timezones : Hash(String, Array(String))
     res = Resource.new("/configuration/timezones")
-    data = res.get
-
     ret = Hash(String, Array(String)).new
 
-    data.as_a.each do |item|
+    res.get.as_a.each do |item|
       ret[item["iso_3166_1"].as_s] = item["zones"].as_a.map(&.to_s)
     end
 
