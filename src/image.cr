@@ -11,7 +11,7 @@ class Tmdb::Image
     @aspect_ratio = data["aspect_ratio"].as_f
     @file_path = data["file_path"].as_s
     @height = data["height"].as_i
-    @iso_639_1 = data["iso_639_1"].as_s?
+    @iso_639_1 = data["iso_639_1"]? ? data["iso_639_1"].as_s? : nil
     @vote_average = data["vote_average"].as_f
     @vote_count = data["vote_count"].as_i64
     @width = data["width"].as_i
