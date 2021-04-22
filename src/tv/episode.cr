@@ -16,6 +16,7 @@ class Tmdb::Tv::Episode
   getter vote_average : Float64
   getter vote_count : Int32
   getter show_id : Int64
+  getter order : Int32?
 
   @crew : Array(Crew)? = nil
   @guest_stars : Array(GuestStar)? = nil
@@ -44,6 +45,7 @@ class Tmdb::Tv::Episode
     @still_path = data["still_path"].as_s?
     @vote_average = data["vote_average"].as_f
     @vote_count = data["vote_count"].as_i
+    @order = data["order"]? ? data["order"].as_i : nil
   end
 
   def crew : Array(Crew)
