@@ -4,8 +4,8 @@ require "./company"
 require "./country"
 require "./language"
 require "./alternative_title"
-require "./cast_credit"
-require "./crew_credit"
+require "./movie/cast"
+require "./movie/crew"
 require "./image"
 require "./release"
 require "./review"
@@ -113,18 +113,18 @@ class Tmdb::Movie
     res.get["titles"].as_a.map { |title| AlternativeTitle.new(title) }
   end
 
-  def cast(language : String? = nil) : Array(CastCredit)
+  def cast(language : String? = nil) : Array(Movie::Cast)
     res = Resource.new("/movie/#{id}/credits", FilterFactory.create_language(language))
     data = res.get
 
-    data["cast"].as_a.map { |cast| CastCredit.new(cast) }
+    data["cast"].as_a.map { |cast| Movie::Cast.new(cast) }
   end
 
-  def crew(language : String? = nil) : Array(CrewCredit)
+  def crew(language : String? = nil) : Array(Movie::Crew)
     res = Resource.new("/movie/#{id}/credits", FilterFactory.create_language(language))
     data = res.get
 
-    data["crew"].as_a.map { |crew| CrewCredit.new(crew) }
+    data["crew"].as_a.map { |crew| Movie::Crew.new(crew) }
   end
 
   def external_ids : Array(ExternalId)

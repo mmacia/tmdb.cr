@@ -30,7 +30,7 @@ describe Tmdb::Movie do
         credits = movie.cast
 
         credits.size.should eq(49)
-        credits.should be_a(Array(Tmdb::CastCredit))
+        credits.should be_a(Array(Tmdb::Movie::Cast))
       end
     end
 
@@ -40,7 +40,7 @@ describe Tmdb::Movie do
         credits = movie.cast(language: "es")
 
         credits.size.should eq(49)
-        credits.should be_a(Array(Tmdb::CastCredit))
+        credits.should be_a(Array(Tmdb::Movie::Cast))
       end
     end
   end
@@ -52,7 +52,7 @@ describe Tmdb::Movie do
         credits = movie.crew
 
         credits.size.should eq(77)
-        credits.should be_a(Array(Tmdb::CrewCredit))
+        credits.should be_a(Array(Tmdb::Movie::Crew))
       end
     end
 
@@ -62,7 +62,7 @@ describe Tmdb::Movie do
         credits = movie.crew(language: "es")
 
         credits.size.should eq(77)
-        credits.should be_a(Array(Tmdb::CrewCredit))
+        credits.should be_a(Array(Tmdb::Movie::Crew))
       end
     end
   end
