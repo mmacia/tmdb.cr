@@ -1,5 +1,6 @@
 require "http"
 require "./filter_factory"
+require "./cache"
 
 class Tmdb::Api
   private getter version : String = "3"
@@ -7,6 +8,7 @@ class Tmdb::Api
 
   property api_key : String = ""
   property default_language : String = "en"
+  property cache : Cache(String)? = nil
 
   def make_uri(path : String, params : Hash(Symbol, String)) : URI
     buf = IO::Memory.new
