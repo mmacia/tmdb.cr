@@ -84,7 +84,7 @@ describe Tmdb::Movie do
         backdrops = movie.backdrops
 
         backdrops.size.should eq(8)
-        backdrops.should be_a(Array(Tmdb::Image))
+        backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
 
@@ -94,7 +94,7 @@ describe Tmdb::Movie do
         backdrops = movie.backdrops(language: "es")
 
         backdrops.size.should eq(0)
-        backdrops.should be_a(Array(Tmdb::Image))
+        backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
 
@@ -104,7 +104,7 @@ describe Tmdb::Movie do
         backdrops = movie.backdrops(include_image_language: ["es", "en"])
 
         backdrops.size.should eq(8)
-        backdrops.should be_a(Array(Tmdb::Image))
+        backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
   end
@@ -116,7 +116,7 @@ describe Tmdb::Movie do
         posters = movie.posters
 
         posters.size.should eq(27)
-        posters.should be_a(Array(Tmdb::Image))
+        posters.should be_a(Array(Tmdb::Poster))
       end
     end
 
@@ -126,7 +126,7 @@ describe Tmdb::Movie do
         posters = movie.posters(language: "es")
 
         posters.size.should eq(7)
-        posters.should be_a(Array(Tmdb::Image))
+        posters.should be_a(Array(Tmdb::Poster))
       end
     end
 
@@ -136,7 +136,7 @@ describe Tmdb::Movie do
         posters = movie.posters(include_image_language: ["es", "en"])
 
         posters.size.should eq(34)
-        posters.should be_a(Array(Tmdb::Image))
+        posters.should be_a(Array(Tmdb::Poster))
       end
     end
   end

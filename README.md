@@ -1,18 +1,77 @@
-# tmdb
+# The Movie Database API
 
-TODO: Write a description here
+A Crystal wrapper for the [The Movie DAtabase API](https://developers.themoviedb.org/).
 
 ## Installation
 
-TODO: Write installation instructions here
+Add this lines to your `shards.yml` file:
+
+```
+dependencies:
+  tmdb:
+    github: mmacia/tmdb.cr
+    branch: master
+```
+
+Then run `shards install` from your project.
 
 ## Usage
 
-TODO: Write usage instructions here
+### Initial configuration
 
-## Development
+You have to provide your API key like this:
 
-TODO: Write development instructions here
+```
+Tmdb.configure do |conf|
+  conf.api_key = "secret"
+  conf.default_language = "en"
+end
+```
+
+The default language is english, but you can temporarily override the global
+language for a single request by specifying it as an additional parameter:
+
+```
+# example
+Tmdb::Search.movies("terminator", language: "es")
+```
+
+You can save a few API calls activating the cache:
+
+```
+Tmdb.configure do |conf|
+  conf.cache = Tmdb::FileCache.new("/tmp/tmdb", 10_000)
+end
+```
+
+Paginated resources are managed by `LazyIterator(T)` class. This acts as a
+infinite iterator, you just have to call `#each`, `#select`, `#map` or whatever
+enumerable method to acces to the whole collection without worrying about
+pagination.
+
+```
+# example
+movies = Tmdb::Search.movies("terminator")
+
+pp movies.total_items
+
+movies.each do |m|
+  pp m.original_title
+end
+```
+
+### Endpoints
+
+All endpoints available are those listed in The Movie Database API
+documentation.
+
+Missing endpoints:
+ * Account
+ * Authentication
+ * Guest Sessions
+ * Lists
+ * Multi search
+
 
 ## Contributing
 

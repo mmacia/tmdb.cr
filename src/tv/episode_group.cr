@@ -39,6 +39,7 @@ class Tmdb::Tv::EpisodeGroup
   getter network : Network
   getter type : Type
 
+  # Get the details of a TV episode group.
   def self.detail(id : String, language : String? = nil) : EpisodeGroup
     res = Resource.new("/tv/episode_group/#{id}", FilterFactory.create_language(language))
     EpisodeGroup.new(res.get)

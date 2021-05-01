@@ -135,7 +135,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         backdrops = tv_show.backdrops
 
-        backdrops.should be_a(Array(Tmdb::Image))
+        backdrops.should be_a(Array(Tmdb::Backdrop))
         backdrops.size.should eq(3)
       end
     end
@@ -145,7 +145,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         backdrops = tv_show.backdrops(language: "es")
 
-        backdrops.should be_a(Array(Tmdb::Image))
+        backdrops.should be_a(Array(Tmdb::Backdrop))
         backdrops.size.should eq(0)
       end
     end
@@ -157,7 +157,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         posters = tv_show.posters
 
-        posters.should be_a(Array(Tmdb::Image))
+        posters.should be_a(Array(Tmdb::Poster))
         posters.size.should eq(7)
       end
     end
@@ -167,7 +167,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         posters = tv_show.posters(language: "es")
 
-        posters.should be_a(Array(Tmdb::Image))
+        posters.should be_a(Array(Tmdb::Poster))
         posters.size.should eq(0)
       end
     end

@@ -31,6 +31,7 @@ class Tmdb::Credit
   getter id : String
   getter person : Person
 
+  # Get a movie or TV credit details by id.
   def self.detail(id : String) : Credit
     res = Resource.new("/credit/#{id}")
     Credit.new(res.get)

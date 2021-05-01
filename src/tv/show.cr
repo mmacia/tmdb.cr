@@ -67,6 +67,7 @@ class Tmdb::Tv::Show
   @videos : Array(Video)? = nil
   @watch_providers : Hash(String, Watch)? = nil
 
+  # Get the primary TV show details by id.
   def self.detail(id : Int64, language : String? = nil) : Show
     res = Resource.new("/tv/#{id}", FilterFactory.create_language(language))
     Tv::Show.new(res.get)
@@ -106,6 +107,11 @@ class Tmdb::Tv::Show
     @vote_count = data["vote_count"].as_i
   end
 
+  # Get the aggregate credits (cast and crew) that have been added to a TV show.
+  #
+  # This call differs from the main `#credits` call in that it does not return
+  # the newest season but rather, is a view of all the entire cast & crew for
+  # all episodes belonging to a TV show.
   def aggregated_credits(language : String? = nil) : Array(Tv::AggregatedCast | Tv::AggregatedCrew)
     res = Resource.new("/tv/#{id}/aggregate_credits", FilterFactory.create_language(language))
     data = res.get
@@ -117,21 +123,39 @@ class Tmdb::Tv::Show
     ret
   end
 
+  # Returns all of the alternative titles for a TV show.
   def alternative_titles(language : String? = nil) : Array(AlternativeTitle)
     res = Resource.new("/tv/#{id}/alternative_titles", FilterFactory.create_language(language))
     res.get["results"].as_a.map { |title| AlternativeTitle.new(title) }
   end
 
+  # Get the list of content ratings (certifications) that have been added to a
+  # TV show.
   def content_ratings(language : String? = nil) : Array(Tv::Rating)
     res = Resource.new("/tv/#{id}/content_ratings", FilterFactory.create_language(language))
     res.get["results"].as_a.map { |rating| Tv::Rating.new(rating) }
   end
 
+  # Get all of the episode groups that have been created for a TV show. With a
+  # group ID you can call the `Tmdb::Tv::EpisodeGroup.detail` method.
   def episode_groups(language : String? = nil) : Array(Tv::EpisodeGroupResult)
     res = Resource.new("/tv/#{id}/episode_groups", FilterFactory.create_language(language))
     res.get["results"].as_a.map { |episode_group| Tv::EpisodeGroupResult.new(episode_group) }
   end
 
+  # Get the external ids for a TV show. We currently support the following
+  # external sources.
+  #
+  # * IMDb ID
+  # * TVDB ID
+  # * Freebase MID\*
+  # * Freebase ID\*
+  # * TVRage ID\*
+  # * Facebook
+  # * Instagram
+  # * Twitter
+  #
+  # \* Defunct or no longer available as a service
   def external_ids(language : String? = nil) : Array(ExternalId)
     res = Resource.new("/tv/#{id}/external_ids", FilterFactory.create_language(language))
     data = res.get
@@ -144,16 +168,33 @@ class Tmdb::Tv::Show
     ret
   end
 
-  def backdrops(language : String? = nil) : Array(Image)
+  # Get the images that belong to a TV show.
+  #
+  # Querying images with a `language` parameter will filter the results. If you
+  # want to include a fallback language (especially useful for backdrops) you
+  # can use the `include_image_language` parameter. This should be a comma
+  # seperated value like so: `include_image_language=en,null`.
+  def images(language : String? = nil) : Array(Backdrop | Poster)
     res = Resource.new("/tv/#{id}/images", FilterFactory.create_language(language))
-    res.get["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
+    ret = [] of Backdrop | Poster
+
+    res.get["backdrops"].as_a.reduce(ret) { |ret, backdrop| ret << Backdrop.new(backdrop) }
+    res.get["posters"].as_a.reduce(ret) { |ret, poster| ret << Poster.new(poster) }
+
+    ret
   end
 
-  def posters(language : String? = nil) : Array(Image)
-    res = Resource.new("/tv/#{id}/images", FilterFactory.create_language(language))
-    res.get["posters"].as_a.map { |poster| Image.new(poster) }
+  # See `#images`
+  def backdrops(language : String? = nil) : Array(Backdrop)
+    images(language).select(Backdrop)
   end
 
+  # See `#images`
+  def posters(language : String? = nil) : Array(Poster)
+    images(language).select(Poster)
+  end
+
+  # Get the keywords that have been added to a TV show.
   def keywords : Array(Keyword)
     Tmdb.memoize :keywords do
       res = Resource.new("/tv/#{id}/keywords")
@@ -161,21 +202,25 @@ class Tmdb::Tv::Show
     end
   end
 
+  # Get the list of TV show recommendations for this item.
   def recommendations(language : String? = nil) : LazyIterator(ShowResult)
     res = Resource.new("/tv/#{id}/recommendations", FilterFactory.create_language(language))
     LazyIterator(ShowResult).new(res)
   end
 
+  # Get the reviews for a TV show.
   def reviews(language : String? = nil) : LazyIterator(Review)
     res = Resource.new("/tv/#{id}/reviews", FilterFactory.create_language(language))
     LazyIterator(Review).new(res)
   end
 
+  # Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
   def similar_tv_shows(language : String? = nil) : LazyIterator(ShowResult)
     res = Resource.new("/tv/#{id}/similar", FilterFactory.create_language(language))
     LazyIterator(ShowResult).new(res)
   end
 
+  # Get a list of the translations that exist for a TV show.
   def translations : Array(Tv::Translation)
     Tmdb.memoize :translations do
       res = Resource.new("/tv/#{id}/translations")
@@ -183,6 +228,7 @@ class Tmdb::Tv::Show
     end
   end
 
+  # Get the videos that have been added to a TV show.
   def videos(language : String? = nil) : Array(Video)
     Tmdb.memoize :videos do
       res = Resource.new("/tv/#{id}/videos", FilterFactory.create_language(language))
@@ -190,6 +236,18 @@ class Tmdb::Tv::Show
     end
   end
 
+  # Powered by our partnership with JustWatch, you can query this method to get
+  # a list of the availabilities per country by provider.
+  #
+  # This is **not** going to return full deep links, but rather, it's just
+  # enough information to display what's available where.
+  #
+  # You can link to the provided TMDB URL to help support TMDB and provide the
+  # actual deep links to the content.
+  #
+  # **Please note**: In order to use this data **you must** attribute the
+  # source of the data as JustWatch. If we find any usage not complying
+  # with these terms we will revoke access to the API.
   def watch_providers : Hash(String, Watch)
     Tmdb.memoize :watch_providers do
       res = Resource.new("/tv/#{id}/watch/providers")

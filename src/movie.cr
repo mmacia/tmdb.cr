@@ -58,6 +58,7 @@ class Tmdb::Movie
   @translations : Array(Translation)? = nil
   @watch_providers : Hash(String, Watch)? = nil
 
+  # Get the primary information about a movie.
   def self.detail(id : Int64, language : String? = nil) : Movie
     res = Resource.new("/movie/#{id}", FilterFactory.create_language(language))
     Movie.new(res.get)
@@ -108,25 +109,39 @@ class Tmdb::Movie
     @vote_count = data["vote_count"].as_i
   end
 
+  # Get all of the alternative titles for a movie.
   def alternative_titles(country : String? = nil) : Array(AlternativeTitle)
     res = Resource.new("/movie/#{id}/alternative_titles", FilterFactory.create_country(country))
     res.get["titles"].as_a.map { |title| AlternativeTitle.new(title) }
   end
 
-  def cast(language : String? = nil) : Array(Movie::Cast)
+  # Get the cast and crew for a movie.
+  def credits(language : String? = nil) : Array(Movie::Cast | Movie::Crew)
     res = Resource.new("/movie/#{id}/credits", FilterFactory.create_language(language))
     data = res.get
+    ret = [] of Movie::Cast | Movie::Crew
 
-    data["cast"].as_a.map { |cast| Movie::Cast.new(cast) }
+    data["cast"].as_a.reduce(ret) { |ret, cast| ret << Movie::Cast.new(cast) }
+    data["crew"].as_a.reduce(ret) { |ret, crew| ret << Movie::Crew.new(crew) }
+
+    ret
+  end
+
+  def cast(language : String? = nil) : Array(Movie::Cast)
+    credits(language).select(Movie::Cast)
   end
 
   def crew(language : String? = nil) : Array(Movie::Crew)
-    res = Resource.new("/movie/#{id}/credits", FilterFactory.create_language(language))
-    data = res.get
-
-    data["crew"].as_a.map { |crew| Movie::Crew.new(crew) }
+    credits(language).select(Movie::Crew)
   end
 
+  # Get the external ids for a movie. We currently support the following
+  # external sources.
+  #
+  # * IMDb ID
+  # * Facebook
+  # * Instagram
+  # * Twitter
   def external_ids : Array(ExternalId)
     Tmdb.memoize :external_ids do
       ret = [] of ExternalId
@@ -141,22 +156,36 @@ class Tmdb::Movie
     end
   end
 
-  def backdrops(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
+  # Get the images that belong to a movie.
+  #
+  # Querying images with a `language` parameter will filter the results. If you
+  # want to include a fallback language (especially useful for backdrops) you
+  # can use the `include_image_language` parameter. This should be a comma
+  # seperated value like so: `include_image_language=en,null`.
+  def images(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Backdrop | Poster)
     filters = FilterFactory.create_language(language)
     filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
 
     res = Resource.new("/movie/#{id}/images", filters)
-    res.get["backdrops"].as_a.map { |backdrop| Image.new(backdrop) }
+    ret = [] of Backdrop | Poster
+
+    res.get["backdrops"].as_a.reduce(ret) { |ret, backdrop| ret << Backdrop.new(backdrop) }
+    res.get["posters"].as_a.reduce(ret) { |ret, poster| ret << Poster.new(poster) }
+
+    ret
   end
 
-  def posters(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Image)
-    filters = FilterFactory.create_language(language)
-    filters[:include_image_language] = include_image_language.join(",") unless include_image_language.nil?
-
-    res = Resource.new("/movie/#{id}/images", filters)
-    res.get["posters"].as_a.map { |poster| Image.new(poster) }
+  # See `#images`
+  def backdrops(language : String? = nil, include_image_language : Array(String)? = nil) : Array(Backdrop)
+    images(language, include_image_language).select(Backdrop)
   end
 
+  # See `#images`
+  def posters(language : String? = nil, include_image_language : Array(String)?  = nil) : Array(Poster)
+    images(language, include_image_language).select(Poster)
+  end
+
+  # Get the keywords that have been added to a movie.
   def keywords : Array(Keyword)
     Tmdb.memoize :keywords do
       res = Resource.new("/movie/#{id}/keywords")
@@ -164,11 +193,13 @@ class Tmdb::Movie
     end
   end
 
+  # Get a list of recommended movies for a movie.
   def recommendations(language : String? = nil) : LazyIterator(MovieResult)
     res = Resource.new("/movie/#{id}/recommendations", FilterFactory.create_language(language))
     LazyIterator(MovieResult).new(res)
   end
 
+  # Get the release date along with the certification for a movie.
   def release_dates : Array(Tuple(String, Array(Release)))
     Tmdb.memoize :release_dates do
       res = Resource.new("/movie/#{id}/release_dates")
@@ -182,16 +213,22 @@ class Tmdb::Movie
     end
   end
 
+  # Get the user reviews for a movie.
   def user_reviews(language : String? = nil) : LazyIterator(Review)
     res = Resource.new("/movie/#{id}/reviews", FilterFactory.create_language(language))
     LazyIterator(Review).new(res)
   end
 
+  # Get a list of similar movies. This is not the same as the "Recommendation"
+  # system you see on the website.
+  #
+  # These items are assembled by looking at keywords and genres.
   def similar_movies(language : String? = nil) : LazyIterator(MovieResult)
     res = Resource.new("/movie/#{id}/similar", FilterFactory.create_language(language))
     LazyIterator(MovieResult).new(res)
   end
 
+  # Get a list of translations that have been created for a movie.
   def translations : Array(Translation)
     Tmdb.memoize :translations do
       res = Resource.new("/movie/#{id}/translations")
@@ -199,11 +236,24 @@ class Tmdb::Movie
     end
   end
 
+  # Get the videos that have been added to a movie.
   def videos(language : String? = nil) : Array(Video)
     res = Resource.new("/movie/#{id}/videos", FilterFactory.create_language(language))
     res.get["results"].as_a.map { |video| Video.new(video) }
   end
 
+  # Powered by our partnership with JustWatch, you can query this method to get
+  # a list of the availabilities per country by provider.
+  #
+  # This is **not** going to return full deep links, but rather, it's just
+  # enough information to display what's available where.
+  #
+  # You can link to the provided TMDB URL to help support TMDB and provide the
+  # actual deep links to the content.
+  #
+  # **Please note**: In order to use this data **you must** attribute the
+  # source of the data as JustWatch. If we find any usage not complying
+  # with these terms we will revoke access to the API.
   def watch_providers : Hash(String, Watch)
     Tmdb.memoize :watch_providers do
       res = Resource.new("/movie/#{id}/watch/providers")

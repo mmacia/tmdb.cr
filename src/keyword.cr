@@ -14,6 +14,10 @@ class Tmdb::Keyword
     @name = data["name"].as_s
   end
 
+  # Get the movies that belong to a keyword.
+  #
+  # We highly recommend using `Tmdb::Dicover.movie` instead of this method as it
+  # is much more flexible.
   def movies(language : String? = nil, include_adult : Bool? = nil) : LazyIterator(MovieResult)
     filters = FilterFactory.create_language(language)
     filters[:include_adult] = include_adult.not_nil!.to_s unless include_adult.nil?

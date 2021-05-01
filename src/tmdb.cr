@@ -11,6 +11,7 @@ require "./tv/show"
 require "./tv/season"
 require "./tv/episode"
 require "./tv/episode_group"
+require "./cache/file_cache"
 
 module Tmdb
   VERSION = "0.1.0"

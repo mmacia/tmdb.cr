@@ -6,6 +6,7 @@ require "./keyword"
 require "./person_result"
 
 class Tmdb::Search
+  # Search for movies.
   def self.movies(
     query : String,
     language : String? = nil,
@@ -25,11 +26,13 @@ class Tmdb::Search
     LazyIterator(MovieResult).new(res)
   end
 
+  # Search for companies.
   def self.companies(query : String) : LazyIterator(CompanyResult)
     res = Resource.new("/search/company", FilterFactory.create(query: query))
     LazyIterator(CompanyResult).new(res)
   end
 
+  # Search for collections.
   def self.collections(query : String, language : String? = nil) : LazyIterator(CollectionResult)
     filters = FilterFactory.create_language(language)
     filters[:query] = query
@@ -38,11 +41,13 @@ class Tmdb::Search
     LazyIterator(CollectionResult).new(res)
   end
 
+  # Search for keywords.
   def self.keywords(query : String) : LazyIterator(Keyword)
     res = Resource.new("/search/keyword", FilterFactory.create(query: query))
     LazyIterator(Keyword).new(res)
   end
 
+  # Search for people.
   def self.people(
     query : String,
     language : String? = nil,
@@ -58,6 +63,7 @@ class Tmdb::Search
     LazyIterator(PersonResult).new(res)
   end
 
+  # Search for a TV show.
   def self.tv_shows(
     query : String,
     language : String? = nil,

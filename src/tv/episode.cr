@@ -26,6 +26,7 @@ class Tmdb::Tv::Episode
   @images : Array(Image)? = nil
   @videos : Array(Video)? = nil
 
+  # Get the TV episode details by id.
   def self.detail(show_id : Int64, season_number : Int32, episode_number : Int32, language : String? = nil) : Episode
     url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}"
     res = Resource.new(url, FilterFactory.create_language(language))
@@ -58,6 +59,7 @@ class Tmdb::Tv::Episode
     @guest_stars.not_nil!
   end
 
+  # Get the credits (cast, crew and guest stars) for a TV episode.
   def credits(language : String? = nil) : Array(Crew | Cast | GuestStar)
     Tmdb.memoize :credits do
       url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}"
@@ -73,6 +75,16 @@ class Tmdb::Tv::Episode
     end
   end
 
+  # Get the external ids for a TV episode. We currently support the following
+  # external sources.
+  #
+  # * IMDb ID
+  # * TVDB ID
+  # * Freebase MID\*
+  # * Freebase ID\*
+  # * TVRage ID\*
+  #
+  # \*Defunct or no longer available as a service.
   def external_ids : Array(ExternalId)
     Tmdb.memoize :external_ids do
       res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/external_ids")
@@ -87,6 +99,12 @@ class Tmdb::Tv::Episode
     end
   end
 
+  # Get the images that belong to a TV episode.
+  #
+  # Querying images with a `language` parameter will filter the results. If you
+  # want to include a fallback language (especially useful for backdrops) you
+  # can use the `include_image_language` parameter. This should be a comma
+  # seperated value like so: `include_image_language=en,null`.
   def images : Array(Image)
     Tmdb.memoize :images do
       res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/images")
@@ -94,6 +112,7 @@ class Tmdb::Tv::Episode
     end
   end
 
+  # Get the translation data for an episode.
   def translations : Array(Tv::Translation)
     Tmdb.memoize :translations do
       res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/translations")
@@ -101,6 +120,7 @@ class Tmdb::Tv::Episode
     end
   end
 
+  # Get the videos that have been added to a TV episode.
   def videos(language : String? = nil) : Array(Video)
     Tmdb.memoize :videos do
       url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/videos"

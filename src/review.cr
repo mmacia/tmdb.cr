@@ -26,6 +26,7 @@ class Tmdb::Review
   getter media_title : String? = nil
   getter media_type : Media::Type? = nil
 
+  # Retrieve the details of a movie or TV show review.
   def self.detail(id : String) : Review
     res = Resource.new("/review/#{id}")
     Review.new(res.get)

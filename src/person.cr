@@ -25,6 +25,7 @@ class Tmdb::Person
 
   private getter? full_initialized : Bool
 
+  # Get the primary person details by id.
   def self.detail(id : Int64, language : String? = nil) : Person
     res = Resource.new("/person/#{id}", FilterFactory.create_language(language))
     Person.new(res.get)

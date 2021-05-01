@@ -27,7 +27,7 @@ describe Tmdb::Collection do
         backdrops = collection.backdrops
 
         backdrops.size.should eq(4)
-        backdrops.should be_a(Array(Tmdb::Image))
+        backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
 
@@ -37,7 +37,7 @@ describe Tmdb::Collection do
         backdrops = collection.backdrops(language: "es")
 
         backdrops.size.should eq(0)
-        backdrops.should be_a(Array(Tmdb::Image))
+        backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
   end
@@ -49,7 +49,7 @@ describe Tmdb::Collection do
         posters = collection.posters
 
         posters.size.should eq(18)
-        posters.should be_a(Array(Tmdb::Image))
+        posters.should be_a(Array(Tmdb::Poster))
       end
     end
 
@@ -59,7 +59,7 @@ describe Tmdb::Collection do
         posters = collection.posters(language: "es")
 
         posters.size.should eq(3)
-        posters.should be_a(Array(Tmdb::Image))
+        posters.should be_a(Array(Tmdb::Poster))
       end
     end
   end

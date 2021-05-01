@@ -17,3 +17,6 @@ class Tmdb::Image
     @width = data["width"].as_i
   end
 end
+
+class Tmdb::Backdrop < Tmdb::Image; end
+class Tmdb::Poster < Tmdb::Image; end

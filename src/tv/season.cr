@@ -9,6 +9,7 @@ class Tmdb::Tv::Season
   getter overview : String
   getter show_id : Int64
 
+  # Get the TV season details by id.
   def self.detail(show_id : Int64, season_number : Int32, language : String? = nil) : Season
     res = Resource.new("/tv/#{show_id}/season/#{season_number}", FilterFactory.create_language(language))
     Season.new(res.get, show_id)
@@ -23,6 +24,11 @@ class Tmdb::Tv::Season
     @overview = data["overview"].as_s
   end
 
+  # Get the aggregate credits for TV season.
+  #
+  # This call differs from the main `#credits` call in that it does not only
+  # return the season credits, but rather is a view of all the cast & crew for
+  # all of the episodes belonging to a season.
   def aggregated_credits(language : String? = nil) : Array(AggregatedCast | AggregatedCrew)
     url = "/tv/#{show_id}/season/#{season_number}/aggregate_credits"
     res = Resource.new(url, FilterFactory.create_language(language))
@@ -35,6 +41,15 @@ class Tmdb::Tv::Season
     ret
   end
 
+  # Get the external ids for a TV season. We currently support the following
+  # external sources.
+  #
+  # * TVDB ID
+  # * Freebase MID\*
+  # * Freebase ID\*
+  # * TVRage ID\*
+  #
+  # \*Defunct or no longer available as a service.
   def external_ids(language : String? = nil) : Array(ExternalId)
     res = Resource.new("/tv/#{show_id}/season/#{season_number}/external_ids", FilterFactory.create_language(language))
     data = res.get
@@ -47,6 +62,12 @@ class Tmdb::Tv::Season
     ret
   end
 
+  # Get the images that belong to a TV season.
+  #
+  # Querying images with a `language` parameter will filter the results. If you
+  # want to include a fallback language (especially useful for backdrops) you
+  # can use the `include_image_language` parameter. This should be a comma
+  # seperated value like so: `include_image_language=en,null`.
   def images(language : String? = nil) : Array(Image)
     res = Resource.new("/tv/#{show_id}/season/#{season_number}/images", FilterFactory.create_language(language))
     data = res.get
@@ -54,6 +75,12 @@ class Tmdb::Tv::Season
     data["posters"].as_a.map { |poster| Image.new(poster) }
   end
 
+  # See `#images`
+  def posters(language : String? = nil) : Array(Poster)
+    images(language)
+  end
+
+  # Get the credits for TV season.
   def translations(language : String? = nil) : Array(Translation)
     res = Resource.new("/tv/#{show_id}/season/#{season_number}/translations", FilterFactory.create_language(language))
     data = res.get
@@ -61,6 +88,7 @@ class Tmdb::Tv::Season
     data["translations"].as_a.map { |tr| Translation.new(tr) }
   end
 
+  # Get the videos that have been added to a TV season.
   def videos(language : String? = nil) : Array(Video)
     res = Resource.new("/tv/#{show_id}/season/#{season_number}/videos", FilterFactory.create_language(language))
     data = res.get

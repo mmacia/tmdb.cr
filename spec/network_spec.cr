@@ -29,7 +29,7 @@ describe Tmdb::Network do
         network = Tmdb::Network.detail(19)
         images = network.images
 
-        images.should be_a(Array(Tmdb::Image))
+        images.should be_a(Array(Tmdb::Logo))
         images.size.should eq(2)
       end
     end
