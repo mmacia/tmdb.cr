@@ -12,9 +12,10 @@ require "./tv/season"
 require "./tv/episode"
 require "./tv/episode_group"
 require "./cache/file_cache"
+require "./changes"
 
 module Tmdb
-  VERSION = "0.1.0"
+  VERSION = `cat VERSION`.strip
   @@api : Api = Api.new
 
   def self.configure
