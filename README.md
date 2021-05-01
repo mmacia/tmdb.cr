@@ -28,6 +28,9 @@ Tmdb.configure do |conf|
 end
 ```
 
+You can also set the API key in environment variable `TMDB_API_KEY`. The value
+of this variable has higher precedence.
+
 The default language is english, but you can temporarily override the global
 language for a single request by specifying it as an additional parameter:
 

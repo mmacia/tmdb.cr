@@ -6,7 +6,7 @@ class Tmdb::Api
   private getter version : String = "3"
   private getter host : String = "api.themoviedb.org"
 
-  property api_key : String = ""
+  property api_key : String = ENV["TMDB_API_KEY"]? || ""
   property default_language : String = "en"
   property cache : Cache(String)? = nil
 
