@@ -24,14 +24,30 @@ class Tmdb::MovieResult
     date = data["release_date"]? ?  data["release_date"].as_s : ""
     @release_date = date.empty? ? nil : Time.parse(date,"%Y-%m-%d", Time::Location::UTC)
 
-    @genre_ids = data["genre_ids"].as_a.map(&.as_i)
-    @id = data["id"].as_i64
+    @genre_ids = data["genre_ids"].as_a.map do |genre|
+      genre.as_i
+    rescue TypeCastError
+      genre.as_f.to_i
+    end
+
+    @id = begin
+            data["id"].as_i64
+          rescue TypeCastError
+            data["id"].as_f.to_i64
+          end
+
     @original_title = data["original_title"].as_s
     @original_language = data["original_language"].as_s
     @title = data["title"].as_s
     @backdrop_path = data["backdrop_path"]? ? data["backdrop_path"].as_s? : nil
     @popularity = data["popularity"]? ? data["popularity"].as_f : 0.0
-    @vote_count = data["vote_count"].as_i
+
+    @vote_count = begin
+                    data["vote_count"].as_i
+                  rescue TypeCastError
+                    data["vote_count"].as_f.to_i
+                  end
+
     @video = data["video"].as_bool
 
     begin
