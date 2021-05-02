@@ -23,6 +23,18 @@ describe Tmdb::Movie do
     end
   end
 
+  context "#changes" do
+    it "should get a list" do
+      VCR.use_cassette("tmdb") do
+        movie = Tmdb::Movie.detail(218)
+        changes = movie.changes(Time.utc(2014, 5, 20))
+
+        changes.size.should eq(1)
+        changes.should be_a(Array(Tmdb::Movie::Change))
+      end
+    end
+  end
+
   context "#cast" do
     it "should get cast" do
       VCR.use_cassette("tmdb") do

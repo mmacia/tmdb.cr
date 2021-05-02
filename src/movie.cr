@@ -26,6 +26,48 @@ class Tmdb::Movie
     Canceled
   end
 
+  class Change
+    class Item
+      getter id : String
+      getter action : String
+      getter time : Time
+      getter iso_639_1 : String?
+      getter value : String
+      getter original_value : String?
+
+      def initialize(data : JSON::Any)
+        @id = data["id"].as_s
+        @action = data["action"].as_s
+        @time = Time.parse(data["time"].as_s, "%Y-%m-%d %H:%M:%s", Time::Location::UTC)
+        @iso_639_1 = data["iso_639_1"]? ? data["iso_639_1"].as_s : nil
+
+        @value = begin
+                   data["value"].as_s
+                 rescue TypeCastError
+                   data["value"].as_h.to_json
+                 end
+
+        if data["original_value"]?
+          @original_value = begin
+                              data["original_value"].as_s
+                            rescue TypeCastError
+                              data["original_value"].as_h.to_json
+                            end
+        else
+          @original_value = nil
+        end
+      end
+    end
+
+    getter key : String
+    getter items : Array(Item)
+
+    def initialize(data : JSON::Any)
+      @key = data["key"].as_s
+      @items = data["items"].as_a.map { |item| Item.new(item) }
+    end
+  end
+
   getter? adult : Bool
   getter backdrop_path : String?
   getter belongs_to_collection : Collection?
@@ -113,6 +155,21 @@ class Tmdb::Movie
   def alternative_titles(country : String? = nil) : Array(AlternativeTitle)
     res = Resource.new("/movie/#{id}/alternative_titles", FilterFactory.create_country(country))
     res.get["titles"].as_a.map { |title| AlternativeTitle.new(title) }
+  end
+
+  # Get the changes for a movie. By default only the last 24 hours are returned.
+  #
+  # You can query up to 14 days in a single query by using the `start_date` and
+  # `end_date` query parameters.
+  def changes(start_date : Time? = nil, end_date : Time? = nil) : Array(Change)
+    filters = FilterFactory::Filter.new
+    filters[:start_date] = start_date.to_s("%Y-%m-%d") unless start_date.nil?
+    filters[:end_date] = end_date.to_s("%Y-%m-%d") unless end_date.nil?
+
+    res = Resource.new("/movie/#{id}/changes", filters)
+    data = res.get
+
+    data["changes"].as_a.map { |change| Change.new(change) }
   end
 
   # Get the cast and crew for a movie.
