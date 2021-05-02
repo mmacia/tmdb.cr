@@ -13,6 +13,7 @@ require "./tv/episode"
 require "./tv/episode_group"
 require "./cache/file_cache"
 require "./changes"
+require "./discover"
 
 module Tmdb
   VERSION = `cat VERSION`.strip

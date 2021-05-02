@@ -11,13 +11,17 @@ class Tmdb::Api
   property cache : Cache(String)? = nil
 
   def make_uri(path : String, params : Hash(Symbol, String)) : URI
+    URI.new("https", host, 443, "#{version}#{path}", make_query_params(params))
+  end
+
+  def make_query_params(filters : Tmdb::FilterFactory::Filter) : String
     buf = IO::Memory.new
 
-    params.reduce(URI::Params::Builder.new(buf)) do |memo, pair|
+    filters.reduce(URI::Params::Builder.new(buf)) do |memo, pair|
       memo.add(pair.first.to_s, pair.last)
     end
 
-    URI.new("https", host, 443, "#{version}#{path}", buf.to_s)
+    buf.to_s
   end
 
   def params
