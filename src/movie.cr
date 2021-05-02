@@ -40,19 +40,10 @@ class Tmdb::Movie
         @action = data["action"].as_s
         @time = Time.parse(data["time"].as_s, "%Y-%m-%d %H:%M:%s", Time::Location::UTC)
         @iso_639_1 = data["iso_639_1"]? ? data["iso_639_1"].as_s : nil
-
-        @value = begin
-                   data["value"].as_s
-                 rescue TypeCastError
-                   data["value"].as_h.to_json
-                 end
+        @value = data["value"].to_json
 
         if data["original_value"]?
-          @original_value = begin
-                              data["original_value"].as_s
-                            rescue TypeCastError
-                              data["original_value"].as_h.to_json
-                            end
+          @original_value = data["original_value"].to_json
         else
           @original_value = nil
         end
