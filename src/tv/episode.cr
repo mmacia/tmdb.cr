@@ -5,6 +5,39 @@ require "../filter_factory"
 require "../external_id"
 
 class Tmdb::Tv::Episode
+  class Change
+    class Item
+      getter id : String
+      getter action : String
+      getter time : Time
+      getter iso_639_1 : String?
+      getter value : String
+      getter original_value : String?
+
+      def initialize(data : JSON::Any)
+        @id = data["id"].as_s
+        @action = data["action"].as_s
+        @time = Time.parse(data["time"].as_s, "%Y-%m-%d %H:%M:%s", Time::Location::UTC)
+        @iso_639_1 = data["iso_639_1"]? ? data["iso_639_1"].as_s : nil
+        @value = data["value"].to_json
+
+        if data["original_value"]?
+          @original_value = data["original_value"].to_json
+        else
+          @original_value = nil
+        end
+      end
+    end
+
+    getter key : String
+    getter items : Array(Item)
+
+    def initialize(data : JSON::Any)
+      @key = data["key"].as_s
+      @items = data["items"].as_a.map { |item| Item.new(item) }
+    end
+  end
+
   getter air_date : Time?
   getter episode_number : Int32
   getter name : String
@@ -57,6 +90,22 @@ class Tmdb::Tv::Episode
   def guest_stars : Array(GuestStar)
     refresh! if @guest_stars.nil?
     @guest_stars.not_nil!
+  end
+
+  # Get the changes for a TV episode. By default only the last 24 hours are
+  # returned.
+  #
+  # You can query up to 14 days in a single query by using the `start_date` and
+  # `end_date` query parameters.
+  def changes(start_date : Time? = nil, end_date : Time? = nil) : Array(Change)
+    filters = FilterFactory::Filter.new
+    filters[:start_date] = start_date.to_s("%Y-%m-%d") unless start_date.nil?
+    filters[:end_date] = end_date.to_s("%Y-%m-%d") unless end_date.nil?
+
+    res = Resource.new("/tv/episode/#{id}/changes", filters)
+    data = res.get
+
+    data["changes"].as_a.map { |change| Change.new(change) }
   end
 
   # Get the credits (cast, crew and guest stars) for a TV episode.

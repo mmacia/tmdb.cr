@@ -41,6 +41,18 @@ describe Tmdb::Tv::Season do
     end
   end
 
+  context "#changes" do
+    it "should get a list" do
+      VCR.use_cassette("tmdb") do
+        season = Tmdb::Tv::Season.detail(1418, 1)
+        changes = season.changes(Time.utc(2016, 5, 20))
+
+        changes.size.should eq(1)
+        changes.should be_a(Array(Tmdb::Tv::Season::Change))
+      end
+    end
+  end
+
   context "#external_ids" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
