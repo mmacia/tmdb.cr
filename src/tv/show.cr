@@ -30,6 +30,39 @@ class Tmdb::Tv::Show
     ReturningSeries
   end
 
+  class Change
+    class Item
+      getter id : String
+      getter action : String
+      getter time : Time
+      getter iso_639_1 : String?
+      getter value : String
+      getter original_value : String?
+
+      def initialize(data : JSON::Any)
+        @id = data["id"].as_s
+        @action = data["action"].as_s
+        @time = Time.parse(data["time"].as_s, "%Y-%m-%d %H:%M:%s", Time::Location::UTC)
+        @iso_639_1 = data["iso_639_1"]? ? data["iso_639_1"].as_s : nil
+        @value = data["value"].to_json
+
+        if data["original_value"]?
+          @original_value = data["original_value"].to_json
+        else
+          @original_value = nil
+        end
+      end
+    end
+
+    getter key : String
+    getter items : Array(Item)
+
+    def initialize(data : JSON::Any)
+      @key = data["key"].as_s
+      @items = data["items"].as_a.map { |item| Item.new(item) }
+    end
+  end
+
   getter backdrop_path : String?
   getter created_by : Array(Credit)
   getter episode_run_time : Array(Int32)
@@ -127,6 +160,30 @@ class Tmdb::Tv::Show
   def alternative_titles(language : String? = nil) : Array(AlternativeTitle)
     res = Resource.new("/tv/#{id}/alternative_titles", FilterFactory.create_language(language))
     res.get["results"].as_a.map { |title| AlternativeTitle.new(title) }
+  end
+
+  # Get the changes for a TV show. By default only the last 24 hours are
+  # returned.
+  #
+  # You can query up to 14 days in a single query by using the `start_date` and
+  # `end_date` query parameters.
+  #
+  # TV show changes are different than movie changes in that there are some
+  # edits on seasons and episodes that will create a change entry at the show
+  # level. These can be found under the season and episode keys. These keys
+  # will contain a `series_id` and `episode_id`. You can use the
+  # [season changes](https://developers.themoviedb.org/3/tv-seasons/get-tv-season-changes)
+  # and [episode changes](https://developers.themoviedb.org/3/tv-episodes/get-tv-episode-changes)
+  # methods to look these up individually.
+  def changes(start_date : Time? = nil, end_date : Time? = nil) : Array(Change)
+    filters = FilterFactory::Filter.new
+    filters[:start_date] = start_date.to_s("%Y-%m-%d") unless start_date.nil?
+    filters[:end_date] = end_date.to_s("%Y-%m-%d") unless end_date.nil?
+
+    res = Resource.new("/tv/#{id}/changes", filters)
+    data = res.get
+
+    data["changes"].as_a.map { |change| Change.new(change) }
   end
 
   # Get the list of content ratings (certifications) that have been added to a

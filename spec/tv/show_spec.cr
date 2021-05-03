@@ -63,6 +63,18 @@ describe Tmdb::Tv::Show do
     end
   end
 
+  context "#changes" do
+    it "should get a list" do
+      VCR.use_cassette("tmdb") do
+        tv_show = Tmdb::Tv::Show.detail(31132)
+        changes = tv_show.changes(Time.utc(2020, 5, 20))
+
+        changes.size.should eq(3)
+        changes.should be_a(Array(Tmdb::Tv::Show::Change))
+      end
+    end
+  end
+
   context "#content_ratings" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
