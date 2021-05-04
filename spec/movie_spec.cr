@@ -180,7 +180,7 @@ describe Tmdb::Movie do
       movie = Tmdb::Movie.detail(218)
       keywords = movie.keywords
 
-      keywords.size.should eq(12)
+      keywords.size.should eq(16)
       keywords.should be_a(Array(Tmdb::Keyword))
     end
   end
@@ -265,7 +265,7 @@ describe Tmdb::Movie do
         movie = Tmdb::Movie.detail(218)
         similar_movies = movie.similar_movies
 
-        similar_movies.total_items.should eq(134)
+        similar_movies.total_items.should eq(305)
       end
     end
 
@@ -274,7 +274,7 @@ describe Tmdb::Movie do
         movie = Tmdb::Movie.detail(218)
         similar_movies = movie.similar_movies(language: "es")
 
-        similar_movies.total_items.should eq(282)
+        similar_movies.total_items.should eq(305)
       end
     end
 
@@ -283,7 +283,7 @@ describe Tmdb::Movie do
         movie = Tmdb::Movie.detail(218)
         similar_movies = movie.similar_movies
 
-        similar_movies.total_items.should eq(134)
+        similar_movies.total_items.should eq(305)
         similar_movies.each do |user_review|
           user_review.should be_a(Tmdb::MovieResult)
         end

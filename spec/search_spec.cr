@@ -123,7 +123,7 @@ describe Tmdb::Search do
       VCR.use_cassette("tmdb") do
         people = Tmdb::Search.people("eastwood")
 
-        people.total_items.should eq(62)
+        people.total_items.should eq(63)
       end
     end
 
@@ -131,7 +131,7 @@ describe Tmdb::Search do
       VCR.use_cassette("tmdb") do
         people = Tmdb::Search.people("eastwood", language: "es")
 
-        people.total_items.should eq(62)
+        people.total_items.should eq(63)
       end
     end
 
@@ -139,7 +139,7 @@ describe Tmdb::Search do
       VCR.use_cassette("tmdb") do
         people = Tmdb::Search.people("eastwood", include_adult: true)
 
-        people.total_items.should eq(64)
+        people.total_items.should eq(65)
       end
     end
 
@@ -147,7 +147,7 @@ describe Tmdb::Search do
       VCR.use_cassette("tmdb") do
         people = Tmdb::Search.people("eastwood", region: "it")
 
-        people.total_items.should eq(62)
+        people.total_items.should eq(63)
       end
     end
 
@@ -155,7 +155,7 @@ describe Tmdb::Search do
       VCR.use_cassette("tmdb") do
         people = Tmdb::Search.people("eastwood")
 
-        people.total_items.should eq(62)
+        people.total_items.should eq(63)
         people.each do |person|
           person.should be_a(Tmdb::PersonResult)
         end

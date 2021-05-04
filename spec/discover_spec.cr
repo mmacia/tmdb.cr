@@ -11,7 +11,7 @@ describe Tmdb::Discover do
       VCR.use_cassette "tmdb" do
         movies = Tmdb::Discover.movies(qb.to_filter)
 
-        movies.total_items.should eq(342)
+        movies.total_items.should eq(343)
       end
     end
 
@@ -34,7 +34,7 @@ describe Tmdb::Discover do
       VCR.use_cassette "tmdb" do
         tv_shows = Tmdb::Discover.tv_shows(qb.to_filter)
 
-        tv_shows.total_items.should eq(3394)
+        tv_shows.total_items.should eq(3400)
       end
     end
 

@@ -59,7 +59,7 @@ describe Tmdb::Collection do
         collection = Tmdb::Collection.detail(528)
         posters = collection.posters
 
-        posters.size.should eq(18)
+        posters.size.should eq(19)
         posters.should be_a(Array(Tmdb::Poster))
       end
     end

@@ -33,7 +33,7 @@ class Tmdb::Api
 
   def json_headers : HTTP::Headers
     @json_headers ||= HTTP::Headers{
-      "content_ddtype" => "application/json; charset=utf-8",
+      "content_type" => "application/json; charset=utf-8",
       "accept" => "application/json",
     }
   end

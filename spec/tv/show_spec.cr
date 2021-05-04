@@ -265,7 +265,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         similar = tv_show.similar_tv_shows
 
-        similar.total_items.should eq(84)
+        similar.total_items.should eq(86)
       end
     end
 
@@ -274,7 +274,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         similar = tv_show.similar_tv_shows(language: "es")
 
-        similar.total_items.should eq(84)
+        similar.total_items.should eq(86)
       end
     end
 
