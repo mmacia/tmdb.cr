@@ -15,8 +15,11 @@ require "./watch"
 require "./keyword"
 require "./external_id"
 require "./filter_factory"
+require "./image_urls"
 
 class Tmdb::Movie
+  include ImageUrls
+
   enum Status
     Rumored
     Planned

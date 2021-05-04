@@ -10,8 +10,11 @@ require "../alternative_title"
 require "../external_id"
 require "../review"
 require "../filter_factory"
+require "../image_urls"
 
 class Tmdb::Tv::Show
+  include ImageUrls
+
   enum Type
     News
     Scripted

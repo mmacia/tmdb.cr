@@ -33,5 +33,14 @@ describe Tmdb::Network do
         images.size.should eq(2)
       end
     end
+
+    it "should get image URL" do
+      VCR.use_cassette("tmdb") do
+        network = Tmdb::Network.detail(19)
+        logo = network.logo_url
+
+        logo.should be_a(String)
+      end
+    end
   end
 end

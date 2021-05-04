@@ -1,6 +1,9 @@
 require "../credit"
+require "../profile_urls"
 
 class Tmdb::Tv::GuestStar
+  include ProfileUrls
+
   getter id : Int64
   getter name : String
   getter credit_id : String

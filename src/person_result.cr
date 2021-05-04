@@ -1,7 +1,10 @@
 require "./tv/show_result"
 require "./movie_result"
+require "./profile_urls"
 
 class Tmdb::PersonResult
+  include ProfileUrls
+
   getter profile_path : String?
   getter adult : Bool
   getter id : Int64

@@ -1,4 +1,8 @@
+require "./logo_urls"
+
 class Tmdb::Provider
+  include LogoUrls
+
   getter display_priority : Int32
   getter logo_path : String
   getter id : Int32

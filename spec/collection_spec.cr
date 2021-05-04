@@ -40,6 +40,17 @@ describe Tmdb::Collection do
         backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
+
+    it "should get image URL" do
+      VCR.use_cassette("tmdb") do
+        collection = Tmdb::Collection.detail(528)
+        backdrops = collection.backdrops
+
+        backdrops.each do |backdrop|
+          backdrop.image_url.should be_a(String)
+        end
+      end
+    end
   end
 
   context "#posters" do
@@ -60,6 +71,17 @@ describe Tmdb::Collection do
 
         posters.size.should eq(3)
         posters.should be_a(Array(Tmdb::Poster))
+      end
+    end
+
+    it "should get image URL" do
+      VCR.use_cassette("tmdb") do
+        collection = Tmdb::Collection.detail(528)
+        posters = collection.posters
+
+        posters.each do |poster|
+          poster.image_url.should be_a(String)
+        end
       end
     end
   end

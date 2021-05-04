@@ -1,6 +1,9 @@
 require "./filter_factory"
+require "./profile_urls"
 
 class Tmdb::Person
+  include ProfileUrls
+
   enum Gender
     NotSpecified
     Female

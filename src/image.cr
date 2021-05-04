@@ -16,6 +16,14 @@ class Tmdb::Image
     @vote_count = data["vote_count"].as_i64
     @width = data["width"].as_i
   end
+
+  def image_url(size : String = "original") : String
+    String.build do |s|
+      s << Tmdb.api.configuration.images_secure_base_url
+      s << size
+      s << file_path
+    end
+  end
 end
 
 class Tmdb::Backdrop < Tmdb::Image; end

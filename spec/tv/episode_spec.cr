@@ -99,6 +99,15 @@ describe Tmdb::Tv::Episode do
         images.size.should eq(2)
       end
     end
+
+    it "should get image URL" do
+      VCR.use_cassette("tmdb") do
+        episode = Tmdb::Tv::Episode.detail(1418, 1, 1)
+        still = episode.still_url
+
+        still.should be_a(String)
+      end
+    end
   end
 
   context "#translations" do

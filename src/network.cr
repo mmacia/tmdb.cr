@@ -1,6 +1,9 @@
 require "./image"
+require "./logo_urls"
 
 class Tmdb::Network
+  include LogoUrls
+
   getter id : Int64
   getter logo_path : String?
   getter name : String

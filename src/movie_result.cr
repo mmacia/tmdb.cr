@@ -1,6 +1,9 @@
 require "./movie"
+require "./image_urls"
 
 class Tmdb::MovieResult
+  include ImageUrls
+
   getter poster_path : String?
   getter? adult : Bool
   getter overview : String

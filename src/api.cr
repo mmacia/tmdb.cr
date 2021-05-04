@@ -37,4 +37,8 @@ class Tmdb::Api
       "accept" => "application/json",
     }
   end
+
+  def configuration : Configuration
+    @configuration ||= Configuration.detail
+  end
 end

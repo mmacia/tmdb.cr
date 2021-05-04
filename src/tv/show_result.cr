@@ -1,6 +1,9 @@
 require "./show"
+require "../image_urls"
 
 class Tmdb::Tv::ShowResult
+  include ImageUrls
+
   getter poster_path : String?
   getter popularity : Float64
   getter id : Int64

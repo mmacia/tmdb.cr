@@ -1,4 +1,8 @@
+require "../profile_urls"
+
 abstract class Tmdb::Tv::CrewBase
+  include ProfileUrls
+
   getter? adult : Bool
   getter gender : Tmdb::Person::Gender?
   getter id : Int64

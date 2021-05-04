@@ -2,8 +2,11 @@ require "./movie_result"
 require "./image"
 require "./translation"
 require "./filter_factory"
+require "./image_urls"
 
 class Tmdb::Collection
+  include ImageUrls
+
   # Unique ID of the collection
   getter id : Int64
   # Name of the collection
@@ -23,7 +26,6 @@ class Tmdb::Collection
     res = Resource.new("/collection/#{id}", FilterFactory.create_language(language))
     Collection.new(res.get)
   end
-
 
   def initialize(@id, @name, @poster_path, @backdrop_path)
     @full_initialized = false

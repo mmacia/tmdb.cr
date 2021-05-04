@@ -21,6 +21,15 @@ describe Tmdb::Company do
     end
   end
 
+  it "should get image URL" do
+    VCR.use_cassette("tmdb") do
+      company = Tmdb::Company.detail(99272)
+      logo_url = company.logo_url
+
+      logo_url.should be_a(String)
+    end
+  end
+
   it "should get the description" do
     VCR.use_cassette("tmdb") do
       company = Tmdb::Company.detail(99272)

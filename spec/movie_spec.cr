@@ -119,6 +119,17 @@ describe Tmdb::Movie do
         backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
+
+    it "should get image URL" do
+      VCR.use_cassette("tmdb") do
+        movie = Tmdb::Movie.detail(218)
+        backdrops = movie.backdrops
+
+        backdrops.each do |backdrop|
+          backdrop.image_url.should be_a(String)
+        end
+      end
+    end
   end
 
   context "#posters" do
@@ -149,6 +160,17 @@ describe Tmdb::Movie do
 
         posters.size.should eq(34)
         posters.should be_a(Array(Tmdb::Poster))
+      end
+    end
+
+    it "should get image URL" do
+      VCR.use_cassette("tmdb") do
+        movie = Tmdb::Movie.detail(218)
+        posters = movie.posters
+
+        posters.each do |poster|
+          poster.image_url.should be_a(String)
+        end
       end
     end
   end
@@ -330,6 +352,32 @@ describe Tmdb::Movie do
         description.should be_a(String)
         hq.should be_a(String)
         homepage.should be_a(String)
+      end
+    end
+  end
+
+  context "#backdrop_url" do
+    it "should return a full URL" do
+      VCR.use_cassette "tmdb" do
+        movie = Tmdb::Movie.detail(218)
+        backdrop_path = movie.backdrop_path.not_nil!
+        backdrop_url = movie.backdrop_url.not_nil!
+
+        backdrop_url.should end_with(backdrop_path)
+        backdrop_url.size.should be > backdrop_path.size
+      end
+    end
+  end
+
+  context "#poster_url" do
+    it "should return a full URL" do
+      VCR.use_cassette "tmdb" do
+        movie = Tmdb::Movie.detail(218)
+        poster_path = movie.poster_path.not_nil!
+        poster_url = movie.poster_url.not_nil!
+
+        poster_url.should end_with(poster_path)
+        poster_url.size.should be > poster_path.size
       end
     end
   end

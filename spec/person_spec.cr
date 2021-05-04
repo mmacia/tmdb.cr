@@ -72,6 +72,15 @@ describe Tmdb::Person do
       end
     end
 
+    it "should get profile URL" do
+      VCR.use_cassette("tmdb") do
+        person = Tmdb::Person.new(name: "Michael Biehn", id: 2712.to_i64)
+        profile = person.profile_url
+
+        profile.should be_a(String)
+      end
+    end
+
     it "should get imdb_id" do
       VCR.use_cassette("tmdb") do
         person = Tmdb::Person.new(name: "Michael Biehn", id: 2712.to_i64)

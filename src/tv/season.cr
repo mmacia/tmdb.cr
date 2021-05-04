@@ -1,6 +1,9 @@
 require "../filter_factory"
+require "../poster_urls"
 
 class Tmdb::Tv::Season
+  include PosterUrls
+
   class Change
     class Item
       getter id : String

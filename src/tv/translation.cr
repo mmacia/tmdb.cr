@@ -17,4 +17,3 @@ class Tmdb::Tv::Translation
     @homepage = data["data"]["homepage"]? ? data["data"]["homepage"].as_s? : nil
   end
 end
-

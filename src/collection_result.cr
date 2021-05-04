@@ -1,6 +1,9 @@
 require "./collection"
+require "./image_urls"
 
 class Tmdb::CollectionResult
+  include ImageUrls
+
   getter id : Int64
   getter backdrop_path : String?
   getter poster_path : String?

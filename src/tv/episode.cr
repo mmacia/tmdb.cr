@@ -3,8 +3,11 @@ require "./cast"
 require "./guest_star"
 require "../filter_factory"
 require "../external_id"
+require "../still_urls"
 
 class Tmdb::Tv::Episode
+  include StillUrls
+
   class Change
     class Item
       getter id : String
