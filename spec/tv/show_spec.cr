@@ -332,4 +332,22 @@ describe Tmdb::Tv::Show do
       end
     end
   end
+
+  context "#latest" do
+    it "should return a tv show" do
+      VCR.use_cassette "tmdb" do
+        tv_show = Tmdb::Tv::Show.latest
+
+        tv_show.should be_a(Tmdb::Tv::Show)
+      end
+    end
+
+    it "should return a translated tv show" do
+      VCR.use_cassette "tmdb" do
+        tv_show = Tmdb::Tv::Show.latest(language: "es")
+
+        tv_show.should be_a(Tmdb::Tv::Show)
+      end
+    end
+  end
 end

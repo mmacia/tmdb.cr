@@ -100,6 +100,13 @@ class Tmdb::Movie
     Movie.new(res.get)
   end
 
+  # Get the most newly created movie. This is a live response and will
+  # continuously change.
+  def self.latest(language : String? = nil) : Movie
+    res = Resource.new("/movie/latest", FilterFactory.create_language(language))
+    Movie.new(res.get)
+  end
+
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
     @backdrop_path = data["backdrop_path"].as_s?
@@ -110,7 +117,7 @@ class Tmdb::Movie
       name: btc["name"].as_s,
       poster_path: btc["poster_path"].as_s,
       backdrop_path: btc["backdrop_path"].as_s
-    )
+    ) if btc.as_h?
 
     @budget = data["budget"].as_i64
     @genres = data["genres"].as_a.map { |genre| Genre.new(genre) }

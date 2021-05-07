@@ -109,6 +109,11 @@ class Tmdb::Tv::Show
     Tv::Show.new(res.get)
   end
 
+  def self.latest(language : String? = nil) : Show
+    res = Resource.new("/tv/latest", FilterFactory.create_language(language))
+    Show.new(res.get)
+  end
+
   def initialize(data : JSON::Any)
     @backdrop_path = data["backdrop_path"].as_s?
     @created_by = data["created_by"].as_a.map { |credit| Credit.detail(credit["credit_id"].as_s) }

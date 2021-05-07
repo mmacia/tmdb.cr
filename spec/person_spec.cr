@@ -121,4 +121,22 @@ describe Tmdb::Person do
       end
     end
   end
+
+  context "#latest" do
+    it "should return a person" do
+      VCR.use_cassette "tmdb" do
+        person = Tmdb::Person.latest
+
+        person.should be_a(Tmdb::Person)
+      end
+    end
+
+    it "should return a translated person" do
+      VCR.use_cassette "tmdb" do
+        person = Tmdb::Person.latest(language: "es")
+
+        person.should be_a(Tmdb::Person)
+      end
+    end
+  end
 end

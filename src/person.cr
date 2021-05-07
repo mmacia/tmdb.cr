@@ -51,7 +51,7 @@ class Tmdb::Person
   @popularity : Float64? = nil
   @profile_path : String? = nil
   @biography : String = ""
-  @imdb_id : String = ""
+  @imdb_id : String? = nil
   @birthday : Time? = nil
   @deathday : Time? = nil
   @place_of_birth : String? = nil
@@ -62,6 +62,13 @@ class Tmdb::Person
   # Get the primary person details by id.
   def self.detail(id : Int64, language : String? = nil) : Person
     res = Resource.new("/person/#{id}", FilterFactory.create_language(language))
+    Person.new(res.get)
+  end
+
+  # Get the most newly created person. This is a live response and will
+  # continuously change.
+  def self.latest(language : String? = nil) : Person
+    res = Resource.new("/person/latest", FilterFactory.create_language(language))
     Person.new(res.get)
   end
 
@@ -83,10 +90,10 @@ class Tmdb::Person
     @popularity = data["popularity"].as_f
     @profile_path = data["profile_path"].as_s?
     @biography = data["biography"].as_s
-    @imdb_id = data["imdb_id"].as_s
+    @imdb_id = data["imdb_id"].as_s?
     @birthday = Tmdb.parse_date(data["birthday"])
     @deathday = Tmdb.parse_date(data["deathday"])
-    @place_of_birth = data["place_of_birth"].as_s
+    @place_of_birth = data["place_of_birth"].as_s?
     @homepage = data["homepage"].as_s?
 
     @full_initialized = true
@@ -122,7 +129,7 @@ class Tmdb::Person
     @biography
   end
 
-  def imdb_id : String
+  def imdb_id : String?
     refresh! unless full_initialized?
     @imdb_id
   end

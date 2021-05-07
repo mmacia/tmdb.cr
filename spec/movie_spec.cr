@@ -381,4 +381,22 @@ describe Tmdb::Movie do
       end
     end
   end
+
+  context "#latest" do
+    it "should return a movie" do
+      VCR.use_cassette "tmdb" do
+        movie = Tmdb::Movie.latest
+
+        movie.should be_a(Tmdb::Movie)
+      end
+    end
+
+    it "should return a translated movie" do
+      VCR.use_cassette "tmdb" do
+        movie = Tmdb::Movie.latest(language: "es")
+
+        movie.should be_a(Tmdb::Movie)
+      end
+    end
+  end
 end
