@@ -123,6 +123,17 @@ class Tmdb::Tv::Show
     LazyIterator(ShowResult).new(res)
   end
 
+  # Get a list of shows that are currently on the air.
+  #
+  # This query looks for any TV show that has an episode with an air date in
+  # the next 7 days.
+  def self.on_the_air(language : String? = nil) : LazyIterator(ShowResult)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/tv/on_the_air", filters)
+    LazyIterator(ShowResult).new(res)
+  end
+
   def initialize(data : JSON::Any)
     @backdrop_path = data["backdrop_path"].as_s?
     @created_by = data["created_by"].as_a.map { |credit| Credit.detail(credit["credit_id"].as_s) }

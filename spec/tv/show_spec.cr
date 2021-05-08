@@ -380,4 +380,34 @@ describe Tmdb::Tv::Show do
       end
     end
   end
+
+  context "#on_the_air" do
+    it "should return a tv show list" do
+      VCR.use_cassette "tmdb" do
+        tv_shows = Tmdb::Tv::Show.on_the_air
+
+        tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
+        tv_shows.total_items.should eq(971)
+      end
+    end
+
+    it "should iterate over all items" do
+      VCR.use_cassette "tmdb" do
+        tv_shows = Tmdb::Tv::Show.on_the_air
+
+        tv_shows.each do |tv_show|
+          tv_show.should be_a(Tmdb::Tv::ShowResult)
+        end
+      end
+    end
+
+    it "should return a tv show list translated" do
+      VCR.use_cassette "tmdb" do
+        tv_shows = Tmdb::Tv::Show.on_the_air(language: "es")
+
+        tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
+        tv_shows.total_items.should eq(971)
+      end
+    end
+  end
 end
