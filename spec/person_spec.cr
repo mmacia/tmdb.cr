@@ -139,4 +139,34 @@ describe Tmdb::Person do
       end
     end
   end
+
+  context "#popular" do
+    it "should return a person list" do
+      VCR.use_cassette "tmdb" do
+        people = Tmdb::Person.popular
+
+        people.should be_a(Tmdb::LazyIterator(Tmdb::PersonResult))
+        people.total_items.should eq(10_000)
+      end
+    end
+
+    it "should return iterate over all items" do
+      VCR.use_cassette "tmdb" do
+        people = Tmdb::Person.popular
+
+        people.each do |person|
+          person.should be_a(Tmdb::PersonResult)
+        end
+      end
+    end
+
+    it "should return a translated person list" do
+      VCR.use_cassette "tmdb" do
+        people = Tmdb::Person.popular(language: "es")
+
+        people.should be_a(Tmdb::LazyIterator(Tmdb::PersonResult))
+        people.total_items.should eq(10_000)
+      end
+    end
+  end
 end

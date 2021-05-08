@@ -72,6 +72,12 @@ class Tmdb::Person
     Person.new(res.get)
   end
 
+  # Get the list of popular people on TMDB. This list updates daily.
+  def self.popular(language : String? = nil) : LazyIterator(PersonResult)
+    res = Resource.new("/person/popular", FilterFactory.create_language(language))
+    LazyIterator(PersonResult).new(res)
+  end
+
   def initialize(@adult, gender : Int32, @id, @known_for_department, @name, @popularity, @profile_path)
     @gender = Gender.from_value(gender)
     @full_initialized = false

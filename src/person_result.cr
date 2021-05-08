@@ -17,7 +17,12 @@ class Tmdb::PersonResult
     @adult = data["adult"].as_bool
     @id = data["id"].as_i64
     @name = data["name"].as_s
-    @popularity = data["popularity"].as_f
+
+    @popularity = begin
+                    data["popularity"].as_f
+                  rescue TypeCastError
+                    data["popularity"].as_i64.to_f
+                  end
 
     @known_for = data["known_for"].as_a.map do |item|
       if item["media_type"].as_s == "tv"

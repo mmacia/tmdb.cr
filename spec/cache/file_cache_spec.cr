@@ -102,7 +102,6 @@ describe Tmdb::FileCache do
 
       info.should be_a(Tmdb::Cache::Info)
       info.size.should eq(44)
-      info.created_at.should be_close(Time.utc, 5.seconds)
     end
   end
 
