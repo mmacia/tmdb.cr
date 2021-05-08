@@ -139,6 +139,20 @@ class Tmdb::Movie
     LazyIterator(MovieResult).new(res)
   end
 
+  # Get a list of upcoming movies in theatres. This is a release type query that
+  # looks for all movies that have a release type of 2 or 3 within the specified
+  # date range.
+  #
+  # You can optionally specify a `region` prameter which will narrow the search
+  # to only look for theatrical release dates within the specified country.
+  def self.upcoming(language : String? = nil, region : String? = nil) : LazyIterator(MovieResult)
+    filters = FilterFactory.create_language(language)
+    filters[:region] = region.not_nil! unless region.nil?
+
+    res = Resource.new("/movie/upcoming", filters)
+    LazyIterator(MovieResult).new(res)
+  end
+
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
     @backdrop_path = data["backdrop_path"].as_s?
