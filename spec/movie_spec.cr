@@ -410,7 +410,7 @@ describe Tmdb::Movie do
       end
     end
 
-    it "should iterate overa all results" do
+    it "should iterate over all results" do
       VCR.use_cassette "tmdb" do
         movies = Tmdb::Movie.now_playing
 
@@ -435,6 +435,45 @@ describe Tmdb::Movie do
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
         movies.total_items.should eq(89)
+      end
+    end
+  end
+
+  context "#popular" do
+    it "should return a movie list" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.popular
+
+        movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
+        movies.total_items.should eq(10_000)
+      end
+    end
+
+    it "should iterate over all results" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.popular
+
+        movies.each do |movie|
+          movie.should be_a(Tmdb::MovieResult)
+        end
+      end
+    end
+
+    it "should return a translated movie list" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.popular(language: "es")
+
+        movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
+        movies.total_items.should eq(10_000)
+      end
+    end
+
+    it "should return a movie list from a region" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.popular(region: "es")
+
+        movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
+        movies.total_items.should eq(10_000)
       end
     end
   end

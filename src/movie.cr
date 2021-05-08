@@ -121,6 +121,15 @@ class Tmdb::Movie
     LazyIterator(MovieResult).new(res)
   end
 
+  # Get a list of the current popular movies on TMDB. This list updates daily.
+  def self.popular(language : String? = nil, region : String? = nil) : LazyIterator(MovieResult)
+    filters = FilterFactory.create_language(language)
+    filters[:region] = region.not_nil! unless region.nil?
+
+    res = Resource.new("/movie/popular", filters)
+    LazyIterator(MovieResult).new(res)
+  end
+
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
     @backdrop_path = data["backdrop_path"].as_s?

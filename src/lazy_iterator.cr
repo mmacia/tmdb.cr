@@ -24,8 +24,8 @@ class Tmdb::LazyIterator(T)
         yield T.new(item)
       end
 
-      finished = true if cur_page > total_pages
       resource.params[:page] = (resource.params[:page].to_i + 1).to_s
+      finished = true if cur_page > total_pages || resource.params[:page].to_i > 500
       @fetched = true
     end
   end
