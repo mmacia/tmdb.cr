@@ -143,6 +143,15 @@ class Tmdb::Tv::Show
     LazyIterator(ShowResult).new(res)
   end
 
+  # Get the top rated TV shows on TMDB.
+  def self.top_rated(language : String? = nil, region : String? = nil) : LazyIterator(ShowResult)
+    filters = FilterFactory.create_language(language)
+    filters[:region] = region.not_nil! unless region.nil?
+
+    res = Resource.new("/tv/top_rated", filters)
+    LazyIterator(ShowResult).new(res)
+  end
+
   def initialize(data : JSON::Any)
     @backdrop_path = data["backdrop_path"].as_s?
     @created_by = data["created_by"].as_a.map { |credit| Credit.detail(credit["credit_id"].as_s) }
