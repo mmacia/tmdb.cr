@@ -477,4 +477,43 @@ describe Tmdb::Movie do
       end
     end
   end
+
+  context "#top_rated" do
+    it "should return a movie list" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.top_rated
+
+        movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
+        movies.total_items.should eq(8_708)
+      end
+    end
+
+    it "should iterate over all results" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.top_rated
+
+        movies.each do |movie|
+          movie.should be_a(Tmdb::MovieResult)
+        end
+      end
+    end
+
+    it "should return a translated movie list" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.top_rated(language: "es")
+
+        movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
+        movies.total_items.should eq(8_708)
+      end
+    end
+
+    it "should return a movie list from a region" do
+      VCR.use_cassette "tmdb" do
+        movies = Tmdb::Movie.top_rated(region: "es")
+
+        movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
+        movies.total_items.should eq(3_773)
+      end
+    end
+  end
 end

@@ -130,6 +130,15 @@ class Tmdb::Movie
     LazyIterator(MovieResult).new(res)
   end
 
+  # Get the top rated movies on TMDB.
+  def self.top_rated(language : String? = nil, region : String? = nil) : LazyIterator(MovieResult)
+    filters = FilterFactory.create_language(language)
+    filters[:region] = region.not_nil! unless region.nil?
+
+    res = Resource.new("/movie/top_rated", filters)
+    LazyIterator(MovieResult).new(res)
+  end
+
   def initialize(data : JSON::Any)
     @adult = data["adult"].as_bool
     @backdrop_path = data["backdrop_path"].as_s?
