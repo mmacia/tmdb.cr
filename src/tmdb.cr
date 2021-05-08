@@ -15,6 +15,7 @@ require "./cache/file_cache"
 require "./changes"
 require "./discover"
 require "./find"
+require "./trending"
 
 module Tmdb
   VERSION = `cat VERSION`.strip

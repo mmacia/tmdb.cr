@@ -7,8 +7,9 @@ class Tmdb::LazyIterator(T)
 
   private getter total_pages : Int32 = 0
   private getter? fetched : Bool = false
+  private getter max_pages : Int32
 
-  def initialize(@resource : Resource)
+  def initialize(@resource : Resource, @max_pages : Int32 = 500)
   end
 
   def each(&block)
@@ -25,7 +26,7 @@ class Tmdb::LazyIterator(T)
       end
 
       resource.params[:page] = (resource.params[:page].to_i + 1).to_s
-      finished = true if cur_page > total_pages || resource.params[:page].to_i > 500
+      finished = true if cur_page > total_pages || resource.params[:page].to_i > max_pages
       @fetched = true
     end
   end

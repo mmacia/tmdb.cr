@@ -18,19 +18,29 @@ class Tmdb::PersonResult
     @id = data["id"].as_i64
     @name = data["name"].as_s
 
-    @popularity = begin
-                    data["popularity"].as_f
-                  rescue TypeCastError
-                    data["popularity"].as_i64.to_f
-                  end
-
-    @known_for = data["known_for"].as_a.map do |item|
-      if item["media_type"].as_s == "tv"
-        Tv::ShowResult.new(item)
-      else
-        MovieResult.new(item)
-      end
+    if data["popularity"]?
+      @popularity = begin
+                      data["popularity"].as_f
+                    rescue TypeCastError
+                      data["popularity"].as_i64.to_f
+                    end
+    else
+      @popularity = 0.0
     end
+
+    begin
+      known_for = data["known_for"].as_a.map do |item|
+        if item["media_type"].as_s == "tv"
+          Tv::ShowResult.new(item)
+        else
+          MovieResult.new(item)
+        end
+      end
+    rescue TypeCastError
+      known_for = [] of MovieResult | Tv::ShowResult
+    end
+
+    @known_for = known_for || [] of MovieResult | Tv::ShowResult
   end
 
   def person_detail : Person

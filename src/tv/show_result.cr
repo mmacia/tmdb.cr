@@ -29,7 +29,12 @@ class Tmdb::Tv::ShowResult
 
     @popularity = pop
 
-    @id = data["id"].as_i64
+    @id = begin
+            data["id"].as_i64
+          rescue TypeCastError
+            data["id"].as_f.to_s.gsub(".0", "").to_i64
+          end
+
     @overview = data["overview"].as_s
     @backdrop_path = data["backdrop_path"]? ? data["backdrop_path"].as_s? : nil
 
@@ -45,9 +50,23 @@ class Tmdb::Tv::ShowResult
     @first_air_date = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
 
     @origin_country = data["origin_country"].as_a.map(&.to_s)
-    @genre_ids = data["genre_ids"].as_a.map(&.as_i)
+
+    @genre_ids = data["genre_ids"].as_a.map do |num|
+      begin
+        num.as_i
+      rescue TypeCastError
+        num.as_f.to_i
+      end
+    end
+
     @original_language = data["original_language"].as_s
-    @vote_count = data["vote_count"].as_i
+
+    @vote_count = begin
+                    data["vote_count"].as_i
+                  rescue TypeCastError
+                    data["vote_count"].as_f.to_i
+                  end
+
     @name = data["name"].as_s
     @original_name = data["original_name"].as_s
   end

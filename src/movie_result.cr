@@ -27,11 +27,17 @@ class Tmdb::MovieResult
     date = data["release_date"]? ?  data["release_date"].as_s : ""
     @release_date = date.empty? ? nil : Time.parse(date,"%Y-%m-%d", Time::Location::UTC)
 
-    @genre_ids = data["genre_ids"].as_a.map do |genre|
-      genre.as_i
+    begin
+      genre_ids = data["genre_ids"].as_a.map do |genre|
+        genre.as_i
+      rescue TypeCastError
+        genre.as_f.to_i
+      end
     rescue TypeCastError
-      genre.as_f.to_i
+      genre_ids = [] of Int32
     end
+
+    @genre_ids = genre_ids || [] of Int32
 
     @id = begin
             data["id"].as_i64
