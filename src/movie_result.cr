@@ -43,7 +43,16 @@ class Tmdb::MovieResult
     @original_language = data["original_language"].as_s
     @title = data["title"].as_s
     @backdrop_path = data["backdrop_path"]? ? data["backdrop_path"].as_s? : nil
-    @popularity = data["popularity"]? ? data["popularity"].as_f : 0.0
+
+    if data["popularity"]?
+      @popularity = begin
+                      data["popularity"].as_f
+                    rescue TypeCastError
+                      data["popularity"].as_i64.to_f64
+                    end
+    else
+      @popularity = 0.0
+    end
 
     @vote_count = begin
                     data["vote_count"].as_i
