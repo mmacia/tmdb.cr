@@ -134,6 +134,15 @@ class Tmdb::Tv::Show
     LazyIterator(ShowResult).new(res)
   end
 
+  # Get a list of the current popular TV shows on TMDB. This list updates daily.
+  def self.popular(language : String? = nil, region : String? = nil) : LazyIterator(ShowResult)
+    filters = FilterFactory.create_language(language)
+    filters[:region] = region.not_nil! unless region.nil?
+
+    res = Resource.new("/tv/popular", filters)
+    LazyIterator(ShowResult).new(res)
+  end
+
   def initialize(data : JSON::Any)
     @backdrop_path = data["backdrop_path"].as_s?
     @created_by = data["created_by"].as_a.map { |credit| Credit.detail(credit["credit_id"].as_s) }

@@ -410,4 +410,43 @@ describe Tmdb::Tv::Show do
       end
     end
   end
+
+  context "#popular" do
+    it "should return a tv_show list" do
+      VCR.use_cassette "tmdb" do
+        tv_shows = Tmdb::Tv::Show.popular
+
+        tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
+        tv_shows.total_items.should eq(10_000)
+      end
+    end
+
+    it "should iterate over all results" do
+      VCR.use_cassette "tmdb" do
+        tv_shows = Tmdb::Tv::Show.popular
+
+        tv_shows.each do |tv_show|
+          tv_show.should be_a(Tmdb::Tv::ShowResult)
+        end
+      end
+    end
+
+    it "should return a translated tv_show list" do
+      VCR.use_cassette "tmdb" do
+        tv_shows = Tmdb::Tv::Show.popular(language: "es")
+
+        tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
+        tv_shows.total_items.should eq(10_000)
+      end
+    end
+
+    it "should return a tv_show list from a region" do
+      VCR.use_cassette "tmdb" do
+        tv_shows = Tmdb::Tv::Show.popular(region: "es")
+
+        tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
+        tv_shows.total_items.should eq(10_000)
+      end
+    end
+  end
 end
