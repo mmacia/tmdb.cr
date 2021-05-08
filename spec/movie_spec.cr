@@ -410,7 +410,7 @@ describe Tmdb::Movie do
       end
     end
 
-    it "should iterate overa ll results" do
+    it "should iterate overa all results" do
       VCR.use_cassette "tmdb" do
         movies = Tmdb::Movie.now_playing
 

@@ -114,6 +114,15 @@ class Tmdb::Tv::Show
     Show.new(res.get)
   end
 
+  # Get a list of TV shows that are airing today. This query is purely day
+  # based as we do not currently support airing times.
+  def self.airing_today(language : String? = nil) : LazyIterator(ShowResult)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/tv/airing_today", filters)
+    LazyIterator(ShowResult).new(res)
+  end
+
   def initialize(data : JSON::Any)
     @backdrop_path = data["backdrop_path"].as_s?
     @created_by = data["created_by"].as_a.map { |credit| Credit.detail(credit["credit_id"].as_s) }
