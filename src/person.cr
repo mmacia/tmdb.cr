@@ -2,6 +2,7 @@ require "./filter_factory"
 require "./profile_urls"
 require "./person/cast"
 require "./person/crew"
+require "./external_id"
 
 class Tmdb::Person
   include ProfileUrls
@@ -216,6 +217,30 @@ class Tmdb::Person
 
     data["cast"].as_a.reduce(ret) { |ret, cast| ret << Person::Cast.new(cast) }
     data["crew"].as_a.reduce(ret) { |ret, crew| ret << Person::Crew.new(crew) }
+
+    ret
+  end
+
+  # Get the external ids for a person. We currently support the following external
+  # sources.
+  #
+  # IMDb ID
+  # Facebook
+  # Freebase MID
+  # Freebase ID
+  # Instagram
+  # TVRage ID
+  # Twitter
+  def external_ids(language : String? = nil) : Array(ExternalId)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/person/#{id}/external_ids", filters)
+    data = res.get
+    ret = [] of ExternalId
+
+    %w(imdb_id facebook_id freebase_mid freebase_id tvrage_id instagram_id twitter_id).each do |provider|
+      ret << ExternalId.new(provider, data[provider].as_s) if data[provider].as_s?
+    end
 
     ret
   end

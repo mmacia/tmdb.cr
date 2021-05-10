@@ -100,6 +100,18 @@ describe Tmdb::Person do
     end
   end
 
+  context "#external_ids" do
+    it "should get a list of external IDs" do
+      VCR.use_cassette("tmdb") do
+        person = Tmdb::Person.detail(2712)
+        external_ids = person.external_ids
+
+        external_ids.size.should eq(3)
+        external_ids.should be_a(Array(Tmdb::ExternalId))
+      end
+    end
+  end
+
   context "not fully initialized" do
     it "should get adult" do
       VCR.use_cassette("tmdb") do
