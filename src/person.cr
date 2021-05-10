@@ -191,6 +191,35 @@ class Tmdb::Person
     ret
   end
 
+  # Get the TV show credits for a person.
+  # You can query for some extra details about the credit with the credit method.
+  def tv_credits(language : String? = nil) : Array(Person::Cast | Person::Crew)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/person/#{id}/tv_credits", filters)
+    data = res.get
+    ret = [] of Person::Cast | Person::Crew
+
+    data["cast"].as_a.reduce(ret) { |ret, cast| ret << Person::Cast.new(cast) }
+    data["crew"].as_a.reduce(ret) { |ret, crew| ret << Person::Crew.new(crew) }
+
+    ret
+  end
+
+  # Get the movie and TV credits together in a single response.
+  def combined_credits(language : String? = nil) : Array(Person::Cast | Person::Crew)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/person/#{id}/combined_credits", filters)
+    data = res.get
+    ret = [] of Person::Cast | Person::Crew
+
+    data["cast"].as_a.reduce(ret) { |ret, cast| ret << Person::Cast.new(cast) }
+    data["crew"].as_a.reduce(ret) { |ret, crew| ret << Person::Crew.new(crew) }
+
+    ret
+  end
+
   private def refresh!
     obj = Person.detail(id)
 
