@@ -3,6 +3,7 @@ require "./profile_urls"
 require "./person/cast"
 require "./person/crew"
 require "./external_id"
+require "./image"
 
 class Tmdb::Person
   include ProfileUrls
@@ -243,6 +244,19 @@ class Tmdb::Person
     end
 
     ret
+  end
+
+  # Get the images for a person.
+  def images : Array(Profile)
+    res = Resource.new("/person/#{id}/images")
+    data = res.get
+
+    data["profiles"].as_a.map { |profile| Profile.new(profile) }
+  end
+
+  # See `images`
+  def profiles : Array(Profile)
+    images
   end
 
   private def refresh!

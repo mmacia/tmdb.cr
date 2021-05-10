@@ -112,6 +112,18 @@ describe Tmdb::Person do
     end
   end
 
+  context "#images" do
+    it "should get a list of profile images" do
+      VCR.use_cassette("tmdb") do
+        person = Tmdb::Person.detail(2712)
+        images = person.images
+
+        images.size.should eq(2)
+        images.should be_a(Array(Tmdb::Profile))
+      end
+    end
+  end
+
   context "not fully initialized" do
     it "should get adult" do
       VCR.use_cassette("tmdb") do

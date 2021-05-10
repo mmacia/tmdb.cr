@@ -28,3 +28,4 @@ end
 
 class Tmdb::Backdrop < Tmdb::Image; end
 class Tmdb::Poster < Tmdb::Image; end
+class Tmdb::Profile < Tmdb::Image; end
