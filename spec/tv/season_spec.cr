@@ -53,6 +53,18 @@ describe Tmdb::Tv::Season do
     end
   end
 
+  context "#credits" do
+    it "should get a list" do
+      VCR.use_cassette("tmdb") do
+        season = Tmdb::Tv::Season.detail(1418, 1)
+        credits = season.credits(1418)
+
+        credits.size.should eq(28)
+        credits.should be_a(Array(Tmdb::Tv::Cast | Tmdb::Tv::Crew))
+      end
+    end
+  end
+
   context "#external_ids" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do

@@ -92,6 +92,20 @@ class Tmdb::Tv::Season
     data["changes"].as_a.map { |change| Change.new(change) }
   end
 
+  # Get the credits for TV season.
+  def credits(show_id : Int64, language : String? = nil) : Array(Tv::Cast | Tv:: Crew)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/tv/#{show_id}/season/#{season_number}/credits", filters)
+    data = res.get
+    ret = [] of Tv::Cast | Tv::Crew
+
+    data["cast"].as_a.reduce(ret) { |ret, cast| ret << Tv::Cast.new(cast) }
+    data["crew"].as_a.reduce(ret) { |ret, crew| ret << Tv::Crew.new(crew) }
+
+    ret
+  end
+
   # Get the external ids for a TV season. We currently support the following
   # external sources.
   #
