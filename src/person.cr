@@ -267,6 +267,15 @@ class Tmdb::Person
     LazyIterator(TaggedImage).new(res)
   end
 
+  # Get a list of translations that have been created for a person.
+  def translations(language : String? = nil) : Array(Translation)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/person/#{id}/translations", filters)
+    data = res.get
+    data["translations"].as_a.map { |tr| Translation.new(tr) }
+  end
+
   private def refresh!
     obj = Person.detail(id)
 

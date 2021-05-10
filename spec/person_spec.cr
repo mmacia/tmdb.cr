@@ -147,6 +147,29 @@ describe Tmdb::Person do
     end
   end
 
+  context "#translations" do
+    it "should get a list of translations" do
+      VCR.use_cassette("tmdb") do
+        person = Tmdb::Person.detail(500)
+        translations = person.translations
+
+        translations.size.should eq(19)
+        translations.should be_a(Array(Tmdb::Translation))
+      end
+    end
+
+    it "should iterate over all items" do
+      VCR.use_cassette("tmdb") do
+        person = Tmdb::Person.detail(500)
+        translations = person.translations
+
+        translations.each do |translation|
+          translation.should be_a(Tmdb::Translation)
+        end
+      end
+    end
+  end
+
   context "not fully initialized" do
     it "should get adult" do
       VCR.use_cassette("tmdb") do
