@@ -239,6 +239,20 @@ class Tmdb::Tv::Show
     res.get["results"].as_a.map { |rating| Tv::Rating.new(rating) }
   end
 
+  # Get the credits (cast and crew) that have been added to a TV show.
+  def credits(language : String? = nil) : Array(Cast | Crew)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/tv/#{id}/credits")
+    data = res.get
+    ret = [] of Cast | Crew
+
+    data["cast"].as_a.reduce(ret) { |ret, cast| ret << Cast.new(cast) }
+    data["crew"].as_a.reduce(ret) { |ret, crew| ret << Crew.new(crew) }
+
+    ret
+  end
+
   # Get all of the episode groups that have been created for a TV show. With a
   # group ID you can call the `Tmdb::Tv::EpisodeGroup.detail` method.
   def episode_groups(language : String? = nil) : Array(Tv::EpisodeGroupResult)

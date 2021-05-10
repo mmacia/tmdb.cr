@@ -97,6 +97,29 @@ describe Tmdb::Tv::Show do
     end
   end
 
+  context "#credits" do
+    it "should return credits list" do
+      VCR.use_cassette("tmdb") do
+        tv_show = Tmdb::Tv::Show.detail(31132)
+        credits = tv_show.credits
+
+        credits.should be_a(Array(Tmdb::Tv::Cast | Tmdb::Tv::Crew))
+        credits.size.should eq(7)
+      end
+    end
+
+    it "should iterate over all items" do
+      VCR.use_cassette("tmdb") do
+        tv_show = Tmdb::Tv::Show.detail(31132)
+        credits = tv_show.credits
+
+        credits.each do |credit|
+          credit.should be_a(Tmdb::Tv::Cast | Tmdb::Tv::Crew)
+        end
+      end
+    end
+  end
+
   context "#episode_groups" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do
