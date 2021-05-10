@@ -282,6 +282,17 @@ describe Tmdb::Tv::Show do
     end
   end
 
+  context "#screened_theatrically" do
+    it "should return a list of tv shows" do
+      VCR.use_cassette("tmdb") do
+        tv_show = Tmdb::Tv::Show.detail(31132)
+        screened = tv_show.screened_theatrically
+
+        screened.size.should eq(0)
+      end
+    end
+  end
+
   context "#similar_tv_shows" do
     it "should get a list" do
       VCR.use_cassette("tmdb") do

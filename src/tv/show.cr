@@ -331,7 +331,20 @@ class Tmdb::Tv::Show
     LazyIterator(Review).new(res)
   end
 
-  # Get a list of similar TV shows. These items are assembled by looking at keywords and genres.
+  # Get a list of seasons or episodes that have been screened in a film festival
+  # or theatre.
+  def screened_theatrically : Array(NamedTuple(episode_number: Int32, season_number: Int32))
+    res = Resource.new("/tv/#{id}/screened_theatrically")
+    data = res.get
+
+    data["results"].as_a.map do |result|
+      { episode_number: result["episode_number"].as_i,
+        season_number: result["season_number"].as_i }
+    end
+  end
+
+  # Get a list of similar TV shows. These items are assembled by looking at
+  # keywords and genres.
   def similar_tv_shows(language : String? = nil) : LazyIterator(ShowResult)
     res = Resource.new("/tv/#{id}/similar", FilterFactory.create_language(language))
     LazyIterator(ShowResult).new(res)
