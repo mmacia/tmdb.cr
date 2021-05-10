@@ -77,6 +77,29 @@ describe Tmdb::Person do
     end
   end
 
+  context "#combined_credits" do
+    it "should return a list of credits" do
+      VCR.use_cassette "tmdb" do
+        person = Tmdb::Person.detail(2712)
+        credits = person.combined_credits
+
+        credits.size.should eq(107)
+        credits.should be_a(Array(Tmdb::Person::Cast | Tmdb::Person::Crew))
+      end
+    end
+
+    it "should iterate over all items" do
+      VCR.use_cassette "tmdb" do
+        person = Tmdb::Person.detail(2712)
+        credits = person.combined_credits
+
+        credits.each do |credit|
+          credit.should be_a(Tmdb::Person::Cast | Tmdb::Person::Crew)
+        end
+      end
+    end
+  end
+
   context "not fully initialized" do
     it "should get adult" do
       VCR.use_cassette("tmdb") do
