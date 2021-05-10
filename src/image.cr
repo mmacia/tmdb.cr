@@ -29,3 +29,17 @@ end
 class Tmdb::Backdrop < Tmdb::Image; end
 class Tmdb::Poster < Tmdb::Image; end
 class Tmdb::Profile < Tmdb::Image; end
+
+class Tmdb::TaggedImage < Tmdb::Image
+  getter media : MovieResult | Tv::ShowResult
+
+  def initialize(data : JSON::Any)
+    super(data)
+
+    if data["media_type"].as_s == "movie"
+      @media = MovieResult.new(data["media"])
+    else
+      @media = Tv::ShowResult.new(data["media"])
+    end
+  end
+end

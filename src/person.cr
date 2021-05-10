@@ -259,6 +259,14 @@ class Tmdb::Person
     images
   end
 
+  # Get the images that this person has been tagged in.
+  def tagged_images(language : String? = nil) : LazyIterator(TaggedImage)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/person/#{id}/tagged_images", filters)
+    LazyIterator(TaggedImage).new(res)
+  end
+
   private def refresh!
     obj = Person.detail(id)
 

@@ -124,6 +124,29 @@ describe Tmdb::Person do
     end
   end
 
+  context "#tagged_images" do
+    it "should get a list of tagged images" do
+      VCR.use_cassette("tmdb") do
+        person = Tmdb::Person.detail(500)
+        images = person.tagged_images
+
+        images.total_items.should eq(1)
+        images.should be_a(Tmdb::LazyIterator(Tmdb::TaggedImage))
+      end
+    end
+
+    it "should iterate over all items" do
+      VCR.use_cassette("tmdb") do
+        person = Tmdb::Person.detail(500)
+        images = person.tagged_images
+
+        images.each do |image|
+          image.should be_a(Tmdb::TaggedImage)
+        end
+      end
+    end
+  end
+
   context "not fully initialized" do
     it "should get adult" do
       VCR.use_cassette("tmdb") do
