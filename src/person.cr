@@ -1,5 +1,7 @@
 require "./filter_factory"
 require "./profile_urls"
+require "./person/cast"
+require "./person/crew"
 
 class Tmdb::Person
   include ProfileUrls
@@ -173,6 +175,20 @@ class Tmdb::Person
     data = res.get
 
     data["changes"].as_a.map { |change| Change.new(change) }
+  end
+
+  # Get the movie credits for a person.
+  def movie_credits(language : String? = nil) : Array(Person::Cast | Person::Crew)
+    filters = FilterFactory.create_language(language)
+
+    res = Resource.new("/person/#{id}/movie_credits", filters)
+    data = res.get
+    ret = [] of Person::Cast | Person::Crew
+
+    data["cast"].as_a.reduce(ret) { |ret, cast| ret << Person::Cast.new(cast) }
+    data["crew"].as_a.reduce(ret) { |ret, crew| ret << Person::Crew.new(crew) }
+
+    ret
   end
 
   private def refresh!
