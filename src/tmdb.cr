@@ -16,6 +16,7 @@ require "./changes"
 require "./discover"
 require "./find"
 require "./trending"
+require "./watch_provider"
 
 module Tmdb
   VERSION = `cat VERSION`.strip
