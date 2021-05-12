@@ -70,7 +70,7 @@ describe Tmdb::Tv::Show do
         changes = tv_show.changes(Time.utc(2020, 5, 20))
 
         changes.size.should eq(3)
-        changes.should be_a(Array(Tmdb::Tv::Show::Change))
+        changes.should be_a(Array(Tmdb::Change))
       end
     end
   end

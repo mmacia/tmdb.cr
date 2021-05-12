@@ -48,7 +48,7 @@ describe Tmdb::Tv::Season do
         changes = season.changes(Time.utc(2016, 5, 20))
 
         changes.size.should eq(1)
-        changes.should be_a(Array(Tmdb::Tv::Season::Change))
+        changes.should be_a(Array(Tmdb::Change))
       end
     end
   end

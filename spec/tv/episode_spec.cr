@@ -50,7 +50,7 @@ describe Tmdb::Tv::Episode do
         changes = episode.changes(Time.utc(2016, 5, 20))
 
         changes.size.should eq(2)
-        changes.should be_a(Array(Tmdb::Tv::Episode::Change))
+        changes.should be_a(Array(Tmdb::Change))
       end
     end
   end

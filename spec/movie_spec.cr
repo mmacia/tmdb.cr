@@ -30,7 +30,7 @@ describe Tmdb::Movie do
         changes = movie.changes(Time.utc(2014, 5, 20))
 
         changes.size.should eq(1)
-        changes.should be_a(Array(Tmdb::Movie::Change))
+        changes.should be_a(Array(Tmdb::Change))
       end
     end
   end
