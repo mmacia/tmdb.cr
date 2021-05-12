@@ -37,8 +37,5 @@ module Tmdb
     (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
   end
 
-  macro memoize(var)
-    return @{{ var.id }}.not_nil! unless @{{ var.id }}.nil?
-    @{{ var.id }} = {{ yield }}
   end
 end

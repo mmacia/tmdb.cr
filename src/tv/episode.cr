@@ -24,11 +24,6 @@ class Tmdb::Tv::Episode
 
   @crew : Array(Crew)? = nil
   @guest_stars : Array(GuestStar)? = nil
-  @credits : Array(Crew | Cast | GuestStar)? = nil
-  @translations : Array(Translation)? = nil
-  @external_ids : Array(ExternalId)? = nil
-  @images : Array(Image)? = nil
-  @videos : Array(Video)? = nil
 
   # Get the TV episode details by id.
   def self.detail(show_id : Int64, season_number : Int32, episode_number : Int32, language : String? = nil) : Episode
@@ -81,18 +76,16 @@ class Tmdb::Tv::Episode
 
   # Get the credits (cast, crew and guest stars) for a TV episode.
   def credits(language : String? = nil) : Array(Crew | Cast | GuestStar)
-    Tmdb.memoize :credits do
-      url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}"
-      res = Resource.new(url, FilterFactory.create_language(language))
-      data = res.get
-      ret = [] of Cast | Crew | GuestStar
+    url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}"
+    res = Resource.new(url, FilterFactory.create_language(language))
+    data = res.get
+    ret = [] of Cast | Crew | GuestStar
 
-      data["cast"].as_a.reduce(ret) { |ret, cast| ret << Cast.new(cast) } if data["cast"]?
-      data["crew"].as_a.reduce(ret) { |ret, crew| ret << Crew.new(crew) } if data["crew"]?
-      data["guest_stars"].as_a.reduce(ret) { |ret, guest_star| ret << GuestStar.new(guest_star) } if data["guest_stars"]?
+    data["cast"].as_a.reduce(ret) { |ret, cast| ret << Cast.new(cast) } if data["cast"]?
+    data["crew"].as_a.reduce(ret) { |ret, crew| ret << Crew.new(crew) } if data["crew"]?
+    data["guest_stars"].as_a.reduce(ret) { |ret, guest_star| ret << GuestStar.new(guest_star) } if data["guest_stars"]?
 
-      ret
-    end
+    ret
   end
 
   # Get the external ids for a TV episode. We currently support the following
@@ -106,17 +99,15 @@ class Tmdb::Tv::Episode
   #
   # \*Defunct or no longer available as a service.
   def external_ids : Array(ExternalId)
-    Tmdb.memoize :external_ids do
-      res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/external_ids")
-      data = res.get
-      ret = [] of ExternalId
+    res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/external_ids")
+    data = res.get
+    ret = [] of ExternalId
 
-      %w(imdb_id freebase_mid freebase_id tvdb_id tvrage_id).each do |provider|
-        ret << ExternalId.new(provider, data[provider].as_s) if data[provider].as_s?
-      end
-
-      ret
+    %w(imdb_id freebase_mid freebase_id tvdb_id tvrage_id).each do |provider|
+      ret << ExternalId.new(provider, data[provider].as_s) if data[provider].as_s?
     end
+
+    ret
   end
 
   # Get the images that belong to a TV episode.
@@ -126,27 +117,21 @@ class Tmdb::Tv::Episode
   # can use the `include_image_language` parameter. This should be a comma
   # seperated value like so: `include_image_language=en,null`.
   def images : Array(Image)
-    Tmdb.memoize :images do
-      res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/images")
-      res.get["stills"].as_a.map { |still| Image.new(still) }
-    end
+    res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/images")
+    res.get["stills"].as_a.map { |still| Image.new(still) }
   end
 
   # Get the translation data for an episode.
   def translations : Array(Tv::Translation)
-    Tmdb.memoize :translations do
-      res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/translations")
-      res.get["translations"].as_a.map { |tr| Tv::Translation.new(tr) }
-    end
+    res = Resource.new("/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/translations")
+    res.get["translations"].as_a.map { |tr| Tv::Translation.new(tr) }
   end
 
   # Get the videos that have been added to a TV episode.
   def videos(language : String? = nil) : Array(Video)
-    Tmdb.memoize :videos do
-      url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/videos"
-      res = Resource.new(url, FilterFactory.create_language(language))
-      res.get["results"].as_a.map { |video| Video.new(video) }
-    end
+    url = "/tv/#{show_id}/season/#{season_number}/episode/#{episode_number}/videos"
+    res = Resource.new(url, FilterFactory.create_language(language))
+    res.get["results"].as_a.map { |video| Video.new(video) }
   end
 
   private def refresh!

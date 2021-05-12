@@ -66,11 +66,6 @@ class Tmdb::Tv::Show
   getter vote_average : Float64
   getter vote_count : Int32
 
-  @keywords : Array(Keyword)? = nil
-  @translations : Array(Tv::Translation)? = nil
-  @videos : Array(Video)? = nil
-  @watch_providers : Hash(String, Watch)? = nil
-
   # Get the primary TV show details by id.
   def self.detail(id : Int64, language : String? = nil) : Show
     res = Resource.new("/tv/#{id}", FilterFactory.create_language(language))
@@ -281,10 +276,8 @@ class Tmdb::Tv::Show
 
   # Get the keywords that have been added to a TV show.
   def keywords : Array(Keyword)
-    Tmdb.memoize :keywords do
-      res = Resource.new("/tv/#{id}/keywords")
-      res.get["results"].as_a.map { |keyword|  Keyword.new(keyword) }
-    end
+    res = Resource.new("/tv/#{id}/keywords")
+    res.get["results"].as_a.map { |keyword|  Keyword.new(keyword) }
   end
 
   # Get the list of TV show recommendations for this item.
@@ -320,18 +313,14 @@ class Tmdb::Tv::Show
 
   # Get a list of the translations that exist for a TV show.
   def translations : Array(Tv::Translation)
-    Tmdb.memoize :translations do
-      res = Resource.new("/tv/#{id}/translations")
-      res.get["translations"].as_a.map { |tr| Tv::Translation.new(tr) }
-    end
+    res = Resource.new("/tv/#{id}/translations")
+    res.get["translations"].as_a.map { |tr| Tv::Translation.new(tr) }
   end
 
   # Get the videos that have been added to a TV show.
   def videos(language : String? = nil) : Array(Video)
-    Tmdb.memoize :videos do
-      res = Resource.new("/tv/#{id}/videos", FilterFactory.create_language(language))
-      res.get["results"].as_a.map { |video| Video.new(video) }
-    end
+    res = Resource.new("/tv/#{id}/videos", FilterFactory.create_language(language))
+    res.get["results"].as_a.map { |video| Video.new(video) }
   end
 
   # Powered by our partnership with JustWatch, you can query this method to get
@@ -347,21 +336,19 @@ class Tmdb::Tv::Show
   # source of the data as JustWatch. If we find any usage not complying
   # with these terms we will revoke access to the API.
   def watch_providers : Hash(String, Watch)
-    Tmdb.memoize :watch_providers do
-      res = Resource.new("/tv/#{id}/watch/providers")
-      ret = Hash(String, Watch).new
+    res = Resource.new("/tv/#{id}/watch/providers")
+    ret = Hash(String, Watch).new
 
-      res.get["results"].as_h.each do |country_code, wp|
-        watch = Watch.new
+    res.get["results"].as_h.each do |country_code, wp|
+      watch = Watch.new
 
-        watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
-        watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
-        watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
+      watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
+      watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
+      watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
 
-        ret[country_code] = watch
-      end
-
-      ret
+      ret[country_code] = watch
     end
+
+    ret
   end
 end

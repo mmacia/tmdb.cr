@@ -11,8 +11,6 @@ class Tmdb::Network
 
   @headquarters : String? = nil
   @homepage : String? = nil
-  @alternative_names : Array(String)? = nil
-  @images : Array(Logo)? = nil
 
   # Get the details of a network.
   def self.detail(id : Int64) : Network
@@ -42,10 +40,8 @@ class Tmdb::Network
 
   # Get the alternative names of a network.
   def alternative_names : Array(String)
-    Tmdb.memoize :alternative_names do
-      res = Resource.new("/network/#{id}/alternative_names")
-      res.get["results"].as_a.map { |result| result["name"].as_s }
-    end
+    res = Resource.new("/network/#{id}/alternative_names")
+    res.get["results"].as_a.map { |result| result["name"].as_s }
   end
 
   # Get a company logos.
@@ -60,10 +56,8 @@ class Tmdb::Network
   # For more information about how SVG's and PNG's can be used, take a read
   # [through](https://developers.themoviedb.org/3/getting-started/images).
   def images : Array(Logo)
-    Tmdb.memoize :images do
-      res = Resource.new("/network/#{id}/images")
-      res.get["logos"].as_a.map { |logo| Logo.new(logo) }
-    end
+    res = Resource.new("/network/#{id}/images")
+    res.get["logos"].as_a.map { |logo| Logo.new(logo) }
   end
 
   # See `#images`

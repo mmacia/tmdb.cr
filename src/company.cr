@@ -12,8 +12,6 @@ class Tmdb::Company
   @headquarters : String? = nil
   @homepage : String? = nil
   @parent_company : Company? = nil
-  @alternative_names : Array(String)? = nil
-  @logos : Array(Logo)? = nil
 
   private getter? full_initialized : Bool
 
@@ -71,10 +69,8 @@ class Tmdb::Company
 
   # Get the alternative names of a company.
   def alternative_names : Array(String)
-    Tmdb.memoize :alternative_names do
-      res = Resource.new("/company/#{id}/alternative_names")
-      res.get["results"].as_a.map { |an| an["name"].as_s }
-    end
+    res = Resource.new("/company/#{id}/alternative_names")
+    res.get["results"].as_a.map { |an| an["name"].as_s }
   rescue NotFound
     [] of String
   end
@@ -96,10 +92,8 @@ class Tmdb::Company
 
   # See `#images`
   def logos : Array(Logo)
-    Tmdb.memoize :logos do
-      res = Resource.new("/company/#{id}/images")
-      res.get["logos"].as_a.map { |logo| Logo.new(logo) }
-    end
+    res = Resource.new("/company/#{id}/images")
+    res.get["logos"].as_a.map { |logo| Logo.new(logo) }
   rescue NotFound
     [] of Logo
   end

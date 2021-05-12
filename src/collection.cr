@@ -17,7 +17,6 @@ class Tmdb::Collection
   getter backdrop_path : String
   @overview : String? = nil
   @parts : Array(MovieResult) = [] of MovieResult
-  @translations : Array(Translation)? = nil
 
   private getter? full_initialized : Bool
 
@@ -78,10 +77,8 @@ class Tmdb::Collection
 
   # Get the list translations for a collection by id.
   def translations(language : String? = nil) : Array(Translation)
-    Tmdb.memoize :translations do
-      res = Resource.new("/collection/#{id}/translations")
-      res.get["translations"].as_a.map { |tr| Translation.new(tr) }
-    end
+    res = Resource.new("/collection/#{id}/translations")
+    res.get["translations"].as_a.map { |tr| Translation.new(tr) }
   end
 
   private def refresh!

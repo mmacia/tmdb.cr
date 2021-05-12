@@ -56,12 +56,6 @@ class Tmdb::Movie
   getter vote_average : Float64
   getter vote_count : Int32
 
-  @external_ids : Array(ExternalId)? = nil
-  @keywords : Array(Keyword)? = nil
-  @release_dates : Array(Tuple(String, Array(Release)))? = nil
-  @translations : Array(Translation)? = nil
-  @watch_providers : Hash(String, Watch)? = nil
-
   # Get the primary information about a movie.
   def self.detail(id : Int64, language : String? = nil) : Movie
     res = Resource.new("/movie/#{id}", FilterFactory.create_language(language))
@@ -215,17 +209,15 @@ class Tmdb::Movie
   # * Instagram
   # * Twitter
   def external_ids : Array(ExternalId)
-    Tmdb.memoize :external_ids do
-      ret = [] of ExternalId
-      res = Resource.new("/movie/#{id}/external_ids")
-      data = res.get
+    ret = [] of ExternalId
+    res = Resource.new("/movie/#{id}/external_ids")
+    data = res.get
 
-      %w(imdb_id facebook_id instagram_id twitter_id).each do |provider|
-        ret << ExternalId.new(provider, data[provider].as_s) if data[provider].as_s?
-      end
-
-      ret
+    %w(imdb_id facebook_id instagram_id twitter_id).each do |provider|
+      ret << ExternalId.new(provider, data[provider].as_s) if data[provider].as_s?
     end
+
+    ret
   end
 
   # Get the images that belong to a movie.
@@ -259,10 +251,8 @@ class Tmdb::Movie
 
   # Get the keywords that have been added to a movie.
   def keywords : Array(Keyword)
-    Tmdb.memoize :keywords do
-      res = Resource.new("/movie/#{id}/keywords")
-      res.get["keywords"].as_a.map { |keyword|  Keyword.new(keyword) }
-    end
+    res = Resource.new("/movie/#{id}/keywords")
+    res.get["keywords"].as_a.map { |keyword|  Keyword.new(keyword) }
   end
 
   # Get a list of recommended movies for a movie.
@@ -273,15 +263,13 @@ class Tmdb::Movie
 
   # Get the release date along with the certification for a movie.
   def release_dates : Array(Tuple(String, Array(Release)))
-    Tmdb.memoize :release_dates do
-      res = Resource.new("/movie/#{id}/release_dates")
+    res = Resource.new("/movie/#{id}/release_dates")
 
-      res.get["results"].as_a.map do |release|
-        country_code = release["iso_3166_1"].as_s
-        releases = release["release_dates"].as_a.map { |rd| Release.new(rd) }
+    res.get["results"].as_a.map do |release|
+      country_code = release["iso_3166_1"].as_s
+      releases = release["release_dates"].as_a.map { |rd| Release.new(rd) }
 
-        {country_code, releases}
-      end
+      {country_code, releases}
     end
   end
 
@@ -302,10 +290,8 @@ class Tmdb::Movie
 
   # Get a list of translations that have been created for a movie.
   def translations : Array(Translation)
-    Tmdb.memoize :translations do
-      res = Resource.new("/movie/#{id}/translations")
-      res.get["translations"].as_a.map { |tr| Translation.new(tr) }
-    end
+    res = Resource.new("/movie/#{id}/translations")
+    res.get["translations"].as_a.map { |tr| Translation.new(tr) }
   end
 
   # Get the videos that have been added to a movie.
@@ -327,21 +313,19 @@ class Tmdb::Movie
   # source of the data as JustWatch. If we find any usage not complying
   # with these terms we will revoke access to the API.
   def watch_providers : Hash(String, Watch)
-    Tmdb.memoize :watch_providers do
-      res = Resource.new("/movie/#{id}/watch/providers")
-      ret = Hash(String, Watch).new
+    res = Resource.new("/movie/#{id}/watch/providers")
+    ret = Hash(String, Watch).new
 
-      res.get["results"].as_h.each do |country_code, wp|
-        watch = Watch.new
+    res.get["results"].as_h.each do |country_code, wp|
+      watch = Watch.new
 
-        watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
-        watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
-        watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
+      watch.flatrate = wp["flatrate"].as_a.map { |p| Provider.new(p) } if wp["flatrate"]?
+      watch.rent = wp["rent"].as_a.map { |p| Provider.new(p) } if wp["rent"]?
+      watch.buy = wp["buy"].as_a.map { |p| Provider.new(p) } if wp["buy"]?
 
-        ret[country_code] = watch
-      end
-
-      ret
+      ret[country_code] = watch
     end
+
+    ret
   end
 end
