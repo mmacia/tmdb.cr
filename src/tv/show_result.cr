@@ -20,53 +20,19 @@ class Tmdb::Tv::ShowResult
 
   def initialize(data : JSON::Any)
     @poster_path = data["poster_path"]? ? data["poster_path"].as_s? : nil
-
-    begin
-      pop = data["popularity"]? ? data["popularity"].as_f : 0.0
-    rescue TypeCastError
-      pop = data["popularity"].as_i64.to_f64
-    end
-
-    @popularity = pop
-
-    @id = begin
-            data["id"].as_i64
-          rescue TypeCastError
-            data["id"].as_f.to_s.gsub(".0", "").to_i64
-          end
-
+    @popularity = data["popularity"]? ? Tmdb.resilient_parse_float64(data["popularity"]) : 0.0
+    @id = Tmdb.resilient_parse_int64(data["id"])
     @overview = data["overview"].as_s
     @backdrop_path = data["backdrop_path"]? ? data["backdrop_path"].as_s? : nil
-
-    begin
-      vote_avg = data["vote_average"].as_f
-    rescue TypeCastError
-      vote_avg = data["vote_average"].as_i64.to_f64
-    end
-
-    @vote_average = vote_avg
+    @vote_average = Tmdb.resilient_parse_float64(data["vote_average"])
 
     date = data["first_air_date"]? ? data["first_air_date"].as_s : ""
     @first_air_date = date.empty? ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
 
     @origin_country = data["origin_country"].as_a.map(&.to_s)
-
-    @genre_ids = data["genre_ids"].as_a.map do |num|
-      begin
-        num.as_i
-      rescue TypeCastError
-        num.as_f.to_i
-      end
-    end
-
+    @genre_ids = data["genre_ids"].as_a.map { |num| Tmdb.resilient_parse_int32(num) }
     @original_language = data["original_language"].as_s
-
-    @vote_count = begin
-                    data["vote_count"].as_i
-                  rescue TypeCastError
-                    data["vote_count"].as_f.to_i
-                  end
-
+    @vote_count = Tmdb.resilient_parse_int32(data["vote_count"])
     @name = data["name"].as_s
     @original_name = data["original_name"].as_s
   end

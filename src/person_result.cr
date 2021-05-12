@@ -17,16 +17,7 @@ class Tmdb::PersonResult
     @adult = data["adult"].as_bool
     @id = data["id"].as_i64
     @name = data["name"].as_s
-
-    if data["popularity"]?
-      @popularity = begin
-                      data["popularity"].as_f
-                    rescue TypeCastError
-                      data["popularity"].as_i64.to_f
-                    end
-    else
-      @popularity = 0.0
-    end
+    @popularity = data["popularity"]? ? Tmdb.resilient_parse_float64(data["popularity"]) : 0.0
 
     begin
       known_for = data["known_for"].as_a.map do |item|

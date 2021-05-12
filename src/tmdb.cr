@@ -37,5 +37,21 @@ module Tmdb
     (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
   end
 
+  def self.resilient_parse_int32(data : JSON::Any) : Int32
+    data.as_i
+  rescue TypeCastError
+    data.as_f.to_i
+  end
+
+  def self.resilient_parse_int64(data : JSON::Any) : Int64
+    data.as_i64
+  rescue TypeCastError
+    data.as_f.to_i64
+  end
+
+  def self.resilient_parse_float64(data : JSON::Any) : Float64
+    data.as_f
+  rescue TypeCastError
+    data.as_i64.to_f64
   end
 end
