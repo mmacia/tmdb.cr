@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 249
+Connection: close
+Date: Sun, 16 May 2021 21:44:20 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=0
+X-Memc: MISS
+X-Memc-Key: 340ea6da047a74508327e70909acba45d7f10e34
+X-Memc-Age: 0
+X-Memc-Expires: 0
+ETag: W/"25aac3820b6ea5c29042583cc31ee508"
+X-Cache: Miss from cloudfront
+Via: 1.1 e9fa09c7497a12fe8b4961214200fa71.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: teTmRnnRTlBjp63DER31RA_ev6T4OTD4lgSaw1ehGaA1Xqx5LcVUuw==
+
+{"adult":false,"also_known_as":[],"biography":"","birthday":null,"deathday":null,"gender":0,"homepage":null,"id":3092890,"imdb_id":null,"known_for_department":"Acting","name":"Hans Richter","place_of_birth":null,"popularity":0.0,"profile_path":null}

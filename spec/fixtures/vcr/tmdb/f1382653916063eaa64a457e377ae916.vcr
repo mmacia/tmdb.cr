@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 173
+Connection: close
+Date: Sun, 16 May 2021 21:29:28 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 8101056e5293d009eabc2de0e5d4691cb67476bb
+X-Memc-Age: 0
+X-Memc-Expires: 17429
+ETag: W/"0db66579b6d588e21e983ec379d7d91f"
+X-Cache: Miss from cloudfront
+Via: 1.1 c9966d06baf42da6ee92424751ed7202.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: bL7YTBN1u1oQKqVjXf6bJFR9cT-zk069HnviH-sJIot6G6wYy12I0g==
+
+{"description":"","headquarters":"","homepage":"","id":41,"logo_path":"/AuAIlCWBrbhbUFFrJ6M9E3ihBoj.png","name":"Orion Pictures","origin_country":"US","parent_company":null}

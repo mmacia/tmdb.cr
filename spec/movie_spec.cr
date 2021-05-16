@@ -265,7 +265,7 @@ describe Tmdb::Movie do
         movie = Tmdb::Movie.detail(218)
         similar_movies = movie.similar_movies
 
-        similar_movies.total_items.should eq(305)
+        similar_movies.total_items.should eq(289)
       end
     end
 
@@ -274,7 +274,7 @@ describe Tmdb::Movie do
         movie = Tmdb::Movie.detail(218)
         similar_movies = movie.similar_movies(language: "es")
 
-        similar_movies.total_items.should eq(305)
+        similar_movies.total_items.should eq(295)
       end
     end
 
@@ -283,7 +283,7 @@ describe Tmdb::Movie do
         movie = Tmdb::Movie.detail(218)
         similar_movies = movie.similar_movies
 
-        similar_movies.total_items.should eq(305)
+        similar_movies.total_items.should eq(289)
         similar_movies.each do |user_review|
           user_review.should be_a(Tmdb::MovieResult)
         end
@@ -406,7 +406,7 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.now_playing
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(888)
+        movies.total_items.should eq(867)
       end
     end
 
@@ -425,7 +425,7 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.now_playing(language: "es")
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(888)
+        movies.total_items.should eq(867)
       end
     end
 
@@ -434,7 +434,7 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.now_playing(region: "es")
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(89)
+        movies.total_items.should eq(86)
       end
     end
   end
@@ -452,9 +452,13 @@ describe Tmdb::Movie do
     it "should iterate over all results" do
       VCR.use_cassette "tmdb" do
         movies = Tmdb::Movie.popular
+        skip_at = 100
 
         movies.each do |movie|
+          skip_at -= 1
           movie.should be_a(Tmdb::MovieResult)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -484,16 +488,20 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.top_rated
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(8_708)
+        movies.total_items.should eq(8_729)
       end
     end
 
     it "should iterate over all results" do
       VCR.use_cassette "tmdb" do
         movies = Tmdb::Movie.top_rated
+        skip_at = 100
 
         movies.each do |movie|
+          n =- 1
           movie.should be_a(Tmdb::MovieResult)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -503,7 +511,7 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.top_rated(language: "es")
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(8_708)
+        movies.total_items.should eq(8_729)
       end
     end
 
@@ -512,7 +520,7 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.top_rated(region: "es")
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(3_773)
+        movies.total_items.should eq(3_785)
       end
     end
   end
@@ -523,16 +531,20 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.upcoming
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(205)
+        movies.total_items.should eq(172)
       end
     end
 
     it "should iterate over all results" do
       VCR.use_cassette "tmdb" do
         movies = Tmdb::Movie.upcoming
+        skip_at = 100
 
         movies.each do |movie|
+          n =- 1
           movie.should be_a(Tmdb::MovieResult)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -542,7 +554,7 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.upcoming(language: "es")
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(205)
+        movies.total_items.should eq(172)
       end
     end
 
@@ -551,7 +563,7 @@ describe Tmdb::Movie do
         movies = Tmdb::Movie.upcoming(region: "es")
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(27)
+        movies.total_items.should eq(19)
       end
     end
   end

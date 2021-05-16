@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:22:58 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: e30edfd4176890bd6d9ea1e8e15b22a694acda7d
+X-Memc-Age: 0
+X-Memc-Expires: 21600
+ETag: W/"445a4612af8110a5cec720a5d8bec235"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 f6fe5265462508690ff6e0d3e33b6068.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: Pm3L2ZcVbxAghZsQ7dfs0o3WwM53Fbd8DDPTeUbe6_uqjcbv8nk2MA==
+Content-Length: 2570
+
+{"movie_results":[],"person_results":[{"adult":false,"gender":1,"name":"Michelle Yeoh","id":1620,"known_for":[{"vote_average":7.6,"overview":"The Guardians must fight to keep their newfound family together as they unravel the mysteries of Peter Quill's true parentage.","release_date":"2017-04-19","adult":false,"backdrop_path":"/aJn9XeesqsrSLKcHfHP4u5985hn.jpg","vote_count":16514,"genre_ids":[12,28,878,35],"id":283995,"original_language":"en","original_title":"Guardians of the Galaxy Vol. 2","poster_path":"/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg","title":"Guardians of the Galaxy Vol. 2","video":false,"popularity":77.385,"media_type":"movie"},{"original_language":"en","original_title":"Kung Fu Panda 2","poster_path":"/mtqqD00vB4PGRt20gWtGqFhrkd0.jpg","video":false,"vote_average":6.9,"overview":"Po is now living his dream as The Dragon Warrior, protecting the Valley of Peace alongside his friends and fellow kung fu masters, The Furious Five - Tigress, Crane, Mantis, Viper and Monkey. But Po’s new life of awesomeness is threatened by the emergence of a formidable villain, who plans to use a secret, unstoppable weapon to conquer China and destroy kung fu. It is up to Po and The Furious Five to journey across China to face this threat and vanquish it. But how can Po stop a weapon that can stop kung fu? He must look to his past and uncover the secrets of his mysterious origins; only then will he be able to unlock the strength he needs to succeed.","release_date":"2011-05-25","vote_count":4985,"adult":false,"backdrop_path":"/iKJNE3QV0wEc9VMFuHYSZVhmSN9.jpg","title":"Kung Fu Panda 2","genre_ids":[16,10751],"id":49444,"popularity":41.677,"media_type":"movie"},{"adult":false,"backdrop_path":"/z1btePhD1jIDLbjy5OCnO0KVf5O.jpg","genre_ids":[12,28,14],"id":1735,"original_language":"en","original_title":"The Mummy: Tomb of the Dragon Emperor","overview":"Archaeologist Rick O'Connell travels to China, pitting him against an emperor from the 2,000-year-old Han dynasty who's returned from the dead to pursue a quest for world domination. This time, O'Connell enlists the help of his wife and son to quash the so-called 'Dragon Emperor' and his abuse of supernatural power.","poster_path":"/A3acM1lX5PNWQa6r5qeMAJOxbnT.jpg","release_date":"2008-07-01","title":"The Mummy: Tomb of the Dragon Emperor","video":false,"vote_average":5.4,"vote_count":3377,"popularity":27.728,"media_type":"movie"}],"known_for_department":"Acting","profile_path":"/wPI2wn6WJEtJr1oAMTLBLh92Ryc.jpg","popularity":6.133}],"tv_results":[],"tv_episode_results":[],"tv_season_results":[]}

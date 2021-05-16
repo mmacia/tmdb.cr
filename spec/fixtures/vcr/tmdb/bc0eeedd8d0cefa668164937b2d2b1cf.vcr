@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:23:45 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: a69b9cce910da574ad28ed505c762f7d89946f71
+X-Memc-Age: 902
+X-Memc-Expires: 14553
+ETag: W/"c9414e40a9e909888e1e74fd911cf7d1"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 f8fe4f851984f096441277ce2c333733.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: PCjZZjHJG5pXkDL4UxWvWVV8awpPtXi5zpppNBOJ2tzhWcroGEEryQ==
+Content-Length: 488
+
+{"genres":[{"id":10759,"name":"Action & Adventure"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"},{"id":99,"name":"Documentary"},{"id":18,"name":"Drama"},{"id":10751,"name":"Family"},{"id":10762,"name":"Kids"},{"id":9648,"name":"Mystery"},{"id":10763,"name":"News"},{"id":10764,"name":"Reality"},{"id":10765,"name":"Sci-Fi & Fantasy"},{"id":10766,"name":"Soap"},{"id":10767,"name":"Talk"},{"id":10768,"name":"War & Politics"},{"id":37,"name":"Western"}]}

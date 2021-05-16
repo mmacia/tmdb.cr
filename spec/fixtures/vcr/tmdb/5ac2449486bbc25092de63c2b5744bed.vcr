@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:39:01 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: 5bd5f821b0608d1b7c0d23da14cc3ab27fdcbc89
+X-Memc-Age: 12746
+X-Memc-Expires: 2435
+ETag: W/"ecca6c15cf1810a978b076ec5cbcc74d"
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 f8fe4f851984f096441277ce2c333733.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: Sjg9IRN6va0Sc24BxFCc3Cyo79Lhlcbg8c_2-8EkbPh5cGvrlKHCXw==
+Age: 318
+Content-Length: 337
+
+{"adult":false,"also_known_as":["Michael Connell Biehn"],"biography":"","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":3.217,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}

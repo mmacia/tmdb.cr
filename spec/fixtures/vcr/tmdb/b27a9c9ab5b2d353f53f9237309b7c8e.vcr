@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:39:01 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: 037a39fe042f8968f1e8ec22a78994402a2f5707
+X-Memc-Age: 14670
+X-Memc-Expires: 1332
+ETag: W/"dae95e1eec02b562068764f540573e9a"
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 e9c760453b6eccd1556a68a55a4a90c5.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: Sp1cy-0KezwEM1b4iqqDebGpEhHx58SbCMn5S0eSrqQ9yG2-y1ktfw==
+Age: 318
+Content-Length: 854
+
+{"adult":false,"also_known_as":["Michael Connell Biehn"],"biography":"An American actor. He is best known for his roles in James Cameron's science fiction action films The Terminator as Kyle Reese, Aliens as Cpl. Dwayne Hicks, and The Abyss as Lt. Coffey. He has also acted in other genres in such films as Tombstone, The Rock, and Planet Terror. On television, Biehn appeared in the cast of the Emmy Award-winning 1980s television series Hill Street Blues.\n\nDescription above from the Wikipedia article  Michael Biehn, licensed under CC-BY-SA, full list of contributors on Wikipedia.","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":3.217,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}

@@ -28,6 +28,8 @@ describe Tmdb::Changes do
         changes = Tmdb::Changes.movie(start_date: start_date)
         n = 0
 
+        changes.total_items.should eq(1)
+
         changes.each do |change|
           n += 1
           change.should be_a(Tmdb::Changes::Change)
@@ -42,6 +44,8 @@ describe Tmdb::Changes do
         changes = Tmdb::Changes.movie(end_date: end_date)
         n = 0
 
+        changes.total_items.should eq(1)
+
         changes.each do |change|
           n += 1
           change.should be_a(Tmdb::Changes::Change)
@@ -55,6 +59,8 @@ describe Tmdb::Changes do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.movie(start_date: start_date, end_date: end_date)
         n = 0
+
+        changes.total_items.should eq(1)
 
         changes.each do |change|
           n += 1
@@ -93,6 +99,8 @@ describe Tmdb::Changes do
         changes = Tmdb::Changes.tv_show(start_date: start_date)
         n = 0
 
+        changes.total_items.should eq(1)
+
         changes.each do |change|
           n += 1
           change.should be_a(Tmdb::Changes::Change)
@@ -107,6 +115,8 @@ describe Tmdb::Changes do
         changes = Tmdb::Changes.tv_show(end_date: end_date)
         n = 0
 
+        changes.total_items.should eq(1)
+
         changes.each do |change|
           n += 1
           change.should be_a(Tmdb::Changes::Change)
@@ -120,6 +130,8 @@ describe Tmdb::Changes do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.tv_show(start_date: start_date, end_date: end_date)
         n = 0
+
+        changes.total_items.should eq(1)
 
         changes.each do |change|
           n += 1
@@ -158,6 +170,8 @@ describe Tmdb::Changes do
         changes = Tmdb::Changes.person(start_date: start_date)
         n = 0
 
+        changes.total_items.should eq(1)
+
         changes.each do |change|
           n += 1
           change.should be_a(Tmdb::Changes::Change)
@@ -172,6 +186,8 @@ describe Tmdb::Changes do
         changes = Tmdb::Changes.person(end_date: end_date)
         n = 0
 
+        changes.total_items.should eq(1)
+
         changes.each do |change|
           n += 1
           change.should be_a(Tmdb::Changes::Change)
@@ -185,6 +201,8 @@ describe Tmdb::Changes do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.person(start_date: start_date, end_date: end_date)
         n = 0
+
+        changes.total_items.should eq(1)
 
         changes.each do |change|
           n += 1

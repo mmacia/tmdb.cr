@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 138
+Connection: close
+Date: Sun, 16 May 2021 22:05:18 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: efd093f52e783e0dd5793996d8090d4f71185d38
+X-Memc-Age: 8918
+X-Memc-Expires: 7800
+ETag: W/"cfa7ab3180534fcf735dc81c228e4b4c"
+X-Cache: Hit from cloudfront
+Via: 1.1 b2ff803e9122fd0c248b789f729b835e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: Efkcgjuj0y1C-xpBne4o9q1pTRQ7-P7FfOSzAKct0BJJhtNYaQp63A==
+Age: 756
+
+{"id":31132,"results":[{"iso_3166_1":"AR","title":"Un Show Más","type":""},{"iso_3166_1":"ES","title":"Historias corrientes","type":""}]}

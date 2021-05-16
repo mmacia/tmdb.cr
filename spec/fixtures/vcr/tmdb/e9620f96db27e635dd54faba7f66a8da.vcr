@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 22:05:19 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: 4086c66ce1800779ca0211701de80fc2d0224f2f
+X-Memc-Age: 11504
+X-Memc-Expires: 4009
+ETag: W/"56e36441cb92cc8255ac2ecc958c37a1"
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 fe55d6b634c29e0dbde85630de5f2787.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: zMVqBeLzB1HovCstfQ3D3sEC_7hX84-74AEeYiG1euOE7kNiBUpZsw==
+Age: 756
+Content-Length: 293
+
+{"id":31132,"results":[{"name":"time travel","id":4379},{"name":"racoon","id":7949},{"name":"slacker","id":8631},{"name":"anthropomorphism","id":11477},{"name":"park","id":14798},{"name":"high school friends","id":18005},{"name":"video gamer","id":185867},{"name":"rock culture","id":204245}]}

@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 146
+Connection: close
+Date: Sun, 16 May 2021 21:29:28 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: e7ef2843e0d17c2e9ec892abfb9a27674c2c88b3
+X-Memc-Age: 0
+X-Memc-Expires: 14647
+ETag: W/"2bb4220a5f876a3fee0fdb7115a2b19b"
+X-Cache: Miss from cloudfront
+Via: 1.1 c9966d06baf42da6ee92424751ed7202.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: LADNQy_n5oOxOsQ1vKaXFheQiH2tslP9b2P5iOXcwf6BEo6XemgLOA==
+
+{"description":"","headquarters":"","homepage":"","id":1280,"logo_path":null,"name":"Pacific Western","origin_country":"US","parent_company":null}

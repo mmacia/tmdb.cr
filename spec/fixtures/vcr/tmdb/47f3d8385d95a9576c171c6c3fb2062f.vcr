@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 22:17:56 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=0
+X-Memc: MISS
+X-Memc-Key: 5cd9488be7efbdbe9628c44edb75f6121b3b0308
+X-Memc-Age: 0
+X-Memc-Expires: 0
+Last-Modified: 2021-05-16 21:58:42 UTC
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 56eff4217adb539e7a42fbab3eee2d4d.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: VNQ41oh3ZdylLMb6S3uU7z38yj8cZwNncN-ljxu-6Zw5J1qi633Atw==
+Content-Length: 1331
+
+{"backdrop_path":"/hIAscHJRHOwKnCmcNPTgGTBJM7M.jpg","created_by":[],"episode_run_time":[],"first_air_date":"2021-02-12","genres":[],"homepage":"","id":125699,"in_production":false,"languages":["hi"],"last_air_date":"2021-02-19","last_episode_to_air":{"air_date":"2021-02-19","episode_number":2,"id":2955681,"name":"Episode 02","overview":"","production_code":"","season_number":1,"still_path":null,"vote_average":0.0,"vote_count":0},"name":"Rubi Star","next_episode_to_air":null,"networks":[{"name":"Big Movie Zoo","id":4920,"logo_path":"/zIJoMv9FsH5rzqv479nSV2Ed45F.png","origin_country":"IN"}],"number_of_episodes":2,"number_of_seasons":1,"origin_country":["IN"],"original_language":"hi","original_name":"Rubi Star","overview":"","popularity":0.0,"poster_path":"/a75BbBrlW8ubbuCW8Qatqu575Pe.jpg","production_companies":[{"id":154368,"logo_path":"/zIJoMv9FsH5rzqv479nSV2Ed45F.png","name":"Big Movie Zoo","origin_country":"IN"}],"production_countries":[{"iso_3166_1":"IN","name":"India"}],"seasons":[{"air_date":"2021-02-12","episode_count":2,"id":195509,"name":"Season 1","overview":"","poster_path":"/a75BbBrlW8ubbuCW8Qatqu575Pe.jpg","season_number":1}],"spoken_languages":[{"english_name":"Hindi","iso_639_1":"hi","name":"हिन्दी"}],"status":"Ended","tagline":"","type":"Miniseries","vote_average":0.0,"vote_count":0}

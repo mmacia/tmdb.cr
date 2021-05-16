@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 19:00:26 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 68c1b00f86f059bb22bd6f371871553a378bcc89
+X-Memc-Age: 0
+X-Memc-Expires: 15669
+Last-Modified: 2021-04-26 23:56:23 +0000
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 b48ff99ee80d859d9aeaafd9cb93df6f.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: 568ClZBrEaySIXmuALT2JNmsLE-gd8WmIC0_GZhOIwjove8EGIrVZA==
+Content-Length: 535
+
+{"id":528,"backdrops":[],"posters":[{"aspect_ratio":0.6666666666666666,"file_path":"/iQ3jxMIroha7Db6B6kM0bHCtBq1.jpg","height":1500,"iso_639_1":"es","vote_average":5.454,"vote_count":3,"width":1000},{"aspect_ratio":0.68,"file_path":"/dwWXDB7UmeeQtueCjIguUi8xNdP.jpg","height":1000,"iso_639_1":"es","vote_average":5.297619047619047,"vote_count":1,"width":680},{"aspect_ratio":0.7012622720897616,"file_path":"/dxMn2LbPxErIWKScWc02ZlCW61W.jpg","height":1426,"iso_639_1":"es","vote_average":5.223443223443224,"vote_count":2,"width":1000}]}

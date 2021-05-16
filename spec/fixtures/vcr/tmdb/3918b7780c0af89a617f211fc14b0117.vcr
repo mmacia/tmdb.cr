@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 213
+Connection: close
+Date: Sun, 16 May 2021 22:05:22 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: 8923ad847505d2c63d9ff83e2bc7d40e2705c619
+X-Memc-Age: 3213
+X-Memc-Expires: 13886
+ETag: W/"a2bf30596cc7e8f220372f758b9b147f"
+X-Cache: Hit from cloudfront
+Via: 1.1 66709b7391664c627ccebe2d9c55dd7f.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: dpPZjHnaf6fTE5MBPRTMSuw40-XrFUlKR6kCAhOo1DIHLPTeCixf-A==
+Age: 753
+
+{"id":31132,"results":[{"id":"5a100f3592514138e4027189","iso_639_1":"en","iso_3166_1":"US","key":"Mm-Zc1_I1_8","name":"Coming Soon | Regular Show | Cartoon Network","site":"YouTube","size":1080,"type":"Trailer"}]}

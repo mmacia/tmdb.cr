@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:39:02 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: df127159560ed2b867729cc42ba87d1677e82d61
+X-Memc-Age: 3994
+X-Memc-Expires: 11191
+ETag: W/"98c0f1c99fd1f10fc8991df6c255d96c"
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 c0d1739fbc59ff80d4ec6a2a675c8aac.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: dCWHUWsBOXNjCBvKouD35vFH56BmFQGgYwB6I1hlF-WW1Zff150llQ==
+Age: 318
+Content-Length: 1406
+
+{"adult":false,"also_known_as":["Том Круз","トム・クルーズ","ทอม ครูซ","湯姆·克魯斯","톰 크루즈","توم كروز","Thomas Cruise Mapother IV","Τομ Κρουζ","טום קרוז","Thomas \"Tom\" Cruise","汤姆·克鲁斯","TC"],"biography":"An American actor and filmmaker. He has been nominated for three Academy Awards and has won three Golden Globe Awards. He started his career at age 19 in the 1981 film Endless Love. After portraying supporting roles in Taps (1981) and The Outsiders (1983), his first leading role was in Risky Business, released in August 1983. Cruise became a full-fledged movie star after starring as Pete \"Maverick\" Mitchell in Top Gun (1986). He has since 1996 been well known for his role as secret agent Ethan Hunt in the Mission: Impossible film series.  In 2012, Cruise was Hollywood's highest-paid actor. Fifteen of his films grossed over $100 million domestically; twenty-one have grossed in excess of $200 million worldwide. Cruise is known for his support for the Church of Scientology and its affiliated social programs.","birthday":"1962-07-03","deathday":null,"gender":2,"homepage":"http://www.tomcruise.com","id":500,"imdb_id":"nm0000129","known_for_department":"Acting","name":"Tom Cruise","place_of_birth":"Syracuse, New York, USA","popularity":18.199,"profile_path":"/gThaIXgpCm3PCiXwFNDBJCme85y.jpg"}

@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 143
+Connection: close
+Date: Sun, 16 May 2021 21:29:28 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: e4a636233f9a5a760e3918af4cca7a4065e60979
+X-Memc-Age: 0
+X-Memc-Expires: 17925
+ETag: W/"95186edad0faf2ff3d0599076c2cd720"
+X-Cache: Miss from cloudfront
+Via: 1.1 c5c852ebeabe49b08625d425153869fe.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: S4HawYm00wPU0fgi_FFKmEutK-6UTM_VlZFzHFfMPJO2fclq8PQp_w==
+
+{"description":"","headquarters":"","homepage":"","id":3952,"logo_path":null,"name":"Hemdale Film","origin_country":null,"parent_company":null}

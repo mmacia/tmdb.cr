@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 148
+Connection: close
+Date: Sun, 16 May 2021 21:29:29 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 0fea9f681bb4d5702e498cd0a6fb66b8781f67f5
+X-Memc-Age: 0
+X-Memc-Expires: 17178
+ETag: W/"6e32199989965a6264f2923598f53b50"
+X-Cache: Miss from cloudfront
+Via: 1.1 02d3291a1ad341b65154c2216e21838b.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: mAEvqotV9f0hpDcgRQDM1xxPazD-C-hxHf269v1UZXqp4tPjuZ-P7A==
+
+{"description":"","headquarters":"","homepage":"","id":7745,"logo_path":null,"name":"Euro Film Funding","origin_country":null,"parent_company":null}

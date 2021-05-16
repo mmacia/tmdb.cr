@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:39:02 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 16bac70353d623ac4b3093cf69fc0a7c2c69d88f
+X-Memc-Age: 0
+X-Memc-Expires: 17573
+ETag: W/"9665f4f315727a5861b05ae5149b4639"
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 cace9d3ed4c025b270cfeeb95eed0eab.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: ECYk8e7JNsJNLIxPFp44rz9UZkMF1AaW19l0V4eYdofOFyWS4i84BQ==
+Age: 318
+Content-Length: 977
+
+{"id":500,"page":1,"results":[{"aspect_ratio":0.6666666666666666,"file_path":"/ymisRFnNz9DUiEKn4ViMGb91Gw9.jpg","height":900,"id":"5d6b39650e4fc85515d8976b","iso_639_1":"pt","vote_average":0.0,"vote_count":0,"width":600,"image_type":"poster","media":{"adult":false,"backdrop_path":"/zdIyydpZvtt5P3KD6wDof95D2uT.jpg","genre_ids":[12,28,53],"id":954,"original_language":"en","original_title":"Mission: Impossible","overview":"When Ethan Hunt, the leader of a crack espionage team whose perilous operation has gone awry with no explanation, discovers that a mole has penetrated the CIA, he's surprised to learn that he's the No. 1 suspect. To clear his name, Hunt now must ferret out the real double agent and, in the process, even the score.","poster_path":"/lirMXnE7NoVLDr3qeqf48fR1mk4.jpg","release_date":"1996-05-22","title":"Mission: Impossible","video":false,"vote_average":6.9,"vote_count":6334,"popularity":20.273},"media_type":"movie"}],"total_pages":1,"total_results":1}

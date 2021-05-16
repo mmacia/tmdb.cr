@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 102
+Connection: close
+Date: Sun, 16 May 2021 21:29:24 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 7e8d1cad188e41fcaca38941e00e3ebd511c6128
+X-Memc-Age: 0
+X-Memc-Expires: 16635
+Last-Modified: 2021-04-19 20:34:53 +0000
+X-Cache: Miss from cloudfront
+Via: 1.1 3d4bc9f760d271ea8c82b4a4027b2f93.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: oppb26uDFoyaiULSwiIS2f4yFkXmvd3ykGkfX8Oz6jKgLKLt5ayeAw==
+
+{"id":218,"titles":[{"iso_3166_1":"MX","title":"Terminator: El exterminador","type":"DVD box title"}]}

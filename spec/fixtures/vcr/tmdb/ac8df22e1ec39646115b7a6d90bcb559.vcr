@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:37:53 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: 6f3a6f40d1aba39476c839d256823a55cb4799e3
+X-Memc-Age: 13792
+X-Memc-Expires: 1292
+ETag: W/"4fe1360bc6888a05305722c3be4958f9"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 158bf65e81ba82d619c73dde6c7796a9.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: ytoIGHdXL2G0DopQhRui2FmyOkMJxhBajQhHZ6yo_3Yq8rnX05I4lA==
+Content-Length: 408
+
+{"id":19,"logos":[{"aspect_ratio":2.325581395348837,"file_path":"/1DSpHrWyOORkL9N2QHX7Adt31mQ.png","height":430,"id":"5a7a673a0e0a26021f000036","file_type":".svg","vote_average":5.384,"vote_count":2,"width":1000},{"aspect_ratio":1.142857142857143,"file_path":"/rUb71E91POVCxpXGJ49pf6m8Ukk.png","height":175,"id":"5a91bb680e0a2616bd00f7fe","file_type":".svg","vote_average":5.172,"vote_count":1,"width":200}]}

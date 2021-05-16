@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 22:05:18 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: 19ce20edabcaa4ab2242fdf4baab4935b8d46e43
+X-Memc-Age: 9447
+X-Memc-Expires: 5635
+ETag: W/"40728f7aed971c20ace5855168bf6b78"
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 f381783b1a4d3b0a57fef757bbb97dc2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: FUW80Us5Yidkvnko94-BNC8dncROqsgEmH1iS2amuDeQ1HHcpnQyJQ==
+Age: 756
+Content-Length: 1955
+
+{"cast":[{"adult":false,"gender":2,"id":222169,"known_for_department":"Writing","name":"J.G. Quintel","original_name":"J.G. Quintel","popularity":1.159,"profile_path":"/iVrY1k1ggfYUy8o9eY8XHAhu6f1.jpg","character":"Mordecai","credit_id":"52589cd6760ee34661611577","order":0},{"adult":false,"gender":2,"id":1215264,"known_for_department":"Acting","name":"William Salyers","original_name":"William Salyers","popularity":0.699,"profile_path":"/7h5yGKp6eROxRrzTkHE6FeKicmT.jpg","character":"Rigby","credit_id":"52589cd6760ee346616115a1","order":1},{"adult":false,"gender":2,"id":2,"known_for_department":"Acting","name":"Mark Hamill","original_name":"Mark Hamill","popularity":9.972,"profile_path":"/zMQ93JTLW8KxusKhOlHFZhih3YQ.jpg","character":"Skips","credit_id":"52589cd6760ee3466161154d","order":2},{"adult":false,"gender":2,"id":1251102,"known_for_department":"Acting","name":"Sam Marin","original_name":"Sam Marin","popularity":1.296,"profile_path":"/7ga9UBGfoHMTXzYiyZLA9T2DiH8.jpg","character":"Benson / Pops Maellard / Mitch \"Muscle Man\" Sorenstein","credit_id":"52589cd7760ee346616115ca","order":3},{"adult":false,"gender":2,"id":75038,"known_for_department":"Acting","name":"Roger Craig Smith","original_name":"Roger Craig Smith","popularity":2.157,"profile_path":"/oWrBIEULh80xAQ210njikYk70C4.jpg","character":"Thomas","credit_id":"52589cd7760ee3466161164a","order":4},{"adult":false,"gender":2,"id":34982,"known_for_department":"Acting","name":"Jeff Bennett","original_name":"Jeff Bennett","popularity":9.311,"profile_path":"/p78svoOr99IA2oBOUzAH9cnPOwf.jpg","character":"High Five Ghost","credit_id":"52589cd7760ee34661611674","order":5},{"adult":false,"gender":1,"id":1251103,"known_for_department":"Acting","name":"Janie Haddad Tompkins","original_name":"Janie Haddad Tompkins","popularity":0.98,"profile_path":"/jzTMYtdgVmq9jpKesss4xj9RZxE.jpg","character":"Margaret","credit_id":"52589cd8760ee3466161169d","order":6}],"crew":[],"id":31132}

@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:47:26 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 613dc6e89e783a85a92760071056437f7322c242
+X-Memc-Age: 0
+X-Memc-Expires: 21600
+ETag: W/"df2b8b221d81449d05543a9757e0224b"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 ed24ed7fbec751651346c1accbcfe3e5.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: ICHAB8p7-fTpr-NSEmruG4RscRYj-OufDlGfn2EutKwSo1yuHiE4tQ==
+Content-Length: 292
+
+{"page":1,"results":[{"name":"slum","id":100},{"name":"slumber party","id":11798},{"name":"slumlord","id":209811},{"name":"slum dweller","id":227709},{"name":"life in the slums","id":229684},{"name":"slum dwellers","id":235085},{"name":"slump","id":252977}],"total_pages":1,"total_results":7}

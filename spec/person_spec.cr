@@ -37,7 +37,7 @@ describe Tmdb::Person do
         person = Tmdb::Person.detail(2712)
         credits = person.movie_credits
 
-        credits.size.should eq(93)
+        credits.size.should eq(95)
         credits.should be_a(Array(Tmdb::Person::Cast | Tmdb::Person::Crew))
       end
     end
@@ -83,7 +83,7 @@ describe Tmdb::Person do
         person = Tmdb::Person.detail(2712)
         credits = person.combined_credits
 
-        credits.size.should eq(107)
+        credits.size.should eq(109)
         credits.should be_a(Array(Tmdb::Person::Cast | Tmdb::Person::Crew))
       end
     end
@@ -292,9 +292,13 @@ describe Tmdb::Person do
     it "should return iterate over all items" do
       VCR.use_cassette "tmdb" do
         people = Tmdb::Person.popular
+        skip_at = 100
 
         people.each do |person|
+          n =- 1
           person.should be_a(Tmdb::PersonResult)
+
+          break if n <= 0
         end
       end
     end

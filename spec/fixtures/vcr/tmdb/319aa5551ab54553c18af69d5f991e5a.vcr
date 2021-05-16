@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 22:07:21 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 62c41daf177249582e861d3040957780622eba15
+X-Memc-Age: 0
+X-Memc-Expires: 300
+ETag: W/"d41fa3f22cc5e67685d5baba217a7d11"
+Vary: Accept-Encoding
+X-Cache: Hit from cloudfront
+Via: 1.1 dadbd3993b5303886df72c2fdce172ca.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: 85kQyg5mjxj38_zaoVnqQ57rfso8lS6IconLCkyoxRwJpcJ6B-W9fg==
+Age: 637
+Content-Length: 842
+
+{"changes":[{"key":"overview","items":[{"id":"5750c81bc3a3682fa000005c","action":"added","time":"2016-06-02 23:58:19 UTC","iso_639_1":"pt","iso_3166_1":"BR","value":"Dois jovens físicos brilhantes (\"QI somado de 360\"), Leonard e Sheldon, são o tipo de \"mentes brilhantes\" que entendem como o universo funciona. Mas seus doutorados não os ajudam a interagir com as pessoas, especialmente mulheres. Tudo isso começa a mudar quando uma bela garota de alto-astral chamada Penny se muda para o apartamento vizinho. Quando eles encontram Penny, Leonard imediatamente se interessa por ela, mas Sheldon acha que seu amigo persegue um sonho que nunca irá alcançar."}]},{"key":"name","items":[{"id":"5750c81bc3a3682fa000005b","action":"added","time":"2016-06-02 23:58:19 UTC","iso_639_1":"pt","iso_3166_1":"BR","value":"Episódio Piloto"}]}]}

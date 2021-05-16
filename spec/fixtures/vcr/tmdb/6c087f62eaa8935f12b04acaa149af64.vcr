@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:37:52 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 433be28161a9425415456977d6d3d367303df65e
+X-Memc-Age: 0
+X-Memc-Expires: 15909
+ETag: W/"ddc5ddad7453df50280d90811379dfda"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 b89214703c5c60a107a07c982809a482.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: LZg3vuFPj1ps7NLzYdEFRhFqPBLhweMVcwV2R8aK1yEI4Kk_3r7ugA==
+Content-Length: 261
+
+{"id":19,"results":[{"name":"Fox Broadcasting Company","type":""},{"name":"Fox","type":""},{"name":"4Kids TV","type":"programming block"},{"name":"4K!DS TV","type":""},{"name":"FoxBox","type":"programming block"},{"name":"Fox Kids","type":"programming block"}]}

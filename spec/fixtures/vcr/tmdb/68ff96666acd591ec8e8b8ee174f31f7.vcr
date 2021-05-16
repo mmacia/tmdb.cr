@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:29:29 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=0
+X-Memc: MISS
+X-Memc-Key: 0234e16d9ceba555e4d48d3da411687fa7499de3
+X-Memc-Age: 0
+X-Memc-Expires: 0
+Last-Modified: 2021-05-16 21:28:58 +0000
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 b89214703c5c60a107a07c982809a482.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: 3Rz_Li9_b2PdAsSLvOCRwMihrA-fuSRse96bJnXt24L5Qc9aVBBx8A==
+Content-Length: 900
+
+{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[],"homepage":"","id":830420,"imdb_id":null,"original_language":"en","original_title":"Endless Vacation (漫无止境的假期)","overview":"Directed by Yang Chen (阳尘). The main character Xia Xia and Xiao Xi are estranged due to a conflict, but the day before Xia Xia is going to study abroad Xiao Xi hopes to ice the past, but the two experienced heavy strange things in this short night, time is like a strange circle that can not go out, and finally Xiao Xi is facing great danger, and Xia Xia is the key to save Xiao Xi.","popularity":0.0,"poster_path":null,"production_companies":[],"production_countries":[],"release_date":"","revenue":0,"runtime":74,"spoken_languages":[],"status":"Released","tagline":"","title":"Endless Vacation (漫无止境的假期)","video":false,"vote_average":4.0,"vote_count":1}

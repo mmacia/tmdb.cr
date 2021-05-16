@@ -299,7 +299,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         similar = tv_show.similar_tv_shows
 
-        similar.total_items.should eq(86)
+        similar.total_items.should eq(82)
       end
     end
 
@@ -308,7 +308,7 @@ describe Tmdb::Tv::Show do
         tv_show = Tmdb::Tv::Show.detail(31132)
         similar = tv_show.similar_tv_shows(language: "es")
 
-        similar.total_items.should eq(86)
+        similar.total_items.should eq(82)
       end
     end
 
@@ -391,16 +391,20 @@ describe Tmdb::Tv::Show do
         tv_shows = Tmdb::Tv::Show.airing_today
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(369)
+        tv_shows.total_items.should eq(418)
       end
     end
 
     it "should iterate over all items" do
       VCR.use_cassette "tmdb" do
         tv_shows = Tmdb::Tv::Show.airing_today
+        skip_at = 100
 
         tv_shows.each do |tv_show|
+          skip_at =- 1
           tv_show.should be_a(Tmdb::Tv::ShowResult)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -410,7 +414,7 @@ describe Tmdb::Tv::Show do
         tv_shows = Tmdb::Tv::Show.airing_today(language: "es")
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(369)
+        tv_shows.total_items.should eq(418)
       end
     end
   end
@@ -421,16 +425,20 @@ describe Tmdb::Tv::Show do
         tv_shows = Tmdb::Tv::Show.on_the_air
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(971)
+        tv_shows.total_items.should eq(936)
       end
     end
 
     it "should iterate over all items" do
       VCR.use_cassette "tmdb" do
         tv_shows = Tmdb::Tv::Show.on_the_air
+        skip_at = 100
 
         tv_shows.each do |tv_show|
+          skip_at =- 1
           tv_show.should be_a(Tmdb::Tv::ShowResult)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -440,7 +448,7 @@ describe Tmdb::Tv::Show do
         tv_shows = Tmdb::Tv::Show.on_the_air(language: "es")
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(971)
+        tv_shows.total_items.should eq(936)
       end
     end
   end
@@ -458,9 +466,13 @@ describe Tmdb::Tv::Show do
     it "should iterate over all results" do
       VCR.use_cassette "tmdb" do
         tv_shows = Tmdb::Tv::Show.popular
+        skip_at = 100
 
         tv_shows.each do |tv_show|
+          skip_at =- 1
           tv_show.should be_a(Tmdb::Tv::ShowResult)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -490,16 +502,20 @@ describe Tmdb::Tv::Show do
         tv_shows = Tmdb::Tv::Show.top_rated
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(1_802)
+        tv_shows.total_items.should eq(1_813)
       end
     end
 
     it "should iterate over all results" do
       VCR.use_cassette "tmdb" do
         tv_shows = Tmdb::Tv::Show.top_rated
+        skip_at = 100
 
         tv_shows.each do |tv_show|
+          skip_at =- 1
           tv_show.should be_a(Tmdb::Tv::ShowResult)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -509,7 +525,7 @@ describe Tmdb::Tv::Show do
         tv_shows = Tmdb::Tv::Show.top_rated(language: "es")
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(1_802)
+        tv_shows.total_items.should eq(1_813)
       end
     end
 
@@ -518,7 +534,7 @@ describe Tmdb::Tv::Show do
         tv_shows = Tmdb::Tv::Show.top_rated(region: "es")
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(1_802)
+        tv_shows.total_items.should eq(1_813)
       end
     end
   end

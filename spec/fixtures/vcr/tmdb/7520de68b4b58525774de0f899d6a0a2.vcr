@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 165
+Connection: close
+Date: Sun, 16 May 2021 21:37:52 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 4554cbf8dd8c13e97db4d6b7a3d4ed230200fa5c
+X-Memc-Age: 0
+X-Memc-Expires: 15724
+ETag: W/"5461fcd040177eabd31576f5a16f64a9"
+X-Cache: Miss from cloudfront
+Via: 1.1 158bf65e81ba82d619c73dde6c7796a9.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: Q6fWNqpDIKJsySSga16ggMOFfoaodjMwoNfJKlFL_Q8GZwPBQgJ6Ig==
+
+{"headquarters":"Los Angeles, California","homepage":"https://www.fox.com","id":19,"logo_path":"/1DSpHrWyOORkL9N2QHX7Adt31mQ.png","name":"FOX","origin_country":"US"}

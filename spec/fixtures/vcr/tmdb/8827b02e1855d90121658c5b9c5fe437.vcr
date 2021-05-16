@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 22:03:37 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: fade0368c825d8d4b258da7fab03f694f76dad2b
+X-Memc-Age: 0
+X-Memc-Expires: 21600
+ETag: W/"0230b069fce78b922167f43717e382b3"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 09e594de40cb3eb83a4bc581fa48d9e2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: 3Mu1XcOwlnwUG2k0DDXlgqJXuU4HeU1Ow6pz5cccnHBxmQuKvaiU9g==
+Content-Length: 2525
+
+{"results":[{"iso_3166_1":"AR","english_name":"Argentina","native_name":"Argentina"},{"iso_3166_1":"AT","english_name":"Austria","native_name":"Austria"},{"iso_3166_1":"AU","english_name":"Australia","native_name":"Australia"},{"iso_3166_1":"BE","english_name":"Belgium","native_name":"Bélgica"},{"iso_3166_1":"BR","english_name":"Brazil","native_name":"Brasil"},{"iso_3166_1":"CA","english_name":"Canada","native_name":"Canadá"},{"iso_3166_1":"CH","english_name":"Switzerland","native_name":"Suiza"},{"iso_3166_1":"CZ","english_name":"Czech Republic","native_name":"República Checa"},{"iso_3166_1":"DE","english_name":"Germany","native_name":"Alemania"},{"iso_3166_1":"DK","english_name":"Denmark","native_name":"Dinamarca"},{"iso_3166_1":"EE","english_name":"Estonia","native_name":"Estonia"},{"iso_3166_1":"ES","english_name":"Spain","native_name":"España"},{"iso_3166_1":"FI","english_name":"Finland","native_name":"Finlandia"},{"iso_3166_1":"FR","english_name":"France","native_name":"Francia"},{"iso_3166_1":"GB","english_name":"United Kingdom","native_name":"Reino Unido"},{"iso_3166_1":"HU","english_name":"Hungary","native_name":"Hungría"},{"iso_3166_1":"ID","english_name":"Indonesia","native_name":"Indonesia"},{"iso_3166_1":"IE","english_name":"Ireland","native_name":"Irlanda"},{"iso_3166_1":"IN","english_name":"India","native_name":"India"},{"iso_3166_1":"IT","english_name":"Italy","native_name":"Italia"},{"iso_3166_1":"JP","english_name":"Japan","native_name":"Japón"},{"iso_3166_1":"KR","english_name":"South Korea","native_name":"Corea del Sur"},{"iso_3166_1":"LT","english_name":"Lithuania","native_name":"Lituania"},{"iso_3166_1":"MX","english_name":"Mexico","native_name":"México"},{"iso_3166_1":"NL","english_name":"Netherlands","native_name":"Países Bajos"},{"iso_3166_1":"NO","english_name":"Norway","native_name":"Noruega"},{"iso_3166_1":"NZ","english_name":"New Zealand","native_name":"Nueva Zelanda"},{"iso_3166_1":"PH","english_name":"Philippines","native_name":"Filipinas"},{"iso_3166_1":"PL","english_name":"Poland","native_name":"Polonia"},{"iso_3166_1":"PT","english_name":"Portugal","native_name":"Portugal"},{"iso_3166_1":"RU","english_name":"Russia","native_name":"Rusia"},{"iso_3166_1":"SE","english_name":"Sweden","native_name":"Suecia"},{"iso_3166_1":"TR","english_name":"Turkey","native_name":"Turquía"},{"iso_3166_1":"US","english_name":"United States of America","native_name":"Estados Unidos"},{"iso_3166_1":"ZA","english_name":"South Africa","native_name":"Sudáfrica"}]}

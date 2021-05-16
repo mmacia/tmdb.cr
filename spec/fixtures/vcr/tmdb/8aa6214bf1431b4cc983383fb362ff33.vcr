@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:29:37 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=21600
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 83f9969abb9f43b17789799503ae532d.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: NSgiQ2YXIblBQUhYlb8JVyyqC_wkxv3OjU9qdVuXSNERnTnnjLxkZg==
+Content-Length: 3025
+
+{"dates":{"maximum":"2021-05-21","minimum":"2021-04-03"},"page":44,"results":[{"adult":false,"backdrop_path":"/4f0CFSwH1UpzZlWxQxukT4tg5M.jpg","genre_ids":[18],"id":830362,"original_language":"en","original_title":"Human Behavior","overview":"A woman has been trapped in a dead-end room. She has no memory of how she got there, nor of her past. All that remains is herself, loneliness and a song.","popularity":0,"poster_path":"/oS7uMUmKNgUgE8yirvs59srPqM2.jpg","release_date":"2021-05-18","title":"Human Behavior","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":830341,"original_language":"en","original_title":"Brizolão","overview":"In Maré, in the northern zone of Rio de Janeiro, students and teachers address public education challenges in Brazil in the New Republic, based on the experience of the CIEPs, a project by Brizola and Darcy Ribeiro, exposed to their virtues and weaknesses.","popularity":0,"poster_path":"/6QUHdc8pn06f5S62TzNTqbHOfnK.jpg","release_date":"2021-05-16","title":"Brizolão","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":830324,"original_language":"en","original_title":"Aqui Jaz o Teu Esquema","overview":"Felappi Montparnasse receives an invitation to dinner with old friends, but does not know whether to accept it.","popularity":0,"poster_path":null,"release_date":"2021-05-18","title":"Aqui Jaz o Teu Esquema","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[18],"id":830312,"original_language":"ar","original_title":"المكان","overview":"The Place is Short Film About Palestine","popularity":0,"poster_path":"/a1nK2uPysP2GwzURFyjczmwpSc2.jpg","release_date":"2021-05-15","title":"The Place","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[10770],"id":830295,"original_language":"it","original_title":"La Traviata - Teatro dell'Opera di Roma","overview":"","popularity":0,"poster_path":"/m25yOfjidn2EbYc07NR9kNYt1RQ.jpg","release_date":"2021-04-09","title":"La Traviata - Teatro dell'Opera di Roma","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":830261,"original_language":"en","original_title":"La Lluvia","overview":"No synopsis","popularity":0,"poster_path":"/pGN1zczJTUHla6XPYL6BpSeWlEj.jpg","release_date":"2021-05-16","title":"La Lluvia","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":830178,"original_language":"en","original_title":"Swing Country","overview":"In this endearingly homespun documentary focusing on the run-up to the 2020 National Election, filmmakers follow Wisconsinites from the Fox Valley area who work to swing Wisconsin back to blue.","popularity":0,"poster_path":"/e50dUwSY4PmzLKHOzhjNGSAQEt5.jpg","release_date":"2021-05-13","title":"Swing Country","video":false,"vote_average":0,"vote_count":0}],"total_pages":44,"total_results":867}

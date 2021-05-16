@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 19:03:18 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 6b733aca8a97e6f010351318f90bbfd9da3bde0d
+X-Memc-Age: 0
+X-Memc-Expires: 15159
+ETag: W/"41bab8742e7a454ea5b6b3b93c2c1906"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 e5bf2c9645151e78d8b35d4b366f79f6.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: UdTaYNIb8YVhuq0o4hhmy9XJwfkmefFUAShV-tEpneqjEYDO6bUD_g==
+Content-Length: 3115
+
+{"credit_type":"cast","department":"Acting","job":"Actor","media":{"vote_average":7.6,"overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","release_date":"1984-10-26","id":218,"adult":false,"backdrop_path":"/wh4ze6klUbeichAj603OKZwY1W5.jpg","genre_ids":[28,53,878],"vote_count":9379,"original_language":"en","original_title":"The Terminator","poster_path":"/qvktm0BHcnmDpul4Hz01GIazWPr.jpg","video":false,"title":"The Terminator","popularity":35.823,"character":"Kyle Reese"},"media_type":"movie","id":"52fe4228c3a36847f800851f","person":{"name":"Michael Biehn","known_for":[{"overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","release_date":"1984-10-26","vote_count":9378.0,"adult":false,"backdrop_path":"/wh4ze6klUbeichAj603OKZwY1W5.jpg","media_type":"movie","genre_ids":[28.0,53.0,878.0],"title":"The Terminator","original_language":"en","original_title":"The Terminator","poster_path":"/qvktm0BHcnmDpul4Hz01GIazWPr.jpg","video":false,"id":218.0,"vote_average":7.6,"popularity":31.136},{"overview":"When Ripley's lifepod is found by a salvage crew over 50 years later, she finds that terra-formers are on the very planet they found the alien species. When the company sends a family of colonists out to investigate her story—all contact is lost with the planet and colonists. They enlist Ripley and the colonial marines to return and search for answers.","release_date":"1986-07-18","video":false,"adult":false,"backdrop_path":"/jMBpJFRtrtIXymer93XLavPwI3P.jpg","media_type":"movie","genre_ids":[28.0,53.0,878.0],"title":"Aliens","original_language":"en","original_title":"Aliens","poster_path":"/r1x5JGpyqZU8PYhbs4UcrO1Xb6x.jpg","vote_count":6871.0,"id":679.0,"vote_average":7.9,"popularity":24.326},{"vote_count":6340.0,"overview":"After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.","first_air_date":"2019-11-12","backdrop_path":"/9ijMGlJKqcslswWUzTEwScm82Gs.jpg","media_type":"tv","genre_ids":[10765.0,10759.0,37.0,18.0],"name":"The Mandalorian","original_language":"en","origin_country":["US"],"poster_path":"/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg","original_name":"The Mandalorian","id":82856.0,"vote_average":8.5,"popularity":209.886}],"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg","adult":false,"id":2712,"known_for_department":"Acting","gender":2,"popularity":3.217}}

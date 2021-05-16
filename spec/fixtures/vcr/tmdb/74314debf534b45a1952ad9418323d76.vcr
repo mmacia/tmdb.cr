@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 210
+Connection: close
+Date: Sun, 16 May 2021 22:07:20 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 4e42a88c97a7b5649a90ff55f11ba455e0211d7e
+X-Memc-Age: 0
+X-Memc-Expires: 14834
+ETag: W/"4e3430fbc200fb1eda00f55017f1567e"
+X-Cache: Hit from cloudfront
+Via: 1.1 56eff4217adb539e7a42fbab3eee2d4d.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: i2Orrau3-hTRZe-YrCshtNGoqaFBT18xOvXz6Qgvt1wQjMwXK-vxCQ==
+Age: 637
+
+{"id":3738,"results":[{"id":"5fd911ceecbde9003eac7003","iso_639_1":"en","iso_3166_1":"US","key":"WBb3fojgW0Q","name":"The Big Bang Theory - Official Trailer (HD)","site":"YouTube","size":360,"type":"Trailer"}]}

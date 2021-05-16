@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:22:59 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: c78679433333791f1b1408d27257d31ea600418d
+X-Memc-Age: 20155
+X-Memc-Expires: 1445
+ETag: W/"3aef87c57294fc9e14a5dc1361bf1b71"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 911151077fc74374130cb3f3f2d671e8.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: GdYKI4K_3yZQoZzRMm1tegm5EjMF11Vy2ZpY5ctq6YqxpEVOppDgDA==
+Content-Length: 672
+
+{"movie_results":[],"person_results":[],"tv_results":[{"genre_ids":[10765,10759],"original_language":"en","first_air_date":"2017-09-24","vote_average":7.1,"vote_count":1016,"id":67198,"poster_path":"/98RYSYsRNKWgrAAFBn0WfploUG7.jpg","overview":"Follow the voyages of Starfleet on their missions to discover new worlds and new life forms, and one Starfleet officer who must learn that to truly understand all things alien, you must first understand yourself.","name":"Star Trek: Discovery","backdrop_path":"/p3McpsDNTNmpbkNBKdNxOFZJeKX.jpg","original_name":"Star Trek: Discovery","origin_country":["US"],"popularity":62.843}],"tv_episode_results":[],"tv_season_results":[]}

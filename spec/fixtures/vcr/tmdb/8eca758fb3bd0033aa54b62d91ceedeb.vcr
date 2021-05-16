@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:47:26 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 92353876d7990b49d26227810d75aec992ddaa22
+X-Memc-Age: 0
+X-Memc-Expires: 21600
+ETag: W/"dbce35daebcd1048cc02de87bb87d438"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 71a0472adc0e71a3b21b29ba3bec35f2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: K6VgyDjDjw3DUFWUQ2FapPGXdOY7XegDPxv6-nO1ON-Q6zcEGx7oBw==
+Content-Length: 1367
+
+{"page":1,"results":[{"adult":false,"backdrop_path":"/cpmbkwSxZnKO69V82A9a34tvk2E.jpg","id":528,"name":"Terminator - Colección","original_language":"en","original_name":"The Terminator Collection","overview":"La colección de Terminator incluye las películas de ciencia ficción lanzadas en las salas de proyección, sobre el conflicto futurista entre los humanos, liderados por John Connor y los cyborgs hechos y controlados por Skynet, un súper ordenador con consciencia de sí mismo que comenzó el Armagedón y que puede llevar al fin de la humanidad para siempre. Las películas incluidas son la serie original de Terminator (1-3) protagonizada por Arnold Schwarzenegger, la cuarta entrega, Terminator: salvación del 2009 protagonizada por Christian Bale como John Connor de adulto. Y Terminator: destino oculto 2019.","poster_path":"/iQ3jxMIroha7Db6B6kM0bHCtBq1.jpg"},{"adult":false,"backdrop_path":null,"id":324142,"name":"Angel Terminators Collection","original_language":"en","original_name":"Angel Terminators Collection","overview":"","poster_path":"/6MP18zYc6zfl9Cw4f7ZOxbcj6EK.jpg"},{"adult":false,"backdrop_path":"/5bgXrLCxkMGB6E7S2wu5dKJFOr2.jpg","id":286948,"name":"Nemesis Collection","original_language":"de","original_name":"Nemesis Collection","overview":"","poster_path":"/oUXKeZxb7hsdSFwgsc2KY56KfzE.jpg"}],"total_pages":1,"total_results":3}

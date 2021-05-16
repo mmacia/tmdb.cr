@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 217
+Connection: close
+Date: Sun, 16 May 2021 19:01:29 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 609104d06f6fd5bfbf00d2525ca7e85e1b4a39e8
+X-Memc-Age: 0
+X-Memc-Expires: 16504
+ETag: W/"2529453638b4a77491ed815c61329903"
+X-Cache: Miss from cloudfront
+Via: 1.1 c1f1733266ff22358c2c3dd7a5454d9d.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: NQkBvl4uRWilRC8VCjcHRYnmm25Hxe6TWB2F5oD99ngugwouwjSyZw==
+
+{"id":99272,"logos":[{"aspect_ratio":5.031446540880503,"file_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","height":318,"id":"5ae50d1c0e0a260d9e000008","file_type":".svg","vote_average":5.384,"vote_count":2,"width":1600}]}

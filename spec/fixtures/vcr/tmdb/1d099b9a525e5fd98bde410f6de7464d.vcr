@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Sun, 16 May 2021 21:29:24 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: HIT
+X-Memc-Key: 04231f75cf0573273843eda528d49f2700006753
+X-Memc-Age: 8149
+X-Memc-Expires: 9750
+ETag: W/"ebc0f0a1b9c6b71094db7e70e812f54c"
+Vary: Accept-Encoding
+X-Cache: Miss from cloudfront
+Via: 1.1 3ac5814762371c236c1682deec50c957.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: UsLPonyefNh96S1Ss9wrXdlaSFPqJeBom_qAb6wdb-t-3MVxW3GH0g==
+Content-Length: 1292
+
+{"id":218,"titles":[{"iso_3166_1":"JP","title":"Tamineta","type":"Romanized title"},{"iso_3166_1":"FI","title":"Terminaattori","type":"TV title"},{"iso_3166_1":"PE","title":"El exteminador","type":"TV title"},{"iso_3166_1":"PE","title":"El ejecutor","type":"promotional title"},{"iso_3166_1":"MX","title":"Terminator: El exterminador","type":"DVD box title"},{"iso_3166_1":"IR","title":"Naboodgar","type":"Romanized title"},{"iso_3166_1":"US","title":"Terminator","type":""},{"iso_3166_1":"CA","title":"Terminateur","type":""},{"iso_3166_1":"KR","title":"터미네이터 1","type":"series title"},{"iso_3166_1":"NL","title":"De uitroeier","type":""},{"iso_3166_1":"SE","title":"Dödsängeln","type":""},{"iso_3166_1":"US","title":"Terminator 1","type":"series title"},{"iso_3166_1":"VE","title":"El Exterminador","type":""},{"iso_3166_1":"TR","title":"Yok edici","type":""},{"iso_3166_1":"TR","title":"Terminatör","type":""},{"iso_3166_1":"PL","title":"Terminator","type":""},{"iso_3166_1":"FR","title":"Terminator 1","type":""},{"iso_3166_1":"US","title":"Terminator 1: The Terminator","type":"Full Series Title"},{"iso_3166_1":"PL","title":"Terminator Elektroniczny morderca","type":""},{"iso_3166_1":"CN","title":"终结者","type":""},{"iso_3166_1":"CN","title":"终结者1","type":""}]}

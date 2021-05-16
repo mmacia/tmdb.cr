@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Content-Length: 158
+Connection: close
+Date: Sun, 16 May 2021 21:47:25 GMT
+Server: openresty
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
+Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+Cache-Control: public, max-age=28800
+X-Memc: MISS, STORE
+X-Memc-Key: 2a693c3686183fa7ffb9d25efa66923b94809ae9
+X-Memc-Age: 0
+X-Memc-Expires: 21600
+ETag: W/"69800f8d68fe0324ac61a69783e102a3"
+X-Cache: Miss from cloudfront
+Via: 1.1 c0d1739fbc59ff80d4ec6a2a675c8aac.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD51-C2
+X-Amz-Cf-Id: m04gEp2n96Rv_vZTyU0xSa9fuVPkwyNZRMtLI8Kl2ETkRfpZ_n75PQ==
+
+{"page":1,"results":[{"id":99272,"logo_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","name":"Icon Films","origin_country":"GB"}],"total_pages":1,"total_results":1}
