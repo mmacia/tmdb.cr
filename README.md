@@ -1,12 +1,12 @@
 # The Movie Database API
 
-A Crystal wrapper for the [The Movie DAtabase API](https://developers.themoviedb.org/).
+A Crystal wrapper for the [The Movie Database API](https://developers.themoviedb.org/).
 
 ## Installation
 
 Add this lines to your `shards.yml` file:
 
-```
+```yaml
 dependencies:
   tmdb:
     github: mmacia/tmdb.cr
@@ -21,7 +21,7 @@ Then run `shards install` from your project.
 
 You have to provide your API key like this:
 
-```
+```crystal
 Tmdb.configure do |conf|
   conf.api_key = "secret"
   conf.default_language = "en"
@@ -34,14 +34,14 @@ of this variable has higher precedence.
 The default language is english, but you can temporarily override the global
 language for a single request by specifying it as an additional parameter:
 
-```
+```crystal
 # example
 Tmdb::Search.movies("terminator", language: "es")
 ```
 
 You can save a few API calls activating the cache:
 
-```
+```crystal
 Tmdb.configure do |conf|
   conf.cache = Tmdb::FileCache.new("/tmp/tmdb", 10_000)
 end
@@ -52,7 +52,7 @@ infinite iterator, you just have to call `#each`, `#select`, `#map` or whatever
 enumerable method to acces to the whole collection without worrying about
 pagination.
 
-```
+```crystal
 # example
 movies = Tmdb::Search.movies("terminator")
 
