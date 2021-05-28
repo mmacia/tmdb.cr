@@ -31,6 +31,10 @@ end
 You can also set the API key in environment variable `TMDB_API_KEY`. The value
 of this variable has higher precedence.
 
+```
+$ export TMDB_API_KEY='secret'
+```
+
 The default language is english, but you can temporarily override the global
 language for a single request by specifying it as an additional parameter:
 
@@ -63,7 +67,132 @@ movies.each do |m|
 end
 ```
 
-### Endpoints
+### Get a movie by ID
+
+Get the movie information for specific movie ID.
+
+```crystal
+Tmdb::Movie.detail 24
+
+Tmdb::Movie.detail 24, language: "es"
+```
+
+### Search movies
+
+Search movies by title.
+
+```crystal
+Tmdb::Search.movies "terminator"
+```
+
+Search movies by title and release year.
+
+```crystal
+Tmdb::Search.movies "terminator", year: 1984
+```
+
+### Alternative titles
+
+Get the alternative titles for a specific movie.
+
+```crystal
+movie = Tmdb::Movie.detail 24
+movie.alternative_titles country: "es"
+```
+
+### Cast
+
+Get the cast for a specific movie ID.
+
+```crystal
+movie = Tmdb::Movie.detail 24
+movie.cast language: "it"
+```
+
+### Crew
+
+Get the crew for a specific movie ID.
+
+```crystal
+movie = Tmdb::Movie.detail 24
+movie.cast language: "de"
+```
+
+### Movie images
+
+Get the images (posters and backdrops) for a specific movie ID.
+
+```crystal
+movie = Tmdb::Movie.detail 24
+movie.images
+```
+
+### Movie keywords
+
+Get the plot keywords for a specific movie ID.
+
+```crystal
+movie = Tmdb::Movie.detail 24
+movie.keywords
+```
+
+### Movie trailers
+
+Get the release trailers for a specific movie ID.
+
+```crystal
+movie = Tmdb::Movie.detail 24
+movie.videos
+```
+
+### Movie releases
+
+Get the release dates by country for a specific movie ID.
+
+```crystal
+movie = Tmdb::Movie.detail 24
+movie.release_dates
+```
+
+### Upcoming movies
+
+Get the list of upcoming movies. This list refreshes every day.
+
+```crystal
+Tmdb::Movie.upcoming
+```
+
+You can get the upcoming movie for a region.
+
+```crystal
+Tmdb::Movie.upcoming region: "pt"
+```
+
+### Find a person by ID
+
+Get the basic person information for a specific person ID.
+
+```crystal
+Tmdb::Person.detail 138
+```
+
+### Search people
+
+Seach for people by name.
+
+```crystal
+Tmdb::Search.people "Paul"
+```
+
+### Popular people
+
+Gets a list of popular people. This list refreshes every day.
+
+```crystal
+Tmdb::People.popular
+```
+
+## Endpoints
 
 All endpoints available are those listed in The Movie Database API
 documentation.

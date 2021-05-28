@@ -2,9 +2,15 @@ dist: xenial
 language: crystal
 
 crystal:
+  - nightly
   - latest
   - 1.0.0
 
 script:
   - crystal spec
   - crystal tool format --check
+
+branches:
+  only:
+    - master
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
