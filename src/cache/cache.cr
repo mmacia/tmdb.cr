@@ -1,3 +1,5 @@
+require "digest/md5"
+
 abstract class Tmdb::Cache(T)
   abstract class Info
     abstract def created_at : Time
