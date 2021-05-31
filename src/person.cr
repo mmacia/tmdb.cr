@@ -70,7 +70,10 @@ class Tmdb::Person
     @popularity = data["popularity"].as_f
     @profile_path = data["profile_path"].as_s?
     @biography = data["biography"].as_s
-    @imdb_id = data["imdb_id"].as_s?
+
+    imdb_id = data["imdb_id"].as_s?
+    @imdb_id = imdb_id == "" ? nil : imdb_id
+
     @birthday = Tmdb.parse_date(data["birthday"])
     @deathday = Tmdb.parse_date(data["deathday"])
     @place_of_birth = data["place_of_birth"].as_s?
@@ -124,9 +127,9 @@ class Tmdb::Person
     @deathday
   end
 
-  def place_of_birth : String
+  def place_of_birth : String?
     refresh! unless full_initialized?
-    @place_of_birth.not_nil!
+    @place_of_birth
   end
 
   def homepage : String?

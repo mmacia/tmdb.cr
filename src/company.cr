@@ -31,12 +31,12 @@ class Tmdb::Company
     @name = data["name"].as_s
 
     pc = data["parent_company"]
-    unless pc.as_nil.nil?
+    unless pc == nil
       @parent_company = Company.new(
         id: pc["id"].as_i64,
         name: pc["name"].as_s,
         logo_path: pc["logo_path"].as_s?,
-        origin_country: pc["origin_country"].as_s
+        origin_country: pc["origin_country"]? ? pc["origin_country"].as_s : nil
       )
     end
 

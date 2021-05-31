@@ -46,7 +46,7 @@ class Tmdb::Movie
   getter production_companies : Array(Company)
   getter production_countries : Array(Country)
   getter release_date : Time?
-  getter revenue : Int32
+  getter revenue : Int64
   getter runtime : Int32?
   getter spoken_languages : Array(Language)
   getter status : Status
@@ -123,8 +123,8 @@ class Tmdb::Movie
     @belongs_to_collection = Collection.new(
       id: btc["id"].as_i64,
       name: btc["name"].as_s,
-      poster_path: btc["poster_path"].as_s,
-      backdrop_path: btc["backdrop_path"].as_s
+      poster_path: btc["poster_path"].as_s?,
+      backdrop_path: btc["backdrop_path"].as_s?
     ) if btc.as_h?
 
     @budget = data["budget"].as_i64
@@ -149,10 +149,10 @@ class Tmdb::Movie
 
     @production_countries = data["production_countries"].as_a.map { |country| Country.new(country) }
     @release_date = Tmdb.parse_date(data["release_date"])
-    @revenue = data["revenue"].as_i
-    @runtime = data["runtime"].as_i
+    @revenue = data["revenue"].as_i64
+    @runtime = data["runtime"].as_i?
     @spoken_languages = data["spoken_languages"].as_a.map { |lang| Language.new(lang) }
-    @status = Status.parse(data["status"].as_s)
+    @status = Status.parse(data["status"].as_s.gsub(" ", ""))
     @tagline = data["tagline"].as_s?
     @title = data["title"].as_s
     @video = data["video"].as_bool

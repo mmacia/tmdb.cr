@@ -12,9 +12,9 @@ class Tmdb::Collection
   # Name of the collection
   getter name : String
   # Path to default poster image
-  getter poster_path : String
+  getter poster_path : String?
   # Path to default backdrop image
-  getter backdrop_path : String
+  getter backdrop_path : String?
   @overview : String? = nil
   @parts : Array(MovieResult) = [] of MovieResult
 
