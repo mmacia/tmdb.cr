@@ -34,8 +34,8 @@ class Tmdb::Collection
     @id = data["id"].as_i64
     @name = data["name"].as_s
     @overview = data["overview"].as_s
-    @poster_path = data["poster_path"].as_s
-    @backdrop_path = data["backdrop_path"].as_s
+    @poster_path = data["poster_path"].as_s?
+    @backdrop_path = data["backdrop_path"].as_s?
     @parts = data["parts"].as_a.map { |part| MovieResult.new(part) }
 
     @full_initialized = true

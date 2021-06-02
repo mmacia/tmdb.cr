@@ -13,7 +13,7 @@ class Tmdb::Movie
         adult: data["adult"].as_bool,
         gender: data["gender"].as_i,
         id: data["id"].as_i64,
-        known_for_department: data["known_for_department"].as_s,
+        known_for_department: data["known_for_department"].as_s?,
         name: data["name"].as_s,
         popularity: data["popularity"].as_f,
         profile_path: data["profile_path"].as_s?

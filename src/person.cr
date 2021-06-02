@@ -21,7 +21,7 @@ class Tmdb::Person
   getter also_known_as : Array(String) = [] of String
   @adult : Bool? = nil
   @gender : Gender = Gender::NotSpecified
-  @known_for_department : String = ""
+  @known_for_department : String? = nil
   @popularity : Float64? = nil
   @profile_path : String? = nil
   @biography : String = ""
@@ -65,7 +65,7 @@ class Tmdb::Person
     @adult = data["adult"].as_bool
     @gender = Gender.from_value(data["gender"].as_i)
     @id = data["id"].as_i64
-    @known_for_department = data["known_for_department"].as_s
+    @known_for_department = data["known_for_department"].as_s?
     @name = data["name"].as_s
     @popularity = data["popularity"].as_f
     @profile_path = data["profile_path"].as_s?
@@ -92,7 +92,7 @@ class Tmdb::Person
     @gender
   end
 
-  def known_for_department : String
+  def known_for_department : String?
     refresh! unless full_initialized?
     @known_for_department
   end

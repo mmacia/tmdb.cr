@@ -35,9 +35,7 @@ class Tmdb::Movie
   getter belongs_to_collection : Collection?
   getter budget : Int64
   getter genres : Array(Genre)
-  getter homepage : String?
   getter id : Int64
-  getter imdb_id : String?
   getter original_language : String
   getter original_title : String
   getter overview : String?
@@ -50,11 +48,13 @@ class Tmdb::Movie
   getter runtime : Int32?
   getter spoken_languages : Array(Language)
   getter status : Status
-  getter tagline : String?
   getter title : String
   getter? video : Bool
   getter vote_average : Float64
   getter vote_count : Int32
+  @homepage : String?
+  @imdb_id : String?
+  @tagline : String?
 
   # Get the primary information about a movie.
   def self.detail(id : Int64, language : String? = nil) : Movie
@@ -158,6 +158,18 @@ class Tmdb::Movie
     @video = data["video"].as_bool
     @vote_average = data["vote_average"].as_f
     @vote_count = data["vote_count"].as_i
+  end
+
+  def homepage : String?
+    @homepage.try(&.empty?) ? nil : @homepage  # treat empty strings as nil
+  end
+
+  def imdb_id : String?
+    @imdb_id.try(&.empty?) ? nil : @imdb_id  # treat empty strings as nil
+  end
+
+  def tagline : String?
+    @tagline.try(&.empty?) ? nil : @tagline  # treat empty strings as nil
   end
 
   # Get all of the alternative titles for a movie.

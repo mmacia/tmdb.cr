@@ -35,6 +35,9 @@ module Tmdb
   def self.parse_date(data : JSON::Any) : Time?
     date = data.as_s?
     (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
+  rescue e : ArgumentError
+    # fix bad time: 2007-04-00 -> 2007-04-01
+    Time.parse(date.not_nil!.gsub(/-00$|-0$/, "-01"), "%Y-%m-%d", Time::Location::UTC)
   end
 
   def self.resilient_parse_int32(data : JSON::Any) : Int32
