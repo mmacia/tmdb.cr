@@ -2,6 +2,6 @@ require "./spec_helper"
 
 describe Tmdb do
   it "should get version" do
-    Tmdb::VERSION.should eq("0.1.3")
+    Tmdb::VERSION.should eq("0.1.4")
   end
 end
