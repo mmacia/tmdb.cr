@@ -2,6 +2,8 @@
 
 A Crystal wrapper for the [The Movie Database API](https://developers.themoviedb.org/).
 
+[![build](https://github.com/mmacia/tmdb.cr/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/mmacia/tmdb.cr/actions/workflows/build.yml)
+
 ## Installation
 
 Add this lines to your `shards.yml` file:
