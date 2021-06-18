@@ -2,13 +2,14 @@ require "./media_type"
 
 class Tmdb::Review
   class Author
-    getter name : String
+    getter name : String?
     getter username : String
     getter avatar_path : String?
     getter rating : Float64?
 
     def initialize(data : JSON::Any)
-      @name = data["name"].as_s
+      name = data["name"].as_s
+      @name = name.empty? ? nil : name
       @username = data["username"].as_s
       @avatar_path = data["avatar_path"].as_s?
       @rating = data["rating"].as_f?
