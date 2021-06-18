@@ -24,7 +24,7 @@ class Tmdb::Person
   @known_for_department : String? = nil
   @popularity : Float64? = nil
   @profile_path : String? = nil
-  @biography : String = ""
+  @biography : String?
   @imdb_id : String? = nil
   @birthday : Time? = nil
   @deathday : Time? = nil
@@ -69,7 +69,9 @@ class Tmdb::Person
     @name = data["name"].as_s
     @popularity = data["popularity"].as_f
     @profile_path = data["profile_path"].as_s?
-    @biography = data["biography"].as_s
+
+    biography = data["biography"].as_s
+    @biography = biography.empty? ? nil : biography
 
     imdb_id = data["imdb_id"].as_s?
     @imdb_id = imdb_id == "" ? nil : imdb_id
@@ -107,7 +109,7 @@ class Tmdb::Person
     @profile_path
   end
 
-  def biography : String
+  def biography : String?
     refresh! unless full_initialized?
     @biography
   end
