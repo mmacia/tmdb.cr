@@ -34,6 +34,8 @@ module Tmdb
 
   def self.parse_date(data : JSON::Any) : Time?
     date = data.as_s?
+    # solve date quirks
+    date = date.gsub(".", "-").gsub(/^1-16-2016$/, "16-01-2016") unless date.nil?
     (date.nil? || date.not_nil!.empty?) ? nil : Time.parse(date, "%Y-%m-%d", Time::Location::UTC)
   rescue e : ArgumentError
     # fix bad time: 2007-04-00 -> 2007-04-01
