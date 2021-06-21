@@ -6,7 +6,7 @@ abstract class Tmdb::Tv::CastBase
   getter? adult : Bool
   getter gender : Tmdb::Person::Gender?
   getter id : Int64
-  getter known_for_department : String
+  getter known_for_department : String?
   getter name : String
   getter original_name : String
   getter popularity : Float64
