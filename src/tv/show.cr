@@ -29,6 +29,7 @@ class Tmdb::Tv::Show
   enum Status
     InProduction
     Pilot
+    Planned
     Canceled
     Ended
     ReturningSeries
