@@ -53,6 +53,14 @@ Tmdb.configure do |conf|
 end
 ```
 
+If you active cache, all methods will be using it. Sometimes you want to get
+fresh data for some particular requests: you can pass the `skip_cache: true` to
+disable cache.
+
+```crystal
+movies = Tmdb::Movie.popular skip_cache: true
+```
+
 Paginated resources are managed by `LazyIterator(T)` class. This acts as a
 infinite iterator, you just have to call `#each`, `#select`, `#map` or whatever
 enumerable method to acces to the whole collection without worrying about
