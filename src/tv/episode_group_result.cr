@@ -7,7 +7,7 @@ class Tmdb::Tv::EpisodeGroupResult
   getter group_count : Int32
   getter id : String
   getter name : String
-  getter network : Network
+  getter network : Network?
   getter type : Tmdb::Tv::EpisodeGroup::Type
 
   def initialize(data : JSON::Any)
@@ -16,7 +16,8 @@ class Tmdb::Tv::EpisodeGroupResult
     @group_count = data["group_count"].as_i
     @id = data["id"].as_s
     @name = data["name"].as_s
-    @network = Network.new(data["network"])
+    network = data["network"].as_h?
+    @network = Network.new(data["network"]) if network
     @type = Tmdb::Tv::EpisodeGroup::Type.from_value(data["type"].as_i)
   end
 

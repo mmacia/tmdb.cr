@@ -16,17 +16,23 @@ class Tmdb::Tv::EpisodeGroup
     getter id : String
     getter name : String
     getter order : Int32
-    getter episodes : Array(Episode)
+    getter episodes : Array(Episode) = [] of Episode
     getter locked : Bool
 
     def initialize(data : JSON::Any)
       @id = data["id"].as_s
       @name = data["name"].as_s
       @order = data["order"].as_i
-      @locked = data["locked"].as_bool
 
-      show_id = data["episodes"].as_a.first["show_id"].as_i64
-      @episodes = data["episodes"].as_a.map { |episode| Episode.new(episode, show_id) }
+      locked = data["locked"]?
+      @locked = locked ? locked.as_bool : false
+
+      episodes = data["episodes"].as_a
+
+      unless episodes.empty?
+        show_id = episodes.first["show_id"].as_i64
+        @episodes = data["episodes"].as_a.map { |episode| Episode.new(episode, show_id) }
+      end
     end
   end
 
@@ -36,7 +42,7 @@ class Tmdb::Tv::EpisodeGroup
   getter groups : Array(Group)
   getter id : String
   getter name : String
-  getter network : Network
+  getter network : Network?
   getter type : Type
 
   # Get the details of a TV episode group.
@@ -52,7 +58,8 @@ class Tmdb::Tv::EpisodeGroup
     @groups = data["groups"].as_a.map { |group| Group.new(group) }
     @id = data["id"].as_s
     @name = data["name"].as_s
-    @network = Network.new(data["network"])
+    network = data["network"].as_h?
+    @network = Network.new(data["network"]) if network
     @type = Type.from_value(data["type"].as_i)
   end
 end
