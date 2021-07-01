@@ -1,15 +1,16 @@
 require "json"
 
 class Tmdb::LazyIterator(T)
-  include Enumerable(JSON::Any)
+  include Enumerable(T)
   getter resource : Resource
   @total_items : Int32 = 0
 
   private getter total_pages : Int32 = 0
   private getter? fetched : Bool = false
   private getter max_pages : Int32
+  private getter? skip_cache : Bool
 
-  def initialize(@resource : Resource, @max_pages : Int32 = 500)
+  def initialize(@resource : Resource, @max_pages : Int32 = 500, @skip_cache : Bool = false)
   end
 
   def each(&block)
@@ -18,7 +19,7 @@ class Tmdb::LazyIterator(T)
     resource.params[:page] = 1.to_s unless resource.params[:page]?
 
     until finished
-      payload = resource.get
+      payload = resource.get skip_cache?
       update_counters(payload)
 
       payload["results"].as_a.each do |item|

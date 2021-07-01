@@ -25,12 +25,12 @@ class Tmdb::Resource
     @params = Hash(Symbol, String).new
   end
 
-  def get
+  def get(skip_cache : Bool = false)
     request_params = api.params
     request_params.merge!(params)
     uri = api.make_uri(query_url, request_params)
 
-    obj = cache_aware(make_cache_key(uri.to_s, "GET", api.json_headers)) do
+    obj = cache_aware(make_cache_key(uri.to_s, "GET", api.json_headers), skip_cache) do
       resp = HTTP::Client.exec url: uri.to_s, method: "GET", headers: api.json_headers
 
       { body: JSON.parse(resp.body),

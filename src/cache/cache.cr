@@ -15,8 +15,8 @@ end
 class Tmdb::CacheMiss < Exception; end
 
 module Tmdb::Cacheable
-  def cache_aware(key : String)
-    if Tmdb.api.cache
+  def cache_aware(key : String, skip : Bool = false)
+    if Tmdb.api.cache && !skip
       cache_item = JSON.parse(Tmdb.api.cache.not_nil!.get(key))
 
       { body: cache_item["body"],
