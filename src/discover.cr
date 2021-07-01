@@ -521,9 +521,9 @@ class Tmdb::Discover
   # `OR`.
   #
   # Some examples of what can be done with discover can be found [here](https://www.themoviedb.org/documentation/api/discover).
-  def self.movies(filters : FilterFactory::Filter) : LazyIterator(MovieResult)
+  def self.movies(filters : FilterFactory::Filter, skip_cache : Bool = false) : LazyIterator(MovieResult)
     res = Resource.new("/discover/movie", filters)
-    LazyIterator(MovieResult).new(res)
+    LazyIterator(MovieResult).new(res, skip_cache: skip_cache)
   end
 
   # Discover TV shows by different types of data like average rating, number of
@@ -551,8 +551,8 @@ class Tmdb::Discover
   # `OR`.
   #
   # Some examples of what can be done with discover can be found [here](https://www.themoviedb.org/documentation/api/discover).
-  def self.tv_shows(filters : FilterFactory::Filter) : LazyIterator(Tv::ShowResult)
+  def self.tv_shows(filters : FilterFactory::Filter, skip_cache : Bool = false) : LazyIterator(Tv::ShowResult)
     res = Resource.new("/discover/tv", filters)
-    LazyIterator(Tv::ShowResult).new(res)
+    LazyIterator(Tv::ShowResult).new(res, skip_cache: skip_cache)
   end
 end

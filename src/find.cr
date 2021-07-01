@@ -40,13 +40,14 @@ class Tmdb::Find
   def self.find(
     external_id : String,
     external_source : ExternalSource,
-    language : String? = nil
+    language : String? = nil,
+    skip_cache : Bool = false
   ) : Array(MovieResult | Tv::ShowResult | PersonResult)
     filters = FilterFactory.create_language(language)
     filters[:external_source] = external_source.to_s
 
     res = Resource.new("/find/#{external_id}", filters)
-    data = res.get
+    data = res.get skip_cache
     ret = [] of MovieResult | Tv::ShowResult | PersonResult
 
     data["movie_results"].as_a.reduce(ret) { |ret, movie| ret << MovieResult.new(movie) }
@@ -60,26 +61,29 @@ class Tmdb::Find
   def self.find_movie(
     external_id : String,
     external_source : ExternalSource,
-    language : String? = nil
+    language : String? = nil,
+    skip_cache : Bool = false
   ) : Array(MovieResult)
-    find(external_id, external_source, language).select(MovieResult)
+    find(external_id, external_source, language, skip_cache).select(MovieResult)
   end
 
   # See `#find`
   def self.find_tv_show(
     external_id : String,
     external_source : ExternalSource,
-    language : String? = nil
+    language : String? = nil,
+    skip_cache : Bool = false
   ) : Array(Tv::ShowResult)
-    find(external_id, external_source, language).select(Tv::ShowResult)
+    find(external_id, external_source, language, skip_cache).select(Tv::ShowResult)
   end
 
   # See `#find`
   def self.find_person(
     external_id : String,
     external_source : ExternalSource,
-    language : String? = nil
+    language : String? = nil,
+    skip_cache : Bool = false
   ) : Array(PersonResult)
-    find(external_id, external_source, language).select(PersonResult)
+    find(external_id, external_source, language, skip_cache).select(PersonResult)
   end
 end

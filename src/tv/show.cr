@@ -73,47 +73,55 @@ class Tmdb::Tv::Show
     Tv::Show.new(res.get)
   end
 
-  def self.latest(language : String? = nil) : Show
+  def self.latest(language : String? = nil, skip_cache : Bool = false) : Show
     res = Resource.new("/tv/latest", FilterFactory.create_language(language))
-    Show.new(res.get)
+    Show.new(res.get(skip_cache))
   end
 
   # Get a list of TV shows that are airing today. This query is purely day
   # based as we do not currently support airing times.
-  def self.airing_today(language : String? = nil) : LazyIterator(ShowResult)
+  def self.airing_today(language : String? = nil, skip_cache : Bool = false) : LazyIterator(ShowResult)
     filters = FilterFactory.create_language(language)
 
     res = Resource.new("/tv/airing_today", filters)
-    LazyIterator(ShowResult).new(res)
+    LazyIterator(ShowResult).new(res, skip_cache: skip_cache)
   end
 
   # Get a list of shows that are currently on the air.
   #
   # This query looks for any TV show that has an episode with an air date in
   # the next 7 days.
-  def self.on_the_air(language : String? = nil) : LazyIterator(ShowResult)
+  def self.on_the_air(language : String? = nil, skip_cache : Bool = false) : LazyIterator(ShowResult)
     filters = FilterFactory.create_language(language)
 
     res = Resource.new("/tv/on_the_air", filters)
-    LazyIterator(ShowResult).new(res)
+    LazyIterator(ShowResult).new(res, skip_cache: skip_cache)
   end
 
   # Get a list of the current popular TV shows on TMDB. This list updates daily.
-  def self.popular(language : String? = nil, region : String? = nil) : LazyIterator(ShowResult)
+  def self.popular(
+    language : String? = nil,
+    region : String? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(ShowResult)
     filters = FilterFactory.create_language(language)
     filters[:region] = region.not_nil! unless region.nil?
 
     res = Resource.new("/tv/popular", filters)
-    LazyIterator(ShowResult).new(res)
+    LazyIterator(ShowResult).new(res, skip_cache: skip_cache)
   end
 
   # Get the top rated TV shows on TMDB.
-  def self.top_rated(language : String? = nil, region : String? = nil) : LazyIterator(ShowResult)
+  def self.top_rated(
+    language : String? = nil,
+    region : String? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(ShowResult)
     filters = FilterFactory.create_language(language)
     filters[:region] = region.not_nil! unless region.nil?
 
     res = Resource.new("/tv/top_rated", filters)
-    LazyIterator(ShowResult).new(res)
+    LazyIterator(ShowResult).new(res, skip_cache: skip_cache)
   end
 
   def initialize(data : JSON::Any)

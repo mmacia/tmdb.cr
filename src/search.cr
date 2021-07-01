@@ -13,7 +13,8 @@ class Tmdb::Search
     include_adult : Bool? = nil,
     region : String? = nil,
     year : Int32? = nil,
-    primary_release_year : Int32? = nil
+    primary_release_year : Int32? = nil,
+    skip_cache : Bool = false
   ) : LazyIterator(MovieResult)
     filters = FilterFactory.create_language(language)
     filters[:query] = query
@@ -23,28 +24,32 @@ class Tmdb::Search
     filters[:primary_release_year] = primary_release_year.not_nil!.to_s unless primary_release_year.nil?
 
     res = Resource.new("/search/movie", filters)
-    LazyIterator(MovieResult).new(res)
+    LazyIterator(MovieResult).new(res, skip_cache: skip_cache)
   end
 
   # Search for companies.
-  def self.companies(query : String) : LazyIterator(CompanyResult)
+  def self.companies(query : String, skip_cache : Bool = false) : LazyIterator(CompanyResult)
     res = Resource.new("/search/company", FilterFactory.create(query: query))
-    LazyIterator(CompanyResult).new(res)
+    LazyIterator(CompanyResult).new(res, skip_cache: skip_cache)
   end
 
   # Search for collections.
-  def self.collections(query : String, language : String? = nil) : LazyIterator(CollectionResult)
+  def self.collections(
+    query : String,
+    language : String? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(CollectionResult)
     filters = FilterFactory.create_language(language)
     filters[:query] = query
 
     res = Resource.new("/search/collection", filters)
-    LazyIterator(CollectionResult).new(res)
+    LazyIterator(CollectionResult).new(res, skip_cache: skip_cache)
   end
 
   # Search for keywords.
-  def self.keywords(query : String) : LazyIterator(Keyword)
+  def self.keywords(query : String, skip_cache : Bool = false) : LazyIterator(Keyword)
     res = Resource.new("/search/keyword", FilterFactory.create(query: query))
-    LazyIterator(Keyword).new(res)
+    LazyIterator(Keyword).new(res, skip_cache: skip_cache)
   end
 
   # Search for people.
@@ -52,7 +57,8 @@ class Tmdb::Search
     query : String,
     language : String? = nil,
     include_adult : Bool? = nil,
-    region : String? = nil
+    region : String? = nil,
+    skip_cache : Bool = false
   ) : LazyIterator(PersonResult)
     filters = FilterFactory.create_language(language)
     filters[:query] = query
@@ -60,7 +66,7 @@ class Tmdb::Search
     filters[:region] = region.not_nil!.upcase unless region.nil?
 
     res = Resource.new("/search/person", filters)
-    LazyIterator(PersonResult).new(res)
+    LazyIterator(PersonResult).new(res, skip_cache: skip_cache)
   end
 
   # Search for a TV show.
@@ -68,7 +74,8 @@ class Tmdb::Search
     query : String,
     language : String? = nil,
     include_adult : Bool? = nil,
-    first_air_date_year : Int32? = nil
+    first_air_date_year : Int32? = nil,
+    skip_cache : Bool = false
   ) : LazyIterator(Tv::ShowResult)
     filters = FilterFactory.create_language(language)
     filters[:query] = query
@@ -76,6 +83,6 @@ class Tmdb::Search
     filters[:first_air_date_year] = first_air_date_year.not_nil!.to_s unless first_air_date_year.nil?
 
     res = Resource.new("/search/tv", filters)
-    LazyIterator(Tv::ShowResult).new(res)
+    LazyIterator(Tv::ShowResult).new(res, skip_cache: skip_cache)
   end
 end

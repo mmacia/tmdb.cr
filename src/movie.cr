@@ -64,9 +64,9 @@ class Tmdb::Movie
 
   # Get the most newly created movie. This is a live response and will
   # continuously change.
-  def self.latest(language : String? = nil) : Movie
+  def self.latest(language : String? = nil, skip_cache : Bool = false) : Movie
     res = Resource.new("/movie/latest", FilterFactory.create_language(language))
-    Movie.new(res.get)
+    Movie.new(res.get(skip_cache))
   end
 
   # Get a list of movies in theatres. This is a release type query that looks
@@ -75,30 +75,42 @@ class Tmdb::Movie
   #
   # You can optionally specify a `region` prameter which will narrow the search
   # to only look for theatrical release dates within the specified country.
-  def self.now_playing(language : String? = nil, region : String? = nil) : LazyIterator(MovieResult)
+  def self.now_playing(
+    language : String? = nil,
+    region : String? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(MovieResult)
     filters = FilterFactory.create_language(language)
     filters[:region] = region.not_nil! unless region.nil?
 
     res = Resource.new("/movie/now_playing", filters)
-    LazyIterator(MovieResult).new(res)
+    LazyIterator(MovieResult).new(res, skip_cache: skip_cache)
   end
 
   # Get a list of the current popular movies on TMDB. This list updates daily.
-  def self.popular(language : String? = nil, region : String? = nil) : LazyIterator(MovieResult)
+  def self.popular(
+    language : String? = nil,
+    region : String? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(MovieResult)
     filters = FilterFactory.create_language(language)
     filters[:region] = region.not_nil! unless region.nil?
 
     res = Resource.new("/movie/popular", filters)
-    LazyIterator(MovieResult).new(res)
+    LazyIterator(MovieResult).new(res, skip_cache: skip_cache)
   end
 
   # Get the top rated movies on TMDB.
-  def self.top_rated(language : String? = nil, region : String? = nil) : LazyIterator(MovieResult)
+  def self.top_rated(
+    language : String? = nil,
+    region : String? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(MovieResult)
     filters = FilterFactory.create_language(language)
     filters[:region] = region.not_nil! unless region.nil?
 
     res = Resource.new("/movie/top_rated", filters)
-    LazyIterator(MovieResult).new(res)
+    LazyIterator(MovieResult).new(res, skip_cache: skip_cache)
   end
 
   # Get a list of upcoming movies in theatres. This is a release type query that
@@ -107,12 +119,16 @@ class Tmdb::Movie
   #
   # You can optionally specify a `region` prameter which will narrow the search
   # to only look for theatrical release dates within the specified country.
-  def self.upcoming(language : String? = nil, region : String? = nil) : LazyIterator(MovieResult)
+  def self.upcoming(
+    language : String? = nil,
+    region : String? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(MovieResult)
     filters = FilterFactory.create_language(language)
     filters[:region] = region.not_nil! unless region.nil?
 
     res = Resource.new("/movie/upcoming", filters)
-    LazyIterator(MovieResult).new(res)
+    LazyIterator(MovieResult).new(res, skip_cache: skip_cache)
   end
 
   def initialize(data : JSON::Any)

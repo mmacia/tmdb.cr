@@ -10,9 +10,9 @@ class Tmdb::Certification
   #
   # Get an up to date list of the officially supported movie certifications on TMDB.
   # The results are grouped by country code.
-  def self.movies : Hash(String, Array(Certification))
+  def self.movies(skip_cache : Bool = false) : Hash(String, Array(Certification))
     res = Resource.new("/certification/movie/list")
-    data = res.get
+    data = res.get skip_cache
 
     ret = Hash(String, Array(Certification)).new
 
@@ -27,9 +27,9 @@ class Tmdb::Certification
   #
   # Get an up to date list of the officially supported TV show certifications on TMDB.
   # The results are grouped by country code.
-  def self.tv_shows : Hash(String, Array(Certification))
+  def self.tv_shows(skip_cache : Bool = false) : Hash(String, Array(Certification))
     res = Resource.new("/certification/tv/list")
-    data = res.get
+    data = res.get skip_cache
 
     ret = Hash(String, Array(Certification)).new
 
