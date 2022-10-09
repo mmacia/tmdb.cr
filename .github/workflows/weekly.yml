@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-        crystal: [1.0.0, latest, nightly]
+        crystal: [1.5.0, 1.6.0, latest, nightly]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
