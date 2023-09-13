@@ -6,6 +6,7 @@ class Tmdb::Tv::Season
   include PosterUrls
 
   getter air_date : Time?
+  getter episodes : Array(Tv::Episode)?
   getter poster_path : String?
   getter season_number : Int32
   getter id : Int64
@@ -21,6 +22,7 @@ class Tmdb::Tv::Season
 
   def initialize(data : JSON::Any, @show_id : Int64)
     @air_date = Tmdb.parse_date(data["air_date"])
+    @episodes = data["episodes"].as_a.map { |episode| Episode.new(episode, show_id) } if data["episode"]?
     @poster_path = data["poster_path"].as_s?
     @season_number = data["season_number"].as_i
     @id = data["id"].as_i64
