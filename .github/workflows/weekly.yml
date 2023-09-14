@@ -2,7 +2,7 @@ name: Weekly CI
 
 on:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
   push:
     branches:
       - master
@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-        crystal: [1.5.0, 1.6.0, latest, nightly]
+        crystal: [1.9.0, 1.8.0, latest, nightly]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
