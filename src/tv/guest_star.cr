@@ -17,7 +17,7 @@ class Tmdb::Tv::GuestStar
     @credit_id = data["credit_id"].as_s
     @character = data["character"].as_s
     @order = data["order"].as_i
-    @profile_path = data["profile_path"].as_s
+    @profile_path = data["profile_path"].as_s? if data["profile_path"]?
   end
 
   def credit : Credit
