@@ -22,7 +22,7 @@ class Tmdb::Tv::Season
 
   def initialize(data : JSON::Any, @show_id : Int64)
     @air_date = Tmdb.parse_date(data["air_date"])
-    @episodes = data["episodes"].as_a.map { |episode| Episode.new(episode, show_id) } if data["episode"]?
+    @episodes = data["episodes"].as_a.map { |episode| Episode.new(episode, show_id) } if data["episodes"]?
     @poster_path = data["poster_path"].as_s?
     @season_number = data["season_number"].as_i
     @id = data["id"].as_i64

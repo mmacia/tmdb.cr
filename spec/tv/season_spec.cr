@@ -7,6 +7,8 @@ describe Tmdb::Tv::Season do
         season = Tmdb::Tv::Season.detail(1418, 1)
 
         season.should be_a(Tmdb::Tv::Season)
+        season.episodes.should_not be_nil
+        season.episodes.not_nil!.size.should be > 0
       end
     end
 
