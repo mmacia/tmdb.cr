@@ -188,7 +188,7 @@ Tmdb::Person.detail 138
 
 ### Search people
 
-Seach for people by name.
+Search for people by name.
 
 ```crystal
 Tmdb::Search.people "Paul"
@@ -202,6 +202,21 @@ Gets a list of popular people. This list refreshes every day.
 Tmdb::People.popular
 ```
 
+### Multi search
+
+Search for movies, TV shows and people in a single request.
+
+```crystal
+results = Tmdb::Search.multi "terminator"
+results.each do |result|
+  case result
+  in Tmdb::MovieResult    then puts result.title
+  in Tmdb::PersonResult   then puts result.name
+  in Tmdb::Tv::ShowResult then puts result.name
+  end
+end
+```
+
 ## Endpoints
 
 All endpoints available are those listed in The Movie Database API
@@ -212,7 +227,6 @@ Missing endpoints:
  * Authentication
  * Guest Sessions
  * Lists
- * Multi search
 
 
 ## Contributing

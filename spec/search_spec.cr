@@ -207,4 +207,17 @@ describe Tmdb::Search do
       end
     end
   end
+
+  context "#multi" do
+    it "should do a multi search" do
+      VCR.use_cassette("tmdb") do
+        results = Tmdb::Search.multi("karamazov")
+
+        results.total_items.should eq(25)
+        results.each do |result|
+          result.should be_a(Tmdb::MovieResult | Tmdb::PersonResult | Tmdb::Tv::ShowResult)
+        end
+      end
+    end
+  end
 end

@@ -52,6 +52,35 @@ class Tmdb::Search
     LazyIterator(Keyword).new(res, skip_cache: skip_cache)
   end
 
+  # Search for movies, TV shows and people in a single request.
+  def self.multi(
+    query : String,
+    language : String? = nil,
+    include_adult : Bool? = nil,
+    skip_cache : Bool = false
+  ) : LazyIterator(MovieResult | PersonResult | Tv::ShowResult)
+    filters = FilterFactory.create_language(language)
+    filters[:query] = query
+    if include_adult_param = include_adult
+      filters[:include_adult] = include_adult_param.to_s
+    end
+
+    res = Resource.new("/search/multi", filters)
+    LazyIterator(MovieResult | PersonResult | Tv::ShowResult).new(
+      res,
+      skip_cache: skip_cache,
+      initializer: ->(item : JSON::Any) {
+        case item["media_type"].as_s
+        when "movie"  then MovieResult.new(item)
+        when "person" then PersonResult.new(item)
+        when "tv"     then Tv::ShowResult.new(item)
+        else
+          raise "Unknown media type: #{item["media_type"].as_s}"
+        end
+      }
+    )
+  end
+
   # Search for people.
   def self.people(
     query : String,

@@ -9,8 +9,14 @@ class Tmdb::LazyIterator(T)
   private getter? fetched : Bool = false
   private getter max_pages : Int32
   private getter? skip_cache : Bool
+  private getter initializer : JSON::Any -> T
 
-  def initialize(@resource : Resource, @max_pages : Int32 = 500, @skip_cache : Bool = false)
+  def initialize(
+    @resource : Resource,
+    @max_pages : Int32 = 500,
+    @skip_cache : Bool = false,
+    @initializer : JSON::Any -> T = ->(item : JSON::Any) { T.new(item) }
+    )
   end
 
   def each(&block)
@@ -23,7 +29,7 @@ class Tmdb::LazyIterator(T)
       update_counters(payload)
 
       payload["results"].as_a.each do |item|
-        yield T.new(item)
+        yield initializer.call(item)
       end
 
       resource.params[:page] = (resource.params[:page].to_i + 1).to_s
