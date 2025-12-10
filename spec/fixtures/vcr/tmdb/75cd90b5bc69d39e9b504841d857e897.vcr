@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: 167ea34b3586437adf04937df25d0e2b2e46462bcba2c2e0d7b08d04acf9a92d
+x-memc-age: 0
+x-memc-expires: 25429
+x-az: us-east-1c
+x-task-id: 85d159752b264c8ca2611b288dbf4d21
+Date: Tue, 09 Dec 2025 14:44:35 GMT
+Cache-Control: public, max-age=24239
+ETag: W/"459d71cbda330ab56dc1bae8453d90b0"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8f0898e2eb5c972640ef7bcada20f09e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 2FINC5Z00iAq-VPc6X7tjl-Or6e8tEaPe4GFKLcMhmSzqdS8mdoGUg==
+Age: 1824
+Content-Length: 168
+
+{"description":"","headquarters":"","homepage":"","id":3952,"logo_path":"/hLfS5FjBQjK5MUNl7kdXgIHSSWy.png","name":"Hemdale","origin_country":"GB","parent_company":null}

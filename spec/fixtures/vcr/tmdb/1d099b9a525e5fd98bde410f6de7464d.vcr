@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:29:24 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: 04231f75cf0573273843eda528d49f2700006753
-X-Memc-Age: 8149
-X-Memc-Expires: 9750
-ETag: W/"ebc0f0a1b9c6b71094db7e70e812f54c"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 3ac5814762371c236c1682deec50c957.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: UsLPonyefNh96S1Ss9wrXdlaSFPqJeBom_qAb6wdb-t-3MVxW3GH0g==
-Content-Length: 1292
+x-memc: HIT
+x-memc-key: a57dcb07cd54ab20b9bf3546204d83db2978314ad2c384cf1249106401337ecf
+x-memc-age: 18521
+x-memc-expires: 7322
+x-az: us-east-1b
+x-task-id: 664392b9dee54fd8813e14ff7054968d
+Date: Tue, 09 Dec 2025 14:44:31 GMT
+Cache-Control: public, max-age=24002
+ETag: W/"cec5941ec8c7310b581d4e93e3ed0370"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8ea5a89d0fc9db6bcaef3f8d436858ae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 5ZKDXM7bksDCQgI4eibYURGoiDMI5uKJCU332_q1uwhBokMX3YQ4ag==
+Age: 2289
+Content-Length: 1671
 
-{"id":218,"titles":[{"iso_3166_1":"JP","title":"Tamineta","type":"Romanized title"},{"iso_3166_1":"FI","title":"Terminaattori","type":"TV title"},{"iso_3166_1":"PE","title":"El exteminador","type":"TV title"},{"iso_3166_1":"PE","title":"El ejecutor","type":"promotional title"},{"iso_3166_1":"MX","title":"Terminator: El exterminador","type":"DVD box title"},{"iso_3166_1":"IR","title":"Naboodgar","type":"Romanized title"},{"iso_3166_1":"US","title":"Terminator","type":""},{"iso_3166_1":"CA","title":"Terminateur","type":""},{"iso_3166_1":"KR","title":"터미네이터 1","type":"series title"},{"iso_3166_1":"NL","title":"De uitroeier","type":""},{"iso_3166_1":"SE","title":"Dödsängeln","type":""},{"iso_3166_1":"US","title":"Terminator 1","type":"series title"},{"iso_3166_1":"VE","title":"El Exterminador","type":""},{"iso_3166_1":"TR","title":"Yok edici","type":""},{"iso_3166_1":"TR","title":"Terminatör","type":""},{"iso_3166_1":"PL","title":"Terminator","type":""},{"iso_3166_1":"FR","title":"Terminator 1","type":""},{"iso_3166_1":"US","title":"Terminator 1: The Terminator","type":"Full Series Title"},{"iso_3166_1":"PL","title":"Terminator Elektroniczny morderca","type":""},{"iso_3166_1":"CN","title":"终结者","type":""},{"iso_3166_1":"CN","title":"终结者1","type":""}]}
+{"id":218,"titles":[{"iso_3166_1":"JP","title":"Tamineta","type":"romanization"},{"iso_3166_1":"FI","title":"Terminaattori","type":"TV title"},{"iso_3166_1":"PE","title":"El exteminador","type":"TV title"},{"iso_3166_1":"PE","title":"El ejecutor","type":"promotional title"},{"iso_3166_1":"MX","title":"Terminator: El exterminador","type":"DVD box title"},{"iso_3166_1":"IR","title":"Naboodgar","type":"romanization"},{"iso_3166_1":"CA","title":"Terminateur","type":""},{"iso_3166_1":"SE","title":"Dödsängeln","type":""},{"iso_3166_1":"VE","title":"El Exterminador","type":""},{"iso_3166_1":"TR","title":"Yok edici","type":""},{"iso_3166_1":"TH","title":"เทอร์มิเนเตอร์","type":""},{"iso_3166_1":"TW","title":"魔鬼終結者","type":""},{"iso_3166_1":"GR","title":"Ο Εξολοθρευτής","type":""},{"iso_3166_1":"BG","title":"Терминатор","type":""},{"iso_3166_1":"JP","title":"ターミネーター","type":""},{"iso_3166_1":"HK","title":"未來戰士","type":""},{"iso_3166_1":"RO","title":"Terminatorul","type":""},{"iso_3166_1":"PL","title":"Elektroniczny morderca","type":"Theatrical"},{"iso_3166_1":"HU","title":"A Halálosztó","type":"Original title"},{"iso_3166_1":"US","title":"Terminator","type":""},{"iso_3166_1":"US","title":"Terminator 1","type":"Series Title"},{"iso_3166_1":"US","title":"The Terminator 1","type":"Series Title"},{"iso_3166_1":"DE","title":"Der Terminator","type":""},{"iso_3166_1":"DE","title":"Terminator 1","type":""},{"iso_3166_1":"ES","title":"Terminator","type":""},{"iso_3166_1":"FR","title":"Terminator 1","type":""},{"iso_3166_1":"CN","title":"终结者1：未来战士","type":""}]}

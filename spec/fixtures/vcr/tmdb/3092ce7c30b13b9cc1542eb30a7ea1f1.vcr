@@ -2,17 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:47:25 GMT
+Date: Tue, 09 Dec 2025 14:43:44 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=600
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 e9c760453b6eccd1556a68a55a4a90c5.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: A7vbs0auROJgrkkBUySneoq8OhdfbShGrwEVqpP2_tFLESEJFE-clQ==
-Content-Length: 793
+Cache-Control: public, max-age=7113
+x-memc: HIT
+x-memc-key: f03cd068ece4618a03953979404a83481d9a3cc101e324df05cb59e00684b751
+x-memc-age: 19342
+x-memc-expires: 7113
+x-az: us-east-1b
+x-task-id: 30da6ae4440a42f0a445f111617018a6
+ETag: W/"e08428d359c800deb4d859dbae149dc4"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8dd6c31efab2c0e3b91356d912029cae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: krJfrv_zZrIAvVLOegvqN2q6UqDQmikzC7IetDYOf3oOf-ERjoBVBQ==
+Age: 2332
+Content-Length: 1137
 
-{"page":1,"results":[{"adult":false,"backdrop_path":"/wh4ze6klUbeichAj603OKZwY1W5.jpg","genre_ids":[28,53,878],"id":218,"original_language":"en","original_title":"The Terminator","overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","popularity":35.823,"poster_path":"/qvktm0BHcnmDpul4Hz01GIazWPr.jpg","release_date":"1984-10-26","title":"The Terminator","video":false,"vote_average":7.6,"vote_count":9379}],"total_pages":1,"total_results":1}
+{"page":1,"results":[{"adult":false,"backdrop_path":"/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg","genre_ids":[28,53,878],"id":218,"original_language":"en","original_title":"The Terminator","overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","popularity":12.5614,"poster_path":"/hzXSE66v6KthZ8nPoLZmsi2G05j.jpg","release_date":"1984-10-26","title":"The Terminator","video":false,"vote_average":7.674,"vote_count":14027},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1464353,"original_language":"ja","original_title":"ターミナルビルの一日","overview":"","popularity":0.0,"poster_path":"/jsY7VHDVfKkrGEyPfZDYLqGG8AE.jpg","release_date":"1984-01-01","title":"A Day in the Terminal Building","video":false,"vote_average":0.0,"vote_count":0}],"total_pages":1,"total_results":2}

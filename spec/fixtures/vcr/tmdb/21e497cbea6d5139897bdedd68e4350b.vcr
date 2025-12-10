@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS
+x-memc-key: 5451c9912b0d6936b14e2d06bac42307565a426031725cbd9581bf704399476f
+x-memc-age: 0
+x-memc-expires: 0
+x-az: us-east-1c
+x-task-id: 9b5a405761724a11a434fc2769395065
+Date: Tue, 09 Dec 2025 15:14:49 GMT
+Cache-Control: public, max-age=0
+ETag: W/"f7b22099c1991a095bb9fec6cab6c275"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: RefreshHit from cloudfront
+Via: 1.1 e51128cbc5c6c2bfa2ca665022eb945e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: YcS2voS1WqmMNHdE3loR6KdEMOAoeKcRKXnR6yha5a05qNhCuFmzKw==
+Content-Length: 1266
+
+{"adult":false,"backdrop_path":"/2W8xc6peR8IkttcwQ9DfOVrabpT.jpg","created_by":[],"episode_run_time":[],"first_air_date":"2023-06-18","genres":[{"id":16,"name":"Animation"}],"homepage":"","id":307901,"in_production":true,"languages":["ko"],"last_air_date":"2023-06-18","last_episode_to_air":{"id":6752985,"name":"Episode 50","overview":"","vote_average":0.0,"vote_count":0,"air_date":"2023-06-18","episode_number":50,"episode_type":"finale","production_code":"","runtime":3,"season_number":1,"show_id":307901,"still_path":null},"name":"화화원행기","next_episode_to_air":null,"networks":[],"number_of_episodes":2,"number_of_seasons":1,"origin_country":["KR"],"original_language":"ko","original_name":"화화원행기","overview":"","popularity":0.0,"poster_path":"/aYVUYayNjFOkxNfDc9NaLcZLW74.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"KR","name":"South Korea"}],"seasons":[{"air_date":"2023-06-18","episode_count":2,"id":488755,"name":"Season 1","overview":"","poster_path":"/v9tsvzWF4ariUtM3OBUf7V3ztG5.jpg","season_number":1,"vote_average":0.0}],"spoken_languages":[{"english_name":"Korean","iso_639_1":"ko","name":"한국어/조선말"}],"status":"Returning Series","tagline":"","type":"Scripted","vote_average":0.0,"vote_count":0}

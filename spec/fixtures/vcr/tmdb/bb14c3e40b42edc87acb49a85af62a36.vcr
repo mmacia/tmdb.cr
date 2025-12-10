@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 91d56afa7b1b127e5f4ee47750de2a1e68158b389ee5faa25c01e06232fd9052
+x-memc-age: 12408
+x-memc-expires: 12448
+x-az: us-east-1c
+x-task-id: b62a7e00f78b4833886e44e53a90fd42
+Date: Tue, 09 Dec 2025 15:07:03 GMT
+Cache-Control: public, max-age=25328
+ETag: W/"98d6f4fb3a0e0c77544a7277f32baebb"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 e9f03a34d7973367544d730361789f76.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: giVKTebv_LWSWxCaA1gMVK9xytPC9U7Pun9wSxaTFjWj8c5dAS6bEw==
+Age: 464
+Content-Length: 547
+
+{"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"},{"id":99,"name":"Documentary"},{"id":18,"name":"Drama"},{"id":10751,"name":"Family"},{"id":14,"name":"Fantasy"},{"id":36,"name":"History"},{"id":27,"name":"Horror"},{"id":10402,"name":"Music"},{"id":9648,"name":"Mystery"},{"id":10749,"name":"Romance"},{"id":878,"name":"Science Fiction"},{"id":10770,"name":"TV Movie"},{"id":53,"name":"Thriller"},{"id":10752,"name":"War"},{"id":37,"name":"Western"}]}

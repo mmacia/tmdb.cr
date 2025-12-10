@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:21 GMT
+Server: openresty
+Cache-Control: public, max-age=25137
+x-memc: MISS, STORE
+x-memc-key: a3bbadcbb3d8fd9aa1327bcdc95d696d3f873067f3f954e3647a32ffa1f0b975
+x-memc-age: 0
+x-memc-expires: 25137
+x-az: us-east-1a
+x-task-id: 3c25d067aa364a8bab5ed538d6d9af09
+ETag: W/"57eef20ac6295c688a5648592d4dba76"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 994deeea5117897efd50b3e367af0a6a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: seobM7ajWc5ntIzNOK4rHxxeouSVYWoqwvOtiDVH_vYkVxqdwt8rKw==
+Age: 1886
+Content-Length: 1131
+
+{"credit_type":"cast","department":"Acting","job":"Actor","media":{"adult":false,"backdrop_path":"/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg","id":218,"title":"The Terminator","original_title":"The Terminator","overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","poster_path":"/hzXSE66v6KthZ8nPoLZmsi2G05j.jpg","media_type":"movie","original_language":"en","genre_ids":[28,53,878],"popularity":12.5614,"release_date":"1984-10-26","video":false,"vote_average":7.674,"vote_count":14027,"character":"Kyle Reese"},"media_type":"movie","id":"52fe4228c3a36847f800851f","person":{"adult":false,"id":2712,"name":"Michael Biehn","original_name":"Michael Biehn","media_type":"person","popularity":1.9366,"gender":2,"known_for_department":"Acting","profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}}

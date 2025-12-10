@@ -2,17 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:47:27 GMT
+Date: Tue, 09 Dec 2025 14:43:47 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=600
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 4ff22507315b19a746baedf1b2177aa8.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: czq4KV2r1qoVNFOE_FbImbHBe9xt68Qb6ddMrGH2o6lsv7U72qOEJQ==
-Content-Length: 536
+Cache-Control: public, max-age=2853
+x-memc: HIT
+x-memc-key: 7f932147c74035ea152b52e1cbe20b23b7da097f90288b2b370d7171ab871970
+x-memc-age: 20549
+x-memc-expires: 2853
+x-az: us-east-1a
+x-task-id: b0eafb7727e14bcabac0e4abd1a9419d
+ETag: W/"3e01c009698b2674ce0d6606362b9bcf"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 18b8ff457c20e60fc9c537b31f0a8594.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: mKYqqsoMgn4bP6GfGCTh8PvYE0RtLXTwBysVHZrzSiv2kfFp4e40Tg==
+Age: 2330
+Content-Length: 831
 
-{"page":1,"results":[{"backdrop_path":"/7RySzFeK3LPVMXcPtqfZnl6u4p1.jpg","first_air_date":"2007-09-24","genre_ids":[35],"id":1418,"name":"Big Bang","origin_country":["US"],"original_language":"en","original_name":"The Big Bang Theory","overview":"Mientras los físicos Leonard y Sheldon completan su pandilla de frikis con Howard y Raj, la aspirante a actriz Penny ocupa el piso de enfrente.","popularity":157.608,"poster_path":"/2bDQWCvFxRGhdvThTJvVxueEoLl.jpg","vote_average":7.7,"vote_count":7184}],"total_pages":1,"total_results":1}
+{"page":1,"results":[{"adult":false,"backdrop_path":"/7RySzFeK3LPVMXcPtqfZnl6u4p1.jpg","genre_ids":[35],"id":1418,"origin_country":["US"],"original_language":"en","original_name":"The Big Bang Theory","overview":"Leonard y Sheldon son dos físicos superdotados que comparten piso. Ambos son capaces de calcular las probabilidades de existencia de vida en otros planetas, pero son incapaces de relacionarse con los demás y especialmente con las chicas. Penny, su nueva vecina, es el polo opuesto a ellos, por lo que su llegada al edificio alterará la tranquila vida sentimental de Leonard y el desorden obsesivo-compulsivo de Sheldon.","popularity":27.4844,"poster_path":"/2bDQWCvFxRGhdvThTJvVxueEoLl.jpg","first_air_date":"2007-09-24","name":"Big Bang","vote_average":7.912,"vote_count":12077}],"total_pages":1,"total_results":1}

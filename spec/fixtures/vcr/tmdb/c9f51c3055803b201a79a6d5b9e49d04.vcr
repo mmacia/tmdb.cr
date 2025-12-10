@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 15:14:27 GMT
+Server: openresty
+Cache-Control: public, max-age=453
+x-memc: HIT
+x-memc-key: f7bd5feb1142c614982155d501e0427aa6ce084f6d4e5a789bbf5dcfe8db763e
+x-memc-age: 147
+x-memc-expires: 453
+x-az: us-east-1a
+x-task-id: 3c25d067aa364a8bab5ed538d6d9af09
+ETag: W/"11d4648a68fbafdae7729459851657b8"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 af27d8f497c4d326909accf8eaaccca4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 1f5SeDhMUq2L5uOm-mJuw1328pOtKee88F_X-Sr_GZv47v_zCubSNg==
+Age: 68
+Content-Length: 4133
+
+{"page":2,"results":[{"adult":false,"id":2472212,"name":"Sae Bom","original_name":"Sae Bom","media_type":"person","popularity":1.5549,"gender":1,"known_for_department":"Acting","profile_path":"/mM43mwxU8YAbRFJPFEwoFYV0CQO.jpg"},{"adult":false,"id":1392433,"name":"Julia Ducournau","original_name":"Julia Ducournau","media_type":"person","popularity":0.5785,"gender":1,"known_for_department":"Directing","profile_path":"/3shIDLkYLA5xIdfwXbxr8B2FMVT.jpg"},{"adult":false,"id":1634739,"name":"Ryan Keely","original_name":"Ryan Keely","media_type":"person","popularity":0.344,"gender":0,"known_for_department":"Visual Effects","profile_path":null},{"adult":false,"id":5292,"name":"Denzel Washington","original_name":"Denzel Washington","media_type":"person","popularity":6.9172,"gender":2,"known_for_department":"Acting","profile_path":"/jj2Gcobpopokal0YstuCQW0ldJ4.jpg"},{"adult":false,"id":1224,"name":"Ethan Coen","original_name":"Ethan Coen","media_type":"person","popularity":1.2912,"gender":2,"known_for_department":"Writing","profile_path":"/lbL8LEcvuxNrzda37g3mysOS2qS.jpg"},{"adult":false,"id":2461,"name":"Mel Gibson","original_name":"Mel Gibson","media_type":"person","popularity":5.5756,"gender":2,"known_for_department":"Acting","profile_path":"/jnqHMaOslt8cef2atSmOpGRvNla.jpg"},{"adult":false,"id":2100955,"name":"Ritvik Arora","original_name":"Ritvik Arora","media_type":"person","popularity":0.5578,"gender":2,"known_for_department":"Acting","profile_path":"/SIWwd1cpJ0iAFCNkgYy1v3mByy.jpg"},{"adult":false,"id":9206,"name":"Neve Campbell","original_name":"Neve Campbell","media_type":"person","popularity":3.2727,"gender":1,"known_for_department":"Acting","profile_path":"/eojcMcfl7fZbvElRSg89r7zyFfY.jpg"},{"adult":false,"id":500,"name":"Tom Cruise","original_name":"Tom Cruise","media_type":"person","popularity":13.8295,"gender":2,"known_for_department":"Acting","profile_path":"/3mShHjSQR7NXOVbdTu5rT2Qd0MN.jpg"},{"adult":false,"id":5531949,"name":"Saika Kawakita","original_name":"河北彩伽","media_type":"person","popularity":0.699,"gender":1,"known_for_department":"Acting","profile_path":"/3q5zJ5Ae6zWKgAU7FOziu0LDYr0.jpg"},{"adult":false,"id":2484644,"name":"Kim Hee-jeong","original_name":"Kim Hee-jeong","media_type":"person","popularity":5.062,"gender":1,"known_for_department":"Acting","profile_path":"/3GxSLhLzUa26ZffrJPOjsIBU7WW.jpg"},{"adult":false,"id":17142,"name":"Paul Dano","original_name":"Paul Dano","media_type":"person","popularity":16.257,"gender":2,"known_for_department":"Acting","profile_path":"/zEJJsm0z07EPNl2Pi1h67xuCmcA.jpg"},{"adult":false,"id":4845074,"name":"Joo Ye-bin","original_name":"Joo Ye-bin","media_type":"person","popularity":4.3531,"gender":1,"known_for_department":"Acting","profile_path":"/wh5Wnrxs9ay7JUeQJfhCfwwfmPt.jpg"},{"adult":false,"id":31,"name":"Tom Hanks","original_name":"Tom Hanks","media_type":"person","popularity":18.5085,"gender":2,"known_for_department":"Acting","profile_path":"/eKF1sGJRrZJbfBG1KirPt1cfNd3.jpg"},{"adult":false,"id":4582206,"name":"Angeline Aril","original_name":"Angeline Aril","media_type":"person","popularity":4.8256,"gender":1,"known_for_department":"Acting","profile_path":"/o4MCnB8mdXXTYn6AWPKsik29lxs.jpg"},{"adult":false,"id":1708576,"name":"Ahn So-hee","original_name":"Ahn So-hee","media_type":"person","popularity":4.0827,"gender":1,"known_for_department":"Acting","profile_path":"/7OWRPTEPYi7dV5a97fhXLiiHpPM.jpg"},{"adult":false,"id":525,"name":"Christopher Nolan","original_name":"Christopher Nolan","media_type":"person","popularity":11.6617,"gender":2,"known_for_department":"Directing","profile_path":"/xuAIuYSmsUzKlUMBFGVZaWsY3DZ.jpg"},{"adult":false,"id":131,"name":"Jake Gyllenhaal","original_name":"Jake Gyllenhaal","media_type":"person","popularity":6.8918,"gender":2,"known_for_department":"Acting","profile_path":"/btORQRDyGCF0KNweGGYpmQXZK3P.jpg"},{"adult":false,"id":2093355,"name":"Yoo Sul-young","original_name":"Yoo Sul-young","media_type":"person","popularity":2.5306,"gender":1,"known_for_department":"Acting","profile_path":"/zpGYel1FXMlwIVIMsz9r3jFhYB9.jpg"}],"total_pages":187,"total_results":3722}

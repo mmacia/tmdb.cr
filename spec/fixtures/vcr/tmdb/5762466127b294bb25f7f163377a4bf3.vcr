@@ -1,21 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 143
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:29:28 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: e4a636233f9a5a760e3918af4cca7a4065e60979
-X-Memc-Age: 0
-X-Memc-Expires: 17925
-ETag: W/"95186edad0faf2ff3d0599076c2cd720"
-X-Cache: Miss from cloudfront
-Via: 1.1 c5c852ebeabe49b08625d425153869fe.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: S4HawYm00wPU0fgi_FFKmEutK-6UTM_VlZFzHFfMPJO2fclq8PQp_w==
+x-memc: MISS, STORE
+x-memc-key: 167ea34b3586437adf04937df25d0e2b2e46462bcba2c2e0d7b08d04acf9a92d
+x-memc-age: 0
+x-memc-expires: 25429
+x-az: us-east-1c
+x-task-id: 85d159752b264c8ca2611b288dbf4d21
+Date: Tue, 09 Dec 2025 14:44:35 GMT
+Cache-Control: public, max-age=24239
+ETag: W/"459d71cbda330ab56dc1bae8453d90b0"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 b36b68631c5d4e671b86b622ad61723a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: gFlusxycNTMrALC4GfmoAvKz_90S1DudDvntV4KKRpPHFF_XjEN3yA==
+Age: 2287
+Content-Length: 168
 
-{"description":"","headquarters":"","homepage":"","id":3952,"logo_path":null,"name":"Hemdale Film","origin_country":null,"parent_company":null}
+{"description":"","headquarters":"","homepage":"","id":3952,"logo_path":"/hLfS5FjBQjK5MUNl7kdXgIHSSWy.png","name":"Hemdale","origin_country":"GB","parent_company":null}

@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:47 GMT
+Server: openresty
+Cache-Control: public, max-age=2853
+x-memc: HIT
+x-memc-key: 7f932147c74035ea152b52e1cbe20b23b7da097f90288b2b370d7171ab871970
+x-memc-age: 20549
+x-memc-expires: 2853
+x-az: us-east-1a
+x-task-id: b0eafb7727e14bcabac0e4abd1a9419d
+ETag: W/"3e01c009698b2674ce0d6606362b9bcf"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8dd6c31efab2c0e3b91356d912029cae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 6u3DA7Aoexvwa2yB-9VSB0OSyUWXxPe8bRvDN7jvemBepmjLFvgkhg==
+Age: 1906
+Content-Length: 831
+
+{"page":1,"results":[{"adult":false,"backdrop_path":"/7RySzFeK3LPVMXcPtqfZnl6u4p1.jpg","genre_ids":[35],"id":1418,"origin_country":["US"],"original_language":"en","original_name":"The Big Bang Theory","overview":"Leonard y Sheldon son dos físicos superdotados que comparten piso. Ambos son capaces de calcular las probabilidades de existencia de vida en otros planetas, pero son incapaces de relacionarse con los demás y especialmente con las chicas. Penny, su nueva vecina, es el polo opuesto a ellos, por lo que su llegada al edificio alterará la tranquila vida sentimental de Leonard y el desorden obsesivo-compulsivo de Sheldon.","popularity":27.4844,"poster_path":"/2bDQWCvFxRGhdvThTJvVxueEoLl.jpg","first_air_date":"2007-09-24","name":"Big Bang","vote_average":7.912,"vote_count":12077}],"total_pages":1,"total_results":1}

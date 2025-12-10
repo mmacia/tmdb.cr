@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: e0ce000319985e9e2592882b1ab69272de26174f16f4fda55ba81a3b89026c74
+x-memc-age: 321
+x-memc-expires: 279
+x-az: us-east-1c
+x-task-id: 48fdd9e15ea14727904ecaf7e5ce09a1
+Date: Tue, 09 Dec 2025 15:13:29 GMT
+Cache-Control: public, max-age=506
+ETag: W/"bb1df3f244d797d474f3e1305c948140"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 7cb5e6ca8e491181a91096729b24a17c.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: lkpyaps7aBqdaZZu83F6UeGX8WuCF0e-MVXsvIfueYRwN3-kwfZx4w==
+Age: 126
+Content-Length: 4211
+
+{"page":1,"results":[{"adult":false,"id":57755,"name":"Woody Harrelson","original_name":"Woody Harrelson","media_type":"person","popularity":6.2329,"gender":2,"known_for_department":"Acting","profile_path":"/igxYDQBbTEdAqaJxaW6ffqswmUU.jpg"},{"adult":false,"id":589101,"name":"Anne Krigsvoll","original_name":"Anne Krigsvoll","media_type":"person","popularity":0.6142,"gender":1,"known_for_department":"Acting","profile_path":"/kRPOfNy7kMlz9keTFtAha5yacsx.jpg"},{"adult":false,"id":7423,"name":"Erika von Tagen","original_name":"Erika von Tagen","media_type":"person","popularity":0.3203,"gender":1,"known_for_department":"Acting","profile_path":"/cnfYAFCcwFydNcmzSi90fZMm81o.jpg"},{"adult":false,"id":5062021,"name":"E","original_name":"E","media_type":"person","popularity":0.0379,"gender":0,"known_for_department":"Writing","profile_path":null},{"adult":false,"id":1253360,"name":"Pedro Pascal","original_name":"Pedro Pascal","media_type":"person","popularity":12.0241,"gender":2,"known_for_department":"Acting","profile_path":"/9VYK7oxcqhjd5LAH6ZFJ3XzOlID.jpg"},{"adult":false,"id":5618117,"name":"E","original_name":"E","media_type":"person","popularity":0.0071,"gender":0,"known_for_department":"Acting","profile_path":null},{"adult":false,"id":12799,"name":"Jeremy Piven","original_name":"Jeremy Piven","media_type":"person","popularity":3.2944,"gender":2,"known_for_department":"Acting","profile_path":"/pBD1jcAZiDrHWcFpJtBtqLRD4gR.jpg"},{"adult":false,"id":5081,"name":"Emily Blunt","original_name":"Emily Blunt","media_type":"person","popularity":36.9254,"gender":1,"known_for_department":"Acting","profile_path":"/5nCSG5TL1bP1geD8aaBfaLnLLCD.jpg"},{"adult":false,"id":20128,"name":"Clive Revill","original_name":"Clive Revill","media_type":"person","popularity":1.4224,"gender":2,"known_for_department":"Acting","profile_path":"/nnQlNoAtcbJaVHgAVq2ADLsIy5s.jpg"},{"adult":false,"id":185777,"name":"Kelly Kimball","original_name":"Kelly Kimball","media_type":"person","popularity":0.2309,"gender":0,"known_for_department":"Costume & Make-Up","profile_path":null},{"adult":false,"id":2963,"name":"Nicolas Cage","original_name":"Nicolas Cage","media_type":"person","popularity":6.4932,"gender":2,"known_for_department":"Acting","profile_path":"/y1RtezurZYveYkVNRht7CwEgSYY.jpg"},{"adult":false,"id":86654,"name":"Austin Butler","original_name":"Austin Butler","media_type":"person","popularity":5.7102,"gender":2,"known_for_department":"Acting","profile_path":"/aGZKvPmjopFfbehunaXXzeZ8eXy.jpg"},{"adult":false,"id":976,"name":"Jason Statham","original_name":"Jason Statham","media_type":"person","popularity":15.5294,"gender":2,"known_for_department":"Acting","profile_path":"/8FMhYekyLR4ibHQ9Kpuaqe4cVjL.jpg"},{"adult":false,"id":5062019,"name":"E","original_name":"E","media_type":"person","popularity":0.0071,"gender":0,"known_for_department":"Production","profile_path":null},{"adult":false,"id":3164807,"name":"Yoon Yool","original_name":"윤율","media_type":"person","popularity":7.2674,"gender":1,"known_for_department":"Acting","profile_path":"/21kdujBeL2hrJ50RyMxmuEsHZAT.jpg"},{"adult":false,"id":1729,"name":"James Horner","original_name":"James Horner","media_type":"person","popularity":0.8401,"gender":2,"known_for_department":"Sound","profile_path":"/g2C3Fb4fHCU2gnqUcwTQCv5EZc4.jpg"},{"adult":false,"id":30614,"name":"Ryan Gosling","original_name":"Ryan Gosling","media_type":"person","popularity":7.7872,"gender":2,"known_for_department":"Acting","profile_path":"/asoKC7CLCqpZKZDL6iovNurQUdf.jpg"},{"adult":false,"id":18841,"name":"Bud Spencer","original_name":"Bud Spencer","media_type":"person","popularity":2.4939,"gender":2,"known_for_department":"Acting","profile_path":"/cVbBoKxRDFOdDKwdpRmxVazDWlE.jpg"},{"adult":false,"id":18897,"name":"Jackie Chan","original_name":"成龍","media_type":"person","popularity":23.4397,"gender":2,"known_for_department":"Acting","profile_path":"/nraZoTzwJQPHspAVsKfgl3RXKKa.jpg"},{"adult":false,"id":25645,"name":"Hirokazu Kore-eda","original_name":"是枝裕和","media_type":"person","popularity":2.2901,"gender":2,"known_for_department":"Directing","profile_path":"/9Quu2Jo5ItVgs8V1YPCaLEHc8y1.jpg"}],"total_pages":500,"total_results":10000}

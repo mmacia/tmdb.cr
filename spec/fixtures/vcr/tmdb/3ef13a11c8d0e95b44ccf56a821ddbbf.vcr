@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 3aef91ce3b212a1c60c672d2cc03151db4d26420fa4f25b4f274914b851d3498
+x-memc-age: 4155
+x-memc-expires: 23875
+x-az: us-east-1c
+x-task-id: 374f1f6eda394c62be1ca031f9631120
+Date: Tue, 09 Dec 2025 14:43:44 GMT
+Cache-Control: public, max-age=25615
+ETag: W/"4bce2213ceb5078c6af7e5cf4fdd89a7"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8ea5a89d0fc9db6bcaef3f8d436858ae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 3vA7l5JEoNCM99uKWwRT_ZSU1nZMSJVtZlKjuzFAWVC_1Kzck08A8Q==
+Age: 1909
+Content-Length: 2016
+
+{"page":1,"results":[{"adult":false,"backdrop_path":"/sCnBEw2Yu6foEjs4Xb4eMddYHRo.jpg","id":528,"name":"The Terminator Collection","original_language":"en","original_name":"The Terminator Collection","overview":"A series of science-fiction films about the futuristic conflict between the humans led by John Connor and the Terminators that are made and controlled by Skynet, a self-aware super computer that started Armageddon and may indeed end humanity for good. Skynet's most well-known products in its genocidal goals are the various terminator models, such as the T-800 (Model 101).","poster_path":"/kpZxdNsAV7qTdTLwKM5NLqa7GEo.jpg"},{"adult":false,"backdrop_path":"/oKV1jGBYeq7W3AVN9R2xUpgqE3n.jpg","id":324142,"name":"Angel Terminators Collection","original_language":"en","original_name":"Angel Terminators Collection","overview":"A series of “girls with guns” movies that rely on stuntmen/stuntwomen putting themselves in harm’s way in order to make up for the obviously low budget.","poster_path":"/1Fqkez03S0rYUrVRu8jyxFoUcNY.jpg"},{"adult":false,"backdrop_path":"/5bgXrLCxkMGB6E7S2wu5dKJFOr2.jpg","id":286948,"name":"Nemesis Collection","original_language":"de","original_name":"Nemesis Collection","overview":"Nemesis is a science fiction post apocalyptic film series directed by Albert Pyun.","poster_path":"/oUXKeZxb7hsdSFwgsc2KY56KfzE.jpg"},{"adult":false,"backdrop_path":"/fvsSPqeVq4yhp7oZTGXA99uDQ1v.jpg","id":148284,"name":"Enthiran","original_language":"ta","original_name":"எந்திரன்","overview":"Dr. Vaseegaran creates Chitti, a powerful robot in his own image, but it is rejected by the scientific body AIRD due to its lack of human behaviour and emotions. After a lightning strike triggers emotions in Chitti, he begins to develop human-like feelings. However, Chitti falls in love with Dr. Vaseegaran's fiancée, Sana, and turns against his creator, leading to dangerous consequences.","poster_path":"/azbMDxDOXQd3fuGDTUg3LmJ4fih.jpg"}],"total_pages":1,"total_results":4}

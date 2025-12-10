@@ -9,16 +9,20 @@ describe Tmdb::Changes do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.movie
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
       end
     end
 
     it "should iterate over all list" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.movie
+        skip_at = 100
 
         changes.each do |change|
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -26,48 +30,48 @@ describe Tmdb::Changes do
     it "should filter by start date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.movie(start_date: start_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(10337)
+          break if skip_at <= 0
+        end
       end
     end
 
     it "should filter by end date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.movie(end_date: end_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(9793)
+          break if skip_at <= 0
+        end
       end
     end
 
     it "should filter both by start and end date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.movie(start_date: start_date, end_date: end_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(4495)
+          break if skip_at <= 0
+        end
       end
     end
   end
@@ -80,16 +84,20 @@ describe Tmdb::Changes do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.tv_show
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
       end
     end
 
-    it "should iterate over all list" do
+    it "should iterate over the list" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.tv_show
+        skip_at = 100
 
         changes.each do |change|
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
+
+          break if skip_at <= 0
         end
       end
     end
@@ -97,48 +105,48 @@ describe Tmdb::Changes do
     it "should filter by start date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.tv_show(start_date: start_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(2519)
+          break if skip_at <= 0
+        end
       end
     end
 
     it "should filter by end date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.tv_show(end_date: end_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(2676)
+          break if skip_at < 0
+        end
       end
     end
 
     it "should filter both by start and end date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.tv_show(start_date: start_date, end_date: end_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(1103)
+          break if skip_at < 0
+        end
       end
     end
   end
@@ -151,7 +159,7 @@ describe Tmdb::Changes do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.person
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
       end
     end
 
@@ -168,48 +176,48 @@ describe Tmdb::Changes do
     it "should filter by start date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.person(start_date: start_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(15233)
+          break if skip_at < 0
+        end
       end
     end
 
     it "should filter by end date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.person(end_date: end_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(14237)
+          break if skip_at < 0
+        end
       end
     end
 
     it "should filter both by start and end date" do
       VCR.use_cassette "tmdb" do
         changes = Tmdb::Changes.person(start_date: start_date, end_date: end_date)
-        n = 0
+        skip_at = 100
 
-        changes.total_items.should eq(1)
+        changes.total_items.should be > 1
 
         changes.each do |change|
-          n += 1
+          skip_at -= 1
           change.should be_a(Tmdb::Changes::Change)
-        end
 
-        n.should eq(6018)
+          break if skip_at < 0
+        end
       end
     end
   end

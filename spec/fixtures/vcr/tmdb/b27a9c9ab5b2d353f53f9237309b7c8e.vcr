@@ -2,23 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:39:01 GMT
+Date: Tue, 09 Dec 2025 14:43:49 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: 037a39fe042f8968f1e8ec22a78994402a2f5707
-X-Memc-Age: 14670
-X-Memc-Expires: 1332
-ETag: W/"dae95e1eec02b562068764f540573e9a"
-Vary: Accept-Encoding
+Cache-Control: public, max-age=14394
+x-memc: HIT
+x-memc-key: cc7bc8d277db000931333f1735e0c8da05dc9fe3c164a9daef5960a043881e03
+x-memc-age: 8172
+x-memc-expires: 14394
+x-az: us-east-1c
+x-task-id: 48fdd9e15ea14727904ecaf7e5ce09a1
+ETag: W/"f64a8afa30c3cc40d3d748526e093cc0"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Hit from cloudfront
-Via: 1.1 e9c760453b6eccd1556a68a55a4a90c5.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: Sp1cy-0KezwEM1b4iqqDebGpEhHx58SbCMn5S0eSrqQ9yG2-y1ktfw==
-Age: 318
-Content-Length: 854
+Via: 1.1 622d0a5eea7bcc7b68b8727e663d8a3e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: Ov3DWI-ZNUqDp0_1oTaGMNkACFBeDt24ItLF--n37_ZxeGc3CPs1DA==
+Age: 2325
+Content-Length: 1211
 
-{"adult":false,"also_known_as":["Michael Connell Biehn"],"biography":"An American actor. He is best known for his roles in James Cameron's science fiction action films The Terminator as Kyle Reese, Aliens as Cpl. Dwayne Hicks, and The Abyss as Lt. Coffey. He has also acted in other genres in such films as Tombstone, The Rock, and Planet Terror. On television, Biehn appeared in the cast of the Emmy Award-winning 1980s television series Hill Street Blues.\n\nDescription above from the Wikipedia article  Michael Biehn, licensed under CC-BY-SA, full list of contributors on Wikipedia.","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":3.217,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}
+{"adult":false,"also_known_as":["Michael Connell Biehn","Майкл Бін","مایکل بین"],"biography":"Michael Connell Biehn (/ˈbiːn/ BEEN or Bean; born July 31, 1956) is an American actor, primarily known for his roles in science fiction films directed by James Cameron; as Sgt. Kyle Reese in The Terminator (1984), Cpl. Dwayne Hicks in Aliens (1986), and Lt. Coffey in The Abyss (1989). His other films include The Fan (1981), The Seventh Sign (1988), Navy SEALs (1990), Tombstone (1993), The Rock (1996), Mojave Moon (1996), Megiddo: The Omega Code 2 (2001), Clockstoppers (2002), and Planet Terror (2007). On television, he has appeared in Hill Street Blues (1984), The Magnificent Seven (1998–2000), and Adventure Inc. (2002–2003). Biehn received a Best Actor Saturn Award nomination for Aliens.\n\nDescription above from the Wikipedia article  Michael Biehn, licensed under CC-BY-SA, full list of contributors on Wikipedia.","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":1.9366,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}

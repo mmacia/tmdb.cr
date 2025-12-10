@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: 25dff1bf6442d87850c4dc9b287eea729285d4ab48f83ce65190380141e12683
+x-memc-age: 0
+x-memc-expires: 27423
+x-az: us-east-1b
+x-task-id: 4fa6da5c6cec4d6c9aa7159490e317e7
+Date: Tue, 09 Dec 2025 14:43:44 GMT
+Cache-Control: public, max-age=14624
+ETag: W/"1260af665f6928a63095618e2af088b5"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 e51128cbc5c6c2bfa2ca665022eb945e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: PuqZj3hTOLNuRF5X-bmXCgZkNgR303xgLGtDw3zyvUcGf5Cem8xTiw==
+Age: 1909
+Content-Length: 2108
+
+{"page":1,"results":[{"adult":false,"backdrop_path":"/sCnBEw2Yu6foEjs4Xb4eMddYHRo.jpg","id":528,"name":"Terminator - Colección","original_language":"en","original_name":"The Terminator Collection","overview":"La colección de Terminator incluye las películas de ciencia ficción lanzadas en las salas de proyección, sobre el conflicto futurista entre los humanos, liderados por John Connor y los cyborgs hechos y controlados por Skynet, un súper ordenador con consciencia de sí mismo que comenzó el Armagedón y que puede llevar al fin de la humanidad para siempre. Las películas incluidas son la serie original de Terminator (1-3) protagonizada por Arnold Schwarzenegger, la cuarta entrega, Terminator: salvación del 2009 protagonizada por Christian Bale como John Connor de adulto. Y Terminator: destino oculto 2019.","poster_path":"/2DdRQER3D5QjBFAXXgVG7QgBYp2.jpg"},{"adult":false,"backdrop_path":"/fvsSPqeVq4yhp7oZTGXA99uDQ1v.jpg","id":148284,"name":"The robot (Terminator indio)","original_language":"ta","original_name":"எந்திரன்","overview":"El Dr. Vaseegaran crea a Chitti, un poderoso robot a su imagen y semejanza, pero es rechazado por la AIRD (Asociación Internacional de Investigación de Desarrollo) debido a su falta de comportamiento y emociones humanas. Tras la caída de un rayo, Chitti comienza a desarrollar sentimientos similares a los humanos. Sin embargo, Chitti se enamora de Sana, la prometida del Dr. Vaseegaran, y se rebela contra su creador, lo que conlleva peligrosas consecuencias.","poster_path":"/hai6CSCLxULO1RThjDP3lWAqOtQ.jpg"},{"adult":false,"backdrop_path":"/oKV1jGBYeq7W3AVN9R2xUpgqE3n.jpg","id":324142,"name":"Angel Terminators Collection","original_language":"en","original_name":"Angel Terminators Collection","overview":"","poster_path":"/1Fqkez03S0rYUrVRu8jyxFoUcNY.jpg"},{"adult":false,"backdrop_path":"/5bgXrLCxkMGB6E7S2wu5dKJFOr2.jpg","id":286948,"name":"Nemesis Collection","original_language":"de","original_name":"Nemesis Collection","overview":"","poster_path":"/oUXKeZxb7hsdSFwgsc2KY56KfzE.jpg"}],"total_pages":1,"total_results":4}

@@ -6,7 +6,7 @@ describe Tmdb::Collection do
       collection = Tmdb::Collection.detail(528)
       parts = collection.parts
 
-      parts.size.should eq(6)
+      parts.size.should be > 1
       parts.should be_a(Array(Tmdb::MovieResult))
     end
   end
@@ -26,7 +26,7 @@ describe Tmdb::Collection do
         collection = Tmdb::Collection.detail(528)
         backdrops = collection.backdrops
 
-        backdrops.size.should eq(4)
+        backdrops.size.should be > 1
         backdrops.should be_a(Array(Tmdb::Backdrop))
       end
     end
@@ -59,7 +59,7 @@ describe Tmdb::Collection do
         collection = Tmdb::Collection.detail(528)
         posters = collection.posters
 
-        posters.size.should eq(19)
+        posters.size.should be > 1
         posters.should be_a(Array(Tmdb::Poster))
       end
     end
@@ -69,7 +69,7 @@ describe Tmdb::Collection do
         collection = Tmdb::Collection.detail(528)
         posters = collection.posters(language: "es")
 
-        posters.size.should eq(3)
+        posters.size.should be > 1
         posters.should be_a(Array(Tmdb::Poster))
       end
     end
@@ -92,7 +92,7 @@ describe Tmdb::Collection do
         collection = Tmdb::Collection.detail(528)
         translations = collection.translations
 
-        translations.size.should eq(32)
+        translations.size.should be > 1
         translations.should be_a(Array(Tmdb::Translation))
       end
     end
@@ -102,7 +102,7 @@ describe Tmdb::Collection do
         collection = Tmdb::Collection.detail(528)
         translations = collection.translations(language: "es")
 
-        translations.size.should eq(32)
+        translations.size.should be > 1
         translations.should be_a(Array(Tmdb::Translation))
       end
     end

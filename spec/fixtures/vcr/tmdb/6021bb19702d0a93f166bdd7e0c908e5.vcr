@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS
+x-memc-key: 2486f371919290448476c712019e749588a041d4758e1e1ad54830bbb7bffc74
+x-memc-age: 0
+x-memc-expires: 0
+x-az: us-east-1b
+x-task-id: 30da6ae4440a42f0a445f111617018a6
+Date: Tue, 09 Dec 2025 15:14:59 GMT
+Cache-Control: public, max-age=0
+ETag: W/"140b1243fe28033ecbddda8212e05e63"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: RefreshHit from cloudfront
+Via: 1.1 2ef1b1b84e938b6071d9a4f357c18e56.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: SBTGKZulYKM-UyODDkw0fZi6XyLkgSyB9uJu8ezgABFbkBF_jSNGhQ==
+Content-Length: 970
+
+{"adult":false,"backdrop_path":"/jA2fBdGEgzFXwZ26K2oEqqGqh1R.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":10402,"name":"Music"}],"homepage":"https://www.youtube.com/watch?v=8oeOwmJa8vk","id":1595644,"imdb_id":null,"origin_country":["US"],"original_language":"en","original_title":"Vanisher, Horizon Scraper","overview":"Quadeca presents his third full‑length self‑produced visual companion to his fourth studio album \"Vanisher, Horizon Scraper\", a mythic odyssey across sea and mind through obsession, transformation, loss and rebirth.","popularity":0.0,"poster_path":"/l54WevwIn5xRmhmY5Os9zaLAO0I.jpg","production_companies":[],"production_countries":[],"release_date":"2025-07-25","revenue":0,"runtime":69,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"\"Through the weaving waves, I remain.\"","title":"Vanisher, Horizon Scraper","video":false,"vote_average":10.0,"vote_count":1}

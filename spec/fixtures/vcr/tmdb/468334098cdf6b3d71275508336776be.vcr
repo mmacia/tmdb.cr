@@ -2,17 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:47:27 GMT
+Date: Tue, 09 Dec 2025 14:43:47 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=600
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 02d3291a1ad341b65154c2216e21838b.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: JJvs9Pe1vDgvSTX9UNaWhuudr14ICks6DGkuHvcr5E8DHrosJaIlXw==
-Content-Length: 870
+Cache-Control: public, max-age=5652
+x-memc: HIT
+x-memc-key: a087546ca67a8b2887f865b9b12efb19ca657770c443159cce2291dee91e4152
+x-memc-age: 22921
+x-memc-expires: 5652
+x-az: us-east-1a
+x-task-id: 93db2961da134913985e7136ab6c623e
+ETag: W/"c9a0902b515f962547c9a4944c77bf1b"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 e9f03a34d7973367544d730361789f76.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 51yekoReZrsgJeaKxQy-wrgeI8Uj3jYiQcwYzRjyEap6L1jysolvDQ==
+Age: 2330
+Content-Length: 571
 
-{"page":1,"results":[{"backdrop_path":"/7RySzFeK3LPVMXcPtqfZnl6u4p1.jpg","first_air_date":"2007-09-24","genre_ids":[35],"id":1418,"name":"The Big Bang Theory","origin_country":["US"],"original_language":"en","original_name":"The Big Bang Theory","overview":"The sitcom is centered on five characters living in Pasadena, California: roommates Leonard Hofstadter and Sheldon Cooper; Penny, a waitress and aspiring actress who lives across the hall; and Leonard and Sheldon's equally geeky and socially awkward friends and co-workers, mechanical engineer Howard Wolowitz and astrophysicist Raj Koothrappali. The geekiness and intellect of the four guys is contrasted for comic effect with Penny's social skills and common sense.","popularity":157.608,"poster_path":"/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg","vote_average":7.7,"vote_count":7184}],"total_pages":1,"total_results":1}
+{"page":1,"results":[{"adult":false,"backdrop_path":"/7RySzFeK3LPVMXcPtqfZnl6u4p1.jpg","genre_ids":[35],"id":1418,"origin_country":["US"],"original_language":"en","original_name":"The Big Bang Theory","overview":"Physicists Leonard and Sheldon find their nerd-centric social circle with pals Howard and Raj expanding when aspiring actress Penny moves in next door.","popularity":27.4844,"poster_path":"/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg","first_air_date":"2007-09-24","name":"The Big Bang Theory","vote_average":7.912,"vote_count":12077}],"total_pages":1,"total_results":1}

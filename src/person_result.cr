@@ -26,7 +26,7 @@ class Tmdb::PersonResult
         else
           MovieResult.new(item)
         end
-      end
+      end if data["known_for"]?
     rescue TypeCastError
       known_for = [] of MovieResult | Tv::ShowResult
     end

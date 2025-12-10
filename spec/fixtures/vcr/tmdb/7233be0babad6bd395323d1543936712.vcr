@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS
+x-memc-key: bf5b77bd6a8d579da8fb86f865b92731b66878b239216c55ea679755768068e6
+x-memc-age: 0
+x-memc-expires: 0
+x-az: us-east-1b
+x-task-id: 8011ba77a8584f91b10251903f708c1a
+Date: Tue, 09 Dec 2025 15:15:00 GMT
+Cache-Control: public, max-age=0
+ETag: W/"303aada8f7bc8bb9b43d00708e895360"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: RefreshHit from cloudfront
+Via: 1.1 3d3cfcce2bc7d8cdd0937a7781e828e8.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 879uy5JrSZZMXnsrJezcPthVbKc_KiEKW0LpuNhkC2i7gdHotG4oZQ==
+Content-Length: 668
+
+{"adult":false,"backdrop_path":"/jA2fBdGEgzFXwZ26K2oEqqGqh1R.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":10402,"name":"Música"}],"homepage":"","id":1595644,"imdb_id":null,"origin_country":["US"],"original_language":"en","original_title":"Vanisher, Horizon Scraper","overview":"","popularity":0.0,"poster_path":"/l54WevwIn5xRmhmY5Os9zaLAO0I.jpg","production_companies":[],"production_countries":[],"release_date":"2025-07-25","revenue":0,"runtime":69,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Vanisher, Horizon Scraper","video":false,"vote_average":10.0,"vote_count":1}

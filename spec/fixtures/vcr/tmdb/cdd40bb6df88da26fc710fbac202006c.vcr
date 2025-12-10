@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:46 GMT
+Server: openresty
+Cache-Control: public, max-age=7426
+x-memc: HIT
+x-memc-key: 98e4ab2c7f77ae8b4e49a478eec195e57df582495a71c29f0c53514059cfe4be
+x-memc-age: 15323
+x-memc-expires: 7426
+x-az: us-east-1c
+x-task-id: c40e998d6f4646df92d8b97ee4ac8097
+ETag: W/"c9a0902b515f962547c9a4944c77bf1b"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8651dec5501a9be54b46f44ea7098ae2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: kMkENN4066F4cZd03A3ApGFEEvPyU2jS4jaN68BHTS2PYjsVjPYhFg==
+Age: 1906
+Content-Length: 571
+
+{"page":1,"results":[{"adult":false,"backdrop_path":"/7RySzFeK3LPVMXcPtqfZnl6u4p1.jpg","genre_ids":[35],"id":1418,"origin_country":["US"],"original_language":"en","original_name":"The Big Bang Theory","overview":"Physicists Leonard and Sheldon find their nerd-centric social circle with pals Howard and Raj expanding when aspiring actress Penny moves in next door.","popularity":27.4844,"poster_path":"/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg","first_air_date":"2007-09-24","name":"The Big Bang Theory","vote_average":7.912,"vote_count":12077}],"total_pages":1,"total_results":1}

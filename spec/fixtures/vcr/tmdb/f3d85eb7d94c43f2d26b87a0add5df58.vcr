@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: 78338a44cda05b93af04fc16ef9782e4028eb337b849ba90acde9b30f9f492ef
+x-memc-age: 0
+x-memc-expires: 28598
+x-az: us-east-1b
+x-task-id: 664392b9dee54fd8813e14ff7054968d
+Date: Tue, 09 Dec 2025 14:43:42 GMT
+Cache-Control: public, max-age=17323
+ETag: W/"a6621e1fb295feaca43268ba338cfcdc"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 2ef1b1b84e938b6071d9a4f357c18e56.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: z54AjSHB3PLSLFwvdjLBYcxofytewUbR2pcLJ1fw5bru40PUqSvSMg==
+Age: 1870
+Content-Length: 217
+
+{"id":99272,"logos":[{"aspect_ratio":5.031446540880503,"file_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","height":318,"id":"5ae50d1c0e0a260d9e000008","file_type":".svg","vote_average":3.334,"vote_count":2,"width":1600}]}

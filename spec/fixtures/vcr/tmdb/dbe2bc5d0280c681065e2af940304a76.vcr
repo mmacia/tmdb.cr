@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:47:25 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: d88e640de6a7e9a85095c11948283b6714158273
-X-Memc-Age: 0
-X-Memc-Expires: 21600
-ETag: W/"cd4de98e6d2f1bc448fde6e7b6548d01"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 5bbe14a8b2c5fa4323fe2881d040833c.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: P76THl51EirbpQwYzDsiYOaVny5fN1Qy4VSrSSaJc0bYEPFM9PPIFQ==
-Content-Length: 1367
+x-memc: HIT
+x-memc-key: 3aef91ce3b212a1c60c672d2cc03151db4d26420fa4f25b4f274914b851d3498
+x-memc-age: 4155
+x-memc-expires: 23875
+x-az: us-east-1c
+x-task-id: 374f1f6eda394c62be1ca031f9631120
+Date: Tue, 09 Dec 2025 14:43:44 GMT
+Cache-Control: public, max-age=25615
+ETag: W/"4bce2213ceb5078c6af7e5cf4fdd89a7"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 aef1665c302c83421efd2e16a8dd31a2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 1CGVOXP5GbRRcxW_idUeb34uvtYl2UO0XaA5Vi5H3slSq01mI05DxA==
+Age: 2332
+Content-Length: 2016
 
-{"page":1,"results":[{"adult":false,"backdrop_path":"/cpmbkwSxZnKO69V82A9a34tvk2E.jpg","id":528,"name":"The Terminator Collection","original_language":"en","original_name":"The Terminator Collection","overview":"A series of science-fiction films about the futuristic conflict between the humans led by John Connor and the Terminators that are made and controlled by Skynet, a self-aware super computer that started Armageddon and may indeed end humanity for good. Skynet's most well-known products in its genocidal goals are the various terminator models, such as the T-800 (Model 101).","poster_path":"/vxiKtcxAJxHhlg2H1X8y7zcM3k6.jpg"},{"adult":false,"backdrop_path":null,"id":324142,"name":"Angel Terminators Collection","original_language":"en","original_name":"Angel Terminators Collection","overview":"A series of “girls with guns” movies that rely on stuntmen/stuntwomen putting themselves in harm’s way in order to make up for the obviously low budget.","poster_path":"/6MP18zYc6zfl9Cw4f7ZOxbcj6EK.jpg"},{"adult":false,"backdrop_path":"/5bgXrLCxkMGB6E7S2wu5dKJFOr2.jpg","id":286948,"name":"Nemesis Collection","original_language":"de","original_name":"Nemesis Collection","overview":"Nemesis is a science fiction post apocalyptic film series directed by Albert Pyun.","poster_path":"/oUXKeZxb7hsdSFwgsc2KY56KfzE.jpg"}],"total_pages":1,"total_results":3}
+{"page":1,"results":[{"adult":false,"backdrop_path":"/sCnBEw2Yu6foEjs4Xb4eMddYHRo.jpg","id":528,"name":"The Terminator Collection","original_language":"en","original_name":"The Terminator Collection","overview":"A series of science-fiction films about the futuristic conflict between the humans led by John Connor and the Terminators that are made and controlled by Skynet, a self-aware super computer that started Armageddon and may indeed end humanity for good. Skynet's most well-known products in its genocidal goals are the various terminator models, such as the T-800 (Model 101).","poster_path":"/kpZxdNsAV7qTdTLwKM5NLqa7GEo.jpg"},{"adult":false,"backdrop_path":"/oKV1jGBYeq7W3AVN9R2xUpgqE3n.jpg","id":324142,"name":"Angel Terminators Collection","original_language":"en","original_name":"Angel Terminators Collection","overview":"A series of “girls with guns” movies that rely on stuntmen/stuntwomen putting themselves in harm’s way in order to make up for the obviously low budget.","poster_path":"/1Fqkez03S0rYUrVRu8jyxFoUcNY.jpg"},{"adult":false,"backdrop_path":"/5bgXrLCxkMGB6E7S2wu5dKJFOr2.jpg","id":286948,"name":"Nemesis Collection","original_language":"de","original_name":"Nemesis Collection","overview":"Nemesis is a science fiction post apocalyptic film series directed by Albert Pyun.","poster_path":"/oUXKeZxb7hsdSFwgsc2KY56KfzE.jpg"},{"adult":false,"backdrop_path":"/fvsSPqeVq4yhp7oZTGXA99uDQ1v.jpg","id":148284,"name":"Enthiran","original_language":"ta","original_name":"எந்திரன்","overview":"Dr. Vaseegaran creates Chitti, a powerful robot in his own image, but it is rejected by the scientific body AIRD due to its lack of human behaviour and emotions. After a lightning strike triggers emotions in Chitti, he begins to develop human-like feelings. However, Chitti falls in love with Dr. Vaseegaran's fiancée, Sana, and turns against his creator, leading to dangerous consequences.","poster_path":"/azbMDxDOXQd3fuGDTUg3LmJ4fih.jpg"}],"total_pages":1,"total_results":4}

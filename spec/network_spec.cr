@@ -18,7 +18,7 @@ describe Tmdb::Network do
         alternative_names = network.alternative_names
 
         alternative_names.should be_a(Array(String))
-        alternative_names.size.should eq(6)
+        alternative_names.size.should eq(8)
       end
     end
   end
@@ -30,7 +30,7 @@ describe Tmdb::Network do
         images = network.images
 
         images.should be_a(Array(Tmdb::Logo))
-        images.size.should eq(2)
+        images.size.should eq(1)
       end
     end
 

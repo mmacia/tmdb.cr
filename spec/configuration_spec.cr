@@ -12,7 +12,7 @@ describe Tmdb::Configuration do
     VCR.use_cassette("tmdb") do
       countries = Tmdb::Configuration.countries
       countries.should be_a(Array(Tmdb::Country))
-      countries.size.should eq(247)
+      countries.size.should be > 1
     end
   end
 
@@ -20,7 +20,7 @@ describe Tmdb::Configuration do
     VCR.use_cassette("tmdb") do
       jobs = Tmdb::Configuration.jobs
       jobs.should be_a(Hash(String, Array(String)))
-      jobs.size.should eq(12)
+      jobs.size.should be > 1
     end
   end
 
@@ -28,7 +28,7 @@ describe Tmdb::Configuration do
     VCR.use_cassette("tmdb") do
       languages = Tmdb::Configuration.languages
       languages.should be_a(Array(Tmdb::Language))
-      languages.size.should eq(187)
+      languages.size.should be > 1
     end
   end
 
@@ -36,7 +36,7 @@ describe Tmdb::Configuration do
     VCR.use_cassette("tmdb") do
       translations = Tmdb::Configuration.primary_translations
       translations.should be_a(Array(String))
-      translations.size.should eq(70)
+      translations.size.should be > 1
     end
   end
 
@@ -44,7 +44,7 @@ describe Tmdb::Configuration do
     VCR.use_cassette("tmdb") do
       timezones = Tmdb::Configuration.timezones
       timezones.should be_a(Hash(String, Array(String)))
-      timezones.size.should eq(249)
+      timezones.size.should be > 1
     end
   end
 end

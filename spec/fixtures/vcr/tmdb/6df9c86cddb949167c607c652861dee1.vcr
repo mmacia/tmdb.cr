@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 15:14:28 GMT
+Server: openresty
+Cache-Control: public, max-age=600
+x-memc: MISS, STORE
+x-memc-key: 920e7afce905350902b320ce865d732a2dcef8821c03ec10c9a155fadc303683
+x-memc-age: 0
+x-memc-expires: 600
+x-az: us-east-1a
+x-task-id: 813dbd8b691649a2820aa3f2bfa6a3d7
+ETag: W/"ad65b958cb25a91e387a06081d588390"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 19870c0393f1333e354741940caea7ba.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: Vu4_u7fuJAB6HwJlS5uKgyq-qxoG86R1w09XxSsbA4PE2vAxeAldXA==
+Age: 67
+Content-Length: 4330
+
+{"page":6,"results":[{"adult":false,"id":10859,"name":"Ryan Reynolds","original_name":"Ryan Reynolds","media_type":"person","popularity":7.8435,"gender":2,"known_for_department":"Acting","profile_path":"/trzgptffGvAlAT6MEu01fz47cLW.jpg"},{"adult":false,"id":13240,"name":"Mark Wahlberg","original_name":"Mark Wahlberg","media_type":"person","popularity":13.4507,"gender":2,"known_for_department":"Acting","profile_path":"/fqIZoibpZBwzCTBXQudVvPl87Db.jpg"},{"adult":false,"id":13922,"name":"Seth Green","original_name":"Seth Green","media_type":"person","popularity":4.134,"gender":2,"known_for_department":"Acting","profile_path":"/l4No5Eu6j0U80hCIkaSn17AOWrj.jpg"},{"adult":false,"id":11288,"name":"Robert Pattinson","original_name":"Robert Pattinson","media_type":"person","popularity":5.6707,"gender":2,"known_for_department":"Acting","profile_path":"/8A4PS5iG7GWEAVFftyqMZKl3qcr.jpg"},{"adult":false,"id":1813,"name":"Anne Hathaway","original_name":"Anne Hathaway","media_type":"person","popularity":15.411,"gender":1,"known_for_department":"Acting","profile_path":"/s6tflSD20MGz04ZR2R1lZvhmC4Y.jpg"},{"adult":false,"id":1781425,"name":"Seo Won","original_name":"서원","media_type":"person","popularity":4.0417,"gender":1,"known_for_department":"Acting","profile_path":"/o63ks1H6KPe7wejGHyRHTnQcqEw.jpg"},{"adult":false,"id":1468490,"name":"Kang Eun-hye","original_name":"Kang Eun-hye","media_type":"person","popularity":5.1611,"gender":1,"known_for_department":"Acting","profile_path":"/39GYBqGd7yHliYO1zfsdwtkPWZI.jpg"},{"adult":false,"id":115440,"name":"Sydney Sweeney","original_name":"Sydney Sweeney","media_type":"person","popularity":20.8647,"gender":1,"known_for_department":"Acting","profile_path":"/qYiaSl0Eb7G3VaxOg8PxExCFwon.jpg"},{"adult":false,"id":5655,"name":"Wes Anderson","original_name":"Wes Anderson","media_type":"person","popularity":2.3154,"gender":2,"known_for_department":"Directing","profile_path":"/s03CeUeC5yAXyB1acqP0zGNo2SC.jpg"},{"adult":false,"id":4736347,"name":"Brayden Cross","original_name":"Brayden Cross","media_type":"person","popularity":0.3149,"gender":2,"known_for_department":"Acting","profile_path":"/aNMpOv5QvxngaYHwGUiWUEIqX7q.jpg"},{"adult":false,"id":3732529,"name":"서아","original_name":"서아","media_type":"person","popularity":1.4594,"gender":0,"known_for_department":"Acting","profile_path":null},{"adult":false,"id":2472427,"name":"Tae Joo","original_name":"Tae Joo","media_type":"person","popularity":0.6534,"gender":1,"known_for_department":"Acting","profile_path":"/4QIDt296jCFXhpjxT5GDZAeLb21.jpg"},{"adult":false,"id":2326151,"name":"Paul Mescal","original_name":"Paul Mescal","media_type":"person","popularity":3.0689,"gender":2,"known_for_department":"Acting","profile_path":"/vrzZ41TGNAFgfmZjC2sOJySzBLd.jpg"},{"adult":false,"id":1907997,"name":"Min Do-yoon","original_name":"민도윤","media_type":"person","popularity":6.1217,"gender":2,"known_for_department":"Acting","profile_path":"/bHHn3krbHyxQIWb4JbHkPlV6Uu1.jpg"},{"adult":false,"id":1867299,"name":"Francis Chapman","original_name":"Francis Chapman","media_type":"person","popularity":0.6901,"gender":2,"known_for_department":"Production","profile_path":"/3GtN5yo5aFhmrQcBFOS7tIjs17z.jpg"},{"adult":false,"id":1622390,"name":"Lee Chae-dam","original_name":"Lee Chae-dam","media_type":"person","popularity":4.0466,"gender":1,"known_for_department":"Acting","profile_path":"/7wMyr6F3yzvbSpu2XMxSW3vObED.jpg"},{"adult":false,"id":1497557,"name":"Alexa Demie","original_name":"Alexa Demie","media_type":"person","popularity":10.3506,"gender":1,"known_for_department":"Acting","profile_path":"/zba2qXMNRnD7uXOYzXfcnstv17V.jpg"},{"adult":false,"id":1437984,"name":"Han Se-Ah","original_name":"Han Se-Ah","media_type":"person","popularity":1.5755,"gender":1,"known_for_department":"Acting","profile_path":"/p4hU3nQCbHTAh6uCgn2bxZhrgFz.jpg"},{"adult":false,"id":234352,"name":"Margot Robbie","original_name":"Margot Robbie","media_type":"person","popularity":9.8414,"gender":1,"known_for_department":"Acting","profile_path":"/euDPyqLnuwaWMHajcU3oZ9uZezR.jpg"},{"adult":false,"id":150903,"name":"Gong Yoo","original_name":"공유","media_type":"person","popularity":4.6972,"gender":2,"known_for_department":"Acting","profile_path":"/ocGoFb6TrK3uWGXt4WnuibUG1vD.jpg"}],"total_pages":187,"total_results":3722}

@@ -2,23 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:39:01 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: 5bd5f821b0608d1b7c0d23da14cc3ab27fdcbc89
-X-Memc-Age: 12746
-X-Memc-Expires: 2435
-ETag: W/"ecca6c15cf1810a978b076ec5cbcc74d"
-Vary: Accept-Encoding
+x-memc: HIT
+x-memc-key: 12a6180ce8a0d2ab23f7069abbae57af5145a91ef7fa0fc0147cc97de686ceab
+x-memc-age: 21202
+x-memc-expires: 1596
+x-az: us-east-1c
+x-task-id: 9b5a405761724a11a434fc2769395065
+Date: Tue, 09 Dec 2025 15:14:06 GMT
+Cache-Control: public, max-age=27421
+ETag: W/"dc1357796e45a7db081b5e16adac4698"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Hit from cloudfront
-Via: 1.1 f8fe4f851984f096441277ce2c333733.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: Sjg9IRN6va0Sc24BxFCc3Cyo79Lhlcbg8c_2-8EkbPh5cGvrlKHCXw==
-Age: 318
-Content-Length: 337
+Via: 1.1 26e93b3a0dd504e9fa61c90a97cb3342.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: pFp-Sa6RtS3Ahrg3dlgiDlzJCQ1egVPoLE7GnM45cfq5c60HoiwI8Q==
+Age: 508
+Content-Length: 378
 
-{"adult":false,"also_known_as":["Michael Connell Biehn"],"biography":"","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":3.217,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}
+{"adult":false,"also_known_as":["Michael Connell Biehn","Майкл Бін","مایکل بین"],"biography":"","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":1.9366,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}

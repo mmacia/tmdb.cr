@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 9c24181883942cd08deb49ba8e67fe1a941e136677f4e0e01d253b84640b634e
+x-memc-age: 12423
+x-memc-expires: 15348
+x-az: us-east-1c
+x-task-id: 85d159752b264c8ca2611b288dbf4d21
+Date: Tue, 09 Dec 2025 14:43:40 GMT
+Cache-Control: public, max-age=4088
+ETag: W/"8e1a8794d8f615b73ab32588929cd416"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 26e93b3a0dd504e9fa61c90a97cb3342.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: HIofiWfHsko9cEnyUlCKzkoyitLLUAP5XCFE5PT5b6kZXEJta03BcQ==
+Age: 1872
+Content-Length: 166
+
+{"headquarters":"Los Angeles, California","homepage":"https://www.fox.com/","id":19,"logo_path":"/1DSpHrWyOORkL9N2QHX7Adt31mQ.png","name":"FOX","origin_country":"US"}

@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:37:53 GMT
+Date: Tue, 09 Dec 2025 14:43:41 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: 6f3a6f40d1aba39476c839d256823a55cb4799e3
-X-Memc-Age: 13792
-X-Memc-Expires: 1292
-ETag: W/"4fe1360bc6888a05305722c3be4958f9"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 158bf65e81ba82d619c73dde6c7796a9.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: ytoIGHdXL2G0DopQhRui2FmyOkMJxhBajQhHZ6yo_3Yq8rnX05I4lA==
-Content-Length: 408
+Cache-Control: public, max-age=13777
+x-memc: HIT
+x-memc-key: a8eaac24dec5190be29b251dcc290e0645bd1107dfea16770cb892bbd2051020
+x-memc-age: 9922
+x-memc-expires: 13777
+x-az: us-east-1a
+x-task-id: b0eafb7727e14bcabac0e4abd1a9419d
+ETag: W/"f89f98a9322a0be9411bdbd7d1507b2a"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 2ef1b1b84e938b6071d9a4f357c18e56.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: UvVtXoReL2zPcrhTtdoMwnrcTGnPDPY2ePaww7vBUowZBhwaq4LE1A==
+Age: 2317
+Content-Length: 215
 
-{"id":19,"logos":[{"aspect_ratio":2.325581395348837,"file_path":"/1DSpHrWyOORkL9N2QHX7Adt31mQ.png","height":430,"id":"5a7a673a0e0a26021f000036","file_type":".svg","vote_average":5.384,"vote_count":2,"width":1000},{"aspect_ratio":1.142857142857143,"file_path":"/rUb71E91POVCxpXGJ49pf6m8Ukk.png","height":175,"id":"5a91bb680e0a2616bd00f7fe","file_type":".svg","vote_average":5.172,"vote_count":1,"width":200}]}
+{"id":19,"logos":[{"aspect_ratio":2.3255813953488373,"file_path":"/1DSpHrWyOORkL9N2QHX7Adt31mQ.png","height":430,"id":"5a7a673a0e0a26021f000036","file_type":".svg","vote_average":2.278,"vote_count":3,"width":1000}]}

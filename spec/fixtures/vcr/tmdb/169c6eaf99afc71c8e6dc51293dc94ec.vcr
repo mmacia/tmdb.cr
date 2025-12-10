@@ -1,22 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 163
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 22:05:18 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: e1b2869a2048d97b2a295763880be1ba262d5f79
-X-Memc-Age: 2524
-X-Memc-Expires: 12503
-ETag: W/"fc04ca2f403b4ca826fe8eaa093f9c15"
+x-memc: HIT
+x-memc-key: 62378180871973f1b3cbb0ef10e2e8d416161689a47778bbd9967c37b24e27ce
+x-memc-age: 21201
+x-memc-expires: 696
+x-az: us-east-1b
+x-task-id: 664392b9dee54fd8813e14ff7054968d
+Date: Tue, 09 Dec 2025 14:43:26 GMT
+Cache-Control: public, max-age=6237
+ETag: W/"e68a51a9c4042efee3cd2c9d414d445e"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Hit from cloudfront
-Via: 1.1 7fdd77e84c03b9aa5af58d1d137b5cd0.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: LHwVgDYXD5pJ8LhJXLePfGckcjXmcJ9qHBs0S9GBdyZQl3pXeeZqcg==
-Age: 756
+Via: 1.1 2ef1b1b84e938b6071d9a4f357c18e56.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 1IUZYX4f4Cq1loXjCScy4KfKHffmIrZQXQk5fS-II34e1M1Knbidmw==
+Age: 2328
+Content-Length: 1721
 
-{"results":[{"iso_3166_1":"US","rating":"TV-PG"},{"iso_3166_1":"FR","rating":"NR"},{"iso_3166_1":"KR","rating":"12"},{"iso_3166_1":"BR","rating":"10"}],"id":31132}
+{"results":[{"descriptors":[],"iso_3166_1":"US","rating":"TV-PG"},{"descriptors":[],"iso_3166_1":"FR","rating":"NR"},{"descriptors":[],"iso_3166_1":"KR","rating":"12"},{"descriptors":[],"iso_3166_1":"BR","rating":"10"},{"descriptors":[],"iso_3166_1":"ES","rating":"7"},{"descriptors":[],"iso_3166_1":"SG","rating":"PG"},{"descriptors":[],"iso_3166_1":"NO","rating":"12"},{"descriptors":[],"iso_3166_1":"PH","rating":"PG"},{"descriptors":[],"iso_3166_1":"IN","rating":"U"},{"descriptors":[],"iso_3166_1":"MY","rating":"U"},{"descriptors":[],"iso_3166_1":"MX","rating":"AA"},{"descriptors":[],"iso_3166_1":"AU","rating":"PG"},{"descriptors":[],"iso_3166_1":"PT","rating":"NR"},{"descriptors":[],"iso_3166_1":"FR","rating":"16"},{"descriptors":[],"iso_3166_1":"ES","rating":"12"},{"descriptors":[],"iso_3166_1":"CA","rating":"C8"},{"descriptors":[],"iso_3166_1":"DE","rating":"16"},{"descriptors":[],"iso_3166_1":"GB","rating":"PG"},{"descriptors":[],"iso_3166_1":"RU","rating":"12+"},{"descriptors":[],"iso_3166_1":"AT","rating":"10"},{"descriptors":[],"iso_3166_1":"CH","rating":"12"},{"descriptors":[],"iso_3166_1":"PL","rating":"12"},{"descriptors":[],"iso_3166_1":"HU","rating":"12"},{"descriptors":[],"iso_3166_1":"CZ","rating":"12+"},{"descriptors":[],"iso_3166_1":"RO","rating":"AP"},{"descriptors":[],"iso_3166_1":"GB","rating":"12"},{"descriptors":[],"iso_3166_1":"NZ","rating":"PG"},{"descriptors":[],"iso_3166_1":"IN","rating":"U/A 13+"},{"descriptors":[],"iso_3166_1":"ZA","rating":"13"},{"descriptors":[],"iso_3166_1":"BE","rating":"12"},{"descriptors":[],"iso_3166_1":"TR","rating":"13+"},{"descriptors":[],"iso_3166_1":"PR","rating":"TV-PG"},{"descriptors":[],"iso_3166_1":"VI","rating":"TV-PG"}],"id":31132}

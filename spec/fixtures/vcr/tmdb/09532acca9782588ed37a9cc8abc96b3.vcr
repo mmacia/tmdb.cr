@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: f61cb63ea4a06eb77722bb80fa165e7c36c6c9a3e067dd64211a772920cac2cd
+x-memc-age: 14141
+x-memc-expires: 8643
+x-az: us-east-1a
+x-task-id: 739b3c9060e343a0ba63ac3c33a555bf
+Date: Tue, 09 Dec 2025 14:44:32 GMT
+Cache-Control: public, max-age=22893
+ETag: W/"4edd01c3d6399529ba566bb582cd2f26"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 19870c0393f1333e354741940caea7ba.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: xSEipITWr9bhp636uPaRrCgnqFedQEnAfXzu8FMNrB16qjC7B3jp6g==
+Age: 1827
+Content-Length: 789
+
+{"id":218,"keywords":[{"id":312,"name":"man vs machine"},{"id":310,"name":"artificial intelligence (a.i.)"},{"id":83,"name":"saving the world"},{"id":1280,"name":"laser gun"},{"id":679,"name":"cyborg"},{"id":1373,"name":"killer robot"},{"id":1366,"name":"shotgun"},{"id":526,"name":"rebel"},{"id":4565,"name":"dystopia"},{"id":3289,"name":"villain"},{"id":4379,"name":"time travel"},{"id":12670,"name":"los angeles, california"},{"id":33556,"name":"urban setting"},{"id":162484,"name":"future war"},{"id":175468,"name":"savior"},{"id":178657,"name":"tech noir"},{"id":208757,"name":"time paradox"},{"id":219404,"name":"action hero"},{"id":253388,"name":"griffith observatory"},{"id":269233,"name":"good versus evil"},{"id":321464,"name":"intense"},{"id":357496,"name":"dystopian sci-fi"}]}

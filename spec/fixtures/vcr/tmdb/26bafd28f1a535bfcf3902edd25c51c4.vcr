@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:27 GMT
+Server: openresty
+Cache-Control: public, max-age=10136
+x-memc: HIT
+x-memc-key: f638de667fa1fe7a991be7d388d47d1e43925692a441dec64ebbbb3f1ab1ddba
+x-memc-age: 14705
+x-memc-expires: 10136
+x-az: us-east-1b
+x-task-id: b8242b4982bb449b83edb73b5551b01a
+ETag: W/"0fd89c932ab472c9b7500fa29203fbfc"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 aef1665c302c83421efd2e16a8dd31a2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 9VQ_wIs6fnoeVTOTlzAMtMmi4yBg2-RciTwGpD8RsztXycs4T59qmg==
+Age: 1881
+Content-Length: 1700
+
+{"backdrops":[{"aspect_ratio":1.778,"height":2160,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/poUFEE6IgACEuliu7PWDTRj0cst.jpg","vote_average":0.0,"vote_count":0,"width":3840},{"aspect_ratio":1.778,"height":1080,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/6MI0ASNsRlIaiO9viXBhaU8u9N1.jpg","vote_average":0.0,"vote_count":0,"width":1920}],"id":31132,"logos":[{"aspect_ratio":6.27,"height":74,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/kUtRUYB9AUrmF6JIT48tSMnmKSD.png","vote_average":0.166,"vote_count":1,"width":464},{"aspect_ratio":2.353,"height":544,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/bapW0FKat09ynelblzeTU2P5COW.png","vote_average":0.0,"vote_count":0,"width":1280},{"aspect_ratio":2.353,"height":544,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/jTONsJiKCrFlurfCluG3JH6Eebm.png","vote_average":0.0,"vote_count":0,"width":1280},{"aspect_ratio":3.137,"height":175,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/boI87jYfFcvmxWUE6own4KU7Vux.png","vote_average":0.0,"vote_count":0,"width":549},{"aspect_ratio":2.876,"height":299,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/4p2x6tF9HAKIROroZRSbAtv9kwv.png","vote_average":0.0,"vote_count":0,"width":860},{"aspect_ratio":4.815,"height":265,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/PnTLXXFhV55uaqkpepVizk26Nc.png","vote_average":0.0,"vote_count":0,"width":1276}],"posters":[{"aspect_ratio":0.667,"height":2562,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/6xea7V4d2xayrlBKOtMZ4wlV6wZ.jpg","vote_average":0.166,"vote_count":1,"width":1708},{"aspect_ratio":0.667,"height":3000,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/zv2paXHigmBPL3X0eYsB9XYbCMs.jpg","vote_average":0.0,"vote_count":0,"width":2000}]}

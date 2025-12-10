@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:25 GMT
+Server: openresty
+Cache-Control: public, max-age=24667
+x-memc: MISS, STORE
+x-memc-key: bec58ce3bc6a83da4f0e081fce3dec3e52f450732b28cabf6318841c7a04bac8
+x-memc-age: 0
+x-memc-expires: 24667
+x-az: us-east-1a
+x-task-id: 73b8d61bf6bb421186d1b10c97925d1a
+ETag: W/"0dd94a526c0d15e0b7adea45331a9991"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 65fafc6240b0e8b3e15609a24840fab6.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: Bbj0Y_G8Z_7PsKok0TPqe4tsqGwpKjkCiRQu0jMCFxgP-Fp05qGVZA==
+Age: 1883
+Content-Length: 901
+
+{"credit_type":"creator","department":"Creator","job":"Creator","media":{"adult":false,"backdrop_path":"/5iWJwQPBusPTV7G7n5TABNRP7tO.jpg","id":31132,"name":"Regular Show","original_name":"Regular Show","overview":"The surreal misadventures of two best friends - a blue jay and a raccoon - as they seek to liven up their mundane jobs as groundskeepers at the local park.","poster_path":"/mS5SLxMYcKfUxA0utBSR5MOAWWr.jpg","media_type":"tv","original_language":"en","genre_ids":[16,35],"popularity":39.4017,"first_air_date":"2010-09-06","vote_average":8.627,"vote_count":2156,"origin_country":["US"],"episodes":[],"seasons":[]},"media_type":"tv","id":"52589cd8760ee346616116bf","person":{"adult":false,"id":222169,"name":"J.G. Quintel","original_name":"J.G. Quintel","media_type":"person","popularity":1.3145,"gender":2,"known_for_department":"Writing","profile_path":"/iVrY1k1ggfYUy8o9eY8XHAhu6f1.jpg"}}

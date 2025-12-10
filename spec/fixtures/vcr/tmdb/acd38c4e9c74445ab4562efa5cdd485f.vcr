@@ -1,21 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 102
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:29:24 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: 7e8d1cad188e41fcaca38941e00e3ebd511c6128
-X-Memc-Age: 0
-X-Memc-Expires: 16635
-Last-Modified: 2021-04-19 20:34:53 +0000
-X-Cache: Miss from cloudfront
-Via: 1.1 3d4bc9f760d271ea8c82b4a4027b2f93.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: oppb26uDFoyaiULSwiIS2f4yFkXmvd3ykGkfX8Oz6jKgLKLt5ayeAw==
+x-memc: MISS, STORE
+x-memc-key: 899822c8a8aa56079275c54c4e5fab8076d986ec6188080426941d9301e9e581
+x-memc-age: 0
+x-memc-expires: 24821
+x-az: us-east-1c
+x-task-id: b62a7e00f78b4833886e44e53a90fd42
+Date: Tue, 09 Dec 2025 14:44:31 GMT
+Cache-Control: public, max-age=23642
+ETag: W/"a314c77fc70ac683079ca279fdcd04ce"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8ea5a89d0fc9db6bcaef3f8d436858ae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: r_KFDznJm5n6shGPMRtrLdGoLVyrlRpV6yUue7zm1C45CMizAQQvFg==
+Age: 2289
+Content-Length: 102
 
 {"id":218,"titles":[{"iso_3166_1":"MX","title":"Terminator: El exterminador","type":"DVD box title"}]}

@@ -1,22 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 91
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 22:07:19 GMT
+Date: Tue, 09 Dec 2025 14:43:36 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: 787c1dc55dd9760220a218e606bfdd27d91d1ae4
-X-Memc-Age: 14439
-X-Memc-Expires: 1076
-ETag: W/"11f023df080c2531780b25286e457fa2"
+Cache-Control: public, max-age=7226
+x-memc: HIT
+x-memc-key: 22eef26a0e9234b6b6a90c57989a53379d98d8f6f171ec47cf827351ad3b1382
+x-memc-age: 15384
+x-memc-expires: 7226
+x-az: us-east-1b
+x-task-id: b8242b4982bb449b83edb73b5551b01a
+ETag: W/"83a0a2f3813437c18d265d9245d4ac74"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Hit from cloudfront
-Via: 1.1 e9c760453b6eccd1556a68a55a4a90c5.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: fCtd6TzalBt5EWTrfiY7p36KIZFaPqbnw7GF_0mDCkwoNUY6m0q1Cg==
-Age: 638
+Via: 1.1 8ea5a89d0fc9db6bcaef3f8d436858ae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: xJu3u-AMc3JQdkEhyqSdOeY18fE0ugVh3tHhWnTYKA6pZBIoUs4t4A==
+Age: 2321
+Content-Length: 110
 
-{"id":3738,"freebase_mid":"/m/04ldv7w","freebase_id":null,"tvdb_id":28047,"tvrage_id":null}
+{"id":3738,"freebase_mid":"/m/04ldv7w","freebase_id":null,"tvdb_id":28047,"tvrage_id":null,"wikidata_id":null}

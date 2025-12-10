@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: adbbfdd62921a5640a697f6736230444c9a43d5146a64a7cfd9d9847ae2a33be
+x-memc-age: 3360
+x-memc-expires: 22864
+x-az: us-east-1a
+x-task-id: 739b3c9060e343a0ba63ac3c33a555bf
+Date: Tue, 09 Dec 2025 14:43:37 GMT
+Cache-Control: public, max-age=19446
+ETag: W/"978c21413061d4e95cd5af9a0e80fe5b"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 ab1aa335aa7cf217c3ce07ab38ba2f80.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: LapJUGsHk_kIAjBmiCMc9dc6yOSkVKW75jNe4SEfdnCFSUZKFq-Dsg==
+Age: 1875
+Content-Length: 2190
+
+{"id":3738,"posters":[{"aspect_ratio":0.667,"height":2100,"iso_3166_1":"US","iso_639_1":"en","file_path":"/zqAL2rav7Tg8uwDtLurqZVN3mtr.jpg","vote_average":5.778,"vote_count":9,"width":1400},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"US","iso_639_1":"en","file_path":"/xeMLtxqVnHmtlrgvj3RUO9XQNT2.jpg","vote_average":3.334,"vote_count":2,"width":1000},{"aspect_ratio":0.692,"height":578,"iso_3166_1":"US","iso_639_1":"en","file_path":"/d7XALneyAM13nGozlqqHk81LzQN.jpg","vote_average":1.388,"vote_count":3,"width":400},{"aspect_ratio":0.692,"height":578,"iso_3166_1":"US","iso_639_1":"en","file_path":"/evk3NyEcDvnHzhcgYxFhffDoed0.jpg","vote_average":1.222,"vote_count":3,"width":400},{"aspect_ratio":0.692,"height":578,"iso_3166_1":"US","iso_639_1":"en","file_path":"/3VSoK8BSYtfNso0lXNTqT6FM1PB.jpg","vote_average":1.222,"vote_count":3,"width":400},{"aspect_ratio":0.692,"height":578,"iso_3166_1":"US","iso_639_1":"en","file_path":"/7YPwf3eEthP2hDCA9XUf89TwJj8.jpg","vote_average":1.222,"vote_count":3,"width":400},{"aspect_ratio":0.692,"height":578,"iso_3166_1":"US","iso_639_1":"en","file_path":"/Abiiui1j8182at27UTW3mXfe2S4.jpg","vote_average":1.222,"vote_count":3,"width":400},{"aspect_ratio":0.68,"height":1000,"iso_3166_1":"US","iso_639_1":"en","file_path":"/3J3JltOz3mD4aUqOEyjvI5GrP0C.jpg","vote_average":0.166,"vote_count":3,"width":680},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"US","iso_639_1":"en","file_path":"/iYneBapiiskdqhslYuth2Hfo4f3.jpg","vote_average":0.166,"vote_count":1,"width":1000},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"US","iso_639_1":"en","file_path":"/FPZgnHlH0rySsLXMWUwbF1KdXq.jpg","vote_average":0.166,"vote_count":1,"width":1000},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"US","iso_639_1":"en","file_path":"/it2kgKV0ctToRdvDvnkYopJViZz.jpg","vote_average":0.166,"vote_count":1,"width":1000},{"aspect_ratio":0.667,"height":3000,"iso_3166_1":"US","iso_639_1":"en","file_path":"/r5yq7LqPBxg6FPErUZ8oVAVYeYe.jpg","vote_average":0.166,"vote_count":1,"width":2000},{"aspect_ratio":0.68,"height":1000,"iso_3166_1":"US","iso_639_1":"en","file_path":"/r1KJ6fiaFYNx7EHlZ7WfHl4bLxn.jpg","vote_average":0.0,"vote_count":0,"width":680}]}

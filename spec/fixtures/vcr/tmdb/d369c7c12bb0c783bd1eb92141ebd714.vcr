@@ -2,22 +2,23 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 22:17:56 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
+x-memc: MISS
+x-memc-key: 6b163ba892a9e7dc4d75d65c96861fe9b861d2256f7dfe60cd34e27438822643
+x-memc-age: 0
+x-memc-expires: 0
+x-az: us-east-1c
+x-task-id: 374f1f6eda394c62be1ca031f9631120
+Date: Tue, 09 Dec 2025 15:22:16 GMT
 Cache-Control: public, max-age=0
-X-Memc: MISS
-X-Memc-Key: 07ccbd5cb7afdfcd7aed9298a085105075d3a6f4
-X-Memc-Age: 0
-X-Memc-Expires: 0
-Last-Modified: 2021-05-16 21:58:42 UTC
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 84edc0906da5023aac71c5fb4a35cd89.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: 3-ZJ_AMS6yrcw6JYv8WkbYUJaqamiprhIXgradzqU_0-BzhW7QV4Tg==
-Content-Length: 1324
+ETag: W/"502de0406a65b74c2249de101422fe4f"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: RefreshHit from cloudfront
+Via: 1.1 cbf33f1ce87e15a598a4a078f6825e00.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: KWTCz63YsidlWJOjvKaEpJxBEMCqf5Hr7S3-452vF5-K_kILapPkWg==
+Content-Length: 1271
 
-{"backdrop_path":"/hIAscHJRHOwKnCmcNPTgGTBJM7M.jpg","created_by":[],"episode_run_time":[],"first_air_date":"2021-02-12","genres":[],"homepage":"","id":125699,"in_production":false,"languages":["hi"],"last_air_date":"2021-02-19","last_episode_to_air":{"air_date":"2021-02-19","episode_number":2,"id":2955681,"name":"","overview":"","production_code":"","season_number":1,"still_path":null,"vote_average":0.0,"vote_count":0},"name":"Rubi Star","next_episode_to_air":null,"networks":[{"name":"Big Movie Zoo","id":4920,"logo_path":"/zIJoMv9FsH5rzqv479nSV2Ed45F.png","origin_country":"IN"}],"number_of_episodes":2,"number_of_seasons":1,"origin_country":["IN"],"original_language":"hi","original_name":"Rubi Star","overview":"","popularity":0.0,"poster_path":"/a75BbBrlW8ubbuCW8Qatqu575Pe.jpg","production_companies":[{"id":154368,"logo_path":"/zIJoMv9FsH5rzqv479nSV2Ed45F.png","name":"Big Movie Zoo","origin_country":"IN"}],"production_countries":[{"iso_3166_1":"IN","name":"India"}],"seasons":[{"air_date":"2021-02-12","episode_count":2,"id":195509,"name":"Temporada 1","overview":"","poster_path":"/a75BbBrlW8ubbuCW8Qatqu575Pe.jpg","season_number":1}],"spoken_languages":[{"english_name":"Hindi","iso_639_1":"hi","name":"हिन्दी"}],"status":"Ended","tagline":"","type":"Miniseries","vote_average":0.0,"vote_count":0}
+{"adult":false,"backdrop_path":"/2W8xc6peR8IkttcwQ9DfOVrabpT.jpg","created_by":[],"episode_run_time":[],"first_air_date":"2023-06-18","genres":[{"id":16,"name":"Animación"}],"homepage":"","id":307901,"in_production":true,"languages":["ko"],"last_air_date":"2023-06-18","last_episode_to_air":{"id":6752985,"name":"Episodio 50","overview":"","vote_average":0.0,"vote_count":0,"air_date":"2023-06-18","episode_number":50,"episode_type":"finale","production_code":"","runtime":3,"season_number":1,"show_id":307901,"still_path":null},"name":"화화원행기","next_episode_to_air":null,"networks":[],"number_of_episodes":2,"number_of_seasons":1,"origin_country":["KR"],"original_language":"ko","original_name":"화화원행기","overview":"","popularity":0.0,"poster_path":"/aYVUYayNjFOkxNfDc9NaLcZLW74.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"KR","name":"South Korea"}],"seasons":[{"air_date":"2023-06-18","episode_count":2,"id":488755,"name":"Temporada 1","overview":"","poster_path":"/v9tsvzWF4ariUtM3OBUf7V3ztG5.jpg","season_number":1,"vote_average":0.0}],"spoken_languages":[{"english_name":"Korean","iso_639_1":"ko","name":"한국어/조선말"}],"status":"Returning Series","tagline":"","type":"Scripted","vote_average":0.0,"vote_count":0}

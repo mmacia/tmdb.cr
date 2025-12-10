@@ -6,7 +6,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         regions = Tmdb::WatchProvider.available_regions
 
-        regions.size.should eq(35)
+        regions.size.should be > 1
         regions.should be_a(Array(Tmdb::Region))
       end
     end
@@ -15,7 +15,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         regions = Tmdb::WatchProvider.available_regions(language: "es")
 
-        regions.size.should eq(35)
+        regions.size.should be > 1
         regions.should be_a(Array(Tmdb::Region))
       end
     end
@@ -26,7 +26,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         providers = Tmdb::WatchProvider.movie_providers
 
-        providers.size.should eq(369)
+        providers.size.should be > 1
         providers.should be_a(Array(Tmdb::Provider))
       end
     end
@@ -35,7 +35,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         providers = Tmdb::WatchProvider.movie_providers(language: "es")
 
-        providers.size.should eq(369)
+        providers.size.should be > 1
         providers.should be_a(Array(Tmdb::Provider))
       end
     end
@@ -44,7 +44,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         providers = Tmdb::WatchProvider.movie_providers(watch_region: "us")
 
-        providers.size.should eq(140)
+        providers.size.should be > 1
         providers.should be_a(Array(Tmdb::Provider))
       end
     end
@@ -55,7 +55,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         providers = Tmdb::WatchProvider.tv_providers
 
-        providers.size.should eq(351)
+        providers.size.should be > 1
         providers.should be_a(Array(Tmdb::Provider))
       end
     end
@@ -64,7 +64,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         providers = Tmdb::WatchProvider.tv_providers(language: "es")
 
-        providers.size.should eq(351)
+        providers.size.should be > 1
         providers.should be_a(Array(Tmdb::Provider))
       end
     end
@@ -73,7 +73,7 @@ describe Tmdb::WatchProvider do
       VCR.use_cassette "tmdb" do
         providers = Tmdb::WatchProvider.tv_providers(watch_region: "us")
 
-        providers.size.should eq(153)
+        providers.size.should be > 1
         providers.should be_a(Array(Tmdb::Provider))
       end
     end

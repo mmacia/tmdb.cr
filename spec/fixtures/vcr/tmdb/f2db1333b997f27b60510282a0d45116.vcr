@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: c51c9145abb24cc2a0dbdbe4a0deb8b274f5dd843da20920f251682c061e24ee
+x-memc-age: 0
+x-memc-expires: 23225
+x-az: us-east-1c
+x-task-id: 642fcb9d444745cfa1a7035fc5623d52
+Date: Tue, 09 Dec 2025 14:43:41 GMT
+Cache-Control: public, max-age=27898
+ETag: W/"1558b8ed34c0272257e6adbea311b988"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 0b770a6a3924f24170b847f10c0b970c.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: Ysj0J5F7qIkhm15cpMvQ0jILZwt0jypJnssG0oN_3Rd2ZoylYUDlvQ==
+Age: 1871
+Content-Length: 1541
+
+{"id":528,"backdrops":[],"posters":[{"aspect_ratio":0.667,"height":3000,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/2DdRQER3D5QjBFAXXgVG7QgBYp2.jpg","vote_average":3.334,"vote_count":3,"width":2000},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/iQ3jxMIroha7Db6B6kM0bHCtBq1.jpg","vote_average":2.066,"vote_count":5,"width":1000},{"aspect_ratio":0.68,"height":1000,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/dwWXDB7UmeeQtueCjIguUi8xNdP.jpg","vote_average":1.112,"vote_count":3,"width":680},{"aspect_ratio":0.701,"height":1426,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/dxMn2LbPxErIWKScWc02ZlCW61W.jpg","vote_average":0.834,"vote_count":4,"width":1000},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/zarOYRkPEhbo0YgiaCcEfEbIeQz.jpg","vote_average":0.166,"vote_count":2,"width":1000},{"aspect_ratio":0.667,"height":1620,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/3kQ5QR3IWpU4dLPgvFtCLn8HfNs.jpg","vote_average":0.166,"vote_count":2,"width":1080},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/zubX8WeC8rFApmTWjWLTzgdp4Jb.jpg","vote_average":0.0,"vote_count":0,"width":1000},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/pDAjS4n6T4Wmuu3NWD1xdVzJqHI.jpg","vote_average":0.0,"vote_count":0,"width":1000},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/fvejPIZSQb8PMnFNLb15g1RpW5D.jpg","vote_average":0.0,"vote_count":0,"width":1000}]}

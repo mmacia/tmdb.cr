@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 62378180871973f1b3cbb0ef10e2e8d416161689a47778bbd9967c37b24e27ce
+x-memc-age: 21201
+x-memc-expires: 696
+x-az: us-east-1b
+x-task-id: 664392b9dee54fd8813e14ff7054968d
+Date: Tue, 09 Dec 2025 14:43:26 GMT
+Cache-Control: public, max-age=6237
+ETag: W/"e68a51a9c4042efee3cd2c9d414d445e"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8651dec5501a9be54b46f44ea7098ae2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: mVfjBWtyqExILXmkD0ztivpFFT8eZatfBSGTsy73pGrkFoW8HbPv0g==
+Age: 1882
+Content-Length: 1721
+
+{"results":[{"descriptors":[],"iso_3166_1":"US","rating":"TV-PG"},{"descriptors":[],"iso_3166_1":"FR","rating":"NR"},{"descriptors":[],"iso_3166_1":"KR","rating":"12"},{"descriptors":[],"iso_3166_1":"BR","rating":"10"},{"descriptors":[],"iso_3166_1":"ES","rating":"7"},{"descriptors":[],"iso_3166_1":"SG","rating":"PG"},{"descriptors":[],"iso_3166_1":"NO","rating":"12"},{"descriptors":[],"iso_3166_1":"PH","rating":"PG"},{"descriptors":[],"iso_3166_1":"IN","rating":"U"},{"descriptors":[],"iso_3166_1":"MY","rating":"U"},{"descriptors":[],"iso_3166_1":"MX","rating":"AA"},{"descriptors":[],"iso_3166_1":"AU","rating":"PG"},{"descriptors":[],"iso_3166_1":"PT","rating":"NR"},{"descriptors":[],"iso_3166_1":"FR","rating":"16"},{"descriptors":[],"iso_3166_1":"ES","rating":"12"},{"descriptors":[],"iso_3166_1":"CA","rating":"C8"},{"descriptors":[],"iso_3166_1":"DE","rating":"16"},{"descriptors":[],"iso_3166_1":"GB","rating":"PG"},{"descriptors":[],"iso_3166_1":"RU","rating":"12+"},{"descriptors":[],"iso_3166_1":"AT","rating":"10"},{"descriptors":[],"iso_3166_1":"CH","rating":"12"},{"descriptors":[],"iso_3166_1":"PL","rating":"12"},{"descriptors":[],"iso_3166_1":"HU","rating":"12"},{"descriptors":[],"iso_3166_1":"CZ","rating":"12+"},{"descriptors":[],"iso_3166_1":"RO","rating":"AP"},{"descriptors":[],"iso_3166_1":"GB","rating":"12"},{"descriptors":[],"iso_3166_1":"NZ","rating":"PG"},{"descriptors":[],"iso_3166_1":"IN","rating":"U/A 13+"},{"descriptors":[],"iso_3166_1":"ZA","rating":"13"},{"descriptors":[],"iso_3166_1":"BE","rating":"12"},{"descriptors":[],"iso_3166_1":"TR","rating":"13+"},{"descriptors":[],"iso_3166_1":"PR","rating":"TV-PG"},{"descriptors":[],"iso_3166_1":"VI","rating":"TV-PG"}],"id":31132}

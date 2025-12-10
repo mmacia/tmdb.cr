@@ -1,7 +1,6 @@
 require "../spec_helper"
 
 describe Tmdb::FileCache do
-
   context "#get" do
     tmpdir = File.join(Dir.tempdir, "tmdb_#{Random.new.hex(6)}")
     cache = Tmdb::FileCache.new(tmpdir)
@@ -47,11 +46,11 @@ describe Tmdb::FileCache do
       payload3 = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium"
       key3 = Digest::MD5.hexdigest(payload3)
 
-      sleep(1)
+      sleep(Time::Span.new(seconds: 1))
       cache.put key2, payload2
 
       before = Dir.entries(tmpdir)
-      sleep(1)
+      sleep(Time::Span.new(seconds: 1))
       cache.put key3, payload3
       after = Dir.entries(tmpdir)
 

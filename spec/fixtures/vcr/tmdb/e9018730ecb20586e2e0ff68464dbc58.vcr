@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:44 GMT
+Server: openresty
+Cache-Control: public, max-age=9456
+x-memc: HIT
+x-memc-key: d243ebef7bfb8a3fe85a6764a96d1aaf606574d9372533a041d43a8bcda4afff
+x-memc-age: 17750
+x-memc-expires: 9456
+x-az: us-east-1a
+x-task-id: 73b8d61bf6bb421186d1b10c97925d1a
+ETag: W/"e08428d359c800deb4d859dbae149dc4"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 ab1aa335aa7cf217c3ce07ab38ba2f80.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: z0CPocK7zG_8pzR02J50QBNWp_sNPuWmGZ6e8XtKw8Z3JvefgAUL5w==
+Age: 1908
+Content-Length: 1137
+
+{"page":1,"results":[{"adult":false,"backdrop_path":"/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg","genre_ids":[28,53,878],"id":218,"original_language":"en","original_title":"The Terminator","overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","popularity":12.5614,"poster_path":"/hzXSE66v6KthZ8nPoLZmsi2G05j.jpg","release_date":"1984-10-26","title":"The Terminator","video":false,"vote_average":7.674,"vote_count":14027},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1464353,"original_language":"ja","original_title":"ターミナルビルの一日","overview":"","popularity":0.0,"poster_path":"/jsY7VHDVfKkrGEyPfZDYLqGG8AE.jpg","release_date":"1984-01-01","title":"A Day in the Terminal Building","video":false,"vote_average":0.0,"vote_count":0}],"total_pages":1,"total_results":2}

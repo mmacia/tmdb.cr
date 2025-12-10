@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:41 GMT
+Server: openresty
+Cache-Control: public, max-age=25393
+x-memc: HIT
+x-memc-key: e54c761b5d93aae1bcbc1755166da97dca0080b677898a10b3870bc01a52becb
+x-memc-age: 2567
+x-memc-expires: 25393
+x-az: us-east-1a
+x-task-id: 813dbd8b691649a2820aa3f2bfa6a3d7
+ETag: W/"5d1e207027ffcaae8eee1331072d0295"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 af27d8f497c4d326909accf8eaaccca4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: j9u9WguddhovwDSbAqEF2C4SsbVewbTWMwdRVAYG-vlz6XD_41VwUw==
+Age: 1871
+Content-Length: 356
+
+{"id":19,"results":[{"name":"Fox Broadcasting Company","type":""},{"name":"Fox","type":""},{"name":"Fox Kids","type":"programming block"},{"name":"4Kids TV","type":"programming block"},{"name":"4K!DS TV","type":""},{"name":"FoxBox","type":"programming block"},{"name":"Fox Broadcasting Company, LLC","type":""},{"name":"FOX Television Network","type":""}]}

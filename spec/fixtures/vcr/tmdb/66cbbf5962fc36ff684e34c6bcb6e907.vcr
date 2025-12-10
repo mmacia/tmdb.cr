@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 8e8802f110b9576edec71ff092346ebc9ae987e96c9a6bd1774215bb102c2b19
+x-memc-age: 16391
+x-memc-expires: 10840
+x-az: us-east-1a
+x-task-id: 4b786e4d4e2d4964ad0c301b3856e3a5
+Date: Tue, 09 Dec 2025 15:13:22 GMT
+Cache-Control: public, max-age=22425
+ETag: W/"56e726de5232e9fb5703a411fffb756f"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 26e93b3a0dd504e9fa61c90a97cb3342.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: fAUjg68ZOqCoFeuwvZrO_o9mxH-j1lVNy8EmIpxOpUszaEtZuRlBug==
+Age: 86
+Content-Length: 219
+
+{"id":31132,"imdb_id":"tt1710308","freebase_mid":"/m/0807c5r","freebase_id":"/en/regular_show","tvdb_id":188401,"tvrage_id":26426,"wikidata_id":"Q82617","facebook_id":"RegularShow","instagram_id":null,"twitter_id":null}

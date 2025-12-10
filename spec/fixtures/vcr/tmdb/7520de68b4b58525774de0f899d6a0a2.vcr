@@ -1,21 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 165
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:37:52 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: 4554cbf8dd8c13e97db4d6b7a3d4ed230200fa5c
-X-Memc-Age: 0
-X-Memc-Expires: 15724
-ETag: W/"5461fcd040177eabd31576f5a16f64a9"
-X-Cache: Miss from cloudfront
-Via: 1.1 158bf65e81ba82d619c73dde6c7796a9.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: Q6fWNqpDIKJsySSga16ggMOFfoaodjMwoNfJKlFL_Q8GZwPBQgJ6Ig==
+x-memc: HIT
+x-memc-key: 9c24181883942cd08deb49ba8e67fe1a941e136677f4e0e01d253b84640b634e
+x-memc-age: 12423
+x-memc-expires: 15348
+x-az: us-east-1c
+x-task-id: 85d159752b264c8ca2611b288dbf4d21
+Date: Tue, 09 Dec 2025 14:43:40 GMT
+Cache-Control: public, max-age=4088
+ETag: W/"8e1a8794d8f615b73ab32588929cd416"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 45a29b86bae07b09ddc92c2b533e0470.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: uRtlMrDv18JO-SV8szihDOhcrr8Vq_XQMql9flTCExYW-olVD7zNUQ==
+Age: 2318
+Content-Length: 166
 
-{"headquarters":"Los Angeles, California","homepage":"https://www.fox.com","id":19,"logo_path":"/1DSpHrWyOORkL9N2QHX7Adt31mQ.png","name":"FOX","origin_country":"US"}
+{"headquarters":"Los Angeles, California","homepage":"https://www.fox.com/","id":19,"logo_path":"/1DSpHrWyOORkL9N2QHX7Adt31mQ.png","name":"FOX","origin_country":"US"}
