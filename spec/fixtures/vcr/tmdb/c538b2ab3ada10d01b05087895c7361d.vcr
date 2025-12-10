@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:42 GMT
+Server: openresty
+Cache-Control: public, max-age=23506
+x-memc: HIT
+x-memc-key: bc5ab8db663a4d1b839bb3827afb2072aedd0e7140fc62149e2c7ed16c8ed103
+x-memc-age: 4628
+x-memc-expires: 23506
+x-az: us-east-1c
+x-task-id: 374f1f6eda394c62be1ca031f9631120
+ETag: W/"9e45c32ed604876face10adad3410641"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 c5aaac5b3515508fe019ba38a51d29f4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 6OtKd8vVQOlwh99pwsvWJg83HBzmqQD1pONDp0B79Isr-OEBmR9Xvw==
+Age: 1876
+Content-Length: 1679
+
+{"adult":false,"backdrop_path":"/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg","belongs_to_collection":{"id":528,"name":"The Terminator Collection","poster_path":"/kpZxdNsAV7qTdTLwKM5NLqa7GEo.jpg","backdrop_path":"/sCnBEw2Yu6foEjs4Xb4eMddYHRo.jpg"},"budget":6400000,"genres":[{"id":28,"name":"Action"},{"id":53,"name":"Thriller"},{"id":878,"name":"Science Fiction"}],"homepage":"https://www.20thcenturystudios.com/movies/theterminator","id":218,"imdb_id":"tt0088247","origin_country":["US"],"original_language":"en","original_title":"The Terminator","overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","popularity":12.5614,"poster_path":"/hzXSE66v6KthZ8nPoLZmsi2G05j.jpg","production_companies":[{"id":3952,"logo_path":"/hLfS5FjBQjK5MUNl7kdXgIHSSWy.png","name":"Hemdale","origin_country":"GB"},{"id":1280,"logo_path":null,"name":"Pacific Western","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1984-10-26","revenue":78371200,"runtime":108,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Spanish","iso_639_1":"es","name":"Español"}],"status":"Released","tagline":"Your future is in its hands.","title":"The Terminator","video":false,"vote_average":7.674,"vote_count":14027}

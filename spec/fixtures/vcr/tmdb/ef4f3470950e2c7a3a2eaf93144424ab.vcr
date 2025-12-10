@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:44:31 GMT
+Server: openresty
+Cache-Control: public, max-age=5912
+x-memc: HIT
+x-memc-key: 7e1bdb428702b90ed92c7acdc6e2fdd150f3c5e9f6075ba921b38fce048cb7f8
+x-memc-age: 21047
+x-memc-expires: 5912
+x-az: us-east-1c
+x-task-id: c40e998d6f4646df92d8b97ee4ac8097
+ETag: W/"ae2ed6f1da65b8eb99f4ea933d0c7ad0"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 7cb5e6ca8e491181a91096729b24a17c.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: dw4RBDWmCJM3-WfbVyM7tNUsB7sMl8NEMIzyjI687MlkX4ZdKCXFMg==
+Age: 1827
+Content-Length: 129
+
+{"id":218,"imdb_id":"tt0088247","wikidata_id":"Q162255","facebook_id":"TheTerminatorMovie","instagram_id":null,"twitter_id":null}

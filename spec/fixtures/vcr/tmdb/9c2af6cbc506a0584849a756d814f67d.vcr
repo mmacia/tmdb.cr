@@ -1,21 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 26
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:24:49 GMT
+Date: Tue, 09 Dec 2025 14:43:38 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: ac93e7c7250ee505d8aad311b142a99ee06d6fa9
-X-Memc-Age: 0
-X-Memc-Expires: 14457
+Cache-Control: public, max-age=20622
+x-memc: HIT
+x-memc-key: 2d5aac510298c92ef98e2e11c4f1fe10cbf71881b765f5cdbdc1d5afceac206f
+x-memc-age: 6384
+x-memc-expires: 20622
+x-az: us-east-1c
+x-task-id: 103f998e1c2c4a63887a6c2a34892de4
 ETag: W/"32b5b6d1fee1ebc58465c412f9bef958"
-X-Cache: Miss from cloudfront
-Via: 1.1 59f22b7f31477bb26619c4c93f750e06.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: lhzzyim2mFwpwyts_CnDjv_hvGrZ7_nK903QGMZc5R-3zp8IbOTpWQ==
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 65fafc6240b0e8b3e15609a24840fab6.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 0siGVLpOEz8ybvwxL9mQEW81T_VAATP_Vl7x3nQH1kFDZIhskHu1zQ==
+Age: 2321
+Content-Length: 26
 
 {"id":679,"name":"cyborg"}

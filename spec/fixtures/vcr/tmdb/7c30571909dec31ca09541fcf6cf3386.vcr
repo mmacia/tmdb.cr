@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:21 GMT
+Server: openresty
+Cache-Control: public, max-age=6040
+x-memc: HIT
+x-memc-key: 775a39518fc040dfbc7f61c208a64652f6a014dd84f7c1203d5eaa5780b22f52
+x-memc-age: 21343
+x-memc-expires: 6040
+x-az: us-east-1a
+x-task-id: 3c25d067aa364a8bab5ed538d6d9af09
+ETag: W/"3abec927e83f84b663d7513b7a743bb4"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 994deeea5117897efd50b3e367af0a6a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: PF7Vj02EGzMagA7XeEd9oO-6D8yRAKQsB511scwuL3UnTqKnakLeOw==
+Age: 1886
+Content-Length: 2039
+
+{"movie_results":[],"person_results":[{"adult":false,"id":1620,"name":"Michelle Yeoh","original_name":"Michelle Yeoh","media_type":"person","popularity":3.9419,"gender":1,"known_for_department":"Acting","profile_path":"/nrbHNzSMydpWK9um5VqWIFJihB5.jpg","known_for":[{"adult":false,"backdrop_path":"/ss0Os3uWJfQAENILHZUdX8Tt1OC.jpg","id":545611,"title":"Everything Everywhere All at Once","original_title":"Everything Everywhere All at Once","overview":"An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what's important to her by connecting with the lives she could have led in other universes.","poster_path":"/u68AjlvlutfEIcpmbYpKcdi09ut.jpg","media_type":"movie","original_language":"en","genre_ids":[28,12,878],"popularity":8.4664,"release_date":"2022-03-24","video":false,"vote_average":7.728,"vote_count":7473},{"adult":false,"backdrop_path":"/nSm9cij9VRrGDoZoS16CPnX0FqK.jpg","id":146,"title":"Crouching Tiger, Hidden Dragon","original_title":"卧虎藏龍","overview":"Two warriors in pursuit of a stolen sword and a notorious fugitive are led to an impetuous, physically-skilled, teenage nobleman's daughter, who is at a crossroads in her life.","poster_path":"/iNDVBFNz4XyYzM9Lwip6atSTFqf.jpg","media_type":"movie","original_language":"zh","genre_ids":[12,18,28,10749],"popularity":4.21,"release_date":"2000-07-06","video":false,"vote_average":7.434,"vote_count":3432},{"adult":false,"backdrop_path":"/fJbWgOb9pSQXihM9m10bRvl2dJ8.jpg","id":566525,"title":"Shang-Chi and the Legend of the Ten Rings","original_title":"Shang-Chi and the Legend of the Ten Rings","overview":"Shang-Chi must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization.","poster_path":"/d08HqqeBQSwN8i8MEvpsZ8Cb438.jpg","media_type":"movie","original_language":"en","genre_ids":[28,12,14],"popularity":8.5271,"release_date":"2021-09-01","video":false,"vote_average":7.504,"vote_count":10051}]}],"tv_results":[],"tv_episode_results":[],"tv_season_results":[]}

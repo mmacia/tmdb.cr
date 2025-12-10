@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:49 GMT
+Server: openresty
+Cache-Control: public, max-age=14394
+x-memc: HIT
+x-memc-key: cc7bc8d277db000931333f1735e0c8da05dc9fe3c164a9daef5960a043881e03
+x-memc-age: 8172
+x-memc-expires: 14394
+x-az: us-east-1c
+x-task-id: 48fdd9e15ea14727904ecaf7e5ce09a1
+ETag: W/"f64a8afa30c3cc40d3d748526e093cc0"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 c5aaac5b3515508fe019ba38a51d29f4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: xwgiecW87YI5lH_lQjDNC6ig-rF61mER9g_4O6K5WBTiAdzkGle7eg==
+Age: 1901
+Content-Length: 1211
+
+{"adult":false,"also_known_as":["Michael Connell Biehn","Майкл Бін","مایکل بین"],"biography":"Michael Connell Biehn (/ˈbiːn/ BEEN or Bean; born July 31, 1956) is an American actor, primarily known for his roles in science fiction films directed by James Cameron; as Sgt. Kyle Reese in The Terminator (1984), Cpl. Dwayne Hicks in Aliens (1986), and Lt. Coffey in The Abyss (1989). His other films include The Fan (1981), The Seventh Sign (1988), Navy SEALs (1990), Tombstone (1993), The Rock (1996), Mojave Moon (1996), Megiddo: The Omega Code 2 (2001), Clockstoppers (2002), and Planet Terror (2007). On television, he has appeared in Hill Street Blues (1984), The Magnificent Seven (1998–2000), and Adventure Inc. (2002–2003). Biehn received a Best Actor Saturn Award nomination for Aliens.\n\nDescription above from the Wikipedia article  Michael Biehn, licensed under CC-BY-SA, full list of contributors on Wikipedia.","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":1.9366,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}

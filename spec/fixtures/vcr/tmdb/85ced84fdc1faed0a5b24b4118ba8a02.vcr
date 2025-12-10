@@ -1,21 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 158
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:47:25 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: 2a693c3686183fa7ffb9d25efa66923b94809ae9
-X-Memc-Age: 0
-X-Memc-Expires: 21600
-ETag: W/"69800f8d68fe0324ac61a69783e102a3"
-X-Cache: Miss from cloudfront
-Via: 1.1 c0d1739fbc59ff80d4ec6a2a675c8aac.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: m04gEp2n96Rv_vZTyU0xSa9fuVPkwyNZRMtLI8Kl2ETkRfpZ_n75PQ==
+x-memc: MISS, STORE
+x-memc-key: b3af453293642c625572b2453cf472b0b98ce0f368bd80908b0cd63561e94a8c
+x-memc-age: 0
+x-memc-expires: 27269
+x-az: us-east-1a
+x-task-id: 93db2961da134913985e7136ab6c623e
+Date: Tue, 09 Dec 2025 14:43:44 GMT
+Cache-Control: public, max-age=24613
+ETag: W/"6e2c88ee036c77deef156ef7d583fbaa"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 ab1aa335aa7cf217c3ce07ab38ba2f80.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 0PhMEiLp9RedKLbksdB9sSejdTRcdigEFAK9NgdE1G1FNE5GGR7T5g==
+Age: 2332
+Content-Length: 547
 
-{"page":1,"results":[{"id":99272,"logo_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","name":"Icon Films","origin_country":"GB"}],"total_pages":1,"total_results":1}
+{"page":1,"results":[{"id":99272,"logo_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","name":"Icon Films","origin_country":"GB"},{"id":262382,"logo_path":null,"name":"Icon Films","origin_country":""},{"id":163852,"logo_path":null,"name":"Icon Films BD","origin_country":""},{"id":92826,"logo_path":null,"name":"Icon Independent Films","origin_country":""},{"id":183930,"logo_path":null,"name":"Northern Icon Films","origin_country":"BB"},{"id":265020,"logo_path":null,"name":"American Icon Films","origin_country":""}],"total_pages":1,"total_results":6}

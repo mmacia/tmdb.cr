@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 15:14:28 GMT
+Server: openresty
+Cache-Control: public, max-age=453
+x-memc: HIT
+x-memc-key: fbe8d03bedbae7472015a81228d39ba83638013a062c665d5895fae8f05ba46a
+x-memc-age: 147
+x-memc-expires: 453
+x-az: us-east-1a
+x-task-id: 813dbd8b691649a2820aa3f2bfa6a3d7
+ETag: W/"361996f3a57a514783f4aa3d1b37132e"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 994deeea5117897efd50b3e367af0a6a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: puiEuDMsAD-AOhZkElDijUYgC8oLj2oCUvLjDlSTsEAkGaGE3Ka_dA==
+Age: 67
+Content-Length: 4320
+
+{"page":4,"results":[{"adult":false,"id":138,"name":"Quentin Tarantino","original_name":"Quentin Tarantino","media_type":"person","popularity":4.9964,"gender":2,"known_for_department":"Directing","profile_path":"/1gjcpAa99FAOWGnrUvHEXXsRs7o.jpg"},{"adult":false,"id":4331194,"name":"Jeremie J. Tobing","original_name":"Jeremie J. Tobing","media_type":"person","popularity":0.1931,"gender":0,"known_for_department":null,"profile_path":null},{"adult":false,"id":2560802,"name":"Saint Etienne","original_name":"Saint Etienne","media_type":"person","popularity":0.1089,"gender":0,"known_for_department":"Sound","profile_path":null},{"adult":false,"id":1734163,"name":"Jimmy Henderson","original_name":"Jimmy Henderson","media_type":"person","popularity":0.5369,"gender":2,"known_for_department":"Writing","profile_path":null},{"adult":false,"id":94151,"name":"Thierry Poiraud","original_name":"Thierry Poiraud","media_type":"person","popularity":0.6211,"gender":2,"known_for_department":"Directing","profile_path":"/bMCofj4pYK4vgpNx5CPYAoWYovZ.jpg"},{"adult":false,"id":56225,"name":"Olivier Van Hoofstadt","original_name":"Olivier Van Hoofstadt","media_type":"person","popularity":0.296,"gender":2,"known_for_department":"Directing","profile_path":"/xZ8Ybm8btVFk6CX58dUy5uZtw3k.jpg"},{"adult":false,"id":5822553,"name":"楓カレン","original_name":"楓カレン","media_type":"person","popularity":0.1422,"gender":1,"known_for_department":"Acting","profile_path":null},{"adult":false,"id":18918,"name":"Dwayne Johnson","original_name":"Dwayne Johnson","media_type":"person","popularity":6.2131,"gender":2,"known_for_department":"Acting","profile_path":"/5QApZVV8FUFlVxQpIK3Ew6cqotq.jpg"},{"adult":false,"id":5081,"name":"Emily Blunt","original_name":"Emily Blunt","media_type":"person","popularity":36.9254,"gender":1,"known_for_department":"Acting","profile_path":"/5nCSG5TL1bP1geD8aaBfaLnLLCD.jpg"},{"adult":false,"id":10099,"name":"Park Chan-wook","original_name":"박찬욱","media_type":"person","popularity":2.7798,"gender":2,"known_for_department":"Directing","profile_path":"/jsSFCVB7MhuVbSLwTgESiXEiNjt.jpg"},{"adult":false,"id":1908486,"name":"Kang Ye-na","original_name":"강예나","media_type":"person","popularity":2.6306,"gender":1,"known_for_department":"Acting","profile_path":"/i5h1lGUR9VqYA3MGLtKKFSNw8BF.jpg"},{"adult":false,"id":4762,"name":"Paul Thomas Anderson","original_name":"Paul Thomas Anderson","media_type":"person","popularity":2.2999,"gender":2,"known_for_department":"Directing","profile_path":"/wKAs2LtLYSUzt3ZZ8pnxMwuEWuR.jpg"},{"adult":false,"id":52583,"name":"Wagner Moura","original_name":"Wagner Moura","media_type":"person","popularity":4.1515,"gender":2,"known_for_department":"Acting","profile_path":"/yJjV1ZCQbCSSgRy05FncCKjyaY4.jpg"},{"adult":false,"id":2598732,"name":"Friedrich Merz","original_name":"Friedrich Merz","media_type":"person","popularity":0.2311,"gender":2,"known_for_department":"Acting","profile_path":"/iSRgwJrrNVF7b4VtlTeTSng5bQZ.jpg"},{"adult":false,"id":1520165,"name":"Bi Gan","original_name":"毕赣","media_type":"person","popularity":2.4253,"gender":2,"known_for_department":"Directing","profile_path":"/w0PeAGcDzkITnIxAOGnlOti34xX.jpg"},{"adult":false,"id":974169,"name":"Jenna Ortega","original_name":"Jenna Ortega","media_type":"person","popularity":14.9739,"gender":1,"known_for_department":"Acting","profile_path":"/cV4x7jNmsGLdKZn5I6xVF3Ltnmg.jpg"},{"adult":false,"id":26457,"name":"Matthew Lillard","original_name":"Matthew Lillard","media_type":"person","popularity":7.623,"gender":2,"known_for_department":"Acting","profile_path":"/auUbijDzR9xpSgQtLsYDvNatloj.jpg"},{"adult":false,"id":10912,"name":"Eva Green","original_name":"Eva Green","media_type":"person","popularity":7.7261,"gender":1,"known_for_department":"Acting","profile_path":"/vwjOWfUeDk5fQr8jraKlR1Yfxxq.jpg"},{"adult":false,"id":73457,"name":"Chris Pratt","original_name":"Chris Pratt","media_type":"person","popularity":8.3911,"gender":2,"known_for_department":"Acting","profile_path":"/cRH6HPAQ98PlOwwEvhYO4CM9lwu.jpg"},{"adult":false,"id":608,"name":"Hayao Miyazaki","original_name":"宮崎駿","media_type":"person","popularity":5.1443,"gender":2,"known_for_department":"Directing","profile_path":"/ouhjt9KugzhWtdEyBPipihB3ic8.jpg"}],"total_pages":187,"total_results":3722}

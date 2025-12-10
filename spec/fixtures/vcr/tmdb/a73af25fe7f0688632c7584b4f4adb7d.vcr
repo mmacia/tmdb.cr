@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 2289ee160c84ad1910defe3ff08d462650494d5485734b025b1a88e494f9293f
+x-memc-age: 534
+x-memc-expires: 21339
+x-az: us-east-1c
+x-task-id: 642fcb9d444745cfa1a7035fc5623d52
+Date: Tue, 09 Dec 2025 14:43:27 GMT
+Cache-Control: public, max-age=12662
+ETag: W/"46a76f1069056453435c415d8d69a4ff"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 7e7ba163f7cdb4f59c418e3f1e0e1656.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 94D-n5PCe96bX9nD98IsiGjXESa0M7B7U3jXG8D_y57mDQ25GVf2TQ==
+Age: 1882
+Content-Length: 222
+
+{"id":31132,"results":[{"name":"time travel","id":4379},{"name":"racoon","id":7949},{"name":"slacker","id":8631},{"name":"anthropomorphism","id":11477},{"name":"park","id":14798},{"name":"high school friends","id":18005}]}

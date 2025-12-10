@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 46908de32fa037b6a58ce919e8bf652426d884d2020b635f9863e325d559fb20
+x-memc-age: 14106
+x-memc-expires: 7514
+x-az: us-east-1c
+x-task-id: 642fcb9d444745cfa1a7035fc5623d52
+Date: Tue, 09 Dec 2025 14:44:35 GMT
+Cache-Control: public, max-age=4148
+ETag: W/"82dd1e33d3d3fa067eb55d0667b0e142"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 45a29b86bae07b09ddc92c2b533e0470.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: On37Jjzc4BsoQz3BcVU1oFFZkuFuR6ce22GROLKursGzmrvN2LLgqw==
+Age: 1824
+Content-Length: 236
+
+{"id":218,"results":[{"iso_639_1":"es","iso_3166_1":"ES","name":"Terminator","key":"alLxdt9PLMc","site":"YouTube","size":1080,"type":"Trailer","official":false,"published_at":"2016-06-18T01:21:02.000Z","id":"68fa5d1efd1d9a90dbdd948c"}]}

@@ -1,21 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 205
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 19:01:29 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: 7e3107c38c26a18dd3cbe59d10713998bc22c1d4
-X-Memc-Age: 0
-X-Memc-Expires: 17725
+x-memc: MISS, STORE
+x-memc-key: 8d19692e74d610ebaf842459c33a2cb4bbaf1a08f889f507c67c8a6edc97d86e
+x-memc-age: 0
+x-memc-expires: 22286
+x-az: us-east-1c
+x-task-id: b32815845c7d43b7ac9925a31dbca395
+Date: Tue, 09 Dec 2025 14:43:42 GMT
+Cache-Control: public, max-age=17135
 ETag: W/"f7af7accaa91a15aeb2ca939b221ca57"
-X-Cache: Miss from cloudfront
-Via: 1.1 f381783b1a4d3b0a57fef757bbb97dc2.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: UtFUuWX46fAki4DT3iQO7sRYpQu5t_HhVzTLQT7gqhZbSLesIzDZ8A==
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 994deeea5117897efd50b3e367af0a6a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: BR19txEw-rYe0hcMEOvwg4_MrHscb29Isd2oqFjtyAN3T_ZQHdRZ7Q==
+Age: 2316
+Content-Length: 205
 
 {"description":"","headquarters":"Bristol","homepage":"http://www.iconfilms.co.uk","id":99272,"logo_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","name":"Icon Films","origin_country":"GB","parent_company":null}

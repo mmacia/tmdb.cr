@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 419a2be9c7c20fdcc21006b843b6092a0a105fe52e035923ac0eaa19e482292a
+x-memc-age: 18955
+x-memc-expires: 6785
+x-az: us-east-1a
+x-task-id: 739b3c9060e343a0ba63ac3c33a555bf
+Date: Tue, 09 Dec 2025 14:43:30 GMT
+Cache-Control: public, max-age=9515
+ETag: W/"0cc6c479f8e341e8b4b61837ca22d94e"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8f0898e2eb5c972640ef7bcada20f09e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: wyy4Cn7K-hAqqd1x2eb4ZV5K_7iydXwA7-eAIqAmfk6Jl4eGNPOekQ==
+Age: 1879
+Content-Length: 251
+
+{"id":31132,"results":[{"iso_639_1":"en","iso_3166_1":"US","name":"Regular Look at Regular Show","key":"1i3ufVR4AXg","site":"YouTube","size":360,"type":"Clip","official":true,"published_at":"2010-09-02T19:37:40.000Z","id":"632e450a988afd007e23a325"}]}

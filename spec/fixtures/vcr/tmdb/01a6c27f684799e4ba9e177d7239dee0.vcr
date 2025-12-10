@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 49e48e4eeacfb8a27a15921d5af7f4ed0b14b2c9e8ea142d5c2187a4012b2bf4
+x-memc-age: 26282
+x-memc-expires: 1017
+x-az: us-east-1a
+x-task-id: 813dbd8b691649a2820aa3f2bfa6a3d7
+Date: Tue, 09 Dec 2025 15:00:20 GMT
+Cache-Control: public, max-age=24521
+ETag: W/"da1148b3e4cb2a9ea2abee36b6b7a7c4"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 af27d8f497c4d326909accf8eaaccca4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: habq0RHgaiyzEmPRa5Re_KYioEslMwAl0hyPxHA80tbWPr10PEEaNA==
+Age: 867
+Content-Length: 793
+
+{"movie_results":[{"adult":false,"backdrop_path":"/mRtplFVP5hXFWtsoj3jlxDiqaN1.jpg","id":10428,"title":"Hackers","original_title":"Hackers","overview":"Along with his new friends, a teenager who was arrested by the US Secret Service and banned from using a computer for writing a computer virus discovers a plot by a nefarious hacker, but they must use their computer skills to find the evidence while being pursued by the Secret Service and the evil computer genius behind the virus.","poster_path":"/qfx2EENW1sOpKNVKLzr7VOhlxkt.jpg","media_type":"movie","original_language":"en","genre_ids":[28,80,53,18],"popularity":4.4907,"release_date":"1995-09-14","video":false,"vote_average":6.386,"vote_count":1396}],"person_results":[],"tv_results":[],"tv_episode_results":[],"tv_season_results":[]}

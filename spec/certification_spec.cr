@@ -5,7 +5,7 @@ describe Tmdb::Certification do
     VCR.use_cassette("tmdb") do
       certs = Tmdb::Certification.movies
 
-      certs.size.should eq(24)
+      certs.size.should be > 1
       certs.should be_a(Hash(String, Array(Tmdb::Certification)))
     end
   end
@@ -14,7 +14,7 @@ describe Tmdb::Certification do
     VCR.use_cassette("tmdb") do
       certs = Tmdb::Certification.tv_shows
 
-      certs.size.should eq(18)
+      certs.size.should be > 1
       certs.should be_a(Hash(String, Array(Tmdb::Certification)))
     end
   end

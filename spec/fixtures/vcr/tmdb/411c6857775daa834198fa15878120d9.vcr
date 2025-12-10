@@ -1,0 +1,24 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 15:15:31 GMT
+Server: openresty
+Cache-Control: public, max-age=0
+x-memc: MISS
+x-memc-key: 512205c5393640d6641d012994299da4b7d6117da9913a1de60257537169da10
+x-memc-age: 0
+x-memc-expires: 0
+x-az: us-east-1b
+x-task-id: b8242b4982bb449b83edb73b5551b01a
+ETag: W/"7f3400dcbdd4d484adf28281f6208b9a"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Miss from cloudfront
+Via: 1.1 994deeea5117897efd50b3e367af0a6a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: RvrSX6UIkK5vSIgIJV5ecZGPNpmAUeBl6v-gNvSyoj8orMjM8kSwNg==
+Content-Length: 247
+
+{"adult":false,"also_known_as":[],"biography":"","birthday":null,"deathday":null,"gender":0,"homepage":null,"id":5866945,"imdb_id":null,"known_for_department":null,"name":"Bobby C. Canup","place_of_birth":null,"popularity":0.0,"profile_path":null}

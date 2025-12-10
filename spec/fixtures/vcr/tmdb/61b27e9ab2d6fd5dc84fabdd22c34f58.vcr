@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:51 GMT
+Server: openresty
+Cache-Control: public, max-age=86400
+x-memc: MISS, STORE
+x-memc-key: f3df00e9e75955bc3461ac944b3746e7043be87bf9a1676a060db6413a1853b6
+x-memc-age: 0
+x-memc-expires: 86400
+x-az: us-east-1b
+x-task-id: 90d49b9610bc4c5f88809459f968de34
+ETag: W/"43b85cd3cfe83621af1c54e85e8b4fd7"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8dd6c31efab2c0e3b91356d912029cae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: vVbcmLPEVuewwuRakCvnUHiUA5G82G4j-DGqM0cPSAnXJ_JhU8o7zw==
+Age: 1863
+Content-Length: 2790
+
+{"results":[{"id":35458,"adult":false},{"id":88799,"adult":false},{"id":194775,"adult":false},{"id":31249,"adult":false},{"id":134597,"adult":false},{"id":82992,"adult":false},{"id":194774,"adult":true},{"id":18777,"adult":false},{"id":194777,"adult":false},{"id":194778,"adult":false},{"id":53034,"adult":false},{"id":127594,"adult":false},{"id":18061,"adult":false},{"id":194782,"adult":true},{"id":85235,"adult":false},{"id":19959,"adult":false},{"id":88036,"adult":false},{"id":23742,"adult":false},{"id":194772,"adult":false},{"id":82684,"adult":false},{"id":84305,"adult":false},{"id":37686,"adult":false},{"id":194783,"adult":false},{"id":59437,"adult":false},{"id":50506,"adult":false},{"id":194784,"adult":false},{"id":194785,"adult":false},{"id":8536,"adult":false},{"id":1924,"adult":false},{"id":194786,"adult":true},{"id":194789,"adult":false},{"id":126315,"adult":false},{"id":194790,"adult":false},{"id":1724,"adult":false},{"id":194791,"adult":true},{"id":105506,"adult":false},{"id":183107,"adult":false},{"id":194792,"adult":false},{"id":194795,"adult":false},{"id":183108,"adult":false},{"id":194798,"adult":false},{"id":194801,"adult":false},{"id":194802,"adult":false},{"id":191256,"adult":false},{"id":194804,"adult":false},{"id":194805,"adult":true},{"id":194806,"adult":false},{"id":42116,"adult":false},{"id":183111,"adult":true},{"id":194808,"adult":false},{"id":194809,"adult":false},{"id":659,"adult":false},{"id":194810,"adult":true},{"id":183119,"adult":false},{"id":89537,"adult":false},{"id":82390,"adult":false},{"id":194811,"adult":false},{"id":194812,"adult":false},{"id":8355,"adult":false},{"id":94253,"adult":false},{"id":194813,"adult":true},{"id":183125,"adult":false},{"id":194814,"adult":false},{"id":31124,"adult":false},{"id":194815,"adult":null},{"id":194817,"adult":false},{"id":76833,"adult":false},{"id":132232,"adult":false},{"id":183128,"adult":false},{"id":194819,"adult":false},{"id":194820,"adult":false},{"id":194821,"adult":true},{"id":26950,"adult":false},{"id":194822,"adult":true},{"id":194121,"adult":false},{"id":106021,"adult":false},{"id":81854,"adult":true},{"id":119790,"adult":false},{"id":18712,"adult":false},{"id":9952,"adult":false},{"id":194823,"adult":true},{"id":194688,"adult":null},{"id":44865,"adult":false},{"id":9533,"adult":false},{"id":26179,"adult":false},{"id":194825,"adult":true},{"id":194826,"adult":true},{"id":194827,"adult":true},{"id":9349,"adult":false},{"id":147465,"adult":null},{"id":194829,"adult":true},{"id":49051,"adult":false},{"id":11637,"adult":false},{"id":83114,"adult":false},{"id":194830,"adult":true},{"id":194831,"adult":true},{"id":108850,"adult":false},{"id":17803,"adult":false},{"id":157663,"adult":false},{"id":87593,"adult":false}],"page":1,"total_pages":18,"total_results":1730}

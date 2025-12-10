@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 950905246711427fcf3fad6a1b891b204c1364b118b2c8fcdc52c1d47ccbb05b
+x-memc-age: 18990
+x-memc-expires: 5129
+x-az: us-east-1a
+x-task-id: 4b786e4d4e2d4964ad0c301b3856e3a5
+Date: Tue, 09 Dec 2025 14:43:50 GMT
+Cache-Control: public, max-age=18033
+ETag: W/"7fdd8f72ee61ccc2f3aa1a6886f8a437"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8f0898e2eb5c972640ef7bcada20f09e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 3HMuxIgBksEsO-vEn_-8OBVhPtZYVKDiNE6yz2JZdcnquLW5bmysAg==
+Age: 1901
+Content-Length: 524
+
+{"id":2712,"profiles":[{"aspect_ratio":0.667,"height":1023,"iso_3166_1":null,"iso_639_1":null,"file_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg","vote_average":3.334,"vote_count":1,"width":682},{"aspect_ratio":0.667,"height":3000,"iso_3166_1":null,"iso_639_1":null,"file_path":"/AbDGQ8qNXUqCa1l69i9sUyS55yW.jpg","vote_average":3.334,"vote_count":2,"width":2000},{"aspect_ratio":0.667,"height":720,"iso_3166_1":null,"iso_639_1":null,"file_path":"/4FH0jVnPdTEqTBSYTtkZZN3o33k.jpg","vote_average":1.75,"vote_count":2,"width":480}]}

@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: 3a21d497cfddb3ec020be2972a7d1cd9049557beb70fb27989299c18f4d91a36
+x-memc-age: 0
+x-memc-expires: 25943
+x-az: us-east-1a
+x-task-id: b0eafb7727e14bcabac0e4abd1a9419d
+Date: Tue, 09 Dec 2025 14:44:35 GMT
+Cache-Control: public, max-age=14315
+ETag: W/"58598bb3e675f5f03f0e9648b6fd80d3"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 ab1aa335aa7cf217c3ce07ab38ba2f80.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: aRhaMHUqeIw4Xz6YWVLT5v0CRilSMwKkH1i8ilmjGoLpf6nDv2HYsw==
+Age: 1824
+Content-Length: 171
+
+{"description":"","headquarters":"Beverly Hills, California","homepage":"","id":1280,"logo_path":null,"name":"Pacific Western","origin_country":"US","parent_company":null}

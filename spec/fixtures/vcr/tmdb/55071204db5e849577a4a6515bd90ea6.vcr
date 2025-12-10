@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: 8d19692e74d610ebaf842459c33a2cb4bbaf1a08f889f507c67c8a6edc97d86e
+x-memc-age: 0
+x-memc-expires: 22286
+x-az: us-east-1c
+x-task-id: b32815845c7d43b7ac9925a31dbca395
+Date: Tue, 09 Dec 2025 14:43:42 GMT
+Cache-Control: public, max-age=17135
+ETag: W/"f7af7accaa91a15aeb2ca939b221ca57"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8ea5a89d0fc9db6bcaef3f8d436858ae.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: r-VJ9yd4ayUk3kBh9lkT5WK3DziZ1BJ8OHBhs8P4-uSxvhemrxev2Q==
+Age: 1870
+Content-Length: 205
+
+{"description":"","headquarters":"Bristol","homepage":"http://www.iconfilms.co.uk","id":99272,"logo_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","name":"Icon Films","origin_country":"GB","parent_company":null}

@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:29:24 GMT
+Date: Tue, 09 Dec 2025 14:43:42 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: 5ff0152857a57b8a482e3b5ee12c64ca8bb621df
-X-Memc-Age: 16391
-X-Memc-Expires: 899
-ETag: W/"a272dc57c4c2a5a98f237dd3cd034e37"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 c5c852ebeabe49b08625d425153869fe.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: Jc9HbTY5e2sVJbn3FS1SWL6RQfsPZHcpGub4YcFDzm95MJHz23M_Uw==
-Content-Length: 1809
+Cache-Control: public, max-age=23506
+x-memc: HIT
+x-memc-key: bc5ab8db663a4d1b839bb3827afb2072aedd0e7140fc62149e2c7ed16c8ed103
+x-memc-age: 4628
+x-memc-expires: 23506
+x-az: us-east-1c
+x-task-id: 374f1f6eda394c62be1ca031f9631120
+ETag: W/"9e45c32ed604876face10adad3410641"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 26e93b3a0dd504e9fa61c90a97cb3342.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 1-dcitebkXgsbkoLUERbtayTU1kT70BSqowEkg1jMvTGFA_1sDP2Yw==
+Age: 2333
+Content-Length: 1679
 
-{"adult":false,"backdrop_path":"/wh4ze6klUbeichAj603OKZwY1W5.jpg","belongs_to_collection":{"id":528,"name":"The Terminator Collection","poster_path":"/vxiKtcxAJxHhlg2H1X8y7zcM3k6.jpg","backdrop_path":"/cpmbkwSxZnKO69V82A9a34tvk2E.jpg"},"budget":6400000,"genres":[{"id":28,"name":"Action"},{"id":53,"name":"Thriller"},{"id":878,"name":"Science Fiction"}],"homepage":"https://www.20thcenturystudios.com/movies/theterminator","id":218,"imdb_id":"tt0088247","original_language":"en","original_title":"The Terminator","overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","popularity":35.823,"poster_path":"/qvktm0BHcnmDpul4Hz01GIazWPr.jpg","production_companies":[{"id":41,"logo_path":"/AuAIlCWBrbhbUFFrJ6M9E3ihBoj.png","name":"Orion Pictures","origin_country":"US"},{"id":1280,"logo_path":null,"name":"Pacific Western","origin_country":"US"},{"id":3952,"logo_path":null,"name":"Hemdale Film","origin_country":""},{"id":4764,"logo_path":null,"name":"Cinema 84","origin_country":""},{"id":7745,"logo_path":null,"name":"Euro Film Funding","origin_country":""}],"production_countries":[{"iso_3166_1":"GB","name":"United Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1984-10-26","revenue":78371200,"runtime":108,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Your future is in his hands.","title":"The Terminator","video":false,"vote_average":7.6,"vote_count":9382}
+{"adult":false,"backdrop_path":"/ffdqHMWkh1h9MABwIfbfRJhgFW6.jpg","belongs_to_collection":{"id":528,"name":"The Terminator Collection","poster_path":"/kpZxdNsAV7qTdTLwKM5NLqa7GEo.jpg","backdrop_path":"/sCnBEw2Yu6foEjs4Xb4eMddYHRo.jpg"},"budget":6400000,"genres":[{"id":28,"name":"Action"},{"id":53,"name":"Thriller"},{"id":878,"name":"Science Fiction"}],"homepage":"https://www.20thcenturystudios.com/movies/theterminator","id":218,"imdb_id":"tt0088247","origin_country":["US"],"original_language":"en","original_title":"The Terminator","overview":"In the post-apocalyptic future, reigning tyrannical supercomputers teleport a cyborg assassin known as the \"Terminator\" back to 1984 to kill Sarah Connor, whose unborn son is destined to lead insurgents against 21st century mechanical hegemony. Meanwhile, the human-resistance movement dispatches a lone warrior to safeguard Sarah. Can he stop the virtually indestructible killing machine?","popularity":12.5614,"poster_path":"/hzXSE66v6KthZ8nPoLZmsi2G05j.jpg","production_companies":[{"id":3952,"logo_path":"/hLfS5FjBQjK5MUNl7kdXgIHSSWy.png","name":"Hemdale","origin_country":"GB"},{"id":1280,"logo_path":null,"name":"Pacific Western","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1984-10-26","revenue":78371200,"runtime":108,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Spanish","iso_639_1":"es","name":"Español"}],"status":"Released","tagline":"Your future is in its hands.","title":"The Terminator","video":false,"vote_average":7.674,"vote_count":14027}

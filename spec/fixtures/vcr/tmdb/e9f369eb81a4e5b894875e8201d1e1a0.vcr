@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: b59edde0894f10a67b3c1c65736cf5547f5401e3ea28cf23e7be75ac532a8a98
+x-memc-age: 1489
+x-memc-expires: 24166
+x-az: us-east-1c
+x-task-id: 85d159752b264c8ca2611b288dbf4d21
+Date: Tue, 09 Dec 2025 14:44:35 GMT
+Cache-Control: public, max-age=1994
+ETag: W/"97e4e29549f2cb25f034924c0aba093e"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 65fafc6240b0e8b3e15609a24840fab6.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: oAvEsjWa8-vaRgtD168_QuzTL_gMSapdajqZrnn2LpWkFxnOAiuBBg==
+Age: 1824
+Content-Length: 1347
+
+{"id":218,"results":[{"iso_639_1":"en","iso_3166_1":"US","name":"Highway Chase Scene","key":"ZuFkEzwi58o","site":"YouTube","size":1080,"type":"Clip","official":true,"published_at":"2024-05-09T18:00:17.000Z","id":"663e1adc532723af3a02837d"},{"iso_639_1":"en","iso_3166_1":"US","name":"From The Future","key":"ztaIu874bUc","site":"YouTube","size":1080,"type":"Clip","official":true,"published_at":"2024-05-08T18:00:34.000Z","id":"663bfe293869cb4a97a8ea42"},{"iso_639_1":"en","iso_3166_1":"US","name":"Come With Me If You Want To Live","key":"-CvG5Ll-A3o","site":"YouTube","size":1080,"type":"Clip","official":true,"published_at":"2024-05-07T18:00:00.000Z","id":"663aa10008ba251f180525a9"},{"iso_639_1":"en","iso_3166_1":"US","name":"Official Trailer","key":"nGrW-OR2uDk","site":"YouTube","size":1080,"type":"Trailer","official":true,"published_at":"2024-05-06T18:00:31.000Z","id":"66395303cc277c0123243c1e"},{"iso_639_1":"en","iso_3166_1":"US","name":"I’ll Be Back","key":"nqWCUWNn5As","site":"YouTube","size":720,"type":"Clip","official":true,"published_at":"2021-03-19T14:30:30.000Z","id":"659fc6fcc14fee01246d787d"},{"iso_639_1":"en","iso_3166_1":"US","name":"Re-release Teaser Trailer","key":"hdHH0dEqMQ4","site":"YouTube","size":1080,"type":"Teaser","official":true,"published_at":"2015-04-28T14:56:06.000Z","id":"659fc757b1131f012a7a7ce8"}]}

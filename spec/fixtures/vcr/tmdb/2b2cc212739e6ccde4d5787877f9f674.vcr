@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: 59eb961a100cfb9039f8fe04d61624743adff6b3bea64c9d7d60a3612ce40041
+x-memc-age: 0
+x-memc-expires: 28395
+x-az: us-east-1c
+x-task-id: 374f1f6eda394c62be1ca031f9631120
+Date: Tue, 09 Dec 2025 14:43:22 GMT
+Cache-Control: public, max-age=25836
+ETag: W/"2a6afa8c08cce43bb883fcf0c357acde"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 26e93b3a0dd504e9fa61c90a97cb3342.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: QAn-q3tMV1O3CQWPZkLlyaIFTmzyCzoYJ1aoZk8HUC_iOXZQDFlhXA==
+Age: 1884
+Content-Length: 1245
+
+{"id":"5f20ce845b2f4700364b2000","author":"Kamurai","author_details":{"name":"Kamurai","username":"Kamurai","avatar_path":"/sKeC7qZLAKreuwxH4x6U3mN7Aa8.jpg","rating":6.0},"content":"Good watch, might watch again, and can recommend.\r\n\r\nI have no idea what just happened, I just watched the 2020 version, and it doesn't even look better, and there doesn't seem be a lot of info on the situation.\r\n\r\nIt has decent practical effects, it's a got plenty of action in a machine chasing a woman aided by a soldier from the future.\r\n\r\nArnold carries an odd amount of weight as an emotionless cyborg, but Linda Hamilton shores up the rest.  I don't think it is Michael Biehn's fault, but Kyle Reese is kind of a forgettable character in this.\r\n\r\nThe depth of this action movie is just on the concept of time travel, and whether or not you can truly change the future.\r\n\r\nThis is a good movie, but it lacks something really special for the time of 2020, it's more important as a precursor to the sequel.","created_at":"2020-07-29T01:19:00.568Z","iso_639_1":"en","media_id":218,"media_title":"The Terminator","media_type":"movie","updated_at":"2021-06-23T15:58:41.671Z","url":"https://www.themoviedb.org/review/5f20ce845b2f4700364b2000"}

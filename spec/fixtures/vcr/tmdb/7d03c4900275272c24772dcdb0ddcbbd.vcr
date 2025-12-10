@@ -1,21 +1,24 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 249
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:44:20 GMT
+Date: Tue, 09 Dec 2025 15:22:35 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
 Cache-Control: public, max-age=0
-X-Memc: MISS
-X-Memc-Key: 340ea6da047a74508327e70909acba45d7f10e34
-X-Memc-Age: 0
-X-Memc-Expires: 0
-ETag: W/"25aac3820b6ea5c29042583cc31ee508"
+x-memc: MISS
+x-memc-key: 512205c5393640d6641d012994299da4b7d6117da9913a1de60257537169da10
+x-memc-age: 0
+x-memc-expires: 0
+x-az: us-east-1a
+x-task-id: 93db2961da134913985e7136ab6c623e
+ETag: W/"c04beb69ebe8777b9f33e993f37ba34b"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Miss from cloudfront
-Via: 1.1 e9fa09c7497a12fe8b4961214200fa71.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: teTmRnnRTlBjp63DER31RA_ev6T4OTD4lgSaw1ehGaA1Xqx5LcVUuw==
+Via: 1.1 2ef1b1b84e938b6071d9a4f357c18e56.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: CfIdd9hwHGx0tL0vEnjHoUNbx_UGpoC2dgZPNQVzIpYoC5grjtYaBg==
+Content-Length: 246
 
-{"adult":false,"also_known_as":[],"biography":"","birthday":null,"deathday":null,"gender":0,"homepage":null,"id":3092890,"imdb_id":null,"known_for_department":"Acting","name":"Hans Richter","place_of_birth":null,"popularity":0.0,"profile_path":null}
+{"adult":false,"also_known_as":[],"biography":"","birthday":null,"deathday":null,"gender":0,"homepage":null,"id":5866965,"imdb_id":null,"known_for_department":null,"name":"Julien Sztuka","place_of_birth":null,"popularity":0.0,"profile_path":null}

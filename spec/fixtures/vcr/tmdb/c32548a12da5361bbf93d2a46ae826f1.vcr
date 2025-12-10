@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: bde7526176e70439449d7a17bb3165a45d99fdd46848d554fa6da4c88944ce1e
+x-memc-age: 22170
+x-memc-expires: 5205
+x-az: us-east-1a
+x-task-id: 4b786e4d4e2d4964ad0c301b3856e3a5
+Date: Tue, 09 Dec 2025 14:43:24 GMT
+Cache-Control: public, max-age=20414
+ETag: W/"633473beea78b7c1134b70098a3f7420"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 8f0898e2eb5c972640ef7bcada20f09e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: gf4ORVvMw2xwTeE9Xj89hHQ_mS5BnQxunw-EBBT34Yf_S0EYgUNI-A==
+Age: 1883
+Content-Length: 1073
+
+{"change_keys":["adult","air_date","also_known_as","alternative_titles","biography","birthday","budget","cast","certifications","character_names","created_by","crew","deathday","episode","episode_number","episode_run_time","freebase_id","freebase_mid","general","genres","guest_stars","homepage","images","imdb_id","languages","name","network","origin_country","original_name","original_title","overview","parts","place_of_birth","plot_keywords","production_code","production_companies","production_countries","releases","revenue","runtime","season","season_number","season_regular","spoken_languages","status","tagline","title","translations","tvdb_id","tvrage_id","type","video","videos"],"images":{"base_url":"http://image.tmdb.org/t/p/","secure_base_url":"https://image.tmdb.org/t/p/","backdrop_sizes":["w300","w780","w1280","original"],"logo_sizes":["w45","w92","w154","w185","w300","w500","original"],"poster_sizes":["w92","w154","w185","w342","w500","w780","original"],"profile_sizes":["w45","w185","h632","original"],"still_sizes":["w92","w185","w300","original"]}}

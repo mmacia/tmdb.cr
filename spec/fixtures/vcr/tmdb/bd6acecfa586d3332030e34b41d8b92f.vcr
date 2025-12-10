@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 1cd39145d64df4d000dc282bf4c74fb7d29c9488c2de125c76642da08951e911
+x-memc-age: 8324
+x-memc-expires: 20118
+x-az: us-east-1a
+x-task-id: 693d74c8ef6c4851b81480235b857108
+Date: Tue, 09 Dec 2025 14:44:32 GMT
+Cache-Control: public, max-age=19992
+ETag: W/"1c22e7eaee94c3a47f03c7c4be208f94"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 18b8ff457c20e60fc9c537b31f0a8594.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: ON8jrEeh0efQNAafm5xV-EBTdV0mJ0VXruqt92c19y5mkpgQGD3azw==
+Age: 1826
+Content-Length: 1213
+
+{"backdrops":[],"id":218,"logos":[{"aspect_ratio":3.664,"height":229,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/q4wdswLUVVrl8OSjYXPqjihRHXs.png","vote_average":0.0,"vote_count":0,"width":839}],"posters":[{"aspect_ratio":0.666,"height":1763,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/9KI49SBnwAOzGcMw1onIki7vd2.jpg","vote_average":1.75,"vote_count":6,"width":1175},{"aspect_ratio":0.667,"height":3000,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/y4jSWrykjrtfrxuvImpu857Qrxr.jpg","vote_average":1.434,"vote_count":5,"width":2000},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/oH7bZUw8nSonPKas8pKybb82TLh.jpg","vote_average":1.31,"vote_count":7,"width":1000},{"aspect_ratio":0.667,"height":3000,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/syGRdJvrPWrVGk52c4eVOIliG3j.jpg","vote_average":0.972,"vote_count":6,"width":2000},{"aspect_ratio":0.667,"height":1035,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/qJw4hTyDcWHXDHyEdpdwNyF8OcX.jpg","vote_average":0.166,"vote_count":3,"width":690},{"aspect_ratio":0.699,"height":1510,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/fWuidloQZqlwHvFHLfCSsjqn1HM.jpg","vote_average":0.0,"vote_count":0,"width":1055}]}

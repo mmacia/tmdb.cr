@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:22:59 GMT
+Date: Tue, 09 Dec 2025 14:43:22 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: c78679433333791f1b1408d27257d31ea600418d
-X-Memc-Age: 20155
-X-Memc-Expires: 1445
-ETag: W/"3aef87c57294fc9e14a5dc1361bf1b71"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 911151077fc74374130cb3f3f2d671e8.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: GdYKI4K_3yZQoZzRMm1tegm5EjMF11Vy2ZpY5ctq6YqxpEVOppDgDA==
-Content-Length: 672
+Cache-Control: public, max-age=15939
+x-memc: HIT
+x-memc-key: 64133e232f9bf98dccf77a82264e09c8b298f8e786e5a900e984ac7dcd4ffd1d
+x-memc-age: 10597
+x-memc-expires: 15939
+x-az: us-east-1c
+x-task-id: 48fdd9e15ea14727904ecaf7e5ce09a1
+ETag: W/"5fac3ea994b8e42cd8d86c46be34cbc6"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 e51128cbc5c6c2bfa2ca665022eb945e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: xVEDgdTujifkkxTIY3ryDRnJvYkoGOFPNx7l891LCc0_yr4unSoK0g==
+Age: 2331
+Content-Length: 710
 
-{"movie_results":[],"person_results":[],"tv_results":[{"genre_ids":[10765,10759],"original_language":"en","first_air_date":"2017-09-24","vote_average":7.1,"vote_count":1016,"id":67198,"poster_path":"/98RYSYsRNKWgrAAFBn0WfploUG7.jpg","overview":"Follow the voyages of Starfleet on their missions to discover new worlds and new life forms, and one Starfleet officer who must learn that to truly understand all things alien, you must first understand yourself.","name":"Star Trek: Discovery","backdrop_path":"/p3McpsDNTNmpbkNBKdNxOFZJeKX.jpg","original_name":"Star Trek: Discovery","origin_country":["US"],"popularity":62.843}],"tv_episode_results":[],"tv_season_results":[]}
+{"movie_results":[],"person_results":[],"tv_results":[{"adult":false,"backdrop_path":"/ePr0k72sypMpZYubz6w34dcW68Y.jpg","id":67198,"name":"Star Trek: Discovery","original_name":"Star Trek: Discovery","overview":"Follow the voyages of Starfleet on their missions to discover new worlds and new life forms, and one Starfleet officer who must learn that to truly understand all things alien, you must first understand yourself.","poster_path":"/xwpOHgym48Ftz7fbJq5te5xoiwu.jpg","media_type":"tv","original_language":"en","genre_ids":[10765,10759,18],"popularity":16.1653,"first_air_date":"2017-09-24","vote_average":7.004,"vote_count":1925,"origin_country":["US"]}],"tv_episode_results":[],"tv_season_results":[]}

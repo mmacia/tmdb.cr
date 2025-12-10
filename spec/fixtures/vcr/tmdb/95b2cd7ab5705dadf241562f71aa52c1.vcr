@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:29:26 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: de7796ebf50a5028f29de75d7346d24e8cc6f40f
-X-Memc-Age: 5911
-X-Memc-Expires: 11567
-ETag: W/"231e27392d47c656dd788889755404a0"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 f381783b1a4d3b0a57fef757bbb97dc2.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: MGpVYJWoaolrxhb6lt3oDOKtjs9ZHRhhXKDYWncBDs30RA_Al-V93g==
-Content-Length: 577
+x-memc: HIT
+x-memc-key: f61cb63ea4a06eb77722bb80fa165e7c36c6c9a3e067dd64211a772920cac2cd
+x-memc-age: 14141
+x-memc-expires: 8643
+x-az: us-east-1a
+x-task-id: 739b3c9060e343a0ba63ac3c33a555bf
+Date: Tue, 09 Dec 2025 14:44:32 GMT
+Cache-Control: public, max-age=22893
+ETag: W/"4edd01c3d6399529ba566bb582cd2f26"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 69e32d27190fc5c6d8b4a04f715c7d9a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: NjNpHsZHURNWVKkie-Vg6fkK4wi6d5RHTep-WhOk8HwWv-L5Yfw2OQ==
+Age: 2289
+Content-Length: 789
 
-{"id":218,"keywords":[{"id":83,"name":"saving the world"},{"id":310,"name":"artificial intelligence"},{"id":526,"name":"rebel"},{"id":679,"name":"cyborg"},{"id":1280,"name":"laser gun"},{"id":1366,"name":"shotgun"},{"id":1373,"name":"killer robot"},{"id":3289,"name":"villain"},{"id":4379,"name":"time travel"},{"id":4565,"name":"dystopia"},{"id":12670,"name":"los angeles, california"},{"id":33556,"name":"urban setting"},{"id":162484,"name":"future war"},{"id":219404,"name":"action hero"},{"id":253388,"name":"griffith observatory"},{"id":269233,"name":"good versus evil"}]}
+{"id":218,"keywords":[{"id":312,"name":"man vs machine"},{"id":310,"name":"artificial intelligence (a.i.)"},{"id":83,"name":"saving the world"},{"id":1280,"name":"laser gun"},{"id":679,"name":"cyborg"},{"id":1373,"name":"killer robot"},{"id":1366,"name":"shotgun"},{"id":526,"name":"rebel"},{"id":4565,"name":"dystopia"},{"id":3289,"name":"villain"},{"id":4379,"name":"time travel"},{"id":12670,"name":"los angeles, california"},{"id":33556,"name":"urban setting"},{"id":162484,"name":"future war"},{"id":175468,"name":"savior"},{"id":178657,"name":"tech noir"},{"id":208757,"name":"time paradox"},{"id":219404,"name":"action hero"},{"id":253388,"name":"griffith observatory"},{"id":269233,"name":"good versus evil"},{"id":321464,"name":"intense"},{"id":357496,"name":"dystopian sci-fi"}]}

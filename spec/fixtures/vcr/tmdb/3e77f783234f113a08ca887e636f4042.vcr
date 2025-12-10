@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 2b8780bc8f58ba9b22752b147694d5983c0d746c5ee1a91c97344838d94868f4
+x-memc-age: 16378
+x-memc-expires: 10801
+x-az: us-east-1c
+x-task-id: 374f1f6eda394c62be1ca031f9631120
+Date: Tue, 09 Dec 2025 14:43:37 GMT
+Cache-Control: public, max-age=10014
+ETag: W/"cfcc1e83e11adb3f104bb4bbbee1e3cc"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 7e7ba163f7cdb4f59c418e3f1e0e1656.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: txLF3sZS6WCciwNVRe9QsMZEX8PhI2OZhZI1FtjE59Ev0rNEhD3kpg==
+Age: 1875
+Content-Length: 269
+
+{"id":3738,"results":[{"iso_639_1":"en","iso_3166_1":"US","name":"The Big Bang Theory - Official Trailer (HD)","key":"WBb3fojgW0Q","site":"YouTube","size":360,"type":"Trailer","official":false,"published_at":"2012-12-14T01:05:54.000Z","id":"5fd911ceecbde9003eac7003"}]}

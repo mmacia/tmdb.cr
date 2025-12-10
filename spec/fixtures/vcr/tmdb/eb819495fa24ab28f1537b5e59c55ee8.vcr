@@ -2,23 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 22:07:20 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: 0db441738d4df76baef39308380920e57b71b857
-X-Memc-Age: 0
-X-Memc-Expires: 17040
-ETag: W/"fb75c7e436908304c4aa20e171ba5954"
-Vary: Accept-Encoding
+x-memc: HIT
+x-memc-key: 70a5984b264b9b22b3b943f27cc2120501d3d2ddc9577109689efee2eba711c0
+x-memc-age: 14973
+x-memc-expires: 12756
+x-az: us-east-1a
+x-task-id: 693d74c8ef6c4851b81480235b857108
+Date: Tue, 09 Dec 2025 14:43:37 GMT
+Cache-Control: public, max-age=24238
+ETag: W/"af06917ef26f2031730252f676a71024"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Hit from cloudfront
-Via: 1.1 b89214703c5c60a107a07c982809a482.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: M-6qrD7jQK-W2xboYizNHQAJnUC_MePTq-0yxKbIpQKM2o7KuYhLNg==
-Age: 637
-Content-Length: 347
+Via: 1.1 aef1665c302c83421efd2e16a8dd31a2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: vOIlMxNrsplzk5YBLg4qzoJ1PiwSAa_U5CWxtjkHEZRiTBLk-GEq6Q==
+Age: 2321
+Content-Length: 1355
 
-{"id":3738,"posters":[{"aspect_ratio":0.6703550023052097,"file_path":"/qTzVq4l9niFTziriBQ42ezuMxvq.jpg","height":2169,"iso_639_1":"es","vote_average":5.312,"vote_count":1,"width":1454},{"aspect_ratio":0.6920415224913494,"file_path":"/dm01uiKcYpYc8lapyMlZgqMZ5cL.jpg","height":578,"iso_639_1":"es","vote_average":5.172,"vote_count":1,"width":400}]}
+{"id":3738,"posters":[{"aspect_ratio":0.666,"height":682,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/z8DWxdb5xdYiYIi3or8sGbh7lO0.jpg","vote_average":1.75,"vote_count":4,"width":454},{"aspect_ratio":0.667,"height":1500,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/n8BXROh3Ztq6GXw89r09IWE1eFo.jpg","vote_average":1.75,"vote_count":2,"width":1000},{"aspect_ratio":0.666,"height":1426,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/z8VxQnst4RbRepupd8a2KPOUMFu.jpg","vote_average":1.714,"vote_count":7,"width":950},{"aspect_ratio":0.666,"height":682,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/lYvcydqLmKOpvR1o4vBDwOOYLhx.jpg","vote_average":1.444,"vote_count":6,"width":454},{"aspect_ratio":0.67,"height":2169,"iso_3166_1":"MX","iso_639_1":"es","file_path":"/qTzVq4l9niFTziriBQ42ezuMxvq.jpg","vote_average":1.066,"vote_count":5,"width":1454},{"aspect_ratio":0.692,"height":578,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/dm01uiKcYpYc8lapyMlZgqMZ5cL.jpg","vote_average":0.166,"vote_count":1,"width":400},{"aspect_ratio":0.68,"height":1000,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/bqsciafP1nr5rQ7BoRnWmwpv5Sg.jpg","vote_average":0.166,"vote_count":1,"width":680},{"aspect_ratio":0.701,"height":1426,"iso_3166_1":"ES","iso_639_1":"es","file_path":"/pWnUXWRTSjDHCCsqq1udaZUeAOW.jpg","vote_average":0.166,"vote_count":2,"width":1000}]}

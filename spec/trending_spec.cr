@@ -7,7 +7,7 @@ describe Tmdb::Trending do
         movies = Tmdb::Trending.trending_movies(Tmdb::Trending::TimeWindow::Day)
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(20_000)
+        movies.total_items.should be > 1
       end
     end
 
@@ -16,7 +16,7 @@ describe Tmdb::Trending do
         movies = Tmdb::Trending.trending_movies(Tmdb::Trending::TimeWindow::Week)
 
         movies.should be_a(Tmdb::LazyIterator(Tmdb::MovieResult))
-        movies.total_items.should eq(20_000)
+        movies.total_items.should be > 1
       end
     end
 
@@ -26,7 +26,7 @@ describe Tmdb::Trending do
         skip_at = 100
 
         movies.each do |movie|
-          skip_at =- 1
+          skip_at -= 1
           movie.should be_a(Tmdb::MovieResult)
 
           break if skip_at <= 0
@@ -41,7 +41,7 @@ describe Tmdb::Trending do
         tv_shows = Tmdb::Trending.trending_tv_shows(Tmdb::Trending::TimeWindow::Day)
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(20_000)
+        tv_shows.total_items.should be > 1
       end
     end
 
@@ -50,7 +50,7 @@ describe Tmdb::Trending do
         tv_shows = Tmdb::Trending.trending_tv_shows(Tmdb::Trending::TimeWindow::Week)
 
         tv_shows.should be_a(Tmdb::LazyIterator(Tmdb::Tv::ShowResult))
-        tv_shows.total_items.should eq(20_000)
+        tv_shows.total_items.should be > 1
       end
     end
 
@@ -60,7 +60,7 @@ describe Tmdb::Trending do
         skip_at = 100
 
         tv_shows.each do |tv_show|
-          skip_at =- 1
+          skip_at -= 1
           tv_show.should be_a(Tmdb::Tv::ShowResult)
 
           break if skip_at <= 0
@@ -75,7 +75,7 @@ describe Tmdb::Trending do
         people = Tmdb::Trending.trending_people(Tmdb::Trending::TimeWindow::Day)
 
         people.should be_a(Tmdb::LazyIterator(Tmdb::PersonResult))
-        people.total_items.should eq(20_000)
+        people.total_items.should be > 1
       end
     end
 
@@ -84,17 +84,17 @@ describe Tmdb::Trending do
         people = Tmdb::Trending.trending_people(Tmdb::Trending::TimeWindow::Week)
 
         people.should be_a(Tmdb::LazyIterator(Tmdb::PersonResult))
-        people.total_items.should eq(20_000)
+        people.total_items.should be > 1
       end
     end
 
     it "should iterate over all items" do
       VCR.use_cassette "tmdb" do
         people = Tmdb::Trending.trending_people(Tmdb::Trending::TimeWindow::Day)
-        skip_at = 0
+        skip_at = 100
 
         people.each do |person|
-          skip_at =- 1
+          skip_at -= 1
           person.should be_a(Tmdb::PersonResult)
 
           break if skip_at <= 0

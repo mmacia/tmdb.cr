@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Date: Tue, 09 Dec 2025 14:43:28 GMT
+Server: openresty
+Cache-Control: public, max-age=21049
+x-memc: HIT
+x-memc-key: 83d469b02099f52e9ddf25a4d25dd092982f5f73d9ffebbe2eaa80a0ded80aa4
+x-memc-age: 5797
+x-memc-expires: 21049
+x-az: us-east-1a
+x-task-id: 739b3c9060e343a0ba63ac3c33a555bf
+ETag: W/"96190baa7c89a29c9c0d690a441b3603"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 45a29b86bae07b09ddc92c2b533e0470.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: 9i9SotHv4t03aMckv8WgTz6C9dSONicQBKBrp3PslPmZ0nCq5Jl3gg==
+Age: 1881
+Content-Length: 68
+
+{"id":31132,"page":1,"results":[],"total_pages":0,"total_results":0}

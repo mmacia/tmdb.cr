@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 18eb27a961306907d8fc582364d902567b31cc8243e8376fea0ef0ab5db47db5
+x-memc-age: 2097
+x-memc-expires: 20736
+x-az: us-east-1c
+x-task-id: b62a7e00f78b4833886e44e53a90fd42
+Date: Tue, 09 Dec 2025 14:43:26 GMT
+Cache-Control: public, max-age=25725
+ETag: W/"b915a0a90c99f23243ab5f3c841b6cdb"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 26e93b3a0dd504e9fa61c90a97cb3342.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: -azIMmAbGtZpiZGyjFcvP773p8Ck6hltTIQdFicAC3nKwFV-WAKqkA==
+Age: 1882
+Content-Length: 241
+
+{"id":31132,"results":[{"iso_3166_1":"CN","title":"天兵公园","type":""},{"iso_3166_1":"JP","title":"レギュラーSHOW コリない2人","type":""},{"iso_3166_1":"JP","title":"レギュラーショー コリないふたり","type":""}]}

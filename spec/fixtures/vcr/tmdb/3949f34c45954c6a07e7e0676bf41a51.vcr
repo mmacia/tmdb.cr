@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: MISS, STORE
+x-memc-key: b3af453293642c625572b2453cf472b0b98ce0f368bd80908b0cd63561e94a8c
+x-memc-age: 0
+x-memc-expires: 27269
+x-az: us-east-1a
+x-task-id: 93db2961da134913985e7136ab6c623e
+Date: Tue, 09 Dec 2025 14:43:44 GMT
+Cache-Control: public, max-age=24613
+ETag: W/"6e2c88ee036c77deef156ef7d583fbaa"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 cbf33f1ce87e15a598a4a078f6825e00.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: kvHqD2xxC5NNEUv9lEQ9V5lah2EkR9v0RPZViDf_53sQbb3jmGeD9A==
+Age: 1908
+Content-Length: 547
+
+{"page":1,"results":[{"id":99272,"logo_path":"/xt9cawh63M0bkKrc0VvDtZ8q2sa.png","name":"Icon Films","origin_country":"GB"},{"id":262382,"logo_path":null,"name":"Icon Films","origin_country":""},{"id":163852,"logo_path":null,"name":"Icon Films BD","origin_country":""},{"id":92826,"logo_path":null,"name":"Icon Independent Films","origin_country":""},{"id":183930,"logo_path":null,"name":"Northern Icon Films","origin_country":"BB"},{"id":265020,"logo_path":null,"name":"American Icon Films","origin_country":""}],"total_pages":1,"total_results":6}

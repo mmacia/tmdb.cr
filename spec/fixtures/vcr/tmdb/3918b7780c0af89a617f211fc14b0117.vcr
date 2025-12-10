@@ -1,22 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 213
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 22:05:22 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: 8923ad847505d2c63d9ff83e2bc7d40e2705c619
-X-Memc-Age: 3213
-X-Memc-Expires: 13886
-ETag: W/"a2bf30596cc7e8f220372f758b9b147f"
+x-memc: HIT
+x-memc-key: 419a2be9c7c20fdcc21006b843b6092a0a105fe52e035923ac0eaa19e482292a
+x-memc-age: 18955
+x-memc-expires: 6785
+x-az: us-east-1a
+x-task-id: 739b3c9060e343a0ba63ac3c33a555bf
+Date: Tue, 09 Dec 2025 14:43:30 GMT
+Cache-Control: public, max-age=9515
+ETag: W/"0cc6c479f8e341e8b4b61837ca22d94e"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Hit from cloudfront
-Via: 1.1 66709b7391664c627ccebe2d9c55dd7f.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: dpPZjHnaf6fTE5MBPRTMSuw40-XrFUlKR6kCAhOo1DIHLPTeCixf-A==
-Age: 753
+Via: 1.1 26e93b3a0dd504e9fa61c90a97cb3342.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: ZyORJM80o-ZOpcGIY0cMnozKMMinu05vwff6mQ6Yx6iTSuNXEqTPDg==
+Age: 2325
+Content-Length: 251
 
-{"id":31132,"results":[{"id":"5a100f3592514138e4027189","iso_639_1":"en","iso_3166_1":"US","key":"Mm-Zc1_I1_8","name":"Coming Soon | Regular Show | Cartoon Network","site":"YouTube","size":1080,"type":"Trailer"}]}
+{"id":31132,"results":[{"iso_639_1":"en","iso_3166_1":"US","name":"Regular Look at Regular Show","key":"1i3ufVR4AXg","site":"YouTube","size":360,"type":"Clip","official":true,"published_at":"2010-09-02T19:37:40.000Z","id":"632e450a988afd007e23a325"}]}

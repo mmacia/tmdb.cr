@@ -1,22 +1,25 @@
 HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
-Content-Length: 138
+Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 22:05:18 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: efd093f52e783e0dd5793996d8090d4f71185d38
-X-Memc-Age: 8918
-X-Memc-Expires: 7800
-ETag: W/"cfa7ab3180534fcf735dc81c228e4b4c"
+x-memc: HIT
+x-memc-key: 18eb27a961306907d8fc582364d902567b31cc8243e8376fea0ef0ab5db47db5
+x-memc-age: 2097
+x-memc-expires: 20736
+x-az: us-east-1c
+x-task-id: b62a7e00f78b4833886e44e53a90fd42
+Date: Tue, 09 Dec 2025 14:43:26 GMT
+Cache-Control: public, max-age=25725
+ETag: W/"b915a0a90c99f23243ab5f3c841b6cdb"
+Vary: accept-encoding
+Vary: Origin
 X-Cache: Hit from cloudfront
-Via: 1.1 b2ff803e9122fd0c248b789f729b835e.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: Efkcgjuj0y1C-xpBne4o9q1pTRQ7-P7FfOSzAKct0BJJhtNYaQp63A==
-Age: 756
+Via: 1.1 aaa7ac5749bcacfb16caeb80b579a9b4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: uQiybkZX_e1BKdilPH40gNcMlRydloCb01KOaGt256wZW44CJknlgQ==
+Age: 2328
+Content-Length: 241
 
-{"id":31132,"results":[{"iso_3166_1":"AR","title":"Un Show Más","type":""},{"iso_3166_1":"ES","title":"Historias corrientes","type":""}]}
+{"id":31132,"results":[{"iso_3166_1":"CN","title":"天兵公园","type":""},{"iso_3166_1":"JP","title":"レギュラーSHOW コリない2人","type":""},{"iso_3166_1":"JP","title":"レギュラーショー コリないふたり","type":""}]}

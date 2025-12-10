@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+Server: openresty
+x-memc: HIT
+x-memc-key: 12a6180ce8a0d2ab23f7069abbae57af5145a91ef7fa0fc0147cc97de686ceab
+x-memc-age: 21202
+x-memc-expires: 1596
+x-az: us-east-1c
+x-task-id: 9b5a405761724a11a434fc2769395065
+Date: Tue, 09 Dec 2025 15:14:06 GMT
+Cache-Control: public, max-age=27421
+ETag: W/"dc1357796e45a7db081b5e16adac4698"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 3731a260b105a218299d2247a68d88c4.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: baojrVLKr6CeHWM5sLOZBk661kvuNZ2h7BCLU2hIPRXaIrqXoa7N7Q==
+Age: 84
+Content-Length: 378
+
+{"adult":false,"also_known_as":["Michael Connell Biehn","Майкл Бін","مایکل بین"],"biography":"","birthday":"1956-07-31","deathday":null,"gender":2,"homepage":null,"id":2712,"imdb_id":"nm0000299","known_for_department":"Acting","name":"Michael Biehn","place_of_birth":"Anniston, Alabama, USA","popularity":1.9366,"profile_path":"/9oFLsADWQm2TvU8XzLIzBbjdMkU.jpg"}

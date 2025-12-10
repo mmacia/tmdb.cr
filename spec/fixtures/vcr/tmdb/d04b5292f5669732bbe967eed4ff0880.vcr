@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:23:45 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: HIT
-X-Memc-Key: a24eb192fc417f4e5c5692890ddfc937ab9b538a
-X-Memc-Age: 12798
-X-Memc-Expires: 2961
+x-memc: HIT
+x-memc-key: dc739cb82e98c29a27b4db31183b455bf89c7e371fc2f8c8eba2010f31899fc9
+x-memc-age: 20443
+x-memc-expires: 4079
+x-az: us-east-1c
+x-task-id: 48fdd9e15ea14727904ecaf7e5ce09a1
+Date: Tue, 09 Dec 2025 14:43:22 GMT
+Cache-Control: public, max-age=6937
 ETag: W/"37244d54ccd63e0b002bf996a8ed58f9"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 7fdd77e84c03b9aa5af58d1d137b5cd0.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: uv8fS5MNG4DEtOAReddGPmuPrh-0Ewq0wiGTYK8GPiJR_NNY9ERR_A==
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 b36b68631c5d4e671b86b622ad61723a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: Qmlh-Uv8ONcd0Of5gJO7gKblCs623NJ5uvEESC-XHf-IdR3xCXMz1A==
+Age: 2331
 Content-Length: 492
 
 {"genres":[{"id":10759,"name":"Action & Adventure"},{"id":16,"name":"Animación"},{"id":35,"name":"Comedia"},{"id":80,"name":"Crimen"},{"id":99,"name":"Documental"},{"id":18,"name":"Drama"},{"id":10751,"name":"Familia"},{"id":10762,"name":"Kids"},{"id":9648,"name":"Misterio"},{"id":10763,"name":"News"},{"id":10764,"name":"Reality"},{"id":10765,"name":"Sci-Fi & Fantasy"},{"id":10766,"name":"Soap"},{"id":10767,"name":"Talk"},{"id":10768,"name":"War & Politics"},{"id":37,"name":"Western"}]}

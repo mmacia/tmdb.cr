@@ -2,22 +2,24 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=utf-8
 Transfer-Encoding: chunked
 Connection: close
-Date: Sun, 16 May 2021 21:47:26 GMT
 Server: openresty
-Access-Control-Allow-Origin: *
-Access-Control-Allow-Methods: GET, HEAD, POST, PUT, DELETE, OPTIONS
-Access-Control-Expose-Headers: ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After, Content-Length, Content-Range
-Cache-Control: public, max-age=28800
-X-Memc: MISS, STORE
-X-Memc-Key: 613dc6e89e783a85a92760071056437f7322c242
-X-Memc-Age: 0
-X-Memc-Expires: 21600
-ETag: W/"df2b8b221d81449d05543a9757e0224b"
-Vary: Accept-Encoding
-X-Cache: Miss from cloudfront
-Via: 1.1 ed24ed7fbec751651346c1accbcfe3e5.cloudfront.net (CloudFront)
-X-Amz-Cf-Pop: MAD51-C2
-X-Amz-Cf-Id: ICHAB8p7-fTpr-NSEmruG4RscRYj-OufDlGfn2EutKwSo1yuHiE4tQ==
-Content-Length: 292
+x-memc: MISS, STORE
+x-memc-key: a69e2c76ca3f241c0c8f16dc7af31c999c87a1c56e94c9a5ef789c30e3f060b9
+x-memc-age: 0
+x-memc-expires: 28398
+x-az: us-east-1a
+x-task-id: 7249804af814494b820b78a483ec0d77
+Date: Tue, 09 Dec 2025 14:43:45 GMT
+Cache-Control: public, max-age=25217
+ETag: W/"562eb01a9c88248dbe52154661c84e9c"
+Vary: accept-encoding
+Vary: Origin
+X-Cache: Hit from cloudfront
+Via: 1.1 aef1665c302c83421efd2e16a8dd31a2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MAD53-P8
+Alt-Svc: h3=":443"; ma=86400
+X-Amz-Cf-Id: IlcgU7_Rmu1d7zVtDwQYdzvjvrP0OKOqNjeM7x6RbZzUEWvsQmQ2sA==
+Age: 2331
+Content-Length: 432
 
-{"page":1,"results":[{"name":"slum","id":100},{"name":"slumber party","id":11798},{"name":"slumlord","id":209811},{"name":"slum dweller","id":227709},{"name":"life in the slums","id":229684},{"name":"slum dwellers","id":235085},{"name":"slump","id":252977}],"total_pages":1,"total_results":7}
+{"page":1,"results":[{"id":100,"name":"slum"},{"id":229684,"name":"life in the slums"},{"id":235085,"name":"slum dwellers"},{"id":11798,"name":"slumber party"},{"id":209811,"name":"slumlord"},{"id":252977,"name":"slump"},{"id":227709,"name":"slum dweller"},{"id":305169,"name":"slums have"},{"id":305170,"name":"slumach"},{"id":316310,"name":"golden slumbers"},{"id":358374,"name":"slum doctor"}],"total_pages":1,"total_results":11}
